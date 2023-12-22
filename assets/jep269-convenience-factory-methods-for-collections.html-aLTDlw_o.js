@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vue_export-helper-x3n3nnut.js";import{o,c}from"./app-SrfyUxWk.js";const t={};function n(r,s){return o(),c("div")}const a=e(t,[["render",n],["__file","jep269-convenience-factory-methods-for-collections.html.vue"]]);export{a as default};
