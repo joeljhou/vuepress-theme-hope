@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://joeljhou/joeljhou/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://joeljhou.github.io/joeljhou/joeljhou/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://joeljhou/joeljhou/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml" rel="self" type="application/rss+xml"/>
     <title>会敲代码的程序猿</title>
-    <link>https://joeljhou/joeljhou/</link>
+    <link>https://joeljhou.github.io/joeljhou/joeljhou/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 04 Jan 2024 02:34:24 GMT</pubDate>
-    <lastBuildDate>Thu, 04 Jan 2024 02:34:24 GMT</lastBuildDate>
+    <pubDate>Thu, 04 Jan 2024 02:38:49 GMT</pubDate>
+    <lastBuildDate>Thu, 04 Jan 2024 02:38:49 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
     <item>
       <title>Java 17 新特性：switch的模式匹配（Preview）</title>
-      <link>https://joeljhou/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 17 新特性：switch的模式匹配（Preview）</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 17 新特性：switch的模式匹配（Preview）</source>
       <description>Java 17 新特性：switch的模式匹配（Preview）</description>
       <category>Java</category>
       <pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate>
@@ -24,9 +24,9 @@
     </item>
     <item>
       <title>Java 17 新特性：密封类</title>
-      <link>https://joeljhou/joeljhou/java-features/Java17/jep409-sealed-classes.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java17/jep409-sealed-classes.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 17 新特性：密封类</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep409-sealed-classes.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep409-sealed-classes.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 17 新特性：密封类</source>
       <description>Java 17 新特性：密封类</description>
       <category>Java</category>
       <pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate>
@@ -35,9 +35,9 @@
     </item>
     <item>
       <title>Java 16 新特性：instanceof增强</title>
-      <link>https://joeljhou/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 16 新特性：instanceof增强</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 16 新特性：instanceof增强</source>
       <description>Java 16 新特性：instanceof增强 Java 16 引入了 instanceof 的增强语法，用于更简便地判断对象是否是某个类的实例并进行相应的局部类型转换。 instanceof 基础用法 if (obj instanceof String) { String someString = (String) obj; // 强制类型转换 // ... }</description>
       <category>Java</category>
       <pubDate>Thu, 28 Dec 2023 00:00:00 GMT</pubDate>
@@ -67,9 +67,9 @@
     </item>
     <item>
       <title>Java 16 新特性：record类</title>
-      <link>https://joeljhou/joeljhou/java-features/Java16/jep395-records.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java16/jep395-records.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 16 新特性：record类</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep395-records.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep395-records.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 16 新特性：record类</source>
       <description>Java 16 新特性：record类 Java 16引入的record类是一种用于简化不可变数据管理的特殊类。 它通过紧凑的语法提供了对不可变数据的支持，并自动生成常见的方法， 如equals()、hashCode()和toString()等，从而减少了开发者的样板代码。 传统Java Bean问题 在处理不可变数据时，传统的Java Bean存在“繁琐”和“冗长”的问题。 为了管理少量值的不可变数据，开发者需要编写大量低价值、重复且容易出错的代码， 包括构造函数、访问器(getter/setter)、equals、hashCode、toString等。</description>
       <category>Java</category>
       <pubDate>Fri, 29 Dec 2023 00:00:00 GMT</pubDate>
@@ -126,9 +126,9 @@
     </item>
     <item>
       <title>Java 15 新特性：隐藏类</title>
-      <link>https://joeljhou/joeljhou/java-features/Java15/jep371-hidden-classes.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java15/jep371-hidden-classes.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 15 新特性：隐藏类</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep371-hidden-classes.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep371-hidden-classes.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 15 新特性：隐藏类</source>
       <description>Java 15 新特性：隐藏类 Hidden Classes 提供了一种在运行时生成类的机制，在编译时未知，并且不能直接在源代码中引用， 需要通过反射间接使用它们，隐藏类是为框架设计的，具有以下特性： 动态生成内部类：隐藏类天生为框架设计，在运行时生成内部类 反射访问限制：隐藏类只能通过反射访问，不能直接被其他类的字节码访问 独立加载和卸载：隐藏类可以独立于其他类加载和卸载 框架扩展性：适用于需要在运行时生成类的框架，提高语言的灵活性和效率</description>
       <category>Java</category>
       <pubDate>Tue, 26 Dec 2023 00:00:00 GMT</pubDate>
@@ -148,9 +148,9 @@
     </item>
     <item>
       <title>Java 15 新特性：文本块</title>
-      <link>https://joeljhou/joeljhou/java-features/Java15/jep378-text-blocks.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java15/jep378-text-blocks.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 15 新特性：文本块</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep378-text-blocks.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep378-text-blocks.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 15 新特性：文本块</source>
       <description>Java 15 新特性：文本块 Java 15（JEP 378）引入了文本块（Text Blocks）这一新特性，旨在简化多行字符串的表示，提高代码可读性，并减少在字符串中使用转义符的需求。 文本块通过引入三个双引号的胖分隔符（&amp;quot;&amp;quot;&amp;quot;）来实现，同时支持转义序列，为开发人员提供更直观、易读的字符串处理方式。 快速上手 HTML示例 // 使用“一维”字符串文字 String html = &amp;quot;&amp;lt;html&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;body&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;p&amp;gt;Hello, world&amp;lt;/p&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;/body&amp;gt;\n&amp;quot; + &amp;quot;&amp;lt;/html&amp;gt;\n&amp;quot;; // 使用“二维”文本块 String html = &amp;quot;&amp;quot;&amp;quot; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, world&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;quot;&amp;quot;&amp;quot;;</description>
       <category>Java</category>
       <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
@@ -200,9 +200,9 @@
     </item>
     <item>
       <title>Java 14 新特性：switch表达式增强</title>
-      <link>https://joeljhou/joeljhou/java-features/Java14/jep361-switch-expressions.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java14/jep361-switch-expressions.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 14 新特性：switch表达式增强</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java14/jep361-switch-expressions.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java14/jep361-switch-expressions.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 14 新特性：switch表达式增强</source>
       <description>Java 14 新特性：switch表达式增强 Java 14（JEP 361）引入了 switch 表达式的新特性，其中包括了 &amp;quot;箭头标签（case ... -&amp;gt;）&amp;quot; 和 yield 语句的增强， 同时支持 Lambda 语法，使得代码更加灵活、简洁，并为未来的模式匹配（JEP 305）特性做好了准备。 传统的switch语句 首先，让我们回顾一下传统的switch语句，它们在处理多个条件时可能显得有些冗长：</description>
       <category>Java</category>
       <pubDate>Mon, 25 Dec 2023 00:00:00 GMT</pubDate>
@@ -241,9 +241,9 @@
     </item>
     <item>
       <title>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</title>
-      <link>https://joeljhou/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
       <description>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX Java 11 中移除了 Java EE 和 CORBA 模块，同时 JavaFX 也被剥离，但仍可作为独立模块使用。 Java9 弃用过程 在 Java 9 中，Java EE 和 CORBA 模块被标记为 @Deprecated，为开发者提供了适应期。 Java11 彻底删除 Java 11 完全删除了以下九个模块：</description>
       <category>Java</category>
       <pubDate>Sun, 24 Dec 2023 00:00:00 GMT</pubDate>
@@ -285,9 +285,9 @@
     </item>
     <item>
       <title>Java 10 新特性：局部变量类型推断</title>
-      <link>https://joeljhou/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</link>
-      <guid>https://joeljhou/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 10 新特性：局部变量类型推断</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 10 新特性：局部变量类型推断</source>
       <description>Java 10 新特性：局部变量类型推断 Java 10 引入了一项新的语言特性，即局部变量类型推断（Local-Variable Type Inference）， 它允许在局部变量声明时，根据变量的初始值，推断出变量的数据类型。 语法 局部变量类型推断的语法非常简单，只需要将 var 关键字作为局部变量的类型即可。 var list = new ArrayList&amp;lt;String&amp;gt;(); // 自动推断 ArrayList&amp;lt;String&amp;gt; var stream = list.stream(); // 自动推断 Stream&amp;lt;String&amp;gt;</description>
       <category>Java</category>
       <pubDate>Sat, 23 Dec 2023 00:00:00 GMT</pubDate>
@@ -311,9 +311,9 @@
     </item>
     <item>
       <title>Java 9-21：前沿特性解读系列（持续连载）</title>
-      <link>https://joeljhou/joeljhou/java-features/</link>
-      <guid isPermaLink="false">https://joeljhou/joeljhou/java-features/</guid>
-      <source url="https://joeljhou/joeljhou/rss.xml">Java 9-21：前沿特性解读系列（持续连载）</source>
+      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/</link>
+      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/</guid>
+      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 9-21：前沿特性解读系列（持续连载）</source>
       <description>Java 9-21：前沿特性解读系列（持续连载），截至2023年9月中旬，Java已达到第21版本。 尽管如此，众多开发者仍停滞在Java 8的认知水平。为填补这一差距，我们推出专栏，聚焦分享最新Java知识。</description>
       <category>Java</category>
       <pubDate>Wed, 20 Dec 2023 00:00:00 GMT</pubDate>
