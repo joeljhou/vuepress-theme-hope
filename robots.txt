@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://mister-hope.github.io/joeljhou/sitemap.xml
+Sitemap: https://joeljhou.github.io/joeljhou/joeljhou/sitemap.xml
