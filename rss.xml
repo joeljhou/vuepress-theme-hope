@@ -1,21 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://joeljhou.github.io/joeljhou/joeljhou/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://mister-hope.github.io/joeljhou/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://mister-hope.github.io/joeljhou/rss.xml" rel="self" type="application/rss+xml"/>
     <title>会敲代码的程序猿</title>
-    <link>https://joeljhou.github.io/joeljhou/joeljhou/</link>
+    <link>https://mister-hope.github.io/joeljhou/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 04 Jan 2024 02:38:49 GMT</pubDate>
-    <lastBuildDate>Thu, 04 Jan 2024 02:38:49 GMT</lastBuildDate>
+    <pubDate>Thu, 04 Jan 2024 03:00:37 GMT</pubDate>
+    <lastBuildDate>Thu, 04 Jan 2024 03:00:37 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
+    <category>程序人生</category>
     <item>
       <title>Java 17 新特性：switch的模式匹配（Preview）</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 17 新特性：switch的模式匹配（Preview）</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 17 新特性：switch的模式匹配（Preview）</source>
       <description>Java 17 新特性：switch的模式匹配（Preview）</description>
       <category>Java</category>
       <pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate>
@@ -24,9 +25,9 @@
     </item>
     <item>
       <title>Java 17 新特性：密封类</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep409-sealed-classes.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java17/jep409-sealed-classes.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 17 新特性：密封类</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java17/jep409-sealed-classes.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java17/jep409-sealed-classes.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 17 新特性：密封类</source>
       <description>Java 17 新特性：密封类</description>
       <category>Java</category>
       <pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate>
@@ -35,9 +36,9 @@
     </item>
     <item>
       <title>Java 16 新特性：instanceof增强</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 16 新特性：instanceof增强</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 16 新特性：instanceof增强</source>
       <description>Java 16 新特性：instanceof增强 Java 16 引入了 instanceof 的增强语法，用于更简便地判断对象是否是某个类的实例并进行相应的局部类型转换。 instanceof 基础用法 if (obj instanceof String) { String someString = (String) obj; // 强制类型转换 // ... }</description>
       <category>Java</category>
       <pubDate>Thu, 28 Dec 2023 00:00:00 GMT</pubDate>
@@ -67,9 +68,9 @@
     </item>
     <item>
       <title>Java 16 新特性：record类</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep395-records.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java16/jep395-records.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 16 新特性：record类</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java16/jep395-records.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java16/jep395-records.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 16 新特性：record类</source>
       <description>Java 16 新特性：record类 Java 16引入的record类是一种用于简化不可变数据管理的特殊类。 它通过紧凑的语法提供了对不可变数据的支持，并自动生成常见的方法， 如equals()、hashCode()和toString()等，从而减少了开发者的样板代码。 传统Java Bean问题 在处理不可变数据时，传统的Java Bean存在“繁琐”和“冗长”的问题。 为了管理少量值的不可变数据，开发者需要编写大量低价值、重复且容易出错的代码， 包括构造函数、访问器(getter/setter)、equals、hashCode、toString等。</description>
       <category>Java</category>
       <pubDate>Fri, 29 Dec 2023 00:00:00 GMT</pubDate>
@@ -126,9 +127,9 @@
     </item>
     <item>
       <title>Java 15 新特性：隐藏类</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep371-hidden-classes.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep371-hidden-classes.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 15 新特性：隐藏类</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java15/jep371-hidden-classes.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java15/jep371-hidden-classes.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 15 新特性：隐藏类</source>
       <description>Java 15 新特性：隐藏类 Hidden Classes 提供了一种在运行时生成类的机制，在编译时未知，并且不能直接在源代码中引用， 需要通过反射间接使用它们，隐藏类是为框架设计的，具有以下特性： 动态生成内部类：隐藏类天生为框架设计，在运行时生成内部类 反射访问限制：隐藏类只能通过反射访问，不能直接被其他类的字节码访问 独立加载和卸载：隐藏类可以独立于其他类加载和卸载 框架扩展性：适用于需要在运行时生成类的框架，提高语言的灵活性和效率</description>
       <category>Java</category>
       <pubDate>Tue, 26 Dec 2023 00:00:00 GMT</pubDate>
@@ -148,9 +149,9 @@
     </item>
     <item>
       <title>Java 15 新特性：文本块</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep378-text-blocks.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java15/jep378-text-blocks.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 15 新特性：文本块</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java15/jep378-text-blocks.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java15/jep378-text-blocks.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 15 新特性：文本块</source>
       <description>Java 15 新特性：文本块 Java 15（JEP 378）引入了文本块（Text Blocks）这一新特性，旨在简化多行字符串的表示，提高代码可读性，并减少在字符串中使用转义符的需求。 文本块通过引入三个双引号的胖分隔符（&amp;quot;&amp;quot;&amp;quot;）来实现，同时支持转义序列，为开发人员提供更直观、易读的字符串处理方式。 快速上手 HTML示例 // 使用“一维”字符串文字 String html = &amp;quot;&amp;lt;html&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;body&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;p&amp;gt;Hello, world&amp;lt;/p&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;/body&amp;gt;\n&amp;quot; + &amp;quot;&amp;lt;/html&amp;gt;\n&amp;quot;; // 使用“二维”文本块 String html = &amp;quot;&amp;quot;&amp;quot; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, world&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;quot;&amp;quot;&amp;quot;;</description>
       <category>Java</category>
       <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
@@ -200,9 +201,9 @@
     </item>
     <item>
       <title>Java 14 新特性：switch表达式增强</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java14/jep361-switch-expressions.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java14/jep361-switch-expressions.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 14 新特性：switch表达式增强</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java14/jep361-switch-expressions.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java14/jep361-switch-expressions.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 14 新特性：switch表达式增强</source>
       <description>Java 14 新特性：switch表达式增强 Java 14（JEP 361）引入了 switch 表达式的新特性，其中包括了 &amp;quot;箭头标签（case ... -&amp;gt;）&amp;quot; 和 yield 语句的增强， 同时支持 Lambda 语法，使得代码更加灵活、简洁，并为未来的模式匹配（JEP 305）特性做好了准备。 传统的switch语句 首先，让我们回顾一下传统的switch语句，它们在处理多个条件时可能显得有些冗长：</description>
       <category>Java</category>
       <pubDate>Mon, 25 Dec 2023 00:00:00 GMT</pubDate>
@@ -241,9 +242,9 @@
     </item>
     <item>
       <title>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
       <description>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX Java 11 中移除了 Java EE 和 CORBA 模块，同时 JavaFX 也被剥离，但仍可作为独立模块使用。 Java9 弃用过程 在 Java 9 中，Java EE 和 CORBA 模块被标记为 @Deprecated，为开发者提供了适应期。 Java11 彻底删除 Java 11 完全删除了以下九个模块：</description>
       <category>Java</category>
       <pubDate>Sun, 24 Dec 2023 00:00:00 GMT</pubDate>
@@ -285,9 +286,9 @@
     </item>
     <item>
       <title>Java 10 新特性：局部变量类型推断</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 10 新特性：局部变量类型推断</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java10/jep286-local-variable-type-inference.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 10 新特性：局部变量类型推断</source>
       <description>Java 10 新特性：局部变量类型推断 Java 10 引入了一项新的语言特性，即局部变量类型推断（Local-Variable Type Inference）， 它允许在局部变量声明时，根据变量的初始值，推断出变量的数据类型。 语法 局部变量类型推断的语法非常简单，只需要将 var 关键字作为局部变量的类型即可。 var list = new ArrayList&amp;lt;String&amp;gt;(); // 自动推断 ArrayList&amp;lt;String&amp;gt; var stream = list.stream(); // 自动推断 Stream&amp;lt;String&amp;gt;</description>
       <category>Java</category>
       <pubDate>Sat, 23 Dec 2023 00:00:00 GMT</pubDate>
@@ -311,9 +312,9 @@
     </item>
     <item>
       <title>Java 9-21：前沿特性解读系列（持续连载）</title>
-      <link>https://joeljhou.github.io/joeljhou/joeljhou/java-features/</link>
-      <guid>https://joeljhou.github.io/joeljhou/joeljhou/java-features/</guid>
-      <source url="https://joeljhou.github.io/joeljhou/joeljhou/rss.xml">Java 9-21：前沿特性解读系列（持续连载）</source>
+      <link>https://mister-hope.github.io/joeljhou/java-features/</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 9-21：前沿特性解读系列（持续连载）</source>
       <description>Java 9-21：前沿特性解读系列（持续连载），截至2023年9月中旬，Java已达到第21版本。 尽管如此，众多开发者仍停滞在Java 8的认知水平。为填补这一差距，我们推出专栏，聚焦分享最新Java知识。</description>
       <category>Java</category>
       <pubDate>Wed, 20 Dec 2023 00:00:00 GMT</pubDate>
@@ -596,6 +597,395 @@
 </ul>
 <h2> Java 8(GA 2014/03/18)</h2>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Java 9 新特性：交互式编程环境JShell</title>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java9/jep222-jshell.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java9/jep222-jshell.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 9 新特性：交互式编程环境JShell</source>
+      <description>Java 9 新特性：交互式编程环境JShell JShell 是 Java 9 引入的一个交互式编程环境，它是 Java 编程语言的 REPL（Read-Eval-Print Loop）实现。 REPL 是一种编程环境，允许用户输入表达式并立即看到结果，而无需事先编写和编译完整的程序。 JShell 的目标是提供一个轻量级、灵活且易于使用的工具，使得 Java 开发者能够更直观地编写和测试代码。 JShell快速入门 启动JShell 打开终端，然后执行命令：jshell，执行效果如下：</description>
+      <category>Java</category>
+      <pubDate>Thu, 21 Dec 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> Java 9 新特性：交互式编程环境JShell</h1>
+<p>JShell 是 Java 9 引入的一个交互式编程环境，它是 Java 编程语言的 REPL（Read-Eval-Print Loop）实现。
+REPL 是一种编程环境，允许用户输入表达式并立即看到结果，而无需事先编写和编译完整的程序。
+JShell 的目标是提供一个轻量级、灵活且易于使用的工具，使得 Java 开发者能够更直观地编写和测试代码。</p>
+<h2> JShell快速入门</h2>
+<h3> 启动JShell</h3>
+<p>打开终端，然后执行命令：<code>jshell</code>，执行效果如下：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 帮助介绍 /help intro</h3>
+<p>执行 <code>/help intro</code> 命令以获取有关 JShell 工具的简要介绍，<strong>intro</strong> 是主题，提供了关于 jshell 工具的核心概念和使用方法的信息。</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 定义变量、方法、类</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 执行表达式、调用方法</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查看定义的变量：/vars</h2>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查看定义的方法：/methods</h2>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2> 查看定义的类：/types</h2>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 列出输入源条目：/list</h2>
+<p>执行后，可以看到之前在<code>jshell</code>中输入的内容清单：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 编辑源条目：/edit</h2>
+<p>上面通过<code>/list</code>列出了输入的条目信息，下面试试通过<code>/edit</code>编辑下，比如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这将打开编辑器，修改先前定义的 <code>square</code> 方法。</p>
+<p>修改完成后，点击 <strong>accept</strong> 即可</p>
+<h2> 删除源条目：/drop</h2>
+<p>使用 <code>/drop</code> 命令可以删除之前输入的源代码块。可以通过指定<strong>名称</strong>或 <strong>ID</strong> 删除特定的源代码块。例如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>这将删除之前定义的 <code>Message</code> 类。</p>
+<h2> 保存文件：/save</h2>
+<p>通过 <code>/save</code> 命令，您可以将 JShell 中的源代码保存到文件中，以便将其保留或与他人共享。例如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这将把当前所有的源代码保存到一个名为 <code>myCode.java</code> 的文件中。</p>
+<h2> 打开文件：/open</h2>
+<p>使用 <code>/open</code> 命令可以将文件的内容导入到 JShell 中，以便重新使用或修改。例如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这将导入之前保存的 <code>myCode.java</code> 文件中的源代码。</p>
+<h2> 重置jshell：/reset</h2>
+<p>使用 <code>/reset</code> 命令可以清空 JShell 的状态，包括所有定义的变量、方法和类。例如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>这将重置 JShell 并清除所有之前定义的内容。</p>
+<h2> 查看引入的包：/imports</h2>
+<p>使用 <code>/imports</code> 命令可以查看当前已经导入的包。这对于确保您在 JShell 中能够访问所需的类和方法非常有用。例如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>这表明已经导入了 <code>java.util</code> 包。</p>
+<h2> 退出jshell：/exit</h2>
+<p>使用 <code>/exit</code> 命令可以退出 JShell。如果需要，在命令后可以添加一个整数表达式片段作为退出代码。例如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这将以退出代码 0 退出 JShell。</p>
+<h2> 查看命令：/help</h2>
+<p>最后，使用 <code>/help</code> 命令可以随时查看 JShell 的帮助信息，了解各种命令和主题的使用方法。例如：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这将显示 JShell 的主要帮助信息。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Java 9 新特性：不可变集合的快捷创建方法</title>
+      <link>https://mister-hope.github.io/joeljhou/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">Java 9 新特性：不可变集合的快捷创建方法</source>
+      <description>Java 9 新特性：不可变集合的快捷创建方法 Java 9引入了一项令人期待的新特性，即“Convenience Factory Methods for Collections”（集合的便利工厂方法），旨在使不可变集合的创建更加简单和便捷。 在此之前，我们通常使用构造方法来初始化集合，而Java 9为我们提供了一些全新的静态工厂方法，使得创建不可变集合的过程更为优雅。 Java 9的集合创建方式 Java 9引入了一些便利的工厂方法，使得创建和初始化集合对象变得更加简洁和方便。 这些改进包括List.of()、Set.of()和Map.of()等方法，用于创建不可变的集合对象。</description>
+      <category>Java</category>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> Java 9 新特性：不可变集合的快捷创建方法</h1>
+<p>Java 9引入了一项令人期待的新特性，即“Convenience Factory Methods for Collections”（集合的便利工厂方法），旨在使不可变集合的创建更加简单和便捷。
+在此之前，我们通常使用构造方法来初始化集合，而Java 9为我们提供了一些全新的静态工厂方法，使得创建不可变集合的过程更为优雅。</p>
+<h2> Java 9的集合创建方式</h2>
+<p>Java 9引入了一些便利的工厂方法，使得创建和初始化集合对象变得更加简洁和方便。
+这些改进包括List.of()、Set.of()和Map.of()等方法，用于创建不可变的集合对象。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这样一行代码就完成了整个集合的创建和初始化过程，使得代码更加简洁、清晰，并且具有更高的可读性。</p>
+<h2> Java 8的集合创建方式</h2>
+<p>Java 8引入了Lambda表达式和流式操作，这使得集合的初始化过程变得更加流畅和具有函数式编程的特性。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>虽然相较于传统方式，Java 8的写法更为紧凑，但仍显得略显繁琐。</p>
+<h2> 传统的集合创建方式</h2>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这种方式繁琐且不够直观，给代码的可读性和编写效率带来了一定的挑战。</p>
+<h2> List.of() vs. Arrays.asList()</h2>
+<ul>
+<li>
+<p><strong>可变性：</strong><code>List.of</code> 创建的是不可变集合，<code>Arrays.asList</code> 是可变集合</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p><strong>null元素：</strong><code>List.of</code> 不允许包含 null 元素，<code>Arrays.asList</code> 允许包含 null 元素，但不推荐</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p><strong>底层数据结构：</strong><code>List.of </code>使用不可变数据结构，<code>Arrays.asList</code>底层使用数组，对列表修改将反映在原始数组上</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>个人简介</title>
+      <link>https://mister-hope.github.io/joeljhou/intro.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/intro.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">个人简介</source>
+      <description>个人简介</description>
+      <category>程序人生</category>
+      <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 个人简介</h1>
+<p>我是一名会敲代码的程序员，对技术有着强烈的热爱，喜欢专研，分享，捣鼓各种有趣的新玩意。</p>
+<p>自认为自己并不是一个聪明的人，也不会有好运会落在我身上；</p>
+<p>做事情只做有把握的事情，前提就是要有把握，为之努力，不达目的不罢休。</p>
+<p>人特别轴，较真！</p>
+<p>我的标语：<mark><strong>当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然。</strong></mark></p>
+]]></content:encoded>
+      <enclosure url="https://mister-hope.github.io/joeljhou/assets/images/cover3.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>幻灯片页</title>
+      <link>https://mister-hope.github.io/joeljhou/slides.html</link>
+      <guid>https://mister-hope.github.io/joeljhou/slides.html</guid>
+      <source url="https://mister-hope.github.io/joeljhou/rss.xml">幻灯片页</source>
+      <description>@slidestart 幻灯片演示 一个简单的幻灯片演示与各种小贴士。 作者 Mr.Hope. 请滚动鼠标滚轮进入下一页 标注幻灯片</description>
+      <pubDate>Mon, 11 Dec 2023 17:02:31 GMT</pubDate>
+      <content:encoded><![CDATA[<!-- markdownlint-disable MD024 MD051 -->
+<p>@slidestart</p>
+<!-- .slide: data-transition="slide" -->
+<h2> 幻灯片演示</h2>
+<!-- .element: class="r-fit-text" -->
+<p>一个简单的幻灯片演示与各种小贴士。</p>
+<!-- .element: class="r-fit-text" -->
+<blockquote>
+<p>作者 Mr.Hope. 请滚动鼠标滚轮进入下一页</p>
+</blockquote>
+<hr>
+<h2> 标注幻灯片</h2>
+<!-- .element: class="r-fit-text" -->
+<p><a href="#/1/1">👇</a></p>
+<p>--</p>
+<h2> 标注幻灯片</h2>
+<!-- .element: class="r-fit-text" -->
+<p>使用 <code>---</code> 标注水平幻灯片</p>
+<!-- .element: class="fragment fade-in" -->
+<p>在水平幻灯片中使用 <code>--</code> 分割垂直幻灯片</p>
+<!-- .element: class="fragment fade-in" -->
+<p>使用 <code>&lt;!-- .slide: ... --&gt;</code> 在幻灯片上添加属性</p>
+<!-- .element: class="fragment fade-in" -->
+<p>使用 <code>&lt;!-- .element: ... --&gt;</code> 在前一个 HTML 元素上添加属性</p>
+<!-- .element: class="fragment fade-in" -->
+<hr>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> Markdown</h2>
+<!-- .element: class="r-fit-text" -->
+<p>你可以在幻灯片中使用 Markdown 语法的各种标记.</p>
+<!-- .element: class="r-fit-text" -->
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> Markdown</h2>
+<p>你可以在幻灯片中使用 Markdown 语法的各种标记.</p>
+<h3> 这是一个 H3</h3>
+<p>标题默认会自动转换为大写。</p>
+<p>这是一个有着 <strong>粗体</strong>, <em>斜体</em>, <s>删除线</s> 文字并包含 <a href="https://mister-hope.com" target="_blank" rel="noopener noreferrer">一个链接</a> 的段落，并且它会自动换行。所以你无需担心它的长度。</p>
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> Markdown</h2>
+<p>你可以在幻灯片中使用 Markdown 语法的各种标记.</p>
+<p>列表默认为 <code>inline-block</code></p>
+<ul>
+<li>项目</li>
+<li>项目</li>
+<li>项目</li>
+</ul>
+<ol>
+<li>项目 1</li>
+<li>项目 2</li>
+<li>项目 3</li>
+</ol>
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> Markdown</h2>
+<p>你可以在幻灯片中使用 Markdown 语法的各种标记.</p>
+<p>在你启用 <code>highlight</code> 插件后，代码块会自动高亮。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> Markdown</h2>
+<p>你可以在幻灯片中使用 Markdown 语法的各种标记.</p>
+<p>在你启用 <code>math</code> 插件后，你也可以使用 TEX 格式使用数学公式。</p>
+<p>$$
+J(\theta_0,\theta_1) = \sum_{i=0}
+$$</p>
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> Markdown</h2>
+<p>你可以在幻灯片中使用 Markdown 语法的各种标记.</p>
+<p>⚠<strong>请注意</strong>: 表格和分割线，以及所有不在 Markdown 标准语法中的内容均不受支持。</p>
+<hr>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 布局</h2>
+<!-- .element: class="r-fit-text" -->
+<p>--</p>
+<!-- .slide: data-auto-animate  -->
+<h2> 布局</h2>
+<!-- .element: class="r-fit-text" -->
+<p>👆 <code>r-fit-text</code> class 会让文字在不超出幻灯片范围的情况下尽可能大。</p>
+<p>--</p>
+<!-- .slide: data-auto-animate  -->
+<h2> 布局</h2>
+<figure><img src="/logo.svg" alt="Logo" tabindex="0" loading="lazy"><figcaption>Logo</figcaption></figure>
+<!-- .element: class="r-stretch" -->
+<p>👆 <code>r-stretch</code> class 帮助你控制注入图片或视频的大小，使它们填充满幻灯片垂直方向上的剩余空间。</p>
+<p>--</p>
+<!-- .slide: data-auto-animate data-background-color="rgb(70, 70, 255)" -->
+<h2> 布局</h2>
+<h3> 背景</h3>
+<p>你可以通过向特定幻灯片添加 <code>data-background</code> 属性自定义幻灯片背景.</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2> 动画片段</h2>
+<!-- .element: class="r-fit-text" -->
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> 动画片段</h2>
+<!-- .element: class="r-fit-text" -->
+<p>动画片段用于高亮或显隐幻灯片中的元素。</p>
+<p>你需要在元素上添加 <code>fragment</code> 和动画 class。</p>
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> 动画片段</h2>
+<h3> 动画 class</h3>
+<ul>
+<li><code>fade-in</code></li>
+</ul>
+<!-- .element: class="fragment fade-in" -->
+<ul>
+<li><code>fade-out</code></li>
+</ul>
+<!-- .element: class="fragment fade-out" -->
+<ul>
+<li><code>fade-up</code></li>
+</ul>
+<!-- .element: class="fragment fade-up" -->
+<!-- list break -->
+<ul>
+<li><code>fade-down</code></li>
+</ul>
+<!-- .element: class="fragment fade-down" -->
+<ul>
+<li><code>fade-left</code></li>
+</ul>
+<!-- .element: class="fragment fade-left" -->
+<ul>
+<li><code>fade-right</code></li>
+</ul>
+<!-- .element: class="fragment fade-right" -->
+<!-- list break -->
+<ul>
+<li><code>fade-in-then-out</code></li>
+</ul>
+<!-- .element: class="fragment fade-in-then-out" -->
+<ul>
+<li><code>fade-in-then-semi-out</code></li>
+</ul>
+<!-- .element: class="fragment fade-in-then-semi-out" -->
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> 动画片段</h2>
+<h3> 动画 class</h3>
+<ul>
+<li><code>grow</code></li>
+</ul>
+<!-- .element: class="fragment grow" -->
+<ul>
+<li><code>shrink</code></li>
+</ul>
+<!-- .element: class="fragment shrink" -->
+<ul>
+<li><code>strike</code></li>
+</ul>
+<!-- .element: class="fragment strike" -->
+<!-- list break -->
+<ul>
+<li><code>highlight-red</code></li>
+</ul>
+<!-- .element: class="fragment highlight-red" -->
+<ul>
+<li><code>highlight-green</code></li>
+</ul>
+<!-- .element: class="fragment highlight-green" -->
+<ul>
+<li><code>highlight-blue</code></li>
+</ul>
+<!-- .element: class="fragment highlight-blue" -->
+<!-- list break -->
+<ul>
+<li><code>highlight-current-red</code></li>
+</ul>
+<!-- .element: class="fragment highlight-current-red" -->
+<ul>
+<li><code>highlight-current-green</code></li>
+</ul>
+<!-- .element: class="fragment highlight-current-green" -->
+<ul>
+<li><code>highlight-current-blue</code></li>
+</ul>
+<!-- .element: class="fragment highlight-current-blue" -->
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> 动画片段</h2>
+<h3> 多个动画片段</h3>
+<p>你可以按照顺序包裹一个 HTML 元素使其拥有多个动画片段</p>
+<span class="fragment fade-in">
+  <span class="fragment highlight-red">
+    <span class="fragment fade-out">
+      渐入 &gt; 变红 &gt; 渐出
+    </span>
+  </span>
+</span>
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> 动画片段</h2>
+<h3> 顺序</h3>
+<p>你可以使用 <code>data-fragment-index</code> 属性改变元素的动画顺序。</p>
+<p>不同元素可以有相同的动画顺序。</p>
+<ul>
+<li>最后显示</li>
+</ul>
+<!-- .element: class="fragment" data-fragment-index="3"-->
+<ul>
+<li>第二个显示</li>
+</ul>
+<!-- .element: class="fragment" data-fragment-index="2"-->
+<!-- list break -->
+<ul>
+<li>第一个显示</li>
+</ul>
+<!-- .element: class="fragment" data-fragment-index="1"-->
+<ul>
+<li>第二个显示</li>
+</ul>
+<!-- .element: class="fragment" data-fragment-index="2"-->
+<hr>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 渐变</h2>
+<!-- .element: class="r-fit-text" -->
+<p>--</p>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 渐变</h2>
+<!-- .element: class="r-fit-text" -->
+<p>Transition 可以通过配置中的 <code>transition</code> 选项全局设置，也可以通过在特定幻灯片添加 <code>data-transition</code> 属性局部设置.</p>
+<p>可能的值:</p>
+<ul>
+<li>none</li>
+<li>fade</li>
+<li>slide</li>
+</ul>
+<!-- list break -->
+<ul>
+<li>convex</li>
+<li>concave</li>
+<li>zoom</li>
+</ul>
+<p>--</p>
+<!-- .slide: data-auto-animate -->
+<h2> 渐变</h2>
+<!-- .element: class="r-fit-text" -->
+<h3> 过渡动画</h3>
+<p>你可以在相邻的幻灯片上添加 <code>data-auto-animate</code> 使相同的 HTML 元素产生过渡动画效果。</p>
+<hr>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 功能</h2>
+<!-- .element: class="r-fit-text" -->
+<p>--</p>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 功能</h2>
+<!-- .element: class="r-fit-text" -->
+<h3> 代码</h3>
+<p>通过启用 <code>highlight</code> 插件，你可以对代码块进行高亮。</p>
+<p>你可以使用 <code>[a-b|c-d]</code> 语法来分布高亮特定行。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>--</p>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 功能</h2>
+<!-- .element: class="r-fit-text" -->
+<h3> 预览模式</h3>
+<p>按下 <code>Esc</code> 或 <code>O</code> 即可在幻灯片获得焦点时进入预览模式。</p>
+<p>--</p>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 功能</h2>
+<!-- .element: class="r-fit-text" -->
+<h3> 全屏模式</h3>
+<p>按下 <code>F</code> 或 <code>F11</code> 即可在幻灯片获得焦点时进入全屏模式。</p>
+<p>--</p>
+<!-- .slide: data-transition="slide" data-auto-animate -->
+<h2> 功能</h2>
+<!-- .element: class="r-fit-text" -->
+<h3> 缩放</h3>
+<p>按下 <code>alt</code> (Linux 上使用 <code>ctrl</code>) 的同时点击幻灯片的任何元素，即可以向此元素进行放大。</p>
+<p>再次点击即可缩小。</p>
+<hr>
+<!-- .element: class="r-fit-text" -->
+<h2> 结束</h2>
+<p>@slideend</p>
+]]></content:encoded>
+      <enclosure url="https://mister-hope.github.io/joeljhou/logo.svg" type="image/svg+xml"/>
     </item>
   </channel>
 </rss>
