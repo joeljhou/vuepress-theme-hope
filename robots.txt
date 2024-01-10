@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://joeljhou.github.io/joeljhou/sitemap.xml
+Sitemap: https://joeljhou.github.io/sitemap.xml
