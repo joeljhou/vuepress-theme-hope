@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://joeljhou.github.io/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://www.geekyspace.cn/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://joeljhou.github.io/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://www.geekyspace.cn/rss.xml" rel="self" type="application/rss+xml"/>
     <title>会敲代码的程序猿</title>
-    <link>https://joeljhou.github.io/</link>
+    <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 11 Jan 2024 06:28:57 GMT</pubDate>
-    <lastBuildDate>Thu, 11 Jan 2024 06:28:57 GMT</lastBuildDate>
+    <pubDate>Thu, 11 Jan 2024 06:34:04 GMT</pubDate>
+    <lastBuildDate>Thu, 11 Jan 2024 06:34:04 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
     <category>程序人生</category>
     <item>
       <title>Java 17 新特性：switch的模式匹配（Preview）</title>
-      <link>https://joeljhou.github.io/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 17 新特性：switch的模式匹配（Preview）</source>
+      <link>https://www.geekyspace.cn/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 17 新特性：switch的模式匹配（Preview）</source>
       <description>Java 17 新特性：switch的模式匹配（Preview）</description>
       <category>Java</category>
       <pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate>
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>Java 17 新特性：密封类</title>
-      <link>https://joeljhou.github.io/java-features/Java17/jep409-sealed-classes.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java17/jep409-sealed-classes.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 17 新特性：密封类</source>
+      <link>https://www.geekyspace.cn/java-features/Java17/jep409-sealed-classes.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java17/jep409-sealed-classes.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 17 新特性：密封类</source>
       <description>Java 17 新特性：密封类</description>
       <category>Java</category>
       <pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate>
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>Java 16 新特性：instanceof增强</title>
-      <link>https://joeljhou.github.io/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 16 新特性：instanceof增强</source>
+      <link>https://www.geekyspace.cn/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 16 新特性：instanceof增强</source>
       <description>Java 16 新特性：instanceof增强 Java 16 引入了 instanceof 的增强语法，用于更简便地判断对象是否是某个类的实例并进行相应的局部类型转换。 instanceof 基础用法 if (obj instanceof String) { String someString = (String) obj; // 强制类型转换 // ... }</description>
       <category>Java</category>
       <pubDate>Thu, 28 Dec 2023 00:00:00 GMT</pubDate>
@@ -68,9 +68,9 @@
     </item>
     <item>
       <title>Java 16 新特性：record类</title>
-      <link>https://joeljhou.github.io/java-features/Java16/jep395-records.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java16/jep395-records.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 16 新特性：record类</source>
+      <link>https://www.geekyspace.cn/java-features/Java16/jep395-records.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java16/jep395-records.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 16 新特性：record类</source>
       <description>Java 16 新特性：record类 Java 16引入的record类是一种用于简化不可变数据管理的特殊类。 它通过紧凑的语法提供了对不可变数据的支持，并自动生成常见的方法， 如equals()、hashCode()和toString()等，从而减少了开发者的样板代码。 传统Java Bean问题 在处理不可变数据时，传统的Java Bean存在“繁琐”和“冗长”的问题。 为了管理少量值的不可变数据，开发者需要编写大量低价值、重复且容易出错的代码， 包括构造函数、访问器(getter/setter)、equals、hashCode、toString等。</description>
       <category>Java</category>
       <pubDate>Fri, 29 Dec 2023 00:00:00 GMT</pubDate>
@@ -127,9 +127,9 @@
     </item>
     <item>
       <title>Java 15 新特性：隐藏类</title>
-      <link>https://joeljhou.github.io/java-features/Java15/jep371-hidden-classes.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java15/jep371-hidden-classes.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 15 新特性：隐藏类</source>
+      <link>https://www.geekyspace.cn/java-features/Java15/jep371-hidden-classes.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java15/jep371-hidden-classes.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：隐藏类</source>
       <description>Java 15 新特性：隐藏类 Hidden Classes 提供了一种在运行时生成类的机制，在编译时未知，并且不能直接在源代码中引用， 需要通过反射间接使用它们，隐藏类是为框架设计的，具有以下特性： 动态生成内部类：隐藏类天生为框架设计，在运行时生成内部类 反射访问限制：隐藏类只能通过反射访问，不能直接被其他类的字节码访问 独立加载和卸载：隐藏类可以独立于其他类加载和卸载 框架扩展性：适用于需要在运行时生成类的框架，提高语言的灵活性和效率</description>
       <category>Java</category>
       <pubDate>Tue, 26 Dec 2023 00:00:00 GMT</pubDate>
@@ -149,9 +149,9 @@
     </item>
     <item>
       <title>Java 15 新特性：文本块</title>
-      <link>https://joeljhou.github.io/java-features/Java15/jep378-text-blocks.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java15/jep378-text-blocks.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 15 新特性：文本块</source>
+      <link>https://www.geekyspace.cn/java-features/Java15/jep378-text-blocks.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java15/jep378-text-blocks.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：文本块</source>
       <description>Java 15 新特性：文本块 Java 15（JEP 378）引入了文本块（Text Blocks）这一新特性，旨在简化多行字符串的表示，提高代码可读性，并减少在字符串中使用转义符的需求。 文本块通过引入三个双引号的胖分隔符（&amp;quot;&amp;quot;&amp;quot;）来实现，同时支持转义序列，为开发人员提供更直观、易读的字符串处理方式。 快速上手 HTML示例 // 使用“一维”字符串文字 String html = &amp;quot;&amp;lt;html&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;body&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;p&amp;gt;Hello, world&amp;lt;/p&amp;gt;\n&amp;quot; + &amp;quot; &amp;lt;/body&amp;gt;\n&amp;quot; + &amp;quot;&amp;lt;/html&amp;gt;\n&amp;quot;; // 使用“二维”文本块 String html = &amp;quot;&amp;quot;&amp;quot; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, world&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; &amp;quot;&amp;quot;&amp;quot;;</description>
       <category>Java</category>
       <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
@@ -201,9 +201,9 @@
     </item>
     <item>
       <title>Java 14 新特性：switch表达式增强</title>
-      <link>https://joeljhou.github.io/java-features/Java14/jep361-switch-expressions.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java14/jep361-switch-expressions.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 14 新特性：switch表达式增强</source>
+      <link>https://www.geekyspace.cn/java-features/Java14/jep361-switch-expressions.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java14/jep361-switch-expressions.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 14 新特性：switch表达式增强</source>
       <description>Java 14 新特性：switch表达式增强 Java 14（JEP 361）引入了 switch 表达式的新特性，其中包括了 &amp;quot;箭头标签（case ... -&amp;gt;）&amp;quot; 和 yield 语句的增强， 同时支持 Lambda 语法，使得代码更加灵活、简洁，并为未来的模式匹配（JEP 305）特性做好了准备。 传统的switch语句 首先，让我们回顾一下传统的switch语句，它们在处理多个条件时可能显得有些冗长：</description>
       <category>Java</category>
       <pubDate>Mon, 25 Dec 2023 00:00:00 GMT</pubDate>
@@ -242,9 +242,9 @@
     </item>
     <item>
       <title>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</title>
-      <link>https://joeljhou.github.io/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
+      <link>https://www.geekyspace.cn/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
       <description>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX Java 11 中移除了 Java EE 和 CORBA 模块，同时 JavaFX 也被剥离，但仍可作为独立模块使用。 Java9 弃用过程 在 Java 9 中，Java EE 和 CORBA 模块被标记为 @Deprecated，为开发者提供了适应期。 Java11 彻底删除 Java 11 完全删除了以下九个模块：</description>
       <category>Java</category>
       <pubDate>Sun, 24 Dec 2023 00:00:00 GMT</pubDate>
@@ -286,9 +286,9 @@
     </item>
     <item>
       <title>Java 10 新特性：局部变量类型推断</title>
-      <link>https://joeljhou.github.io/java-features/Java10/jep286-local-variable-type-inference.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java10/jep286-local-variable-type-inference.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 10 新特性：局部变量类型推断</source>
+      <link>https://www.geekyspace.cn/java-features/Java10/jep286-local-variable-type-inference.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java10/jep286-local-variable-type-inference.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 10 新特性：局部变量类型推断</source>
       <description>Java 10 新特性：局部变量类型推断 Java 10 引入了一项新的语言特性，即局部变量类型推断（Local-Variable Type Inference）， 它允许在局部变量声明时，根据变量的初始值，推断出变量的数据类型。 语法 局部变量类型推断的语法非常简单，只需要将 var 关键字作为局部变量的类型即可。 var list = new ArrayList&amp;lt;String&amp;gt;(); // 自动推断 ArrayList&amp;lt;String&amp;gt; var stream = list.stream(); // 自动推断 Stream&amp;lt;String&amp;gt;</description>
       <category>Java</category>
       <pubDate>Sat, 23 Dec 2023 00:00:00 GMT</pubDate>
@@ -312,9 +312,9 @@
     </item>
     <item>
       <title>Java 9-21：前沿特性解读系列（持续连载）</title>
-      <link>https://joeljhou.github.io/java-features/</link>
-      <guid>https://joeljhou.github.io/java-features/</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 9-21：前沿特性解读系列（持续连载）</source>
+      <link>https://www.geekyspace.cn/java-features/</link>
+      <guid>https://www.geekyspace.cn/java-features/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 9-21：前沿特性解读系列（持续连载）</source>
       <description>Java 9-21：前沿特性解读系列（持续连载），截至2023年9月中旬，Java已达到第21版本。 尽管如此，众多开发者仍停滞在Java 8的认知水平。为填补这一差距，我们推出专栏，聚焦分享最新Java知识。</description>
       <category>Java</category>
       <pubDate>Wed, 20 Dec 2023 00:00:00 GMT</pubDate>
@@ -600,9 +600,9 @@
     </item>
     <item>
       <title>Java 9 新特性：交互式编程环境JShell</title>
-      <link>https://joeljhou.github.io/java-features/Java9/jep222-jshell.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java9/jep222-jshell.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 9 新特性：交互式编程环境JShell</source>
+      <link>https://www.geekyspace.cn/java-features/Java9/jep222-jshell.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java9/jep222-jshell.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 9 新特性：交互式编程环境JShell</source>
       <description>Java 9 新特性：交互式编程环境JShell JShell 是 Java 9 引入的一个交互式编程环境，它是 Java 编程语言的 REPL（Read-Eval-Print Loop）实现。 REPL 是一种编程环境，允许用户输入表达式并立即看到结果，而无需事先编写和编译完整的程序。 JShell 的目标是提供一个轻量级、灵活且易于使用的工具，使得 Java 开发者能够更直观地编写和测试代码。 JShell快速入门 启动JShell 打开终端，然后执行命令：jshell，执行效果如下：</description>
       <category>Java</category>
       <pubDate>Thu, 21 Dec 2023 00:00:00 GMT</pubDate>
@@ -651,9 +651,9 @@ JShell 的目标是提供一个轻量级、灵活且易于使用的工具，使�
     </item>
     <item>
       <title>Java 9 新特性：不可变集合的快捷创建方法</title>
-      <link>https://joeljhou.github.io/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</link>
-      <guid>https://joeljhou.github.io/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">Java 9 新特性：不可变集合的快捷创建方法</source>
+      <link>https://www.geekyspace.cn/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 9 新特性：不可变集合的快捷创建方法</source>
       <description>Java 9 新特性：不可变集合的快捷创建方法 Java 9引入了一项令人期待的新特性，即“Convenience Factory Methods for Collections”（集合的便利工厂方法），旨在使不可变集合的创建更加简单和便捷。 在此之前，我们通常使用构造方法来初始化集合，而Java 9为我们提供了一些全新的静态工厂方法，使得创建不可变集合的过程更为优雅。 Java 9的集合创建方式 Java 9引入了一些便利的工厂方法，使得创建和初始化集合对象变得更加简洁和方便。 这些改进包括List.of()、Set.of()和Map.of()等方法，用于创建不可变的集合对象。</description>
       <category>Java</category>
       <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
@@ -685,9 +685,9 @@ JShell 的目标是提供一个轻量级、灵活且易于使用的工具，使�
     </item>
     <item>
       <title>个人简介</title>
-      <link>https://joeljhou.github.io/intro.html</link>
-      <guid>https://joeljhou.github.io/intro.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">个人简介</source>
+      <link>https://www.geekyspace.cn/intro.html</link>
+      <guid>https://www.geekyspace.cn/intro.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">个人简介</source>
       <description>个人简介</description>
       <category>程序人生</category>
       <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
@@ -698,13 +698,13 @@ JShell 的目标是提供一个轻量级、灵活且易于使用的工具，使�
 <p>人特别轴，较真！</p>
 <p>我的标语：<mark><strong>当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然。</strong></mark></p>
 ]]></content:encoded>
-      <enclosure url="https://joeljhou.github.io/assets/images/cover3.jpg" type="image/jpeg"/>
+      <enclosure url="https://www.geekyspace.cn/assets/images/cover3.jpg" type="image/jpeg"/>
     </item>
     <item>
       <title>幻灯片页</title>
-      <link>https://joeljhou.github.io/slides.html</link>
-      <guid>https://joeljhou.github.io/slides.html</guid>
-      <source url="https://joeljhou.github.io/rss.xml">幻灯片页</source>
+      <link>https://www.geekyspace.cn/slides.html</link>
+      <guid>https://www.geekyspace.cn/slides.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">幻灯片页</source>
       <description>@slidestart 幻灯片演示 一个简单的幻灯片演示与各种小贴士。 作者 Mr.Hope. 请滚动鼠标滚轮进入下一页 标注幻灯片</description>
       <pubDate>Mon, 11 Dec 2023 17:02:31 GMT</pubDate>
       <content:encoded><![CDATA[<!-- markdownlint-disable MD024 MD051 -->
@@ -985,7 +985,7 @@ $$</p>
 <h2> 结束</h2>
 <p>@slideend</p>
 ]]></content:encoded>
-      <enclosure url="https://joeljhou.github.io/logo.svg" type="image/svg+xml"/>
+      <enclosure url="https://www.geekyspace.cn/logo.svg" type="image/svg+xml"/>
     </item>
   </channel>
 </rss>
