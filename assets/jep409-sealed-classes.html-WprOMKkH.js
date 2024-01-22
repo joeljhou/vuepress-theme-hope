@@ -1,1 +1,0 @@
-import{_ as a,o as s,c as t,a as e,b as c}from"./app-_ShJfE_X.js";const o={},r=e("h1",{id:"java-17-新特性-密封类",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#java-17-新特性-密封类","aria-hidden":"true"},"#"),c(" Java 17 新特性：密封类")],-1),n=[r];function _(d,l){return s(),t("div",null,n)}const h=a(o,[["render",_],["__file","jep409-sealed-classes.html.vue"]]);export{h as default};
