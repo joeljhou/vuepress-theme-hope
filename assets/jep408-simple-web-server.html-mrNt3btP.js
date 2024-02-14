@@ -1,1 +1,0 @@
-import{_ as a,o as s,c as r,a as e}from"./app-sBE2_ipI.js";const t={},c=e("h1",{id:"java-18-新特性-简单web服务器",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#java-18-新特性-简单web服务器"},[e("span",null,"Java 18 新特性：简单Web服务器")])],-1),n=[c];function o(_,l){return s(),r("div",null,n)}const d=a(t,[["render",o],["__file","jep408-simple-web-server.html.vue"]]);export{d as default};
