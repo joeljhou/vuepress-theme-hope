@@ -6,12 +6,64 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 14 Feb 2024 08:19:41 GMT</pubDate>
-    <lastBuildDate>Wed, 14 Feb 2024 08:19:41 GMT</lastBuildDate>
+    <pubDate>Wed, 14 Feb 2024 17:26:10 GMT</pubDate>
+    <lastBuildDate>Wed, 14 Feb 2024 17:26:10 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>Java19 新特性总结</title>
+      <link>https://www.geekyspace.cn/java-features/Java19/java19-new-features-summary.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java19/java19-new-features-summary.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java19 新特性总结</source>
+      <description>Java 19 新特性总结 该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。 422: Linux/RISC-V Port：RISC-V是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）,这个JEP的主旨则是移植JDK到RISC-V上。 以下预览特性在Java 21中正式定稿： 405: R...</description>
+      <category>Java</category>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。</p>
+<ul>
+<li>422: Linux/RISC-V Port：RISC-V是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）,这个JEP的主旨则是移植JDK到RISC-V上。</li>
+</ul>
+<p>以下预览特性在Java 21中正式定稿：</p>
+<ul>
+<li><a href="/java-features/java21/jep440-record-partterns">405: Record Patterns (Preview)：终稿见 440: Record Patterns</a></li>
+<li><a href="/java-features/java21/jep444-virtual-threads">425: Virtual Threads (Preview)：终稿见 444: Virtual Threads</a></li>
+<li><a href="/java-features/java21/jep441-pattern-matching-for-switch">427: Pattern Matching for switch (Third Preview)：终稿见 441: Pattern Matching for switch</a></li>
+</ul>
+<p>以下内容在Java 21中继续迭代：</p>
+<ul>
+<li>424: Foreign Function &amp; Memory API (Preview)</li>
+<li>426: Vector API (Fourth Incubator)</li>
+<li>428: Structured Concurrency (Incubator)</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Java20 新特性总结</title>
+      <link>https://www.geekyspace.cn/java-features/Java20/java20-new-features-summary.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java20/java20-new-features-summary.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java20 新特性总结</source>
+      <description>Java 20 新特性总结 该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。 以下内容在Java 21中正式定稿，可根据链接查看终稿内容： 432: Record Patterns (Second Preview)：终稿见440: Record Patterns 433: Pattern Matchin...</description>
+      <category>Java</category>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。</p>
+<p>以下内容在Java 21中正式定稿，可根据链接查看终稿内容：</p>
+<ul>
+<li><a href="/java-features/java21/jep440-record-partterns">432: Record Patterns (Second Preview)：终稿见440: Record Patterns</a></li>
+<li><a href="/java-features/java21/jep441-pattern-matching-for-switch">433: Pattern Matching for switch (Fourth Preview)：终稿见441: Pattern Matching for switch</a></li>
+<li><a href="/java-features/java21/jep444-virtual-threads">436: Virtual Threads (Second Preview)：终稿见444: Virtual Threads</a></li>
+</ul>
+<p>以下内容在Java 21中继续迭代：</p>
+<ul>
+<li>429: Scoped Values (Incubator)</li>
+<li>434: Foreign Function &amp; Memory API (Second Preview)</li>
+<li>437: Structured Concurrency (Second Incubator)</li>
+<li>438: Vector API (Fifth Incubator)</li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>Java 18 新特性：指定UTF-8为默认字符集</title>
       <link>https://www.geekyspace.cn/java-features/Java18/jep400-utf8-by-default.html</link>
@@ -1678,11 +1730,13 @@ mutableList<span class="token punctuation">.</span><span class="token function">
       <category>程序人生</category>
       <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<p>我是一名会敲代码的程序员，对技术有着强烈的热爱，喜欢专研，分享，捣鼓各种有趣的新玩意。</p>
-<p>自认为自己并不是一个聪明的人，也不会有好运会落在我身上；</p>
-<p>做事情只做有把握的事情，前提就是要有把握，为之努力，不达目的不罢休。</p>
-<p>人特别轴，较真！</p>
-<p>我的标语：<mark><strong>当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然。</strong></mark></p>
+<p>我是一名<strong>会敲代码的程序员</strong>，热爱编程，对技术充满好奇心，乐于钻研各种新技术，并乐意与他人分享我的发现和经验</p>
+<p>虽然我并不认为自己是天才，也不依赖于好运，但我相信通过努力和专注，我可以取得想要的成就</p>
+<p>在工作中，我努力尝试有挑战性的事情，一旦决定去做，我会全力以赴，直到达到目标</p>
+<p>我有些固执，喜欢追求事情的完美，不轻易放弃，也不喜欢半途而废</p>
+<blockquote>
+<p>我始终相信：当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然</p>
+</blockquote>
 ]]></content:encoded>
       <enclosure url="https://www.geekyspace.cn/assets/images/cover3.jpg" type="image/jpeg"/>
     </item>
