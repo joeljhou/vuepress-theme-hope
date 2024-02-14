@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 14 Feb 2024 04:34:34 GMT</pubDate>
-    <lastBuildDate>Wed, 14 Feb 2024 04:34:34 GMT</lastBuildDate>
+    <pubDate>Wed, 14 Feb 2024 08:19:41 GMT</pubDate>
+    <lastBuildDate>Wed, 14 Feb 2024 08:19:41 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -258,11 +258,50 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
       <link>https://www.geekyspace.cn/java-features/Java18/jep413-code-snippets-in-api-documentation.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java18/jep413-code-snippets-in-api-documentation.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Java 18 新特性：新增@snipppet标签</source>
-      <description>Java 18 新特性：新增@snipppet标签 </description>
+      <description>Java 18 新特性：新增@snipppet标签 Java 18 引入了@snippet标签，用于在API文档中嵌入代码片段，以便更好地展示API的使用方法。 主要特点： 有效性检查，代码包含语法错误时，会出现错误提示 启用现代样式，例如语法高亮显示，以及名称与声明的自动链接 为创建和编辑代码段提供更好的IDE支持 存在的@code标签 用于单独的小...</description>
       <category>Java</category>
       <pubDate>Wed, 03 Jan 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-]]></content:encoded>
+<p>Java 18 引入了<code>@snippet</code>标签，用于在API文档中嵌入代码片段，以便更好地展示API的使用方法。</p>
+<p>主要特点：</p>
+<ul>
+<li>有效性检查，代码包含语法错误时，会出现错误提示</li>
+<li>启用现代样式，例如语法高亮显示，以及名称与声明的自动链接</li>
+<li>为创建和编辑代码段提供更好的IDE支持</li>
+</ul>
+<h2>存在的@code标签</h2>
+<p>用于单独的小段代码, 当代码片段复杂时, 使用复合模式的文档注释，如下所示：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code> <span class="token operator">*</span> <span class="token generics"><span class="token punctuation">&lt;</span>pre<span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token annotation punctuation">@code</span>
+ <span class="token operator">*</span>     源代码行<span class="token number">1</span>
+ <span class="token operator">*</span>     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+ <span class="token operator">*</span>     源代码行n
+ <span class="token operator">*</span> <span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>pre<span class="token operator">&gt;</span>
+</code></pre></div><h2>引入@snippet标签</h2>
+<p>解决了<code>@code</code>标签的不足，允许在API文档中直接嵌入代码片段，以便更好地展示API的使用方法。</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token doc-comment comment">/**
+ * 以下代码显示了如何使用 <span class="token punctuation">{</span><span class="token keyword">@code</span> <span class="token code-section"><span class="token code language-java"><span class="token class-name">Optional</span><span class="token punctuation">.</span>isPresent</span></span><span class="token punctuation">}</span>:
+ * <span class="token punctuation">{</span><span class="token keyword">@snippet</span> :
+ * if (v.isPresent()) <span class="token punctuation">{</span>
+ *     System.out.println("v: " + v.get());
+ * <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
+ */</span>
+</code></pre></div><p>作为外部片段导入</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token doc-comment comment">/**
+ * 以下代码显示了如何使用 <span class="token punctuation">{</span><span class="token keyword">@code</span> <span class="token code-section"><span class="token code language-java"><span class="token class-name">Optional</span><span class="token punctuation">.</span>isPresent</span></span><span class="token punctuation">}</span>:
+ * <span class="token punctuation">{</span><span class="token keyword">@snippet</span> file="ShowOptional.java" region="example"<span class="token punctuation">}</span>
+ */</span>
+</code></pre></div><p>其中<code>ShowOptional.java</code>是一个包含以下内容的文件：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShowOptional</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// @start region="example"</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token punctuation">.</span><span class="token function">isPresent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"v: "</span> <span class="token operator">+</span> v<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// @end</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div>]]></content:encoded>
     </item>
     <item>
       <title>Java 17 新特性：switch的模式匹配（Preview）</title>
