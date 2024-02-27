@@ -6,12 +6,132 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 26 Feb 2024 08:52:00 GMT</pubDate>
-    <lastBuildDate>Mon, 26 Feb 2024 08:52:00 GMT</lastBuildDate>
+    <pubDate>Tue, 27 Feb 2024 03:55:13 GMT</pubDate>
+    <lastBuildDate>Tue, 27 Feb 2024 03:55:13 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>Java 21 新特性：有序集合</title>
+      <link>https://www.geekyspace.cn/java-features/Java21/jep431-sequenced-collections.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java21/jep431-sequenced-collections.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：有序集合</source>
+      <description>Java 21 新特性：有序集合（Sequenced Collections） 在JDK 21中，有序集合（Sequenced Collections）引入了新的接口和方法来简化集合处理。 此增强功能旨在解决访问Java中各种集合类型的第一个和最后一个元素需要非统一且麻烦处理场景 Sequenced Collections 引入如下 3 个新接口，用于...</description>
+      <category>Java</category>
+      <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>在JDK 21中，<strong>有序集合</strong>（Sequenced Collections）引入了新的接口和方法来简化集合处理。</p>
+<blockquote>
+<p>此增强功能旨在解决访问Java中各种集合类型的第一个和最后一个元素需要非统一且麻烦处理场景</p>
+</blockquote>
+<p><code>Sequenced Collections</code> 引入如下 3 个新接口，用于处理顺序<code>List</code>、<code>Set</code>和<code>Map</code>，
+并将它们整合到现有的集合类型中。这些新接口中的方法都具有默认实现。</p>
+<ol>
+<li>SequencedCollection</li>
+<li>SequencedSet</li>
+<li>SequencedMap</li>
+</ol>
+<h2>SequencedCollection</h2>
+<p>提供了在集合两端添加、检索和移除元素的方法，沿着<code>reversed()</code>方法提供了该集合的逆序视图。</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">interface</span> <span class="token class-name">SequencedCollection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">extends</span> <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">// 新方法：返回反转后的序列化集合</span>
+    <span class="token class-name">SequencedCollection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span> <span class="token function">reversed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 以下方法是从Deque提升的,支持在两端添加、获取和删除元素</span>
+    <span class="token keyword">void</span> <span class="token function">addFirst</span><span class="token punctuation">(</span><span class="token class-name">E</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">addLast</span><span class="token punctuation">(</span><span class="token class-name">E</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">E</span> <span class="token function">getFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">E</span> <span class="token function">getLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">E</span> <span class="token function">removeFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">E</span> <span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul>
+<li>新的<code>reversed()</code>方法提供了原始集合的反向视图，对原始集合的任何修改都可以在视图中看到</li>
+<li>如果允许，对视图的修改将写入原始集合</li>
+<li>逆序视图使得不同的序列类型可以在两个方向上处理元素
+<ul>
+<li>如：增强for循环、显式iterator()循环、forEach()、stream()、parallelStream() 和 toArray()</li>
+</ul>
+</li>
+</ul>
+<p>例如，从<code>LinkedHashSet</code>获得逆序流以前很难，现在很简单</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code>linkedHashSet<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">reverseOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// 获取逆序流非常困难</span>
+linkedHashSet<span class="token punctuation">.</span><span class="token function">reversed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">// 现在：直接使用 reversed() 方法获取逆序流</span>
+</code></pre></div><blockquote>
+<p><code>reversed()</code> 方法本质上是 <code>NavigableSet::descendingSet</code>的重命名，并升级为 SequencedCollection</p>
+</blockquote>
+<h2>SequencedSet</h2>
+<p>sequenced set 是一个不包含重复元素的 SequencedCollection，区别是<code>SequencedSet.reversed()</code>的返回类型是SequencedSet。</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">interface</span> <span class="token class-name">SequencedSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">extends</span> <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">,</span> <span class="token class-name">SequencedCollection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">// 重写父接口的 reversed() 方法</span>
+    <span class="token class-name">SequencedSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">&gt;</span></span> <span class="token function">reversed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>SortedSet</strong></p>
+<ul>
+<li>Java集合框架中<code>SortedSet</code>接口，表示一个有序集合</li>
+<li>不能支持显式定位操作，因为是基于元素之间的相对比较来确定它们位置的，而不是基于顺序插入</li>
+<li>如果尝试使用<code>addFirst(E)</code>或<code>addLast(E)</code>方法，会抛出<code>UnsupportedOperationException</code>异常</li>
+</ul>
+<p><strong>SequencedSet</strong></p>
+<ul>
+<li><code>SequencedSet</code>接口扩展了<code>SortedSet</code></li>
+<li>其中<code>addFirst(E)</code>和<code>addLast(E)</code> 方法对于集合（如<code>LinkedHashSet</code>）具有特殊情况语义：
+<ul>
+<li>如果元素已经存在于集合中，则将其移动到适当的位置</li>
+<li>这弥补了LinkedHashSet中的一个长期缺陷，即无法重新定位元素</li>
+</ul>
+</li>
+</ul>
+<h2>SequencedMap</h2>
+<p>sequenced map 是一个映射，其键具有已定义的顺序，
+它不实现SequencedCollection，而是提供了自己的方法，这些方法将访问顺序应用于映射条目，而不是单个元素。</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">interface</span> <span class="token class-name">SequencedMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">extends</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">// 新方法</span>
+    <span class="token class-name">SequencedMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token function">reversed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// 返回一个反转的映射</span>
+    <span class="token class-name">SequencedSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">&gt;</span></span> <span class="token function">sequencedKeySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// 返回键的序列化集合</span>
+    <span class="token class-name">SequencedCollection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token function">sequencedValues</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 返回值的序列化集合</span>
+    <span class="token class-name">SequencedSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> <span class="token function">sequencedEntrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 返回条目的序列化集合</span>
+    <span class="token class-name">V</span> <span class="token function">putFirst</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">,</span> <span class="token class-name">V</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>                  <span class="token comment">// 将键值对放在映射的第一个位置</span>
+    <span class="token class-name">V</span> <span class="token function">putLast</span><span class="token punctuation">(</span><span class="token class-name">K</span> key<span class="token punctuation">,</span> <span class="token class-name">V</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>                   <span class="token comment">// 将键值对放在映射的最后一个位置</span>
+    <span class="token comment">// 从 NavigableMap 提升的方法，支持在映射的两端获取和移除条目</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token function">firstEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token comment">// 返回映射的第一个条目</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token function">lastEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment">// 返回映射的最后一个条目</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token function">pollFirstEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// 移除并返回映射的第一个条目</span>
+    <span class="token class-name">Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token class-name">V</span><span class="token punctuation">&gt;</span></span> <span class="token function">pollLastEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment">// 移除并返回映射的最后一个条目</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>新的<code>put*(K, V)</code>方法具有特殊的含义，类似于 SequencedSet 中对应的<code>add*(E)</code>方法：</p>
+<ul>
+<li>对于 LinkedHashMap 映射，如果已存在相同键的条目，该方法将重新定位该条目</li>
+<li>对于 SortedMap 映射，这些方法会抛出 <code>UnsupportedOperationException</code> 异常</li>
+</ul>
+<h2>改造</h2>
+<p>上述定义的三个新接口完美地适应了现有的集合类型层次结构（点击放大）：</p>
+<figure><img src="https://cr.openjdk.org/~smarks/collections/SequencedCollectionDiagram20220216.png" alt="Sequenced-Collections" tabindex="0" loading="lazy"><figcaption>Sequenced-Collections</figcaption></figure>
+<p>具体而言，我们对现有的类和接口进行以下调整：</p>
+<ul>
+<li>List 现在将 SequencedCollection 定义为其直接超级接口</li>
+<li>Deque 现在将 SequencedCollection 定义为其直接超级接口</li>
+<li>LinkedHashSet 另外实现了 SequencedSet</li>
+<li>SortedSet 现在将 SequencedSet 定义为其直接超级接口</li>
+<li>LinkedHashMap 另外实现了 SequencedMap</li>
+<li>SortedMap 现在将 SequencedMap 定义为其直接超级接口</li>
+</ul>
+<p>我们在适当的位置为<code>reversed()</code>方法定义协变覆盖。
+例如: <code>List::reversed</code> 被覆盖为返回 List 类型的值，而不是 <code>SequencedCollection</code> 类型的值。</p>
+<p>我们还向 Collections 实用类添加了新方法，用于创建三种新类型的不可修改包装：</p>
+<ul>
+<li>Collections.unmodifiableSequencedCollection(sequencedCollection)</li>
+<li>Collections.unmodifiableSequencedSet(sequencedSet)</li>
+<li>Collections.unmodifiableSequencedMap(sequencedMap)</li>
+</ul>
+<h2>第一个和最后一个元素的访问</h2>
+<p>引入顺序接口的动机是对获取集合的第一个和最后一个元素的简单方法的长期未决需求。</p>
+<p>目前，在Java 21之前，JDK API调用访问第一个和最后一个元素的一些示例：</p>
+<p>| 访问位置   | List                    | Deque            | SortedSet   |
+|</p>
+]]></content:encoded>
+      <enclosure url="https://cr.openjdk.org/~smarks/collections/SequencedCollectionDiagram20220216.png" type="image/png"/>
+    </item>
     <item>
       <title>Java 21 新特性：字符串模版(Preview)</title>
       <link>https://www.geekyspace.cn/java-features/Java21/jep430-string-templates.html</link>
@@ -578,11 +698,11 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
 </code></pre></div>]]></content:encoded>
     </item>
     <item>
-      <title>Java 17 新特性：switch的模式匹配（Preview）</title>
+      <title>Java 17 新特性：switch模式匹配（Preview）</title>
       <link>https://www.geekyspace.cn/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 17 新特性：switch的模式匹配（Preview）</source>
-      <description>Java 17 新特性：switch的模式匹配（Preview） 当case标签可以有模式时，有如下四个主要的设计问题，我们一一来看： 增强类型检查 switch表达式和语句的完整性 模式变量声明的作用域 处理null 模式匹配设计 增强类型检查 通过扩展switch模式匹配的case标签，现在支持除了原始数据类型（char、byte、short 或 ...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 17 新特性：switch模式匹配（Preview）</source>
+      <description>Java 17 新特性：switch模式匹配（Preview） 当case标签可以有模式时，有如下四个主要的设计问题，我们一一来看： 增强类型检查 switch表达式和语句的完整性 模式变量声明的作用域 处理null 模式匹配设计 增强类型检查 通过扩展switch模式匹配的case标签，现在支持除了原始数据类型（char、byte、short 或 i...</description>
       <category>Java</category>
       <pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -798,11 +918,11 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
 ]]></content:encoded>
     </item>
     <item>
-      <title>Java 16 新特性：instanceof类型模式</title>
+      <title>Java 16 新特性：instanceof 模式匹配</title>
       <link>https://www.geekyspace.cn/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 16 新特性：instanceof类型模式</source>
-      <description>Java 16 新特性：instanceof类型模式 Java 16 引入了instanceof模式匹配的增强语法，用于更简便地判断对象是否是某个类的实例并进行相应的局部类型转换。 instanceof 基础用法 这个强制转换通常是在 instanceof 检查之后 的第一件事，所以为什么不围绕它优化一下语法呢？ instanceof 增强用法 若 i...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 16 新特性：instanceof 模式匹配</source>
+      <description>Java 16 新特性：instanceof 模式匹配 Java 16 引入了instanceof模式匹配的增强语法，用于更简便地判断对象是否是某个类的实例并进行相应的局部类型转换。 instanceof 基础用法 这个强制转换通常是在 instanceof 检查之后 的第一件事，所以为什么不围绕它优化一下语法呢？ instanceof 增强用法 若 ...</description>
       <category>Java</category>
       <pubDate>Thu, 28 Dec 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -1021,11 +1141,11 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
 ]]></content:encoded>
     </item>
     <item>
-      <title>Java 15 新特性：隐藏类</title>
+      <title>Java 15 新特性：隐藏类（Hidden Classes）</title>
       <link>https://www.geekyspace.cn/java-features/Java15/jep371-hidden-classes.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java15/jep371-hidden-classes.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：隐藏类</source>
-      <description>Java 15 新特性：隐藏类 隐藏类（Hidden Classes） 提供了一种在运行时生成类的机制，在编译时未知，并且不能直接在源代码中引用， 需要通过反射间接使用它们，隐藏类是为框架设计的，具有以下特性： 动态生成内部类：隐藏类天生为框架设计，在运行时生成内部类 反射访问限制：隐藏类只能通过反射访问，不能直接被其他类的字节码访问 独立加载和卸载：...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：隐藏类（Hidden Classes）</source>
+      <description>Java 15 新特性：隐藏类（Hidden Classes） 隐藏类（Hidden Classes） 提供了一种在运行时生成类的机制，在编译时未知，并且不能直接在源代码中引用， 需要通过反射间接使用它们，隐藏类是为框架设计的，具有以下特性： 动态生成内部类：隐藏类天生为框架设计，在运行时生成内部类 反射访问限制：隐藏类只能通过反射访问，不能直接被其他...</description>
       <category>Java</category>
       <pubDate>Tue, 26 Dec 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -1043,11 +1163,11 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
 ]]></content:encoded>
     </item>
     <item>
-      <title>Java 15 新特性：文本块</title>
+      <title>Java 15 新特性：文本块（Text Blocks）</title>
       <link>https://www.geekyspace.cn/java-features/Java15/jep378-text-blocks.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java15/jep378-text-blocks.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：文本块</source>
-      <description>Java 15 新特性：文本块 Java 15(JEP 378)引入了文本块（Text Blocks）这一新特性，旨在简化多行字符串的表示，提高代码可读性，并减少在字符串中使用转义符的需求。 文本块通过引入三个双引号的胖分隔符（&amp;quot;&amp;quot;&amp;quot;）来实现，同时支持转义序列，为开发人员提供更直观、易读的字符串处理方式。 快速上手 HTML示例 SQL示例 Polyg...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：文本块（Text Blocks）</source>
+      <description>Java 15 新特性：文本块（Text Blocks） Java 15(JEP 378)引入了文本块（Text Blocks）这一新特性，旨在简化多行字符串的表示，提高代码可读性，并减少在字符串中使用转义符的需求。 文本块通过引入三个双引号的胖分隔符（&amp;quot;&amp;quot;&amp;quot;）来实现，同时支持转义序列，为开发人员提供更直观、易读的字符串处理方式。 快速上手 HTML示...</description>
       <category>Java</category>
       <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -1358,13 +1478,17 @@ Object obj = engine.eval("function hello() {\n" +
       <content:encoded><![CDATA[<p>为了帮助大家跟上最新的技术潮流，计划启动一个专栏，重点分享Java领域的前沿知识。
 这个专栏将详细解读从<strong>Java 9 - 最新版本</strong>的各种有趣的新特性。
 会持续不断地发布相关内容，希望大家能够关注并收藏起来，跟随我们一起深入了解Java的最新进展！</p>
-<p>详细了解Java Enhancement Proposals（JEPs）及其最新动态， 🚀 访问官方网站：<a href="https://openjdk.java.net/jeps/" target="_blank" rel="noopener noreferrer">OpenJDK JEPs</a></p>
+<p>详细了解Java Enhancement Proposals（JEPs）及其最新动态</p>
+<ul>
+<li>🚀 访问官方网站：<a href="https://openjdk.java.net/jeps/" target="_blank" rel="noopener noreferrer">OpenJDK JEPs</a></li>
+<li>❄️ 参考howtodoinjava博客：<a href="https://howtodoinjava.com/series/java-versions-features/" target="_blank" rel="noopener noreferrer">Java Versions and Features</a></li>
+</ul>
 <h2>Java 23(in development)</h2>
 <h2>Java 22(in development)</h2>
 <h2>Java 21(GA 2023/09/19)</h2>
 <ul>
-<li>430:    String Templates (Preview)</li>
-<li>431:    Sequenced Collections</li>
+<li><a href="java21/jep430-string-templates">430:    String Templates (Preview)</a></li>
+<li><a href="java21/jep431-sequenced-collections">431:    Sequenced Collections</a></li>
 <li>439:    Generational ZGC</li>
 <li>440:    Record Patterns</li>
 <li>441:    Pattern Matching for switch</li>
