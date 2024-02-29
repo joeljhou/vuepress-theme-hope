@@ -6,12 +6,23 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 29 Feb 2024 11:01:07 GMT</pubDate>
-    <lastBuildDate>Thu, 29 Feb 2024 11:01:07 GMT</lastBuildDate>
+    <pubDate>Thu, 29 Feb 2024 15:27:43 GMT</pubDate>
+    <lastBuildDate>Thu, 29 Feb 2024 15:27:43 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>Java 21 新特性：switch模式匹配</title>
+      <link>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</link>
+      <guid>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：switch模式匹配</source>
+      <description>Java 21 新特性：switch模式匹配 </description>
+      <category>Java</category>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>Java 21 新特性：记录模式（Record Patterns）</title>
       <link>https://www.geekyspace.cn/java-features/Java21/jep440-record-partterns.html</link>
@@ -24,7 +35,7 @@
 <p>Java 21 中的<strong>记录模式</strong>（Record Patterns）是对模式匹配的扩展，它允许在模式匹配中使用<strong>记录</strong>（Records）类型。
 同时，记录模式还支持嵌套，可以实现更复杂的数据查询和处理。</p>
 <h2>仅仅是类型匹配</h2>
-<p>到目前为止，Java中的模式匹配主要局限于匹配类型：<a href="/java-features/Java16/jep394-pattern-matching-for-instanceof">instanceof类型匹配</a></p>
+<p>到目前为止，Java中的模式匹配主要局限于匹配类型：<a href="../Java16/jep394-pattern-matching-for-instanceof">instanceof类型匹配</a></p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// Java 16 之前</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> obj<span class="token punctuation">;</span>
@@ -36,7 +47,7 @@
   <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><p>Java
-21扩展了这个概念，使其可用于switch语句和表达式: <a href="/java-features/Java21/jep441-pattern-matching-for-switch">switch的模式匹配</a></p>
+21扩展了这个概念，使其可用于switch语句和表达式: <a href="jep441-pattern-matching-for-switch">switch的模式匹配</a></p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// JAVA 21之前</span>
 <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">asStringValue</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anyValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token class-name">String</span> result <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
@@ -1664,7 +1675,7 @@ Object obj = engine.eval("function hello() {\n" +
 <li><a href="Java21/jep431-sequenced-collections">431:    Sequenced Collections</a></li>
 <li><a href="Java21/jep439-generational-zgc">439:    Generational ZGC</a></li>
 <li><a href="Java21/jep440-record-partterns">440:    Record Patterns</a></li>
-<li>441:    Pattern Matching for switch</li>
+<li><a href="Java21/jep441-pattern-matching-for-switch">441:    Pattern Matching for switch</a></li>
 <li>442:    Foreign Function &amp; Memory API (Third Preview)</li>
 <li>443:    Unnamed Patterns and Variables (Preview)</li>
 <li>444:    Virtual Threads</li>
