@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 28 Feb 2024 03:59:12 GMT</pubDate>
-    <lastBuildDate>Wed, 28 Feb 2024 03:59:12 GMT</lastBuildDate>
+    <pubDate>Thu, 29 Feb 2024 05:32:08 GMT</pubDate>
+    <lastBuildDate>Thu, 29 Feb 2024 05:32:08 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -2157,26 +2157,6 @@ mutableList<span class="token punctuation">.</span><span class="token function">
 </blockquote>
 ]]></content:encoded>
       <enclosure url="https://www.geekyspace.cn/assets/images/cover3.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>幻灯片页</title>
-      <link>https://www.geekyspace.cn/slides.html</link>
-      <guid>https://www.geekyspace.cn/slides.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">幻灯片页</source>
-      <description> @slidestart 幻灯片演示 一个简单的幻灯片演示与各种小贴士。 作者 Mr.Hope. 请滚动鼠标滚轮进入下一页 标注幻灯片 👇 -- 标注幻灯片 使用 --- 标注水平幻灯片 在水平幻灯片中使用 -- 分割垂直幻灯片 使用 &amp;lt;!-- .slide: ... --&amp;gt; 在幻灯片上添加属性 使用 &amp;lt;!-- .element: ... --&amp;gt; 在...</description>
-      <pubDate>Mon, 11 Dec 2023 17:02:31 GMT</pubDate>
-      <content:encoded><![CDATA[<!-- markdownlint-disable MD024 MD051 -->
-<p>@slidestart</p>
-<!-- .slide: data-transition="slide" -->
-<h2>幻灯片演示</h2>
-<!-- .element: class="r-fit-text" -->
-<p>一个简单的幻灯片演示与各种小贴士。</p>
-<!-- .element: class="r-fit-text" -->
-<blockquote>
-<p>作者 Mr.Hope. 请滚动鼠标滚轮进入下一页</p>
-</blockquote>
-]]></content:encoded>
-      <enclosure url="https://www.geekyspace.cn/logo.svg" type="image/svg+xml"/>
     </item>
   </channel>
 </rss>
