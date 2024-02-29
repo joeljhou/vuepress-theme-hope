@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 29 Feb 2024 10:58:32 GMT</pubDate>
-    <lastBuildDate>Thu, 29 Feb 2024 10:58:32 GMT</lastBuildDate>
+    <pubDate>Thu, 29 Feb 2024 11:01:07 GMT</pubDate>
+    <lastBuildDate>Thu, 29 Feb 2024 11:01:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -90,6 +90,9 @@
 <span class="token keyword">record</span> <span class="token class-name">ColoredPoint</span><span class="token punctuation">(</span><span class="token class-name">Point</span> p<span class="token punctuation">,</span> <span class="token class-name">Color</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token keyword">record</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token class-name">ColoredPoint</span> upperLeft<span class="token punctuation">,</span> <span class="token class-name">ColoredPoint</span> lowerRight<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
+<span class="token class-name">Rectangle</span> r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ColoredPoint</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> y1<span class="token punctuation">)</span><span class="token punctuation">,</span> c1<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+                            <span class="token keyword">new</span> <span class="token class-name">ColoredPoint</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span> y2<span class="token punctuation">)</span><span class="token punctuation">,</span> c2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 <span class="token comment">// Java 16 之前</span>
 <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">printUpperLeftColoredPoint</span><span class="token punctuation">(</span><span class="token class-name">Rectangle</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token keyword">instanceof</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token class-name">ColoredPoint</span> ul<span class="token punctuation">,</span> <span class="token class-name">ColoredPoint</span> lr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -103,7 +106,8 @@
          <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><h2>发展脉络</h2>
+</code></pre></div><p>嵌套模式允许我们使用与将其组合的代码一样清晰简洁的代码来拆解聚合。</p>
+<h2>发展脉络</h2>
 <p>该功能最初作为预览功能在Java 19（JEP 405）中首次亮相，随后经过Java 20（JEP 432）的迭代，最终在Java 21中定稿（JEP 440）。
 此功能与模式匹配的switch语句（JEP 441）共同演进，并且它们之间存在相当大的互动。</p>
 ]]></content:encoded>
