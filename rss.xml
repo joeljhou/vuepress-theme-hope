@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 29 Feb 2024 15:33:23 GMT</pubDate>
-    <lastBuildDate>Thu, 29 Feb 2024 15:33:23 GMT</lastBuildDate>
+    <pubDate>Fri, 01 Mar 2024 15:39:20 GMT</pubDate>
+    <lastBuildDate>Fri, 01 Mar 2024 15:39:20 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -1054,6 +1054,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
         <span class="token keyword">case</span> <span class="token class-name">String</span> s                      <span class="token operator">-&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
+</code></pre></div><h2>启用预览功能</h2>
+<p>Preview阶段的功能并不是默认开启的，需要在编译和运行时启用。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">java</span> --enable-preview <span class="token parameter variable">--source</span> <span class="token number">17</span> PatternMatching.java
 </code></pre></div>]]></content:encoded>
     </item>
     <item>
