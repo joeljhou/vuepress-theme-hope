@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 01 Mar 2024 15:39:20 GMT</pubDate>
-    <lastBuildDate>Fri, 01 Mar 2024 15:39:20 GMT</lastBuildDate>
+    <pubDate>Fri, 01 Mar 2024 15:42:29 GMT</pubDate>
+    <lastBuildDate>Fri, 01 Mar 2024 15:42:29 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -17,7 +17,7 @@
       <link>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：switch模式匹配</source>
-      <description>Java 21 新特性：switch模式匹配 </description>
+      <description>Java 21 新特性：switch模式匹配</description>
       <category>Java</category>
       <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
