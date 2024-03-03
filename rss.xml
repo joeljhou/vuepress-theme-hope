@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 03 Mar 2024 15:24:43 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Mar 2024 15:24:43 GMT</lastBuildDate>
+    <pubDate>Sun, 03 Mar 2024 15:34:07 GMT</pubDate>
+    <lastBuildDate>Sun, 03 Mar 2024 15:34:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -164,7 +164,7 @@ Spring Data JPA 会为你处理这些！你只需要定义你的 Repository 接�
 当你添加更多方法时，如果在方法名中犯错，IntelliJ IDEA 将会指出错误。
 例如，如果我们尝试创建一个用于查询具有不正确 <code>LName</code> 属性的员工的方法，IntelliJ IDEA
 会给出一个错误，说<code>Cannot resolve property LName</code>。</p>
-<figure><img src="https://www.jetbrains.com/guide/assets/MethodSignatureValidation-9e703516.png" alt="Method Signature Validation" tabindex="0" loading="lazy"><figcaption>Method Signature Validation</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403032330980.png" alt="Method Signature Validation" tabindex="0" loading="lazy"><figcaption>Method Signature Validation</figcaption></figure>
 <p>最终，你的 EmployeeRepository 接口应该如下所示：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>jetbrains<span class="token punctuation">.</span>springdatajpaapp</span><span class="token punctuation">;</span>
 
@@ -181,7 +181,7 @@ Spring Data JPA 会为你处理这些！你只需要定义你的 Repository 接�
 <p>我们将调出搜索菜单 <strong>⇧⇧</strong> (macOS) / <strong>Shift+Shift</strong> (Windows/Linux) 并搜索我们的 <mark>application.properties</mark> 文件。
 在我们的 application.properties 文件中，我们可以利用 IntelliJ IDEA 的建议来指定连接到我们的 H2 数据库所需的属性。
 我们将开始输入 <mark>url</mark>，并从建议列表中选择 <mark>spring.datasource.url</mark> 属性。</p>
-<figure><img src="https://www.jetbrains.com/guide/assets/ApplicationProperties-9272e3ae.png" alt="Application Properties URL" tabindex="0" loading="lazy"><figcaption>Application Properties URL</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403032332643.png" alt="Application Properties URL" tabindex="0" loading="lazy"><figcaption>Application Properties URL</figcaption></figure>
 <p>如果你没有使用 H2 作为你的数据库，你可以在这里指定你自己的数据库 URL。
 在我们的情况下，我们将指定 <mark>jdbc:h2:file:./data/myDB</mark> 作为我们的 URL，这将创建一个名为 <mark>myDB</mark> 的 H2 数据库。</p>
 <p>接下来，我们需要指定我们的驱动类名。
@@ -233,21 +233,21 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
 请注意，此功能仅适用于<a href="https://www.jetbrains.com/idea/features/editions_comparison_matrix.html" target="_blank" rel="noopener noreferrer">IntelliJ IDEA Ultimate</a>版。</p>
 <p>要创建我们的H2数据源，我们将打开数据库工具窗口（<strong>View | Tool Windows | Database</strong>），然后点击<code>+</code>按钮。
 有多种方式可以创建我们的连接。我们将使用<strong>Data source from URL</strong>选项。</p>
-<figure><img src="https://www.jetbrains.com/guide/assets/NewDatabase-616f8402.png" alt="New Database" tabindex="0" loading="lazy"><figcaption>New Database</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403032330533.png" alt="New Database" tabindex="0" loading="lazy"><figcaption>New Database</figcaption></figure>
 <p>我们将输入我们的数据库URL：<mark>jdbc:h2:file:./data/myDB</mark>，然后点击确定。</p>
 <p>接下来，我们将完成数据库的配置。对于我们的用户和密码字段，
 我们将输入在我们的<code>application.properties</code>文件中设置的用户和密码（<mark>sa</mark>，<mark>password</mark>）。
 如果你收到有关缺少H2驱动程序的警告，请点击下载缺失的驱动程序文件。</p>
-<figure><img src="https://www.jetbrains.com/guide/assets/IJConfigMyDB-37a8e177.png" alt="Data Source myDB Config" tabindex="0" loading="lazy"><figcaption>Data Source myDB Config</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403032332971.png" alt="Data Source myDB Config" tabindex="0" loading="lazy"><figcaption>Data Source myDB Config</figcaption></figure>
 <p><strong>可选步骤</strong>：在选项选项卡下，启用“设置后自动断开连接”，并将其设置为在3秒后断开连接。
 此设置将断开IntelliJ IDEA中的数据库并释放所有锁定，使我们应用程序的进程可以持续连接并写入数据库。
 这将防止来自你的应用程序的<code>database may already be in use</code>的错误。
 如果执行了此步骤，则可能需要在数据库工具窗口中点击“刷新”按钮以更新数据源。</p>
 <p>然后，我们将点击“<strong>Test Connection</strong>”以确保我们的配置是有效的。</p>
-<figure><img src="https://www.jetbrains.com/guide/assets/IJConfigOptions-166a29d9.png" alt="Data Source Config Options" tabindex="0" loading="lazy"><figcaption>Data Source Config Options</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403032331974.png" alt="Data Source Config Options" tabindex="0" loading="lazy"><figcaption>Data Source Config Options</figcaption></figure>
 <p>一旦我们点击"<strong>OK</strong>"，我们就会看到一个新的数据源，用于我们的H2数据库。</p>
 <p>最终结果 ，在数据库视图中，我们现在可以导航到我们的Employee表，并通过双击表格查看所有员工数据。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202403032235746.png" alt="Database View" tabindex="0" loading="lazy"><figcaption>Database View</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403032331767.png" alt="Database View" tabindex="0" loading="lazy"><figcaption>Database View</figcaption></figure>
 <h2>调用自定义查询</h2>
 <p>假设我们想要查询数据库中所有姓氏中包含空格的员工。</p>
 <p><strong>练习</strong>：花几分钟时间编写代码，查找并打印姓氏中带有空格的所有员工。</p>
