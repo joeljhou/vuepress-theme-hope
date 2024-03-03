@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 03 Mar 2024 03:28:05 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Mar 2024 03:28:05 GMT</lastBuildDate>
+    <pubDate>Sun, 03 Mar 2024 07:43:43 GMT</pubDate>
+    <lastBuildDate>Sun, 03 Mar 2024 07:43:43 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -17,11 +17,48 @@
       <link>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：switch模式匹配</source>
-      <description>Java 21 新特性：switch模式匹配</description>
+      <description>Java 21 新特性：switch模式匹配 Java 21 引入了 switch 模式匹配功能，它增强了 switch 语句的功能，允许使用更简洁的语法来执行类型检查和数据提取。 该功能与共同发展，并与之有相当大的互动。 switch + instanceof 与if条件中的instanceof一样，switch case现在可以对其值进行类型检查，...</description>
       <category>Java</category>
       <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-]]></content:encoded>
+<p>Java 21 引入了 switch 模式匹配功能，它增强了 switch 语句的功能，允许使用更简洁的语法来执行类型检查和数据提取。
+该功能与<a href="/java-features/Java21/jep440-record-partterns.html" target="_blank">记录模式（JEP 440）</a>共同发展，并与之有相当大的互动。</p>
+<h2>switch + instanceof</h2>
+<p>与if条件中的<code>instanceof</code>一样，<code>switch case</code>现在可以对其值进行类型检查，并创建一个case作用域变量:</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">asStringValue</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anyValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">switch</span> <span class="token punctuation">(</span>anyValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token class-name">String</span> str      <span class="token operator">-&gt;</span> str<span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">JSONObject</span> json <span class="token operator">-&gt;</span> json<span class="token punctuation">.</span><span class="token function">toCompactString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">BigDecimal</span> bd   <span class="token operator">-&gt;</span> bd<span class="token punctuation">.</span><span class="token function">toEngineeringString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">Integer</span> i       <span class="token operator">-&gt;</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">LocalDate</span> ld    <span class="token operator">-&gt;</span> ld<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token class-name">DateTimeFormatter</span><span class="token punctuation">.</span><span class="token constant">ISO_LOCAL_DATE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span>              <span class="token operator">-&gt;</span> <span class="token string">"n/a"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>switch + null</h2>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">asStringValue</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anyValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">switch</span> <span class="token punctuation">(</span>anyValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token keyword">null</span>       <span class="token operator">-&gt;</span> <span class="token string">"n/a"</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">String</span> str <span class="token operator">-&gt;</span> str<span class="token punctuation">;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>switch + enum</h2>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">sealed</span> <span class="token keyword">interface</span> <span class="token class-name">CardClassification</span> <span class="token keyword">permits</span> <span class="token class-name">Suit</span><span class="token punctuation">,</span> <span class="token class-name">Tarot</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Suit</span> <span class="token keyword">implements</span> <span class="token class-name">CardClassification</span> <span class="token punctuation">{</span> <span class="token constant">CLUBS</span><span class="token punctuation">,</span> <span class="token constant">DIAMONDS</span><span class="token punctuation">,</span> <span class="token constant">HEARTS</span><span class="token punctuation">,</span> <span class="token constant">SPADES</span> <span class="token punctuation">}</span>
+<span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Tarot</span> <span class="token keyword">implements</span> <span class="token class-name">CardClassification</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">exhaustiveSwitchWithBetterEnumSupport</span><span class="token punctuation">(</span><span class="token class-name">CardClassification</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token constant">CLUBS</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"梅花"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token constant">DIAMONDS</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"方块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token constant">HEARTS</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"红桃"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token constant">SPADES</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"黑桃"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">Tarot</span> t <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"塔罗牌"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"未知的卡片类型"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div>]]></content:encoded>
     </item>
     <item>
       <title>Java 21 新特性：记录模式（Record Patterns）</title>
@@ -1036,8 +1073,12 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The rest (including null)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><h2>保护模式和括号模式</h2>
-<p>为了提高代码可读性，引入了 <strong>guarded patterns</strong><code>(p &amp;&amp; e)</code> 和 <strong>parenthesized patterns</strong><code>(p)</code>，其中<code>p</code>是模式，<code>e</code>是布尔表达式。</p>
-<p>如下示例代码存在可读性问题：</p>
+<p>为了增强代码的可读性并避免歧义，引入了两种新的模式匹配技术：</p>
+<ul>
+<li>保护模式 (guarded patterns)，允许在模式匹配成功后添加一个布尔表达式</li>
+<li>括号模式 (parenthesized patterns)，将模式放在括号中，避免歧义，控制顺序</li>
+</ul>
+<p>在成功匹配模式后，我们经常会进一步测试匹配结果。这会导致代码变得繁琐，例如：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">switch</span> <span class="token punctuation">(</span>o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">case</span> <span class="token class-name">String</span> s<span class="token operator">:</span>
@@ -1047,14 +1088,17 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>使用<strong>guarded patterns</strong>改进，允许在 <code>case</code> 标签中结合模式和布尔表达式，使条件逻辑更加清晰：</p>
+</code></pre></div><p>使用<strong>保护模式</strong>，写成<code>p &amp;&amp; e</code>改进上面的代码，使其更加简洁</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">switch</span> <span class="token punctuation">(</span>o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> <span class="token class-name">String</span> s <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-        <span class="token keyword">case</span> <span class="token class-name">String</span> s                      <span class="token operator">-&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token keyword">case</span> <span class="token class-name">String</span> s <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">-&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token keyword">case</span> <span class="token class-name">String</span> s                    <span class="token operator">-&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><h2>启用预览功能</h2>
+</code></pre></div><blockquote>
+<p>JDK 17中还加入了<strong>括号模式</strong>，以避免解析歧义。支持括号内写入<code>(p)</code> 其中p是一个模式。在JDK 21中，括号模式被移除。</p>
+</blockquote>
+<h2>启用预览功能</h2>
 <p>Preview阶段的功能并不是默认开启的，需要在编译和运行时启用。</p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">java</span> --enable-preview <span class="token parameter variable">--source</span> <span class="token number">17</span> PatternMatching.java
 </code></pre></div>]]></content:encoded>
