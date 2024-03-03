@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 03 Mar 2024 15:14:41 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Mar 2024 15:14:41 GMT</lastBuildDate>
+    <pubDate>Sun, 03 Mar 2024 15:24:43 GMT</pubDate>
+    <lastBuildDate>Sun, 03 Mar 2024 15:24:43 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -279,7 +279,7 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
       <content:encoded><![CDATA[
 <h2>目录</h2>
 <ul>
-<li><a href="/spring-data-jpa/jetbrains/quick-start">Spring Data JPA 快速入门</a></li>
+<li><a href="/spring-data-jpa/jetbrains/getting-started">Spring Data JPA 快速入门</a></li>
 </ul>
 ]]></content:encoded>
     </item>
