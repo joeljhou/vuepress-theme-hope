@@ -6,31 +6,16 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 03 Mar 2024 15:09:09 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Mar 2024 15:09:09 GMT</lastBuildDate>
+    <pubDate>Sun, 03 Mar 2024 15:14:41 GMT</pubDate>
+    <lastBuildDate>Sun, 03 Mar 2024 15:14:41 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
     <category>程序人生</category>
     <item>
-      <title>Spring Data JPA</title>
-      <link>https://www.geekyspace.cn/spring-data-jpa/</link>
-      <guid>https://www.geekyspace.cn/spring-data-jpa/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring Data JPA</source>
-      <description>Spring Data JPA 目录 Spring Data JPA 快速入门</description>
-      <category>Java</category>
-      <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>目录</h2>
-<ul>
-<li><a href="/spring-data-jpa/jetbrains/quick-start">Spring Data JPA 快速入门</a></li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Spring Data JPA 快速入门</title>
-      <link>https://www.geekyspace.cn/spring-data-jpa/jetbrains/quick-start.html</link>
-      <guid>https://www.geekyspace.cn/spring-data-jpa/jetbrains/quick-start.html</guid>
+      <link>https://www.geekyspace.cn/spring-data-jpa/jetbrains/getting-started.html</link>
+      <guid>https://www.geekyspace.cn/spring-data-jpa/jetbrains/getting-started.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Spring Data JPA 快速入门</source>
       <description>Spring Data JPA 快速入门 目标： 了解如何使用Spring Data JPA从数据库中存储和检索数据。 参考：Jetbrains 官方文档 介绍 Spring Data JPA是一个功能强大的框架，允许用户轻松地与数据库交互，同时最大限度地减少样板代码。 在本教程中，我们将研究如何使用Spring Data JPA插入数据库并从数据库查...</description>
       <category>Java</category>
@@ -282,6 +267,21 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
 |</p>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202403032048778.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Spring Data JPA</title>
+      <link>https://www.geekyspace.cn/spring-data-jpa/</link>
+      <guid>https://www.geekyspace.cn/spring-data-jpa/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Spring Data JPA</source>
+      <description>Spring Data JPA 目录 Spring Data JPA 快速入门</description>
+      <category>Java</category>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>目录</h2>
+<ul>
+<li><a href="/spring-data-jpa/jetbrains/quick-start">Spring Data JPA 快速入门</a></li>
+</ul>
+]]></content:encoded>
     </item>
     <item>
       <title>Java 21 新特性：虚拟线程</title>
