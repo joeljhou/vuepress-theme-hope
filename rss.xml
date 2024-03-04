@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 03 Mar 2024 16:31:00 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Mar 2024 16:31:00 GMT</lastBuildDate>
+    <pubDate>Mon, 04 Mar 2024 02:41:34 GMT</pubDate>
+    <lastBuildDate>Mon, 04 Mar 2024 02:41:34 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -17,14 +17,18 @@
       <link>https://www.geekyspace.cn/spring-data-jpa/jetbrains/getting-started.html</link>
       <guid>https://www.geekyspace.cn/spring-data-jpa/jetbrains/getting-started.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Spring Data JPA 快速入门</source>
-      <description>Spring Data JPA 快速入门 目标： 了解如何使用Spring Data JPA从数据库中存储和检索数据。 参考：Jetbrains 官方文档 介绍 Spring Data JPA是一个功能强大的框架，允许用户轻松地与数据库交互，同时最大限度地减少样板代码。 在本教程中，我们将研究如何使用Spring Data JPA插入数据库并从数据库查...</description>
+      <description>Spring Data JPA 快速入门 目标： 了解如何使用Spring Data JPA从数据库中存储和检索数据。 参考： Spring Data JPA 官方文档 Jetbrains 官方文档 介绍 Spring Data JPA是一个功能强大的框架，允许用户轻松地与数据库交互，同时最大限度地减少样板代码。 在本教程中，我们将研究如何使用Spri...</description>
       <category>Java</category>
       <pubDate>Thu, 04 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
 <p>目标： 了解如何使用Spring Data JPA从数据库中存储和检索数据。</p>
 </blockquote>
-<p>参考：<a href="https://www.jetbrains.com/guide/java/tutorials/getting-started-spring-data-jpa/" target="_blank" rel="noopener noreferrer">Jetbrains 官方文档</a></p>
+<p>参考：</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-data/jpa/reference/jpa/getting-started.html" target="_blank" rel="noopener noreferrer">Spring Data JPA 官方文档</a></li>
+<li><a href="https://www.jetbrains.com/guide/java/tutorials/getting-started-spring-data-jpa/" target="_blank" rel="noopener noreferrer">Jetbrains 官方文档</a></li>
+</ul>
 <h2>介绍</h2>
 <p><a href="https://spring.io/projects/spring-data-jpa" target="_blank" rel="noopener noreferrer">Spring Data JPA</a>是一个功能强大的框架，允许用户轻松地与数据库交互，同时最大限度地减少样板代码。
 在本教程中，我们将研究如何使用Spring Data JPA插入数据库并从数据库查询数据。
@@ -83,8 +87,8 @@
 
 <span class="token annotation punctuation">@Entity</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Id</span>
-    <span class="token annotation punctuation">@GeneratedValue</span>
+
+    <span class="token annotation punctuation">@Id</span> <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> <span class="token class-name">GenerationType</span><span class="token punctuation">.</span><span class="token constant">AUTO</span><span class="token punctuation">)</span>
     <span class="token keyword">private</span> <span class="token class-name">Long</span> id<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> firstName<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> lastName<span class="token punctuation">;</span>
@@ -263,7 +267,7 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
 <h2>总结</h2>
 <p>在这个教程中，我们创建了一个简单的Spring Boot应用程序，它使用Spring Data JPA来存储和检索数据库中的数据。</p>
 <p>一些在教程中提到的有用的快捷方式包括：</p>
-<p>| Name                      | Windows Shortcut | macOS Shortcut |
+<p>| Name          | Windows Shortcut | macOS Shortcut |
 |</p>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202403032048778.png" type="image/png"/>
