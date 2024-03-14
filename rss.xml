@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 12 Mar 2024 14:36:46 GMT</pubDate>
-    <lastBuildDate>Tue, 12 Mar 2024 14:36:46 GMT</lastBuildDate>
+    <pubDate>Thu, 14 Mar 2024 10:42:40 GMT</pubDate>
+    <lastBuildDate>Thu, 14 Mar 2024 10:42:40 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -292,13 +292,71 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
       <link>https://www.geekyspace.cn/java-features/Java21/jep444-virtual-threads.html</link>
       <guid>https://www.geekyspace.cn/java-features/Java21/jep444-virtual-threads.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：虚拟线程</source>
-      <description>Java 21 新特性：虚拟线程（Virtual Threads） Java 21 引入了虚拟线程（Virtual Threads）功能，它是对线程的一种新的实现方式，用于提高并发性能和降低资源消耗。 虚拟线程，也称为“用户模式线程”（User-Mode Threads）或 ”纤程“（Fibers），是一种轻量级的线程，它不需要操作系统的线程支持，而是...</description>
+      <description>Java 21 新特性：虚拟线程（Virtual Threads） Java 21 引入了虚拟线程（Virtual Threads）功能，类似于Go语言中的Goroutines。 虚拟线程是一种轻量级的线程，它可以极大地减少了编写、维护和管理高吞吐量并发应用程序所需的工作量。 Java平台目前为止有两种类型的线程：传统线程，也称为平台线程，和虚拟线程。...</description>
       <category>Java</category>
       <pubDate>Thu, 11 Jan 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<p>Java 21 引入了<strong>虚拟线程</strong>（Virtual Threads）功能，它是对线程的一种新的实现方式，用于提高并发性能和降低资源消耗。
-虚拟线程，也称为“用户模式线程”（User-Mode Threads）或 ”纤程“（Fibers），是一种轻量级的线程，它不需要操作系统的线程支持，而是由Java虚拟机（JVM）直接管理。</p>
+<p>Java 21 引入了<strong>虚拟线程</strong>（Virtual Threads）功能，类似于Go语言中的<code>Goroutines</code>。
+虚拟线程是一种轻量级的线程，它可以极大地减少了编写、维护和管理高吞吐量并发应用程序所需的工作量。</p>
+<p>Java平台目前为止有两种类型的线程：<strong>传统线程</strong>，也称为<mark>平台线程</mark>，和<strong>虚拟线程</strong>。</p>
+<h2>平台线程</h2>
+<p>在引入虚拟线程之前，我们所使用的线程<code>java.lang.Thread</code>是由所谓的平台线程支持的。</p>
+<p>这些线程通常是1:1映射到操作系统线程的，因此它们是重量级的，创建和销毁线程的开销很大。
+且每个请求都需要一个独立的线程，这会导致线程资源的快速耗尽，从而限制了应用程序的可伸缩性。</p>
+<h2>虚拟线程</h2>
+<p>虚拟线程是JDK提供的<strong>轻量级线程</strong>实现，可以在同一个OS线程上运行许多虚拟线程。
+虚拟线程为平台线程提供了一种更有效的替代方案，允许开发人员以显著降低的开销处理大量任务。
+这些线程提供了与现有Java代码的兼容性和无缝迁移路径，从而从增强的性能和资源利用率中获益。</p>
+<p>许多语言中都有某种形式的轻量级线程：</p>
+<ul>
+<li>Go语言的<a href="https://go.dev/tour/concurrency/1" target="_blank" rel="noopener noreferrer">Goroutines</a></li>
+<li>Erlang的<a href="https://www.erlang.org/docs/23/efficiency_guide/processes.html" target="_blank" rel="noopener noreferrer">Erlang Processes</a></li>
+<li>Haskell的<a href="https://wiki.haskell.org/Lightweight_concurrency" target="_blank" rel="noopener noreferrer">Haskell Threads</a></li>
+<li>等等</li>
+</ul>
+<h3>创建虚拟线程</h3>
+<ol>
+<li>使用<code>Thread.startVirtualThread()</code>方法创建虚拟线程：</li>
+</ol>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// 使用静态构建器方法</span>
+<span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">startVirtualThread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 由虚拟线程执行的代码</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>也可以使用<code>Thread.ofVirtual()</code>来创建，这里还可以设置一些属性，比如：线程名称等。具体如下代码：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">Thread</span> virtualThread <span class="token operator">=</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">ofVirtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"virtual-thread"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 由虚拟线程执行的代码</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ol start="2">
+<li>使用<code>ExecutorService</code>创建虚拟线程：</li>
+</ol>
+<p>从Java 5开始，就推荐开发人员使用<code>ExecutorServices</code>而不是直接使用<code>Thread</code>类了。
+现在，Java 21中引入了使用虚拟线程，所以也有了新的ExecutorService来适配，看看下面的例子：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">try</span> <span class="token punctuation">(</span><span class="token class-name">ExecutorService</span> executor <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newVirtualThreadPerTaskExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">IntStream</span><span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10_000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>i <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+        executor<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token class-name">Duration</span><span class="token punctuation">.</span><span class="token function">ofSeconds</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>  <span class="token comment">// executor.close() 被隐式调用, 然后 waits</span>
+</code></pre></div><p>3.使用<code>ThreadFactory</code>创建虚拟线程：</p>
+<p>开发者还可以创建一个生成虚拟线程的工厂来管理，具体看下面的例子例子：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">ThreadFactory</span> virtualThreadFactory <span class="token operator">=</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">ofVirtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"virtual-thread"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">factory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">Thread</span> factoryThread <span class="token operator">=</span> virtualThreadFactory<span class="token punctuation">.</span><span class="token function">newThread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 由虚拟线程执行的代码</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+factoryThread<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>这段代码创建了一个虚拟线程工厂，每个虚拟线程都会以<code>virtual-thread</code>为前缀、以数字结尾（从0开始累加）的名称。</p>
+<h2>虚拟线程如何工作</h2>
+<p>虚拟线程是一个新的轻量级<code>java.lang.Thread</code>变体，由JVM的<a href="https://openjdk.org/projects/loom/" target="_blank" rel="noopener noreferrer">Project Loom</a>项目实现的。
+它使用了一种称为<code>Continuation</code>的技术，不受操作系统的管理或调度。相反，JVM负责调度。</p>
+<figure><img src="https://images.idgesg.net/images/article/2022/10/iw-virtual-threads-100933997-large.jpg?auto=webp&amp;quality=85,70" alt="Java中虚拟线程的结构" tabindex="0" loading="lazy"><figcaption>Java中虚拟线程的结构</figcaption></figure>
+<figure><img src="https://belief-driven-design.com/images/2023/2023-10-05-java-21-virtual-threads-scheduler.webp" alt="JVM/OS线程管理=" tabindex="0" loading="lazy"><figcaption>JVM/OS线程管理=</figcaption></figure>
 ]]></content:encoded>
+      <enclosure url="https://images.idgesg.net/images/article/2022/10/iw-virtual-threads-100933997-large.jpg?auto=webp&amp;quality=85,70" type="image/"/>
     </item>
     <item>
       <title>Java 21 新特性：switch模式匹配</title>
