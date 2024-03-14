@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 14 Mar 2024 10:42:40 GMT</pubDate>
-    <lastBuildDate>Thu, 14 Mar 2024 10:42:40 GMT</lastBuildDate>
+    <pubDate>Thu, 14 Mar 2024 10:56:37 GMT</pubDate>
+    <lastBuildDate>Thu, 14 Mar 2024 10:56:37 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -353,10 +353,10 @@ factoryThread<span class="token punctuation">.</span><span class="token function
 <h2>虚拟线程如何工作</h2>
 <p>虚拟线程是一个新的轻量级<code>java.lang.Thread</code>变体，由JVM的<a href="https://openjdk.org/projects/loom/" target="_blank" rel="noopener noreferrer">Project Loom</a>项目实现的。
 它使用了一种称为<code>Continuation</code>的技术，不受操作系统的管理或调度。相反，JVM负责调度。</p>
-<figure><img src="https://images.idgesg.net/images/article/2022/10/iw-virtual-threads-100933997-large.jpg?auto=webp&amp;quality=85,70" alt="Java中虚拟线程的结构" tabindex="0" loading="lazy"><figcaption>Java中虚拟线程的结构</figcaption></figure>
-<figure><img src="https://belief-driven-design.com/images/2023/2023-10-05-java-21-virtual-threads-scheduler.webp" alt="JVM/OS线程管理=" tabindex="0" loading="lazy"><figcaption>JVM/OS线程管理=</figcaption></figure>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/202403141847457.jpg" alt="Java中虚拟线程的结构" tabindex="0" loading="lazy"><figcaption>Java中虚拟线程的结构</figcaption></figure>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/202403141846557.webp" alt="JVM/OS线程管理" tabindex="0" loading="lazy"><figcaption>JVM/OS线程管理</figcaption></figure>
 ]]></content:encoded>
-      <enclosure url="https://images.idgesg.net/images/article/2022/10/iw-virtual-threads-100933997-large.jpg?auto=webp&amp;quality=85,70" type="image/"/>
+      <enclosure url="https://img.geekyspace.cn/pictures/2024/202403141847457.jpg" type="image/jpeg"/>
     </item>
     <item>
       <title>Java 21 新特性：switch模式匹配</title>
