@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 14 Mar 2024 10:56:37 GMT</pubDate>
-    <lastBuildDate>Thu, 14 Mar 2024 10:56:37 GMT</lastBuildDate>
+    <pubDate>Thu, 14 Mar 2024 11:22:39 GMT</pubDate>
+    <lastBuildDate>Thu, 14 Mar 2024 11:22:39 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Java</category>
@@ -301,9 +301,22 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
 <p>Java平台目前为止有两种类型的线程：<strong>传统线程</strong>，也称为<mark>平台线程</mark>，和<strong>虚拟线程</strong>。</p>
 <h2>平台线程</h2>
 <p>在引入虚拟线程之前，我们所使用的线程<code>java.lang.Thread</code>是由所谓的平台线程支持的。</p>
-<p>这些线程通常是1:1映射到操作系统线程的，因此它们是重量级的，创建和销毁线程的开销很大。
+<p>这些线程通常是 1:1 映射到操作系统线程的，因此它们是重量级的，创建和销毁线程的开销很大。
 且每个请求都需要一个独立的线程，这会导致线程资源的快速耗尽，从而限制了应用程序的可伸缩性。</p>
-<h2>虚拟线程</h2>
+<h3>创建平台线程</h3>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">Thread</span> thread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 由平台线程执行的代码</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>随着<a href="https://openjdk.org/projects/loom/" target="_blank" rel="noopener noreferrer">Project Loom</a>简化了新的并发方法，它还提供了一种新的方法来创建平台支持的线程：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">Thread</span> thread <span class="token operator">=</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">ofPlatform</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span>runnable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      
+<span class="token comment">// 或者</span>
+<span class="token class-name">Thread</span> thread <span class="token operator">=</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">ofPlatform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+                      <span class="token punctuation">.</span><span class="token function">daemon</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"platform-thread"</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">.</span><span class="token function">unstarted</span><span class="token punctuation">(</span>runnable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2>虚拟线程</h2>
 <p>虚拟线程是JDK提供的<strong>轻量级线程</strong>实现，可以在同一个OS线程上运行许多虚拟线程。
 虚拟线程为平台线程提供了一种更有效的替代方案，允许开发人员以显著降低的开销处理大量任务。
 这些线程提供了与现有Java代码的兼容性和无缝迁移路径，从而从增强的性能和资源利用率中获益。</p>
@@ -323,9 +336,9 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
     <span class="token comment">// 由虚拟线程执行的代码</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div><p>也可以使用<code>Thread.ofVirtual()</code>来创建，这里还可以设置一些属性，比如：线程名称等。具体如下代码：</p>
-<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">Thread</span> virtualThread <span class="token operator">=</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">ofVirtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"virtual-thread"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 由虚拟线程执行的代码</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">Thread</span> virtualThread <span class="token operator">=</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">ofVirtual</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"virtual-thread"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span>runnable<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div><ol start="2">
 <li>使用<code>ExecutorService</code>创建虚拟线程：</li>
 </ol>
@@ -354,7 +367,17 @@ factoryThread<span class="token punctuation">.</span><span class="token function
 <p>虚拟线程是一个新的轻量级<code>java.lang.Thread</code>变体，由JVM的<a href="https://openjdk.org/projects/loom/" target="_blank" rel="noopener noreferrer">Project Loom</a>项目实现的。
 它使用了一种称为<code>Continuation</code>的技术，不受操作系统的管理或调度。相反，JVM负责调度。</p>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202403141847457.jpg" alt="Java中虚拟线程的结构" tabindex="0" loading="lazy"><figcaption>Java中虚拟线程的结构</figcaption></figure>
+<p>应用程序实例化虚拟线程，而 JVM 分配计算资源来处理它们。
+与传统线程相对比，传统线程直接映射到操作系统（OS）进程。
+传统线程中，应用程序代码负责提供和释放 OS 资源。
+而虚拟线程中，应用程序实例化虚拟线程，从而表达并发需求。
+但实际上是 JVM 从操作系统获取并释放资源。</p>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202403141846557.webp" alt="JVM/OS线程管理" tabindex="0" loading="lazy"><figcaption>JVM/OS线程管理</figcaption></figure>
+<p>所需的平台线程在 FIFO 工作窃取
+<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ForkJoinPool.html" target="_blank" rel="noopener noreferrer">ForkJoinPool</a>
+中进行管理，默认情况下使用所有可用处理器，
+但可以通过调整系统属性 <code>jdk.virtualThreadScheduler.parallelism</code> 来根据您的需求进行修改。
+您熟悉的 <code>ForkJoinPool</code> 和其他功能（如并行流）使用的公共池的主要区别在于，公共池以 LIFO 模式运行。</p>
 ]]></content:encoded>
       <enclosure url="https://img.geekyspace.cn/pictures/2024/202403141847457.jpg" type="image/jpeg"/>
     </item>
