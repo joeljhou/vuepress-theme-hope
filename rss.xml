@@ -6,14 +6,56 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 14 Mar 2024 17:35:34 GMT</pubDate>
-    <lastBuildDate>Thu, 14 Mar 2024 17:35:34 GMT</lastBuildDate>
+    <pubDate>Fri, 15 Mar 2024 06:45:13 GMT</pubDate>
+    <lastBuildDate>Fri, 15 Mar 2024 06:45:13 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>Spring</category>
     <category>Spring Boot</category>
     <category>Java</category>
     <category>Spring Data</category>
     <category>程序人生</category>
+    <item>
+      <title>Spring 框架</title>
+      <link>https://www.geekyspace.cn/spring-framework/</link>
+      <guid>https://www.geekyspace.cn/spring-framework/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Spring 框架</source>
+      <description>Spring 框架 什么是Spring框架？ Spring是一个开源的Java框架，用于构建企业级应用程序。 核心思想是避免重复造轮子，通过 IOC（控制反转）和AOP（面向切面编程）提供了一种更加简单、更加高效的开发方式。 专注于企业程序的“管道”组件，如事务管理、安全、数据访问、Web应用程序等。 为什么选择Spring框架？ 官网解释：why-s...</description>
+      <category>Spring</category>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>什么是Spring框架？</h2>
+<p>Spring是一个开源的Java框架，用于构建企业级应用程序。
+核心思想是避免重复造轮子，通过 <mark>IOC</mark>（控制反转）和<mark>AOP</mark>（面向切面编程）提供了一种更加简单、更加高效的开发方式。
+专注于企业程序的“管道”组件，如事务管理、安全、数据访问、Web应用程序等。</p>
+<h2>为什么选择Spring框架？</h2>
+<blockquote>
+<p>官网解释：<a href="https://spring.io/why-spring" target="_blank" rel="noopener noreferrer">why-spring</a></p>
+<p>Spring让Java编程变得更快、更容易、更安全。
+Spring对速度、简单性和生产力的关注使其成为世界上最受欢迎的Java框架。</p>
+</blockquote>
+<p>我们使用了许多Spring框架提供的工具，并受益于许多<mark>开箱即用</mark>的解决方案，
+无需担心编写大量额外的代码，因此这确实为我们节省了时间和精力。</p>
+<h2>版本支持</h2>
+<p>我们建议尽可能从Maven Central升级到最新的<strong>Spring Framework 6.0.x / 5.3.x</strong> 版本</p>
+<ul>
+<li>6.2.x (2024年11月) - 下一个功能分支</li>
+<li>6.1.x (2023年11月) - 即将推出的功能分支</li>
+<li>6.0.x (2022年11月) - 主要生产线，基于JDK 17和Jakarta EE 9</li>
+<li>5.3.x - 第五代最终功能分支，长期支持，支持JDK 8、11、17和Java EE 8</li>
+<li>4.3.x - EOL (2020年12月31日)，不再提供维护和安全补丁</li>
+<li>3.2.x - EOL (2016年12月31日)，不再提供维护和安全补丁</li>
+</ul>
+<p>您可以在 <a href="https://spring.io/projects/spring-framework#support" target="_blank" rel="noopener noreferrer">spring.io</a>上找到有关官方支持日期的更多信息。</p>
+<h2>入门指南</h2>
+<p>使用<a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer">Spring Boot</a>来快速创建生产就绪的Spring应用程序。</p>
+<ul>
+<li>您可以通过<a href="start.spring.io">start.spring.io</a>生成基本项目</li>
+<li>或者遵循"<a href="https://spring.io/guides" target="_blank" rel="noopener noreferrer">入门指南</a>"
+之一，例如"<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener noreferrer">开始构建RESTful Web服务</a>"。</li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>Spring Boot 入门教程</title>
       <link>https://www.geekyspace.cn/spring-boot/</link>
@@ -21,7 +63,7 @@
       <source url="https://www.geekyspace.cn/rss.xml">Spring Boot 入门教程</source>
       <description>Spring Boot 教程</description>
       <category>Spring Boot</category>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 ]]></content:encoded>
     </item>
@@ -32,7 +74,7 @@
       <source url="https://www.geekyspace.cn/rss.xml">SpringBoot 快速入门</source>
       <description>SpringBoot 快速入门</description>
       <category>Java</category>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 ]]></content:encoded>
     </item>
