@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 15 Mar 2024 10:00:19 GMT</pubDate>
-    <lastBuildDate>Fri, 15 Mar 2024 10:00:19 GMT</lastBuildDate>
+    <pubDate>Fri, 15 Mar 2024 10:49:08 GMT</pubDate>
+    <lastBuildDate>Fri, 15 Mar 2024 10:49:08 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -97,11 +97,29 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
       <link>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">快速开始</source>
-      <description>快速开始</description>
+      <description>快速开始 参考🚀 ：Jetbrains 创建第一个Spring应用程序 借助 IntelliJ IDEA 提供的专用项目向导，您能够快速创建Spring应用程序，这也是创建Spring应用程序的最佳方式之一。 在本教程中，您将学习如何公开HTTP端点并将其映射到一个方法，当用户通过Web浏览器访问时，该方法会向用户返回问候信息。 创建一个新的Spri...</description>
       <category>Spring</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
+<p>参考🚀 ：<a href="https://www.jetbrains.com/help/idea/your-first-spring-application.html" target="_blank" rel="noopener noreferrer">Jetbrains 创建第一个Spring应用程序</a></p>
+<p>借助 IntelliJ IDEA 提供的专用项目向导，您能够快速创建Spring应用程序，这也是创建Spring应用程序的最佳方式之一。
+在本教程中，您将学习如何公开HTTP端点并将其映射到一个方法，当用户通过Web浏览器访问时，该方法会向用户返回问候信息。</p>
+<h2>创建一个新的Spring靴子项目</h2>
+<ol>
+<li>在主菜单中，转到 <strong>File | New | Project</strong></li>
+<li>在 <strong>New Project</strong> 对话框中，选择 <strong>Spring Initializr</strong></li>
+<li>指定项目的名称 <code>spring-boot-tutorial</code>
+<ul>
+<li>从JDK列表中，选择 Download JDK 并下载最新版本的 Oracle OpenJDK</li>
+</ul>
+</li>
+</ol>
+<figure><img src="https://resources.jetbrains.com/help/img/idea/2023.3/spring-new-project-initializr.png" alt="spring-new-project-initializr" tabindex="0" loading="lazy"><figcaption>spring-new-project-initializr</figcaption></figure>
+<h2>添加发送问候语的方法</h2>
+<h2>运行Spring应用程序</h2>
+<h2>添加主页</h2>
 ]]></content:encoded>
+      <enclosure url="https://resources.jetbrains.com/help/img/idea/2023.3/spring-new-project-initializr.png" type="image/png"/>
     </item>
     <item>
       <title>Spring Boot 入门教程</title>
