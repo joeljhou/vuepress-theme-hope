@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 15 Mar 2024 10:49:08 GMT</pubDate>
-    <lastBuildDate>Fri, 15 Mar 2024 10:49:08 GMT</lastBuildDate>
+    <pubDate>Fri, 15 Mar 2024 18:05:34 GMT</pubDate>
+    <lastBuildDate>Fri, 15 Mar 2024 18:05:34 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -37,39 +37,39 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 无需担心编写大量额外的代码，因此这确实为我们节省了时间和精力。</p>
 <h2>设计理念</h2>
 <ul>
-<li><strong>在各个层面提供选择</strong>：
+<li>在各个层面提供选择：
 <ul>
 <li>Spring 支持延迟设计决策，例如可以通过配置切换持久层而无需修改代码</li>
 </ul>
 </li>
-<li><strong>适应不同的观点</strong>：
+<li>适应不同的观点：
 <ul>
 <li>Spring框架具有灵活性，不固守特定的实现方式，可以满足广泛的应用需求</li>
 </ul>
 </li>
-<li><strong>保持后向兼容性</strong>：
+<li>保持后向兼容性：
 <ul>
 <li>Spring版本升级尽量保持向后兼容，并支持固定的JDK版本和第三方库，便于应用程序维护</li>
 </ul>
 </li>
-<li><strong>专注 API 设计</strong>：
+<li>专注 API 设计：
 <ul>
 <li>Spring 团队非常注重API的易用性和可维护性，确保在多个版本中保持稳定</li>
 </ul>
 </li>
-<li><strong>追求严苛的代码质量</strong>：
+<li>追求严苛的代码质量：
 <ul>
 <li>Spring框架强调代码可读性、准确性和及时更新，保持清晰结构且避免循环依赖</li>
 </ul>
 </li>
 </ul>
 <h2>核心思想</h2>
-<p>Spring的核心思想是<mark>IOC</mark>（控制反转）和<mark>AOP</mark>（面向切面编程）。</p>
+<p>Spring的核心思想是 <strong>控制反转（IOC）</strong> 和 <strong>面向切面编程（AOP）</strong>。</p>
 <h3>控制反转（IOC）</h3>
-<p>控制反转是一种设计模式，它将对象的创建和对象之间的依赖关系的管理交给了Spring容器。
+<p>控制反转是一种设计模式，它将对象的创建和对象之间的依赖关系的管理交给了Spring IOC容器。
 在传统的开发模式中，对象的创建和对象之间的依赖关系的管理都是由程序员来完成的。</p>
 <h3>面向切面编程（AOP）</h3>
-<p>面向切面编程是一种编程范式，它将程序的业务逻辑和系统级服务分开，通过<mark>横切关注点</mark>的方式来解耦。
+<p>面向切面编程是一种编程范式，它将程序的业务逻辑和系统级服务（如日志，事务，安全等）分开，通过<mark>横切关注点</mark>的方式来解耦。
 在传统的开发模式中，业务逻辑和系统级服务是混在一起的，这样会导致代码的复杂性增加。</p>
 <h2>版本支持</h2>
 <p>我们建议尽可能从Maven Central升级到最新的<strong>Spring Framework 6.0.x / 5.3.x</strong> 版本</p>
@@ -93,33 +93,117 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 ]]></content:encoded>
     </item>
     <item>
-      <title>快速开始</title>
+      <title>Spring Framework 快速开始</title>
       <link>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">快速开始</source>
-      <description>快速开始 参考🚀 ：Jetbrains 创建第一个Spring应用程序 借助 IntelliJ IDEA 提供的专用项目向导，您能够快速创建Spring应用程序，这也是创建Spring应用程序的最佳方式之一。 在本教程中，您将学习如何公开HTTP端点并将其映射到一个方法，当用户通过Web浏览器访问时，该方法会向用户返回问候信息。 创建一个新的Spri...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">Spring Framework 快速开始</source>
+      <description>Spring Framework 快速开始 IntelliJ IDEA 提供的专用项目向导，您能够快速创建Spring应用程序，这也是创建Spring应用程序的最佳方式之一。 参考🚀 ：Jetbrains 创建第一个Spring应用程序 在本教程中，您将学习如何公开HTTP端点并将其映射到一个方法，当用户通过Web浏览器访问时，该方法会向用户返回问候...</description>
       <category>Spring</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
+<blockquote>
+<p><strong>IntelliJ IDEA</strong> 提供的专用项目向导，您能够快速创建Spring应用程序，这也是创建Spring应用程序的最佳方式之一。</p>
+</blockquote>
 <p>参考🚀 ：<a href="https://www.jetbrains.com/help/idea/your-first-spring-application.html" target="_blank" rel="noopener noreferrer">Jetbrains 创建第一个Spring应用程序</a></p>
-<p>借助 IntelliJ IDEA 提供的专用项目向导，您能够快速创建Spring应用程序，这也是创建Spring应用程序的最佳方式之一。
-在本教程中，您将学习如何公开HTTP端点并将其映射到一个方法，当用户通过Web浏览器访问时，该方法会向用户返回问候信息。</p>
-<h2>创建一个新的Spring靴子项目</h2>
+<p>在本教程中，您将学习如何公开HTTP端点并将其映射到一个方法，当用户通过Web浏览器访问时，该方法会向用户返回问候信息。</p>
+<h2>创建 Spring Boot项目</h2>
 <ol>
-<li>在主菜单中，转到 <strong>File | New | Project</strong></li>
-<li>在 <strong>New Project</strong> 对话框中，选择 <strong>Spring Initializr</strong></li>
-<li>指定项目的名称 <code>spring-boot-tutorial</code>
-<ul>
-<li>从JDK列表中，选择 Download JDK 并下载最新版本的 Oracle OpenJDK</li>
-</ul>
-</li>
+<li>在主菜单中，转到 <strong>文件(File) | 新建(New) | 项目(Project)</strong></li>
+<li>在 <strong>新建项目(New Project)</strong> 对话框中，选择 <code>Spring Initializr</code></li>
+<li>指定项目的名称 <mark>spring-boot-tutorial</mark>，单击 <strong>下一步(Next)</strong> 继续</li>
 </ol>
-<figure><img src="https://resources.jetbrains.com/help/img/idea/2023.3/spring-new-project-initializr.png" alt="spring-new-project-initializr" tabindex="0" loading="lazy"><figcaption>spring-new-project-initializr</figcaption></figure>
-<h2>添加发送问候语的方法</h2>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/spring-new-project-initializr.png" alt="Spring Initializr in the New Project wizard" tabindex="0" loading="lazy"><figcaption>Spring Initializr in the New Project wizard</figcaption></figure>
+<ol start="4">
+<li>在<strong>Web</strong>组下选择<strong>Spring Web</strong>依赖项，然后单击 <strong>创建(Create)</strong> 生成并设置项目</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/spring-new-project-dependencies.png" alt="Spring Dependencies in the New Project wizard" tabindex="0" loading="lazy"><figcaption>Spring Dependencies in the New Project wizard</figcaption></figure>
+<h2>添加 sayHello() 方法</h2>
+<p><code>Spring Initializr</code> 会创建一个带有 <code>main()</code> 方法的类来启动你的 Spring 应用程序。</p>
+<ol>
+<li>转到 "<strong>导航(Navigate) | 文件(File )</strong>"，搜索<code>SpringBootTutorialApplication.java</code>文件并打开</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/spring-boot-tutorial-gotofile.png" alt="Using Go To File to open SpringBootTutorialApplication.java" tabindex="0" loading="lazy"><figcaption>Using Go To File to open SpringBootTutorialApplication.java</figcaption></figure>
+<ol start="2">
+<li>添加 <code>sayHello()</code> 方法，并包含所有必要的注解和导入：</li>
+</ol>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>springboottutorial</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span></span><span class="token class-name">SpringApplication</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span></span><span class="token class-name">SpringBootApplication</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">GetMapping</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RequestParam</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RestController</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringBootTutorialApplication</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">SpringBootTutorialApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"myName"</span><span class="token punctuation">,</span> defaultValue <span class="token operator">=</span> <span class="token string">"World"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"Hello %s!"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>sayHello()</code>方法接受一个名字参数，并返回与参数值组合的<code>Hello</code>单词。其余的工作由添加Spring注解来处理：</p>
+<ul>
+<li><code>@RestController</code>注解将<code>SpringBootTutorialApplication</code>类标记为请求处理程序（<mark>REST控制器</mark>）。</li>
+<li><code>@GetMapping("/hello")</code>注解将<code>sayHello()</code>方法<mark>映射</mark>到GET请求的<code>/hello</code>路径。
+*<code> @RequestParam</code>注解将名字<strong>方法参数</strong><mark>映射</mark>到<code>myName</code> Web请求参数。如果您在Web请求中未提供<code>myName</code>
+参数，则默认为<code>World</code>。</li>
+</ul>
 <h2>运行Spring应用程序</h2>
+<p><strong>IntelliJ IDEA</strong> 创建了一个<code> Spring Boot</code> 运行配置，您可以使用它来运行新 <code>Spring</code> 应用程序。</p>
+<ul>
+<li>如果选择了运行配置，请按 <code>Shift</code> <code>F10</code>键。</li>
+<li>还可以点击 <code>SpringBootTutorialApplication.java</code> 文件<code> main()</code>方法旁边的▶️图标运行。</li>
+</ul>
+<p>默认情况下，IntelliJ IDEA 会在运行工具窗口中显示你正在运行的 Spring Boot 应用程序。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/spring-boot-demo-run-console_dark.png" alt="The Run tool window with a running Spring Boot application" tabindex="0" loading="lazy"><figcaption>The Run tool window with a running Spring Boot application</figcaption></figure>
+<p>控制台选项卡显示 Spring 日志消息的输出。
+默认情况下，内置的 Apache Tomcat 服务器正在监听端口 8080。
+打开你的网络浏览器并访问 <a href="http://localhost:8080/hello" target="_blank" rel="noopener noreferrer">http://localhost:8080/hello</a>。
+如果你操作正确，你应该会看到你的应用程序以 Hello World! 回应。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/spring-boot-web-browser-hello-world.png" alt="Spring Boot Hello World response in the browser" tabindex="0" loading="lazy"><figcaption>Spring Boot Hello World response in the browser</figcaption></figure>
+<p>这是默认的响应。你可以在你的网络请求中提供一个参数，让应用程序知道如何适当地问候你。
+例如，尝试访问 <a href="http://localhost:8080/hello?myName=Human" target="_blank" rel="noopener noreferrer">http://localhost:8080/hello?myName=Human</a>。</p>
 <h2>添加主页</h2>
+<p>创建的 Spring Boot 应用程序在 <code>/hello</code> 路径下有一个端点可用。
+然而，如果你在 <a href="http://localhost:8080/" target="_blank" rel="noopener noreferrer">http://localhost:8080/</a> 中打开你的应用程序的根上下文，你会收到错误，因为没有定义根资源。
+让我们添加一个静态 HTML 首页，其中包含指向你端点的链接。</p>
+<ol>
+<li>请在 <code>/src/main/resources/static/</code> 下创建 <code>index.html</code> 文件。</li>
+<li>你可以修改默认模板或者使用以下 HTML 代码替换它：</li>
+</ol>
+<div class="language-html" data-ext="html" data-title="html"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">HTML</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>您的第一个 Spring 应用程序<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/hello<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>问候全世界！<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ifm</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/hello<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>GET<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nameForm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nameField<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>应用程序应该怎样称呼您？<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myName<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nameField<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>问候我！<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ifm</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>3.在运行工具窗口中，点击 "<strong>重新运行</strong>" 按钮，或按下 <code>Shift</code> + <code>F10</code>。
+现在你的应用程序将会在 <a href="http://localhost:8080/" target="_blank" rel="noopener noreferrer">http://localhost:8080/</a> 上作为根资源提供 <code>index.html</code> 页面。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/image-20240316015405566.png" alt="image-20240316015405566" tabindex="0" loading="lazy"><figcaption>image-20240316015405566</figcaption></figure>
+<h2>接下来呢？</h2>
+<p>这个简单的应用程序演示了如何开始使用 Spring。 要了解 IntelliJ IDEA 如何帮助你编写代码并在运行时管理应用程序，
+请参考下一个教程，该教程重点介绍更高级的 <a href="https://www.jetbrains.com/help/idea/spring-support-tutorial.html" target="_blank" rel="noopener noreferrer">Spring 支持功能</a>。</p>
 ]]></content:encoded>
-      <enclosure url="https://resources.jetbrains.com/help/img/idea/2023.3/spring-new-project-initializr.png" type="image/png"/>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/spring-new-project-initializr.png" type="image/png"/>
     </item>
     <item>
       <title>Spring Boot 入门教程</title>
