@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 15 Mar 2024 06:45:13 GMT</pubDate>
-    <lastBuildDate>Fri, 15 Mar 2024 06:45:13 GMT</lastBuildDate>
+    <pubDate>Fri, 15 Mar 2024 10:00:19 GMT</pubDate>
+    <lastBuildDate>Fri, 15 Mar 2024 10:00:19 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -16,19 +16,18 @@
     <category>Spring Data</category>
     <category>程序人生</category>
     <item>
-      <title>Spring 框架</title>
-      <link>https://www.geekyspace.cn/spring-framework/</link>
-      <guid>https://www.geekyspace.cn/spring-framework/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring 框架</source>
-      <description>Spring 框架 什么是Spring框架？ Spring是一个开源的Java框架，用于构建企业级应用程序。 核心思想是避免重复造轮子，通过 IOC（控制反转）和AOP（面向切面编程）提供了一种更加简单、更加高效的开发方式。 专注于企业程序的“管道”组件，如事务管理、安全、数据访问、Web应用程序等。 为什么选择Spring框架？ 官网解释：why-s...</description>
+      <title>Spring Framework 概述</title>
+      <link>https://www.geekyspace.cn/spring-framework/overview/</link>
+      <guid>https://www.geekyspace.cn/spring-framework/overview/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Spring Framework 概述</source>
+      <description>Spring Framework 概述 Spring Framework 简介 官网地址：spring-framework-overview Spring是一个开源、轻量级、依赖注入(DI)容器和框架，用于构建Java企业应用程序。 为什么使用Spring？ 官网解释：why-spring Spring让Java编程变得更快、更容易、更安全。 Spri...</description>
       <category>Spring</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>什么是Spring框架？</h2>
-<p>Spring是一个开源的Java框架，用于构建企业级应用程序。
-核心思想是避免重复造轮子，通过 <mark>IOC</mark>（控制反转）和<mark>AOP</mark>（面向切面编程）提供了一种更加简单、更加高效的开发方式。
-专注于企业程序的“管道”组件，如事务管理、安全、数据访问、Web应用程序等。</p>
-<h2>为什么选择Spring框架？</h2>
+<h2>Spring Framework 简介</h2>
+<p>官网地址：<a href="https://docs.spring.io/spring-framework/reference/index.html" target="_blank" rel="noopener noreferrer">spring-framework-overview</a></p>
+<p>Spring是一个开源、轻量级、依赖注入(DI)容器和框架，用于构建Java企业应用程序。</p>
+<h2>为什么使用Spring？</h2>
 <blockquote>
 <p>官网解释：<a href="https://spring.io/why-spring" target="_blank" rel="noopener noreferrer">why-spring</a></p>
 <p>Spring让Java编程变得更快、更容易、更安全。
@@ -36,8 +35,45 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 </blockquote>
 <p>我们使用了许多Spring框架提供的工具，并受益于许多<mark>开箱即用</mark>的解决方案，
 无需担心编写大量额外的代码，因此这确实为我们节省了时间和精力。</p>
+<h2>设计理念</h2>
+<ul>
+<li><strong>在各个层面提供选择</strong>：
+<ul>
+<li>Spring 支持延迟设计决策，例如可以通过配置切换持久层而无需修改代码</li>
+</ul>
+</li>
+<li><strong>适应不同的观点</strong>：
+<ul>
+<li>Spring框架具有灵活性，不固守特定的实现方式，可以满足广泛的应用需求</li>
+</ul>
+</li>
+<li><strong>保持后向兼容性</strong>：
+<ul>
+<li>Spring版本升级尽量保持向后兼容，并支持固定的JDK版本和第三方库，便于应用程序维护</li>
+</ul>
+</li>
+<li><strong>专注 API 设计</strong>：
+<ul>
+<li>Spring 团队非常注重API的易用性和可维护性，确保在多个版本中保持稳定</li>
+</ul>
+</li>
+<li><strong>追求严苛的代码质量</strong>：
+<ul>
+<li>Spring框架强调代码可读性、准确性和及时更新，保持清晰结构且避免循环依赖</li>
+</ul>
+</li>
+</ul>
+<h2>核心思想</h2>
+<p>Spring的核心思想是<mark>IOC</mark>（控制反转）和<mark>AOP</mark>（面向切面编程）。</p>
+<h3>控制反转（IOC）</h3>
+<p>控制反转是一种设计模式，它将对象的创建和对象之间的依赖关系的管理交给了Spring容器。
+在传统的开发模式中，对象的创建和对象之间的依赖关系的管理都是由程序员来完成的。</p>
+<h3>面向切面编程（AOP）</h3>
+<p>面向切面编程是一种编程范式，它将程序的业务逻辑和系统级服务分开，通过<mark>横切关注点</mark>的方式来解耦。
+在传统的开发模式中，业务逻辑和系统级服务是混在一起的，这样会导致代码的复杂性增加。</p>
 <h2>版本支持</h2>
 <p>我们建议尽可能从Maven Central升级到最新的<strong>Spring Framework 6.0.x / 5.3.x</strong> 版本</p>
+<p>在Spring Framework 6.0中， Spring需要Java 17+。</p>
 <ul>
 <li>6.2.x (2024年11月) - 下一个功能分支</li>
 <li>6.1.x (2023年11月) - 即将推出的功能分支</li>
@@ -54,6 +90,17 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 <li>或者遵循"<a href="https://spring.io/guides" target="_blank" rel="noopener noreferrer">入门指南</a>"
 之一，例如"<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener noreferrer">开始构建RESTful Web服务</a>"。</li>
 </ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>快速开始</title>
+      <link>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">快速开始</source>
+      <description>快速开始</description>
+      <category>Spring</category>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
 ]]></content:encoded>
     </item>
     <item>
