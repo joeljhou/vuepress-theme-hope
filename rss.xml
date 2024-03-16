@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 16 Mar 2024 03:59:34 GMT</pubDate>
-    <lastBuildDate>Sat, 16 Mar 2024 03:59:34 GMT</lastBuildDate>
+    <pubDate>Sat, 16 Mar 2024 04:04:11 GMT</pubDate>
+    <lastBuildDate>Sat, 16 Mar 2024 04:04:11 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -42,7 +42,7 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 <li>Spring 支持延迟设计决策，例如可以通过配置切换持久层而无需修改代码</li>
 </ul>
 </li>
-<li>适应不同的观点：
+<li>容纳不同的观点：
 <ul>
 <li>Spring框架具有灵活性，不固守特定的实现方式，可以满足广泛的应用需求</li>
 </ul>
@@ -1173,9 +1173,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
 </ul>
 <p>以下预览特性在Java 21中正式定稿：</p>
 <ul>
-<li><a href="/java-features/java21/jep440-record-partterns">405: Record Patterns (Preview)：终稿见 440: Record Patterns</a></li>
-<li><a href="/java-features/java21/jep444-virtual-threads">425: Virtual Threads (Preview)：终稿见 444: Virtual Threads</a></li>
-<li><a href="/java-features/java21/jep441-pattern-matching-for-switch">427: Pattern Matching for switch (Third Preview)：终稿见 441: Pattern Matching for switch</a></li>
+<li><a href="/java-features/Java21/jep440-record-partterns">405: Record Patterns (Preview)：终稿见 440: Record Patterns</a></li>
+<li><a href="/java-features/Java21/jep444-virtual-threads">425: Virtual Threads (Preview)：终稿见 444: Virtual Threads</a></li>
+<li><a href="/java-features/Java21/jep441-pattern-matching-for-switch">427: Pattern Matching for switch (Third Preview)：终稿见 441: Pattern Matching for switch</a></li>
 </ul>
 <p>以下内容在Java 21中继续迭代：</p>
 <ul>
@@ -1197,9 +1197,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
 <p>该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。</p>
 <p>以下内容在Java 21中正式定稿，可根据链接查看终稿内容：</p>
 <ul>
-<li><a href="/java-features/java21/jep440-record-partterns">432: Record Patterns (Second Preview)：终稿见440: Record Patterns</a></li>
-<li><a href="/java-features/java21/jep441-pattern-matching-for-switch">433: Pattern Matching for switch (Fourth Preview)：终稿见441: Pattern Matching for switch</a></li>
-<li><a href="/java-features/java21/jep444-virtual-threads">436: Virtual Threads (Second Preview)：终稿见444: Virtual Threads</a></li>
+<li><a href="/java-features/Java21/jep440-record-partterns">432: Record Patterns (Second Preview)：终稿见440: Record Patterns</a></li>
+<li><a href="/java-features/Java21/jep441-pattern-matching-for-switch">433: Pattern Matching for switch (Fourth Preview)：终稿见441: Pattern Matching for switch</a></li>
+<li><a href="/java-features/Java21/jep444-virtual-threads">436: Virtual Threads (Second Preview)：终稿见444: Virtual Threads</a></li>
 </ul>
 <p>以下内容在Java 21中继续迭代：</p>
 <ul>
