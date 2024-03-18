@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 16 Mar 2024 04:04:11 GMT</pubDate>
-    <lastBuildDate>Sat, 16 Mar 2024 04:04:11 GMT</lastBuildDate>
+    <pubDate>Mon, 18 Mar 2024 07:38:13 GMT</pubDate>
+    <lastBuildDate>Mon, 18 Mar 2024 07:38:13 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -15,6 +15,17 @@
     <category>Java</category>
     <category>Spring Data</category>
     <category>程序人生</category>
+    <item>
+      <title>Spring 核心技术</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Spring 核心技术</source>
+      <description>Spring 核心技术</description>
+      <category>Spring</category>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>Spring Framework 概述</title>
       <link>https://www.geekyspace.cn/spring-framework/overview/</link>
@@ -68,6 +79,10 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 <h3>控制反转（IOC）</h3>
 <p>控制反转是一种设计模式，它将对象的创建和对象之间的依赖关系的管理交给了Spring IOC容器。
 在传统的开发模式中，对象的创建和对象之间的依赖关系的管理都是由程序员来完成的。</p>
+<p><mark>依赖注入（DI）</mark> 是控制反转的一种实现方式。</p>
+<blockquote>
+<p>建议参阅Fowler的文章以了解 IOC 和 DI：<a href="http://martinfowler.com/articles/injection.html" target="_blank" rel="noopener noreferrer">链接</a></p>
+</blockquote>
 <h3>面向切面编程（AOP）</h3>
 <p>面向切面编程是一种编程范式，它将程序的业务逻辑和系统级服务（如日志，事务，安全等）分开，通过<mark>横切关注点</mark>的方式来解耦。
 在传统的开发模式中，业务逻辑和系统级服务是混在一起的，这样会导致代码的复杂性增加。</p>
@@ -199,7 +214,7 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 </code></pre></div><p>3.在运行工具窗口中，点击 "<strong>重新运行</strong>" 按钮，或按下 <code>Shift</code> + <code>F10</code>。
 现在你的应用程序将会在 <a href="http://localhost:8080/" target="_blank" rel="noopener noreferrer">http://localhost:8080/</a> 上作为根资源提供 <code>index.html</code> 页面。</p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/image-20240316015405566.png" alt="image-20240316015405566" tabindex="0" loading="lazy"><figcaption>image-20240316015405566</figcaption></figure>
-<h2>接下来呢？</h2>
+<h2>下一个教程</h2>
 <p>这个简单的应用程序演示了如何开始使用 Spring。 要了解 IntelliJ IDEA 如何帮助你编写代码并在运行时管理应用程序，
 请参考下一个教程，该教程重点介绍更高级的 <a href="https://www.jetbrains.com/help/idea/spring-support-tutorial.html" target="_blank" rel="noopener noreferrer">Spring 支持功能</a>。</p>
 ]]></content:encoded>
