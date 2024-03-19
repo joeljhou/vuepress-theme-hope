@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 19 Mar 2024 09:57:43 GMT</pubDate>
-    <lastBuildDate>Tue, 19 Mar 2024 09:57:43 GMT</lastBuildDate>
+    <pubDate>Tue, 19 Mar 2024 10:31:50 GMT</pubDate>
+    <lastBuildDate>Tue, 19 Mar 2024 10:31:50 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -15,6 +15,17 @@
     <category>Java</category>
     <category>Spring Data</category>
     <category>程序人生</category>
+    <item>
+      <title>Bean 定义</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Bean 定义</source>
+      <description>Bean 定义</description>
+      <category>Spring</category>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2>Bean 定义</h2>
+]]></content:encoded>
+    </item>
     <item>
       <title>IoC 容器</title>
       <link>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</link>
@@ -30,7 +41,7 @@
 </blockquote>
 <p>容器通过读取<mark>配置元数据</mark>来获取指令，从而确定要实例化、配置和组装哪些对象。
 配置元数据可以用 <code>XML</code>、<code>Java注解</code>或<code>Java代码</code>表示， 用于描述应用程序中的对象及它们之间的复杂相互依赖关系。</p>
-<h2>实现类</h2>
+<h2>ApplicationContext实现类</h2>
 <p>Spring 提供了多个 <code>ApplicationContext</code> 接口的实现类</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">ClassPathXmlApplicationContext</a></li>
@@ -38,7 +49,7 @@
 </ul>
 <p>虽然 <code>XML</code> 一直是定义<mark>配置元数据</mark>的传统格式， 但通过提供少量的 <code>XML</code> 配置，您可以声明性地启用对<code>Java注解</code>或<code>Java代码</code>
 作为元数据格式的支持，从而更灵活地定义应用程序的配置信息。</p>
-<h2>初始化</h2>
+<h2>初始化IoC容器</h2>
 <p>在大多数应用场景中，无需手动编写代码来实例化<strong>Spring IoC</strong>容器</p>
 <ul>
 <li>例如：Web应用中，只需要在<code>web.xml</code>中添加 8
@@ -79,9 +90,14 @@
 <p>有关在<code>Spring</code>容器中使用其他形式的元数据信息，请参阅：</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-properties-detailed.html" target="_blank" rel="noopener noreferrer">基于XML的容器配置</a></li>
-<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html" target="_blank" rel="noopener noreferrer">基于注解的容器配置</a></li>
-<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a></li>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html" target="_blank" rel="noopener noreferrer">基于注解的容器配置</a>（Spring
+2.5开始支持）</li>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a>（Spring 3.0开始支持）</li>
 <li>等等</li>
+</ul>
+<h2>实例化容器</h2>
+<ul>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/basics.html#beans-factory-instantiation" target="_blank" rel="noopener noreferrer">链接</a></li>
 </ul>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202403181756387.png" type="image/png"/>
