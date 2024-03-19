@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 18 Mar 2024 08:21:14 GMT</pubDate>
-    <lastBuildDate>Mon, 18 Mar 2024 08:21:14 GMT</lastBuildDate>
+    <pubDate>Tue, 19 Mar 2024 02:22:21 GMT</pubDate>
+    <lastBuildDate>Tue, 19 Mar 2024 02:22:21 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -16,14 +16,55 @@
     <category>Spring Data</category>
     <category>程序人生</category>
     <item>
+      <title>Ioc 容器</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Ioc 容器</source>
+      <description>Ioc 容器 容器概述 org.springframework.context.ApplicationContext 接口代表了 Spring IoC 容器，负责实例化、配置和组装 bean。 容器通过读取配置元数据来获取指令，从而确定要实例化、配置和组装哪些对象。 配置元数据可以用 XML、Java 注解或 Java 代码表示，它允许您表达组成应用程...</description>
+      <category>Spring</category>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>容器概述</h2>
+<ul>
+<li><code>org.springframework.context.ApplicationContext</code> 接口代表了 <strong>Spring IoC</strong> 容器，负责实例化、配置和组装 bean。</li>
+<li>容器通过读取配置<mark>元数据</mark>来获取指令，从而确定要实例化、配置和组装哪些对象。</li>
+<li>配置元数据可以用 XML、Java 注解或 Java 代码表示，它允许您表达组成应用程序的对象以及这些对象之间的丰富相互依赖关系。</li>
+</ul>
+<h2>容器实现</h2>
+<ul>
+<li>Spring 提供了多个实现了 <code>ApplicationContext</code> 接口的实现类。</li>
+<li></li>
+</ul>
+<p>在独立应用程序中，通常会创建 <a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">ClassPathXmlApplicationContext</a>
+或 <a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/FileSystemXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">FileSystemXmlApplicationContext</a>
+的实例。</p>
+<ul>
+<li>虽然 XML 一直是定义配置元数据的传统格式，但您可以通过提供少量的 XML 配置来声明性地启用对这些附加元数据格式的支持，
+从而指示容器使用 Java 注解或代码作为元数据格式。</li>
+</ul>
+<h2>容器初始化简化</h2>
+<ul>
+<li>在大多数应用场景中，通常不需要用户编写显式代码来实例化一个或多个 Spring IoC 容器的实例。</li>
+<li>在 Web 应用程序场景中，通常只需要在应用程序的 <code>web.xml</code> 文件中添加简单的八行左右的模板式 Web 描述符 XML 就足够了
+（请参阅方便的 <a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html#context-create" target="_blank" rel="noopener noreferrer">Web 应用程序中的 ApplicationContext 实例化</a>）。</li>
+<li>如果您使用 <a href="https://spring.io/tools" target="_blank" rel="noopener noreferrer">Spring Tools for Eclipse</a>，您可以轻松地通过几次鼠标点击或按键来创建这个模板配置。</li>
+</ul>
+<p>以下图表展示了 Spring 工作的高层视图。
+您的应用程序类与配置元数据结合在一起，因此，在创建和初始化 ApplicationContext 之后，您就拥有了一个完全配置和可执行的系统或应用程序。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403181756387.png" alt="container magic" tabindex="0" loading="lazy"><figcaption>container magic</figcaption></figure>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202403181756387.png" type="image/png"/>
+    </item>
+    <item>
       <title>Spring 核心技术</title>
       <link>https://www.geekyspace.cn/spring-framework/core/</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Spring 核心技术</source>
-      <description>Spring 核心技术 Spring 框架的核心技术主要包括： 依赖注入（dependency injection），也称为控制反转（IOC） 事件（events） 资源（resources） 国际化（i18n） 数据验证（validation） 数据绑定（data binding） 类型转换（type conversion） SpEL（Spring ...</description>
+      <description>Spring 核心技术 核心技术 Spring 框架的核心技术主要包括： 依赖注入（dependency injection），也称为控制反转（IOC） 事件（events） 资源（resources） 国际化（i18n） 数据验证（validation） 数据绑定（data binding） 类型转换（type conversion） SpEL（Sp...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
+<h2>核心技术</h2>
 <p>Spring 框架的核心技术主要包括：</p>
 <ul>
 <li><strong>依赖注入（dependency injection），也称为控制反转（IOC）</strong></li>
@@ -36,10 +77,15 @@
 <li>SpEL（Spring Expression Language）</li>
 <li><strong>面向切面编程（AOP）</strong></li>
 </ul>
-<p>其中最重要的技术之一是Spring框架的 <mark>控制反转（IOC）</mark> 容器，它是Spring框架的核心。
-紧随其后的是Spring框架的 <mark>面向切面编程（AOP）</mark> 技术。</p>
-<p>此外，Spring 与 <code>AspectJ</code> 进行集成，AspectJ 目前是 Java 企业领域功能最丰富、最成熟的 AOP 实现。
-还介绍了<code>AOT（Ahead-of-Time）</code>处理，可以将应用程序编译成本地机器代码，用于优化应用程序的性能。通常用于使用<code>GraalVM</code>进行本地图像部署。</p>
+<p>其中最重要的技术之一是Spring框架的<mark>控制反转（IOC）</mark> 容器，它是Spring框架的核心。
+紧随其后的是Spring框架的<mark>面向切面编程（AOP）</mark> 技术。</p>
+<h2>AOP支持</h2>
+<p>Spring框架独有的AOP框架采用基于代理的实现方式，这种方式使AOP
+概念易于理解，并且成功地满足了Java企业编程中80%的AOP需求。
+此外，Spring 可以与<code>AspectJ</code>无缝集成，后者是Java企业领域功能最丰富、最成熟的 AOP 实现之一。</p>
+<h2>AOT（Ahead-of-Time）处理</h2>
+<p><code>AOT（Ahead-of-Time）</code>处理用于优化应用程序的性能。通常用于使用<code>GraalVM</code>进行本地图像部署。
+通过AOT编译，应用程序可以在启动时更快地启动和执行，提高了应用程序的响应速度和资源利用率。</p>
 ]]></content:encoded>
     </item>
     <item>
