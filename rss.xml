@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 19 Mar 2024 05:15:33 GMT</pubDate>
-    <lastBuildDate>Tue, 19 Mar 2024 05:15:33 GMT</lastBuildDate>
+    <pubDate>Tue, 19 Mar 2024 09:57:43 GMT</pubDate>
+    <lastBuildDate>Tue, 19 Mar 2024 09:57:43 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -47,7 +47,42 @@
 </ul>
 <p>下图表展示了Spring框架的工作原理高层视图。通过将您的<mark>应用程序类</mark>与<mark>配置元数据</mark>结合起来，
 一旦<code>ApplicationContext</code>被创建和初始化，您就获得了一个完全配置且可执行的系统或应用程序。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202403181756387.png" alt="container magic" tabindex="0" loading="lazy"><figcaption>container magic</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202403181756387.png" alt="Spring IoC容器" tabindex="0" loading="lazy"><figcaption>Spring IoC容器</figcaption></figure>
+<h2>配置元数据</h2>
+<p>Spring框架传统上使用<code>XML</code>文件来配置<code>ApplicationContext</code>，以下是示例：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.ExampleClass1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- 这个bean的协作器和配置在这里 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.ExampleClass2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- 这个bean的协作器和配置在这里 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 更多的bean定义见这里 --&gt;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol>
+<li><code>id</code>属性是一个字符串，用于<mark>唯一标识</mark>bean</li>
+<li><code>class</code>属性是一个字符串，用于指定bean的<mark>完整类名</mark>（包括包名）</li>
+</ol>
+<blockquote>
+<p>传统的XML格式的元数据并不是唯一允许的配置元数据形式。Spring IoC容器本身与实际配置元数据的编写格式完全解耦。
+如今，许多开发者选择使用<a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a>
+来构建他们的Spring应用程序。</p>
+</blockquote>
+<p>有关在<code>Spring</code>容器中使用其他形式的元数据信息，请参阅：</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-properties-detailed.html" target="_blank" rel="noopener noreferrer">基于XML的容器配置</a></li>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html" target="_blank" rel="noopener noreferrer">基于注解的容器配置</a></li>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a></li>
+<li>等等</li>
+</ul>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202403181756387.png" type="image/png"/>
     </item>
