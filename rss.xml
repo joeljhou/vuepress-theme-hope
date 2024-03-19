@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 19 Mar 2024 04:13:49 GMT</pubDate>
-    <lastBuildDate>Tue, 19 Mar 2024 04:13:49 GMT</lastBuildDate>
+    <pubDate>Tue, 19 Mar 2024 05:04:59 GMT</pubDate>
+    <lastBuildDate>Tue, 19 Mar 2024 05:04:59 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -16,47 +16,38 @@
     <category>Spring Data</category>
     <category>程序人生</category>
     <item>
-      <title>Ioc 容器</title>
+      <title>IoC 容器</title>
       <link>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Ioc 容器</source>
-      <description>Ioc 容器 容器概述 org.springframework.context.ApplicationContext 接口代表了 Spring IoC 容器，负责实例化、配置和组装 bean。 容器通过读取配置元数据来获取指令，从而确定要实例化、配置和组装哪些对象。 配置元数据可以用 XML、Java 注解或 Java 代码表示，它允许您表达组成应用程...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">IoC 容器</source>
+      <description>IoC 容器 概述 org.springframework.context.ApplicationContext 接口代表了Spring IoC容器，负责实例化、配置和组装Bean 容器通过读取配置元数据来获取指令，从而确定要实例化、配置和组装哪些对象。 配置元数据可以用 XML、Java注解或Java代码表示， 用于描述应用程序中的对象及它们之间的复...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>容器概述</h2>
+<h2>概述</h2>
 <blockquote>
-<p><code>org.springframework.context.ApplicationContext</code> 接口代表了 <strong>Spring IoC</strong> 容器，负责实例化、配置和组装 bean。</p>
+<p><code>org.springframework.context.ApplicationContext</code> 接口代表了<strong>Spring IoC</strong>容器，负责实例化、配置和组装<code>Bean</code></p>
 </blockquote>
-<ul>
-<li>容器通过读取配置<mark>元数据</mark>来获取指令，从而确定要实例化、配置和组装哪些对象。</li>
-<li>配置元数据可以用 XML、Java 注解或 Java 代码表示，它允许您表达组成应用程序的对象以及这些对象之间的丰富相互依赖关系。</li>
-</ul>
-<h3>容器实现</h3>
-<ul>
-<li>
-<p>Spring 提供了多个实现了 <code>ApplicationContext</code> 接口的实现类。</p>
+<p>容器通过读取<mark>配置元数据</mark>来获取指令，从而确定要实例化、配置和组装哪些对象。
+配置元数据可以用 <code>XML</code>、<code>Java注解</code>或<code>Java代码</code>表示， 用于描述应用程序中的对象及它们之间的复杂相互依赖关系。</p>
+<h2>实现类</h2>
+<p>Spring 提供了多个 <code>ApplicationContext</code> 接口的实现类</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">ClassPathXmlApplicationContext</a></li>
 <li><a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/FileSystemXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">FileSystemXmlApplicationContext</a></li>
 </ul>
-</li>
-<li>
-<p>虽然 XML 一直是定义配置元数据的传统格式，但您可以通过提供少量的 XML 配置来声明性地启用对这些附加元数据格式的支持，
-从而指示容器使用 Java 注解或代码作为元数据格式。</p>
-</li>
-</ul>
-<h3>容器初始化简化</h3>
+<p>虽然 <code>XML</code> 一直是定义<mark>配置元数据</mark>的传统格式， 但通过提供少量的 <code>XML</code> 配置，您可以声明性地启用对<code>Java注解</code>或<code>Java代码</code>
+作为元数据格式的支持，从而更灵活地定义应用程序的配置信息。</p>
+<h2>初始化</h2>
+<p>在大多数应用场景中，无需手动编写代码来实例化<strong>Spring IoC</strong>容器</p>
 <ul>
-<li>在大多数应用场景中，通常不需要用户编写显式代码来实例化一个或多个 Spring IoC 容器的实例。</li>
-<li>在 Web 应用程序场景中，通常只需要在应用程序的 <code>web.xml</code> 文件中添加简单的八行左右的模板式 Web 描述符 XML 就足够了
-（请参阅方便的 <a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html#context-create" target="_blank" rel="noopener noreferrer">Web 应用程序中的 ApplicationContext 实例化</a>）。</li>
-<li>如果您使用 <a href="https://spring.io/tools" target="_blank" rel="noopener noreferrer">Spring Tools for Eclipse</a>，您可以轻松地通过几次鼠标点击或按键来创建这个模板配置。</li>
+<li>例如：Web应用中，只需要在<code>web.xml</code>中添加 8
+行<a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html#context-create" target="_blank" rel="noopener noreferrer">模板XML</a>
+即可初始化<code>ApplicationContext</code></li>
 </ul>
-<p>以下图表展示了 Spring 工作的高层视图。
-您的应用程序类与配置元数据结合在一起，因此，在创建和初始化 ApplicationContext 之后，您就拥有了一个完全配置和可执行的系统或应用程序。</p>
+<p>下图表展示了Spring框架的工作原理高层视图。通过将您的<mark>应用程序类</mark>与<mark>配置元数据</mark>结合起来，
+一旦<code>ApplicationContext</code>被创建和初始化，您就获得了一个完全配置且可执行的系统或应用程序。</p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202403181756387.png" alt="container magic" tabindex="0" loading="lazy"><figcaption>container magic</figcaption></figure>
-<h2>配置元数据</h2>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202403181756387.png" type="image/png"/>
     </item>
