@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 19 Mar 2024 10:31:50 GMT</pubDate>
-    <lastBuildDate>Tue, 19 Mar 2024 10:31:50 GMT</lastBuildDate>
+    <pubDate>Wed, 20 Mar 2024 03:21:22 GMT</pubDate>
+    <lastBuildDate>Wed, 20 Mar 2024 03:21:22 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -2423,7 +2423,21 @@ Object obj = engine.eval("function hello() {\n" +
 <li>❄️ 参考howtodoinjava博客：<a href="https://howtodoinjava.com/series/java-versions-features/" target="_blank" rel="noopener noreferrer">Java Versions and Features</a></li>
 </ul>
 <h2>Java 23(in development)</h2>
-<h2>Java 22(in development)</h2>
+<h2>Java 22(GA 2024/03/19)</h2>
+<ul>
+<li>423:    Region Pinning for G1</li>
+<li>447:    Statements before super(...) (Preview)</li>
+<li>454:    Foreign Function &amp; Memory API</li>
+<li>456:    Unnamed Variables &amp; Patterns</li>
+<li>457:    Class-File API (Preview)</li>
+<li>458:    Launch Multi-File Source-Code Programs</li>
+<li>459:    String Templates (Second Preview)</li>
+<li>460:    Vector API (Seventh Incubator)</li>
+<li>461:    Stream Gatherers (Preview)</li>
+<li>462:    Structured Concurrency (Second Preview)</li>
+<li>463:    Implicitly Declared Classes and Instance Main Methods (Second Preview)</li>
+<li>464:    Scoped Values (Second Preview)</li>
+</ul>
 <h2>Java 21(GA 2023/09/19)</h2>
 <ul>
 <li><a href="Java21/jep430-string-templates">430:    String Templates (Preview)</a></li>
