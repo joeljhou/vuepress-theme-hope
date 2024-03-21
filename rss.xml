@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 20 Mar 2024 03:21:22 GMT</pubDate>
-    <lastBuildDate>Wed, 20 Mar 2024 03:21:22 GMT</lastBuildDate>
+    <pubDate>Thu, 21 Mar 2024 02:36:01 GMT</pubDate>
+    <lastBuildDate>Thu, 21 Mar 2024 02:36:01 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -20,10 +20,13 @@
       <link>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Bean 定义</source>
-      <description>Bean 定义</description>
+      <description>Bean 定义 概述 Spring框架的核心是Bean，Bean是Spring框架的基本构建块。 Bean是由Spring容器管理的对象。Bean是一个被实例化、组装和管理的对象。</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2>Bean 定义</h2>
+      <content:encoded><![CDATA[
+<h2>概述</h2>
+<p><code>Spring</code>框架的核心是<code>Bean</code>，<code>Bean</code>是<code>Spring</code>框架的基本构建块。
+<code>Bean</code>是由<code>Spring</code>容器管理的对象。<code>Bean</code>是一个被实例化、组装和管理的对象。</p>
 ]]></content:encoded>
     </item>
     <item>
