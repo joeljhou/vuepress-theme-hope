@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 21 Mar 2024 02:36:01 GMT</pubDate>
-    <lastBuildDate>Thu, 21 Mar 2024 02:36:01 GMT</lastBuildDate>
+    <pubDate>Thu, 21 Mar 2024 09:09:28 GMT</pubDate>
+    <lastBuildDate>Thu, 21 Mar 2024 09:09:28 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -20,13 +20,26 @@
       <link>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Bean 定义</source>
-      <description>Bean 定义 概述 Spring框架的核心是Bean，Bean是Spring框架的基本构建块。 Bean是由Spring容器管理的对象。Bean是一个被实例化、组装和管理的对象。</description>
+      <description>Bean 定义 概述 Spring IoC 容器管理的对象称为 Bean。 由org.springframework.beans.factory.config.BeanDefinition 接口表示，定义了Bean的配置元数据。 BeanDefinition BeanDefinition 包含以下元数据： Bean的包限定类名 Bean的行为配置元素，...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>概述</h2>
-<p><code>Spring</code>框架的核心是<code>Bean</code>，<code>Bean</code>是<code>Spring</code>框架的基本构建块。
-<code>Bean</code>是由<code>Spring</code>容器管理的对象。<code>Bean</code>是一个被实例化、组装和管理的对象。</p>
+<blockquote>
+<p>Spring IoC 容器管理的对象称为 Bean。
+由<code>org.springframework.beans.factory.config.BeanDefinition</code> 接口表示，定义了Bean的配置元数据。</p>
+</blockquote>
+<h2>BeanDefinition</h2>
+<p><code>BeanDefinition</code> 包含以下元数据：</p>
+<ul>
+<li>Bean的包限定类名</li>
+<li>Bean的行为配置元素，例如作用域、生命周期回调等</li>
+<li>Bean的依赖关系</li>
+<li>其他配置信息（如：管理连接池的Bean可以配置池的大小，连接数量等）</li>
+</ul>
+<p>该元数据转换为组成每个bean定义的一组属性。 下表介绍了这些属性：</p>
+<p>| 属性                       | 描述           |
+|</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -34,17 +47,18 @@
       <link>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">IoC 容器</source>
-      <description>IoC 容器 概述 org.springframework.context.ApplicationContext 接口代表了Spring IoC容器，负责实例化、配置和组装Bean 容器通过读取配置元数据来获取指令，从而确定要实例化、配置和组装哪些对象。 配置元数据可以用 XML、Java注解或Java代码表示， 用于描述应用程序中的对象及它们之间的复...</description>
+      <description>IoC 容器 概述 Spring IoC（控制反转）容器是Spring框架的核心。 由 org.springframework.context.ApplicationContext接口表示，负责实例化、配置和组装Bean。 容器通过读取配置元数据来获取指令，从而确定要实例化、配置和组装哪些对象。 配置元数据可以用 XML、Java注解或Java代码表示...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>概述</h2>
 <blockquote>
-<p><code>org.springframework.context.ApplicationContext</code> 接口代表了<strong>Spring IoC</strong>容器，负责实例化、配置和组装<code>Bean</code></p>
+<p>Spring IoC（控制反转）容器是Spring框架的核心。
+由 <code>org.springframework.context.ApplicationContext</code>接口表示，负责实例化、配置和组装<code>Bean</code>。</p>
 </blockquote>
 <p>容器通过读取<mark>配置元数据</mark>来获取指令，从而确定要实例化、配置和组装哪些对象。
 配置元数据可以用 <code>XML</code>、<code>Java注解</code>或<code>Java代码</code>表示， 用于描述应用程序中的对象及它们之间的复杂相互依赖关系。</p>
-<h2>ApplicationContext实现类</h2>
+<h2>ApplicationContext</h2>
 <p>Spring 提供了多个 <code>ApplicationContext</code> 接口的实现类</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">ClassPathXmlApplicationContext</a></li>
