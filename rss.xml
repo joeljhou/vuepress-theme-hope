@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 21 Mar 2024 10:43:06 GMT</pubDate>
-    <lastBuildDate>Thu, 21 Mar 2024 10:43:06 GMT</lastBuildDate>
+    <pubDate>Fri, 22 Mar 2024 11:01:00 GMT</pubDate>
+    <lastBuildDate>Fri, 22 Mar 2024 11:01:00 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -20,13 +20,13 @@
       <link>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/bean-definition.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Bean 定义</source>
-      <description>Bean 定义 概述 Spring IoC 容器管理的对象称为 Bean。 由org.springframework.beans.factory.config.BeanDefinition 接口表示，定义了Bean的配置元数据。 BeanDefinition BeanDefinition 包含以下元数据： Bean的包限定类名 Bean的行为配置元素，...</description>
+      <description>Bean 定义 概述 构建应用程序主干并由Spring IoC 容器管理的对象称为 Bean。 由org.springframework.beans.factory.config.BeanDefinition 接口表示，定义了Bean的配置元数据。 BeanDefinition BeanDefinition 包含以下元数据： Bean的包限定类名 Be...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>概述</h2>
 <blockquote>
-<p>Spring IoC 容器管理的对象称为 Bean。
+<p>构建应用程序主干并由Spring IoC 容器管理的对象称为 Bean。
 由<code>org.springframework.beans.factory.config.BeanDefinition</code> 接口表示，定义了Bean的配置元数据。</p>
 </blockquote>
 <h2>BeanDefinition</h2>
@@ -113,9 +113,52 @@
 <li>等等</li>
 </ul>
 <h2>实例化容器</h2>
-<ul>
-<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/basics.html#beans-factory-instantiation" target="_blank" rel="noopener noreferrer">链接</a></li>
-</ul>
+<p><code>ApplicationContext</code>的构造函数中可以提供资源路径，
+这些路径是资源字符串，用于让容器从外部<a href="https://docs.spring.io/spring-framework/reference/core/resources.html" target="_blank" rel="noopener noreferrer">资源(Resources)</a>
+加载配置元数据，比如本地文件系统和Java <code>CLASSPATH</code>路径。</p>
+<p><strong>使用容器</strong></p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// 创建和配置Bean</span>
+<span class="token class-name">ApplicationContext</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"services.xml"</span><span class="token punctuation">,</span> <span class="token string">"daos.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取配置的实例</span>
+<span class="token class-name">PetStoreService</span> service <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"petStore"</span><span class="token punctuation">,</span> <span class="token class-name">PetStoreService</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 使用配置的实例</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> userList <span class="token operator">=</span> service<span class="token punctuation">.</span><span class="token function">getUsernameList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>以下示例显示<strong>服务层对象</strong>（<code>services.xml</code>）配置文件：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- services --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>petStore<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.springframework.samples.jpetstore.services.PetStoreServiceImpl<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>accountDao<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>accountDao<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>itemDao<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>itemDao<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token comment">&lt;!-- 其他关于这个bean的协作者和配置信息在这里添加 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>以下示例显示<strong>数据访问对象</strong><code>daos.xml</code>文件：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>accountDao<span class="token punctuation">"</span></span>
+          <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.springframework.samples.jpetstore.dao.jpa.JpaAccountDao<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- 这里可以添加关于这个bean的其他协作者和配置信息 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>itemDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.springframework.samples.jpetstore.dao.jpa.JpaItemDao<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- 这里可以添加关于这个bean的其他协作者和配置信息 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>在前面的示例中，服务层由<code>PetStoreServiceImpl</code>类和两个类型为<code>JpaAccountDao</code>和<code>JpaItemDao</code>（基于JPA对象关系映射标准）的数据访问对象组成。</p>
+<p>属性名称元素引用<code>JavaBean</code>属性的名称，<code>ref</code>元素引用另一个<code>bean</code>定义的名称。
+<code>id</code>和<code>ref</code>元素之间的这种链接表达了协作对象之间的依赖性。
+有关配置对象依赖项的详细信息，请参见依赖项。</p>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202403181756387.png" type="image/png"/>
     </item>
