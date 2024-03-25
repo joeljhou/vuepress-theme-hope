@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 22 Mar 2024 11:02:07 GMT</pubDate>
-    <lastBuildDate>Fri, 22 Mar 2024 11:02:07 GMT</lastBuildDate>
+    <pubDate>Mon, 25 Mar 2024 03:33:15 GMT</pubDate>
+    <lastBuildDate>Mon, 25 Mar 2024 03:33:15 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -47,60 +47,38 @@
       <link>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">IoC 容器</source>
-      <description>IoC 容器 概述 Spring IoC（控制反转）容器是Spring框架的核心。 由 org.springframework.context.ApplicationContext接口表示，负责实例化、配置和组装Bean。 容器通过读取配置元数据来获取指令，从而确定要实例化、配置和组装哪些对象。 配置元数据可以用 XML、Java注解或Java代码表示...</description>
+      <description>IoC 容器 概述 Spring IoC（控制反转）容器是Spring框架的核心。 org.springframework.context.ApplicationContext接口代表Spring IoC容器，负责实例化、配置和组装Bean。 Spring提供了几个 ApplicationContext 接口的实现，在独立应用程序中，最常用的是： Cl...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>概述</h2>
 <blockquote>
 <p>Spring IoC（控制反转）容器是Spring框架的核心。
-由 <code>org.springframework.context.ApplicationContext</code>接口表示，负责实例化、配置和组装<code>Bean</code>。</p>
+<code>org.springframework.context.ApplicationContext</code>接口代表Spring IoC容器，负责实例化、配置和组装<code>Bean</code>。</p>
 </blockquote>
-<p>容器通过读取<mark>配置元数据</mark>来获取指令，从而确定要实例化、配置和组装哪些对象。
-配置元数据可以用 <code>XML</code>、<code>Java注解</code>或<code>Java代码</code>表示， 用于描述应用程序中的对象及它们之间的复杂相互依赖关系。</p>
-<h2>ApplicationContext</h2>
-<p>Spring 提供了多个 <code>ApplicationContext</code> 接口的实现类</p>
+<p>Spring提供了几个 ApplicationContext 接口的实现，在独立应用程序中，最常用的是：</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/ClassPathXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">ClassPathXmlApplicationContext</a></li>
 <li><a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/support/FileSystemXmlApplicationContext.html" target="_blank" rel="noopener noreferrer">FileSystemXmlApplicationContext</a></li>
+<li>等等</li>
 </ul>
-<p>虽然 <code>XML</code> 一直是定义<mark>配置元数据</mark>的传统格式， 但通过提供少量的 <code>XML</code> 配置，您可以声明性地启用对<code>Java注解</code>或<code>Java代码</code>
-作为元数据格式的支持，从而更灵活地定义应用程序的配置信息。</p>
-<h2>初始化IoC容器</h2>
-<p>在大多数应用场景中，无需手动编写代码来实例化<strong>Spring IoC</strong>容器</p>
-<ul>
-<li>例如：Web应用中，只需要在<code>web.xml</code>中添加 8
-行<a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html#context-create" target="_blank" rel="noopener noreferrer">模板XML</a>
-即可初始化<code>ApplicationContext</code></li>
-</ul>
-<p>下图表展示了Spring框架的工作原理高层视图。通过将您的<mark>应用程序类</mark>与<mark>配置元数据</mark>结合起来，
+<p><strong>支持以XML、Java注释或Java代码作为配置元数据的格式</strong></p>
+<p>虽然<code>XML</code>一直是定义配置元数据的传统格式， 但您可以通过提供少量的<code>XML</code>配置来指定容器使用<code>Java注解</code>或<code>Java代码</code>作为元数据格式。
+以声明式方式启用对这些元数据格式的支持，从而更灵活地定义应用程序的配置信息。</p>
+<p><strong>为Web应用程序提供方便的ApplicationContext实例化</strong></p>
+<p>在大多数应用场景中，无需手动编写代码来实例化<strong>Spring IoC</strong>容器；
+例如：在Web应用场景中，通常只需要在应用程序的<code>web.xml</code>文件中编写 8
+行（或更多）<a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html#context-create" target="_blank" rel="noopener noreferrer">模板式的Web描述符</a>
+即可初始化<code>ApplicationContext</code></p>
+<p><strong>解析Spring框架的工作原理：<mark>应用程序类</mark>与<mark>配置元数据</mark>的整合</strong></p>
+<p>下图表展示了Spring框架的工作原理高层视图。通过将您的应用程序类与配置元数据结合起来，
 一旦<code>ApplicationContext</code>被创建和初始化，您就获得了一个完全配置且可执行的系统或应用程序。</p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202403181756387.png" alt="Spring IoC容器" tabindex="0" loading="lazy"><figcaption>Spring IoC容器</figcaption></figure>
 <h2>配置元数据</h2>
-<p>Spring框架传统上使用<code>XML</code>文件来配置<code>ApplicationContext</code>，以下是示例：</p>
-<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
-		https://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.ExampleClass1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token comment">&lt;!-- 这个bean的协作器和配置在这里 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.ExampleClass2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-        <span class="token comment">&lt;!-- 这个bean的协作器和配置在这里 --&gt;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
-
-    <span class="token comment">&lt;!-- 更多的bean定义见这里 --&gt;</span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
-</code></pre></div><ol>
-<li><code>id</code>属性是一个字符串，用于<mark>唯一标识</mark>bean</li>
-<li><code>class</code>属性是一个字符串，用于指定bean的<mark>完整类名</mark>（包括包名）</li>
-</ol>
+<p>如上图所示，Spring IoC容器消费一种配置元数据。
+这种配置元数据代表了你作为一个应用开发者，如何告诉Spring容器在你的应用中实例化、配置和组装对象。</p>
 <blockquote>
-<p>传统的XML格式的元数据并不是唯一允许的配置元数据形式。Spring IoC容器本身与实际配置元数据的编写格式完全解耦。
+<p><strong>注意</strong>：Spring IoC容器本身与实际配置元数据的编写格式完全解耦。
 如今，许多开发者选择使用<a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a>
 来构建他们的Spring应用程序。</p>
 </blockquote>
@@ -109,9 +87,43 @@
 <li><a href="https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-properties-detailed.html" target="_blank" rel="noopener noreferrer">基于XML的容器配置</a></li>
 <li><a href="https://docs.spring.io/spring-framework/reference/core/beans/annotation-config.html" target="_blank" rel="noopener noreferrer">基于注解的容器配置</a>（Spring
 2.5开始支持）</li>
-<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a>（Spring 3.0开始支持）</li>
-<li>等等</li>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a>（Spring
+3.0开始支持；参阅 <a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/annotation/Configuration.html" target="_blank" rel="noopener noreferrer">@Configuration</a>, <a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/annotation/Bean.html" target="_blank" rel="noopener noreferrer">@Bean</a>,
+<a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/annotation/Import.html" target="_blank" rel="noopener noreferrer">@Import</a>,
+和 <a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/annotation/DependsOn.html" target="_blank" rel="noopener noreferrer">@DependsOn</a>
+注解）</li>
 </ul>
+<p>Spring的配置包含至少一个，通常是多个<code>&lt;bean&gt;</code>元素。容器必须管理这些定义的bean。</p>
+<ul>
+<li>XML配置：将这些Bean配置为顶层 <code>&lt;beans/&gt;</code> 元素内的 <code>&lt;bean/&gt;</code> 元素</li>
+<li>Java配置：将这些Bean配置为<code>@Configuration</code>类中的<code>@Bean</code>注解的方法</li>
+</ul>
+<p>这些Bean的定义对应于构成应用程序的实际对象，
+如服务层对象，持久层对象（Dao），表示层对象（Web控制器），基础设施对象（JPA EntityManagerFactory），JMS队列对象等。
+通常，人们不会在容器中配置细粒度的<code>domain</code>对象，因为创建和加载<code>domain</code>对象的通常是<code>repository</code>和<code>service</code>层逻辑的责任。</p>
+<p>下面的例子显示了基于XML的配置元数据的基本结构：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>(1) (2)
+        <span class="token comment">&lt;!-- 这个bean的合作者和配置在这里 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- c这个bean的合作者和配置在这里 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 更多bean 定义在这里 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ol>
+<li><code>id</code>属性是一个字符串，用于<mark>唯一标识</mark>bean</li>
+<li><code>class</code>属性是一个字符串，用于指定bean的<mark>完整类名</mark>（包括包名）</li>
+</ol>
+<p><code>id</code>属性的值可以用来指代其他bean的<code>ref</code>属性，从而实现bean之间的依赖关系。
+参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/dependencies.html" target="_blank" rel="noopener noreferrer">依赖（Dependencies）</a>。</p>
 <h2>实例化容器</h2>
 <p><code>ApplicationContext</code>的构造函数中可以提供资源路径，
 这些路径是资源字符串，用于让容器从外部<a href="https://docs.spring.io/spring-framework/reference/core/resources.html" target="_blank" rel="noopener noreferrer">资源(Resources)</a>
@@ -184,15 +196,28 @@
 <li>SpEL（Spring Expression Language）</li>
 <li><strong>面向切面编程（AOP）</strong></li>
 </ul>
-<p>其中最重要的技术之一是Spring框架的<mark>控制反转（IOC）</mark> 容器，它是Spring框架的核心。
-紧随其后的是Spring框架的<mark>面向切面编程（AOP）</mark> 技术。</p>
-<h2>AOP支持</h2>
-<p>Spring框架独有的AOP框架采用基于代理的实现方式，这种方式使AOP
-概念易于理解，并且成功地满足了Java企业编程中80%的AOP需求。
-此外，Spring 可以与<code>AspectJ</code>无缝集成，后者是Java企业领域功能最丰富、最成熟的 AOP 实现之一。</p>
-<h2>AOT（Ahead-of-Time）处理</h2>
-<p><code>AOT（Ahead-of-Time）</code>处理用于优化应用程序的性能。通常用于使用<code>GraalVM</code>进行本地图像部署。
-通过AOT编译，应用程序可以在启动时更快地启动和执行，提高了应用程序的响应速度和资源利用率。</p>
+<h2>Spring IoC容器和Bean简介</h2>
+<p><strong>Spring IoC（控制反转）</strong> 也被称为<strong>依赖注入（DI）</strong>。</p>
+<p>它是一个过程，对象仅通过构造函数参数、工厂方法参数 或在 构造函数或工厂方法实例化后设置的属性来定义它们的依赖关系。
+在IoC容器创建bean时，它会注入这些依赖项。 这个过程对象不再通过直接构造依赖项或使用服务定位器模式等方式来控制其实例化或位置，
+而是交由IoC容器来管理，因此称为<strong>控制反转</strong>。</p>
+<p><a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/beans/factory/BeanFactory.html" target="_blank" rel="noopener noreferrer">org.springframework.beans</a>
+和 <a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/ApplicationContext.html" target="_blank" rel="noopener noreferrer">org.springframework.context</a>
+包是Spring Framework的IoC容器的基础。
+<a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/beans/factory/BeanFactory.html" target="_blank" rel="noopener noreferrer">BeanFactory</a>
+接口提供了一种高级配置机制，能够管理任何类型的<code>object</code>对象。
+<a href="https://docs.spring.io/spring-framework/docs/6.1.5/javadoc-api/org/springframework/context/ApplicationContext.html" target="_blank" rel="noopener noreferrer">ApplicationContext</a>
+是 BeanFactory 的一个子接口。它增加了：</p>
+<ul>
+<li>与Spring的AOP特性更好的集成</li>
+<li><code>Message resource</code>消息资源处理（用于国际化）</li>
+<li><code>Event publication</code>事件发布</li>
+<li>应用层特定的上下文，例如Web应用程序的<code>WebApplicationContext</code></li>
+</ul>
+<p>简而言之，<code>BeanFactory</code> 提供了配置框架和基本功能，<code>ApplicationContext</code> 添加了更多企业特定的功能。
+<code>ApplicationContext</code> 是 <code>BeanFactory</code> 的一个超集。 在特别要求轻量级应用程序的情况下，可以考虑使用<code>BeanFactory</code>。</p>
+<p>想要了解 BeanFactory
+请参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/beanfactory.html" target="_blank" rel="noopener noreferrer">BeanFactory API</a> 。</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -200,13 +225,16 @@
       <link>https://www.geekyspace.cn/spring-framework/overview/</link>
       <guid>https://www.geekyspace.cn/spring-framework/overview/</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Spring Framework 概述</source>
-      <description>Spring Framework 概述 Spring Framework 简介 官网地址：spring-framework-overview Spring是一个开源、轻量级、依赖注入(DI)容器和框架，用于构建Java企业应用程序。 为什么使用Spring？ 官网解释：why-spring Spring让Java编程变得更快、更容易、更安全。 Spri...</description>
+      <description>Spring Framework 概述 Spring Framework 简介 Spring是一个开源、轻量级、依赖注入(DI)容器和框架，用于构建Java企业应用程序。 官网地址：spring-framework-overview Spring项目： spring.io/projects 为什么使用Spring？ 官网解释：why-spring Sp...</description>
       <category>Spring</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Spring Framework 简介</h2>
-<p>官网地址：<a href="https://docs.spring.io/spring-framework/reference/index.html" target="_blank" rel="noopener noreferrer">spring-framework-overview</a></p>
 <p>Spring是一个开源、轻量级、依赖注入(DI)容器和框架，用于构建Java企业应用程序。</p>
+<ul>
+<li>官网地址：<a href="https://docs.spring.io/spring-framework/reference/index.html" target="_blank" rel="noopener noreferrer">spring-framework-overview</a></li>
+<li>Spring项目： <a href="https://spring.io/projects" target="_blank" rel="noopener noreferrer">spring.io/projects</a></li>
+</ul>
 <h2>为什么使用Spring？</h2>
 <blockquote>
 <p>官网解释：<a href="https://spring.io/why-spring" target="_blank" rel="noopener noreferrer">why-spring</a></p>
@@ -215,45 +243,13 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 </blockquote>
 <p>我们使用了许多Spring框架提供的工具，并受益于许多<mark>开箱即用</mark>的解决方案，
 无需担心编写大量额外的代码，因此这确实为我们节省了时间和精力。</p>
-<h2>设计理念</h2>
-<ul>
-<li>在各个层面提供选择：
-<ul>
-<li>Spring 支持延迟设计决策，例如可以通过配置切换持久层而无需修改代码</li>
-</ul>
-</li>
-<li>容纳不同的观点：
-<ul>
-<li>Spring框架具有灵活性，不固守特定的实现方式，可以满足广泛的应用需求</li>
-</ul>
-</li>
-<li>保持后向兼容性：
-<ul>
-<li>Spring版本升级尽量保持向后兼容，并支持固定的JDK版本和第三方库，便于应用程序维护</li>
-</ul>
-</li>
-<li>专注 API 设计：
-<ul>
-<li>Spring 团队非常注重API的易用性和可维护性，确保在多个版本中保持稳定</li>
-</ul>
-</li>
-<li>追求严苛的代码质量：
-<ul>
-<li>Spring框架强调代码可读性、准确性和及时更新，保持清晰结构且避免循环依赖</li>
-</ul>
-</li>
-</ul>
 <h2>核心思想</h2>
 <p>Spring的核心思想是 <strong>控制反转（IOC）</strong> 和 <strong>面向切面编程（AOP）</strong>。</p>
-<h3>控制反转（IOC）</h3>
+<p><strong>控制反转（IOC）</strong></p>
 <p>控制反转是一种设计模式，它将对象的创建和对象之间的依赖关系的管理交给了Spring IOC容器。
 在传统的开发模式中，对象的创建和对象之间的依赖关系的管理都是由程序员来完成的。</p>
-<p><mark>依赖注入（DI）</mark> 是控制反转的一种实现方式。</p>
-<blockquote>
-<p>建议参阅Fowler的文章以了解 IOC 和 DI：<a href="http://martinfowler.com/articles/injection.html" target="_blank" rel="noopener noreferrer">链接</a></p>
-</blockquote>
-<h3>面向切面编程（AOP）</h3>
-<p>面向切面编程是一种编程范式，它将程序的业务逻辑和系统级服务（如日志，事务，安全等）分开，通过<mark>横切关注点</mark>的方式来解耦。
+<p><strong>面向切面编程（AOP）</strong></p>
+<p>面向切面编程是一种编程范式，它将程序的业务逻辑和系统级服务（如日志，事务，安全等）分开，通过横切关注点的方式来解耦。
 在传统的开发模式中，业务逻辑和系统级服务是混在一起的，这样会导致代码的复杂性增加。</p>
 <h2>版本支持</h2>
 <p>我们建议尽可能从Maven Central升级到最新的<strong>Spring Framework 6.0.x / 5.3.x</strong> 版本</p>
@@ -266,13 +262,13 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
 <li>4.3.x - EOL (2020年12月31日)，不再提供维护和安全补丁</li>
 <li>3.2.x - EOL (2016年12月31日)，不再提供维护和安全补丁</li>
 </ul>
-<p>您可以在 <a href="https://spring.io/projects/spring-framework#support" target="_blank" rel="noopener noreferrer">spring.io</a>上找到有关官方支持日期的更多信息。</p>
+<p>您可以在 <a href="https://spring.io/projects/spring-framework#support" target="_blank" rel="noopener noreferrer">spring.io#support</a>上找到有关官方支持日期的更多信息。</p>
 <h2>入门指南</h2>
-<p>使用<a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer">Spring Boot</a>来快速创建生产就绪的Spring应用程序。</p>
+<p>使用<a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer">Spring Boot</a>来快速创建生产就绪的Spring应用程序</p>
 <ul>
 <li>您可以通过<a href="start.spring.io">start.spring.io</a>生成基本项目</li>
 <li>或者遵循"<a href="https://spring.io/guides" target="_blank" rel="noopener noreferrer">入门指南</a>"
-之一，例如"<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener noreferrer">开始构建RESTful Web服务</a>"。</li>
+之一，例如"<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener noreferrer">开始构建RESTful Web服务</a>"</li>
 </ul>
 ]]></content:encoded>
     </item>
