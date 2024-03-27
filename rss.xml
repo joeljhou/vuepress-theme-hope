@@ -6,14 +6,14 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 27 Mar 2024 08:01:47 GMT</pubDate>
-    <lastBuildDate>Wed, 27 Mar 2024 08:01:47 GMT</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2024 08:20:48 GMT</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2024 08:20:48 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
     <category>Spring Boot</category>
-    <category>Java</category>
     <category>Spring Data</category>
+    <category>Java</category>
     <category>程序人生</category>
     <item>
       <title>自动装配协作者</title>
@@ -522,7 +522,7 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
       <guid>https://www.geekyspace.cn/spring-boot/quickstart.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">SpringBoot 快速入门</source>
       <description>SpringBoot 快速入门</description>
-      <category>Java</category>
+      <category>Spring Boot</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 ]]></content:encoded>
