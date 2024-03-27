@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 26 Mar 2024 16:32:05 GMT</pubDate>
-    <lastBuildDate>Tue, 26 Mar 2024 16:32:05 GMT</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2024 08:01:47 GMT</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2024 08:01:47 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -15,6 +15,61 @@
     <category>Java</category>
     <category>Spring Data</category>
     <category>程序人生</category>
+    <item>
+      <title>自动装配协作者</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-autowire.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-autowire.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">自动装配协作者</source>
+      <description>自动装配协作者</description>
+      <category>Spring</category>
+      <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
+    <item>
+      <title>使用depends-on</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-dependson.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-dependson.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">使用depends-on</source>
+      <description>使用depends-on</description>
+      <category>Spring</category>
+      <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
+    <item>
+      <title>延迟初始化的Bean</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-lazy-init.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-lazy-init.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">延迟初始化的Bean</source>
+      <description>延迟初始化的Bean</description>
+      <category>Spring</category>
+      <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
+    <item>
+      <title>方法注入</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-method-injection.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-method-injection.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">方法注入</source>
+      <description>方法注入</description>
+      <category>Spring</category>
+      <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
+    <item>
+      <title>依赖和配置详解</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-properties-detailed.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-properties-detailed.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">依赖和配置详解</source>
+      <description>依赖和配置详解</description>
+      <category>Spring</category>
+      <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>Bean 定义</title>
       <link>https://www.geekyspace.cn/spring-framework/core/beans-definition.html</link>
@@ -42,18 +97,27 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>依赖关系</title>
+      <title>依赖</title>
       <link>https://www.geekyspace.cn/spring-framework/core/dependencies/</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">依赖关系</source>
-      <description>依赖关系 概述 典型的企业应用程序不包含单个对象（或 Spring 术语中的 bean）。 即使是最简单的应用程序也有一些对象一起工作来呈现最终用户所认为的连贯的应用程序。 下一节将解释如何从定义多个独立的 bean 定义转变为一个完全实现的应用程序，在该应用程序中对象协作以实现目标。</description>
+      <source url="https://www.geekyspace.cn/rss.xml">依赖</source>
+      <description>依赖 企业应用程序通常不是由单个对象（或Spring术语中的Bean）构成的。 即使是最简单的应用程序，也是由多个对象共同协作来呈现给最终用户一个连贯的应用体验。 下一节将解释如何从定义独立的Bean开始，逐步实现一个完整的应用程序。 在这个应用程序中，各个对象将相互协作，实现一个共同的目标。 章节摘要</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>概述</h2>
-<p>典型的企业应用程序不包含单个对象（或 Spring 术语中的 bean）。
-即使是最简单的应用程序也有一些对象一起工作来呈现最终用户所认为的连贯的应用程序。
-下一节将解释如何从定义多个独立的 bean 定义转变为一个完全实现的应用程序，在该应用程序中对象协作以实现目标。</p>
+<p>企业应用程序通常不是由单个对象（或<code>Spring</code>术语中的<code>Bean</code>）构成的。
+即使是最简单的应用程序，也是由多个对象共同协作来呈现给最终用户一个连贯的应用体验。</p>
+<p>下一节将解释如何从定义独立的Bean开始，逐步实现一个完整的应用程序。
+在这个应用程序中，各个对象将相互协作，实现一个共同的目标。</p>
+<h2>章节摘要</h2>
+<ul>
+<li><a href="/spring-framework/core/dependencies/factory-collaborators.html" target="_blank">依赖注入</a></li>
+<li><a href="/spring-framework/core/dependencies/factory-properties-detailed.html" target="_blank">依赖和配置详解</a></li>
+<li><a href="/spring-framework/core/dependencies/factory-dependson.html" target="_blank">使用depends-on</a></li>
+<li><a href="/spring-framework/core/dependencies/factory-lazy-init.html" target="_blank">延迟初始化的Bean</a></li>
+<li><a href="/spring-framework/core/dependencies/factory-autowire.html" target="_blank">自动装配协作者</a></li>
+<li><a href="/spring-framework/core/dependencies/factory-method-injection.html" target="_blank">方法注入</a></li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
