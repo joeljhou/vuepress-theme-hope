@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 29 Mar 2024 03:24:54 GMT</pubDate>
-    <lastBuildDate>Fri, 29 Mar 2024 03:24:54 GMT</lastBuildDate>
+    <pubDate>Fri, 29 Mar 2024 03:58:05 GMT</pubDate>
+    <lastBuildDate>Fri, 29 Mar 2024 03:58:05 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -255,17 +255,14 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 
     <span class="token comment">// 省略了实际使用注入的 MovieFinder 的业务逻辑...</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p><strong>ApplicationContext的依赖注入支持</strong></p>
-<p><code>ApplicationContext</code>在管理的<code>Bean</code>时支持基于构造函数和基于Setter的依赖注入（DI）。
-此外，它还支持通过构造函数注入依赖项后，再使用Setter方法注入其他依赖项。</p>
-<p><strong>配置依赖关系和属性转换</strong></p>
-<p>你可以通过<code>BeanDefinition</code>来配置依赖关系，并利用<code>java.beans.PropertyEditor</code>接口实例将属性值从一种格式转换为另一种格式。</p>
-<p><strong>Spring用户的使用方式</strong></p>
-<p>然而，大多数Spring用户并不直接使用这些类（即以编程方式），而是使用XML Bean定义、
+</code></pre></div><p><strong>ApplicationContext的依赖注入支持</strong>：<code>ApplicationContext</code>在管理的<code>Bean</code>时支持基于构造函数和基于Setter的依赖注入（DI）。
+此外，它还支持通过构造函数注入依赖项后，再使用Setter方法注入其他依赖项。
+<strong>配置依赖关系和属性转换</strong>：你可以通过<code>BeanDefinition</code>来配置依赖关系，并利用<code>java.beans.PropertyEditor</code>
+接口实例将属性值从一种格式转换为另一种格式。
+<strong>Spring用户的使用方式</strong>：然而，大多数Spring用户并不直接使用这些类（即以编程方式），而是使用XML Bean定义、
 注解组件（即使用<code>@Component</code>、<code>@Controller</code>等注解的类），
-或基于Java的<code>@Configuration</code>类中的<code>@Bean</code>方法。</p>
-<p><strong>内部转换为BeanDefinition</strong></p>
-<p>然后，这些来源在内部被转换为<code>BeanDefinition</code>的实例，并用于加载整个Spring IoC容器实例。</p>
+或基于Java的<code>@Configuration</code>类中的<code>@Bean</code>方法。
+<strong>内部转换为BeanDefinition</strong>：然后，这些来源在内部被转换为<code>BeanDefinition</code>的实例，并用于加载整个Spring IoC容器实例。</p>
 <div class="hint-container tip">
 <p class="hint-container-title">基于构造器的DI还是基于Setter的DI？</p>
 <p>通常建议对于必要的依赖项使用构造函数注入（DI），对于可选的依赖项使用Setter方法或配置方法进行注入。
@@ -329,18 +326,113 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 另一个方法是避免构造函数注入，只使用Setter注入。换句话说，虽然不推荐，但你可以通过Setter注入配置循环依赖。</p>
 <p>与典型情况（没有循环依赖）不同，Bean A和Bean B之间的循环依赖会导致其中一个Bean在自身完全初始化之前被注入到另一个Bean中（经典的鸡生蛋蛋生鸡的情况）。</p>
 </div>
-<p><strong>Spring容器的行为</strong></p>
-<p>通常情况下，你可以相信Spring会做正确的事情。
-它在容器加载时检测配置问题，例如引用不存在的Bean或存在循环依赖等。</p>
-<p><strong>异常生成可能性</strong></p>
-<p>Spring会尽可能地延迟设置属性和解析依赖，直到真正创建Bean时才会进行。
-这意味着，一个正确加载的Spring容器在请求对象时可能会生成异常；例如在创建该对象或其依赖关系时出现问题，Bean由于缺少或无效属性而抛出异常。</p>
-<p><strong>ApplicationContext的预实例化</strong></p>
-<p>这种潜在的延迟暴露一些配置的情况，是<code>ApplicationContext</code>实现默认预先实例化单例Bean的原因。
-在实际创建这些Bean之前，尽管需要花费一些前期时间和内存代价，但这样做可以在创建<code>ApplicationContext</code>时发现配置问题，而不是之后。</p>
-<p><strong>覆盖默认行为</strong></p>
-<p>你仍然可以覆盖这种默认行为，使得单例Bean延迟（懒加载）初始化，而不是预先实例化。</p>
+<p><strong>Spring容器的行为</strong>： 通常情况下，你可以相信Spring会做正确的事情。
+它在容器加载时检测配置问题，例如引用不存在的Bean或存在循环依赖等。
+<strong>异常生成可能性</strong>： Spring会尽可能地延迟设置属性和解析依赖，直到真正创建Bean时才会进行。
+这意味着，一个正确加载的Spring容器在请求对象时可能会生成异常；例如在创建该对象或其依赖关系时出现问题，Bean由于缺少或无效属性而抛出异常。
+<strong>ApplicationContext的预实例化</strong>： 这种潜在的延迟暴露一些配置的情况，是<code>ApplicationContext</code>实现默认预先实例化单例Bean的原因。
+在实际创建这些Bean之前，尽管需要花费一些前期时间和内存代价，但这样做可以在创建<code>ApplicationContext</code>时发现配置问题，而不是之后。
+<strong>覆盖默认行为</strong>： 你仍然可以覆盖这种默认行为，使得单例Bean延迟（懒加载）初始化，而不是预先实例化。</p>
 <h2>依赖注入的例子</h2>
+<h3>Setter依赖注入</h3>
+<p>以下示例使用基于XML的配置元数据来实现基于Setter的依赖注入。Spring XML配置文件的一小部分如下所示，指定了一些<code>Bean</code>定义：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.ExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 使用嵌套的 ref 元素进行Setter注入 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanOne<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ref</span> <span class="token attr-name">bean</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anotherExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 使用更简洁的 ref 属性进行Setter注入 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanTwo<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yetAnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>integerProperty<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anotherExampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.AnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yetAnotherBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.YetAnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><p>以下示例展示了相应的<code>ExampleBean</code>类：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleBean</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">AnotherBean</span> beanOne<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">YetAnotherBean</span> beanTwo<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBeanOne</span><span class="token punctuation">(</span><span class="token class-name">AnotherBean</span> beanOne<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>beanOne <span class="token operator">=</span> beanOne<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBeanTwo</span><span class="token punctuation">(</span><span class="token class-name">YetAnotherBean</span> beanTwo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>beanTwo <span class="token operator">=</span> beanTwo<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setIntegerProperty</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>i <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3>构造函数依赖注入</h3>
+<p>在上面的例子中，Setter 方法被声明来匹配 XML 文件中指定的属性。以下示例使用基于构造函数依赖注入（DI）：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.ExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 使用嵌套的ref元素进行构造函数注入 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ref</span> <span class="token attr-name">bean</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anotherExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>constructor-arg</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 使用更简洁的ref属性进行构造函数注入 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yetAnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>int<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anotherExampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.AnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yetAnotherBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.YetAnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><p>对应的<code>ExampleBean</code>类如下所示：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleBean</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">AnotherBean</span> beanOne<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">YetAnotherBean</span> beanTwo<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">ExampleBean</span><span class="token punctuation">(</span>
+        <span class="token class-name">AnotherBean</span> anotherBean<span class="token punctuation">,</span> <span class="token class-name">YetAnotherBean</span> yetAnotherBean<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>beanOne <span class="token operator">=</span> anotherBean<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>beanTwo <span class="token operator">=</span> yetAnotherBean<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>i <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在<code>Bean</code>定义中指定的构造函数参数将作为<code>ExampleBean</code>的构造函数参数使用。</p>
+<h3>静态工厂方法依赖注入</h3>
+<p>现在考虑这个示例的一个变体，在这个变体中，不是使用构造函数，而是告诉 Spring 调用一个静态工厂方法来返回对象的实例：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.ExampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">factory-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>createInstance<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anotherExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yetAnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anotherExampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.AnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yetAnotherBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.YetAnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><p>以下示例展示了相应的<code>ExampleBean</code>类：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleBean</span> <span class="token punctuation">{</span>
+
+	<span class="token comment">// 私有构造函数</span>
+	<span class="token keyword">private</span> <span class="token class-name">ExampleBean</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// 静态工厂方法；该方法的参数可以被视为返回的Bean的依赖项，</span>
+	<span class="token comment">// 不管这些参数实际上是如何使用的。</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ExampleBean</span> createInstance <span class="token punctuation">(</span>
+		<span class="token class-name">AnotherBean</span> anotherBean<span class="token punctuation">,</span> <span class="token class-name">YetAnotherBean</span> yetAnotherBean<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">ExampleBean</span> eb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ExampleBean</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">// 其他操作...</span>
+		<span class="token keyword">return</span> eb<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>静态工厂方法的参数由<code>&lt;constructor-arg/&gt;</code>元素提供，与实际使用构造函数时完全相同。
+被工厂方法返回的类的类型不一定与包含静态工厂方法的类的类型相同（尽管在这个例子中，它是相同的）。
+实例（非静态）工厂方法可以以基本相同的方式使用（除了使用<code>factory-bean</code>属性而不是<code>class</code>属性），因此我们不在此讨论这些细节。</p>
 ]]></content:encoded>
     </item>
     <item>
