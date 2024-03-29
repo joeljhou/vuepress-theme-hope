@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 29 Mar 2024 07:32:57 GMT</pubDate>
-    <lastBuildDate>Fri, 29 Mar 2024 07:32:57 GMT</lastBuildDate>
+    <pubDate>Fri, 29 Mar 2024 08:51:24 GMT</pubDate>
+    <lastBuildDate>Fri, 29 Mar 2024 08:51:24 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -74,7 +74,8 @@ Spring基于XML的配置元数据支持<code>&lt;property/&gt;</code>和<code>&l
 <p><code>&lt;property/&gt;</code>元素的<code>value</code>属性指定了一个属性或构造函数参数的可读字符串表示。
 Spring使用 <a href="https://docs.spring.io/spring-framework/reference/core/validation/convert.html#core-convert-ConversionService-API" target="_blank" rel="noopener noreferrer">转换服务</a>
 来将这些值从字符串转换为属性或参数的实际类型。以下示例展示了设置各种值的方式：</p>
-<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myDataSource<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.apache.commons.dbcp.BasicDataSource<span class="token punctuation">"</span></span> <span class="token attr-name">destroy-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>myDataSource<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.apache.commons.dbcp.BasicDataSource<span class="token punctuation">"</span></span> <span class="token attr-name">destroy-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token comment">&lt;!-- 调用 setDriverClassName(String) 方法 --&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>driverClassName<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.mysql.jdbc.Driver<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>jdbc:mysql://localhost:3306/mydb<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
@@ -82,7 +83,8 @@ Spring使用 <a href="https://docs.spring.io/spring-framework/reference/core/val
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>misterkaoli<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div><p>以下示例使用了<a href="#%E4%BD%BF%E7%94%A8p%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84xml%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F">p命名空间</a>，使得 XML 配置更加简洁：</p>
-<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
        <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
        <span class="token attr-name"><span class="token namespace">xmlns:</span>p</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/p<span class="token punctuation">"</span></span>
        <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
@@ -99,7 +101,8 @@ Spring使用 <a href="https://docs.spring.io/spring-framework/reference/core/val
 除非你使用支持在创建 Bean 定义时进行自动属性完成的集成开发环境（例如<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener noreferrer">IntelliJ IDEA</a>
 或<a href="https://spring.io/tools" target="_blank" rel="noopener noreferrer">Spring Tools for Eclipse</a>），强烈建议使用这类 IDE 的帮助。</p>
 <p>你也可以配置一个<code>java.util.Properties</code>实例，示例如下：</p>
-<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mappings<span class="token punctuation">"</span></span>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mappings<span class="token punctuation">"</span></span>
       <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.springframework.context.support.PropertySourcesPlaceholderConfigurer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 
     <span class="token comment">&lt;!-- 作为 java.util.Properties 类型 --&gt;</span>
@@ -112,6 +115,33 @@ Spring使用 <a href="https://docs.spring.io/spring-framework/reference/core/val
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div><p>Spring容器会利用JavaBeans的<code>PropertyEditor</code>机制，将<code>&lt;value/&gt;</code>元素内的文本转换为<code>java.util.Properties</code>实例。
 这是一个很好的快捷方式，Spring团队中在一些场景中更倾向于使用嵌套的<code>&lt;value/&gt;</code>元素而不是<code>value</code>属性的方式。</p>
+<h3>idref元素</h3>
+<p><code>idref</code>元素仅仅是将容器中另一个<code>Bean</code>的id（一个字符串值，而不是引用）
+传递给<code>&lt;constructor-arg/&gt;</code>或<code>&lt;property/&gt;</code>元素的一种防错方式。下面的例子展示了如何使用它。</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theTargetBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theClientBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>targetName<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>idref</span> <span class="token attr-name">bean</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theTargetBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>上面的 Bean 定义片段（在运行时）与以下代码片段完全等价：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theTargetBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>client<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>targetName<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theTargetBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>第一种形式比第二种形式好，使用<code>idref</code>标签可以在部署时验证引用的<code>Bean</code>是否存在，
+避免在第二种情况下，当实例化时才发现拼写错误或不存在的引用（并且可能导致致命的结果）。这提高了配置文件的可靠性和易读性。</p>
+<blockquote>
+<p>4.0 版Bean XSD中，不再支持<code>idref</code>元素上的<code>local</code>属性，因为它与常规的<code>Bean</code>引用没有区别。
+在升级到4.0模式时，将你现有的<code>idref</code>局部引用改为<code>idref bean</code>。</p>
+</blockquote>
+<p><code>&lt;idref/&gt;</code>元素带来价值的一个常见地方（至少在早于Spring 2.0的版本中）是在<code>ProxyFactory</code> Bean
+定义中配置 <a href="https://docs.spring.io/spring-framework/reference/core/aop-api/pfb.html#aop-pfb-1" target="_blank" rel="noopener noreferrer">AOP interceptor（拦截器）</a>
+。当你指定拦截器名称时，使用<code>&lt;idref/&gt;</code>元素可以防止你把拦截器的ID拼错。</p>
 <h2>对其他Bean的引用（合作者）</h2>
 <h2>内部 Bean</h2>
 <h2>集合（Collection）</h2>
