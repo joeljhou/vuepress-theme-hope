@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 31 Mar 2024 06:39:57 GMT</pubDate>
-    <lastBuildDate>Sun, 31 Mar 2024 06:39:57 GMT</lastBuildDate>
+    <pubDate>Sun, 31 Mar 2024 07:20:25 GMT</pubDate>
+    <lastBuildDate>Sun, 31 Mar 2024 07:20:25 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -260,7 +260,35 @@ Spring使用 <a href="https://docs.spring.io/spring-framework/reference/core/val
 父集合的值位于子列表所有值之前。对于Map、Set和Properties集合类型，不存在任何排序。因此，在容器内部使用的关于
 Map、Set和Properties实现的集合类型，没有排序语义。</p>
 <h3>集合合并的限制</h3>
+<p>你不能合并不同的集合类型（例如 Map 和 List）。如果你试图这样做，会抛出一个适当的<code>Exception</code>异常。
+合并属性（merge attribute）必须在较低层级、被继承的子定义上指定。
+在父级集合定义上指定<code>merge</code>属性是多余的，不会产生期望的合并行为。</p>
 <h3>强类型集合</h3>
+<p>得益于Java的泛型特性，你能够创建特定类型的强类型的集合（Collection）。
+例如，可以声明一个Collection类型，使其只能包含（例如）String元素。
+当你通过Spring进行依赖注入时，Spring的类型转换功能将确保Collection中的元素在添加之前被自动转换为正确的类型。</p>
+<p>以下示例 Java 类和 Bean 定义展示了如何实现这一点：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SomeClass</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Float</span><span class="token punctuation">&gt;</span></span> accounts<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAccounts</span><span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Float</span><span class="token punctuation">&gt;</span></span> accounts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>accounts <span class="token operator">=</span> accounts<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>something<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.SomeClass<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>accounts<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>map</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>one<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>9.99<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>two<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2.75<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entry</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>six<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3.99<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>map</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>当准备注入<code>something</code> Bean 的<code>accounts</code>属性时，关于强类型<code>Map&lt;String, Float&gt;</code>的元素类型的泛型信息可通过反射获得。
+因此，Spring 的类型转换基础设施能够识别出这些值元素属于 <code>Float</code> 类型，并将字符串值（9.99、2.75 和 3.99）转换为实际的 <code>Float</code> 类型。</p>
 <h2>Null和空字符串值</h2>
 <h2>使用p命名空间的XML快捷方式</h2>
 <h2>使用c命名空间的XML快捷方式</h2>
