@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 01 Apr 2024 08:35:14 GMT</pubDate>
-    <lastBuildDate>Mon, 01 Apr 2024 08:35:14 GMT</lastBuildDate>
+    <pubDate>Mon, 01 Apr 2024 09:25:10 GMT</pubDate>
+    <lastBuildDate>Mon, 01 Apr 2024 09:25:10 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -471,10 +471,9 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 这种方式使代码更加整洁，同时也更符合面向对象的设计原则。</p>
 <p>DI有两个主要的变体。 基于<a href="#%E5%9F%BA%E4%BA%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5">构造器的依赖注入</a>和<a href="#%E5%9F%BA%E4%BA%8Esetter%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5">基于Setter的依赖注入</a>。</p>
 <h2>基于构造函数的依赖注入</h2>
-<p><strong>基于构造函数的DI</strong>是通过容器调用具有多个参数的构造函数来实现的，每个参数代表一个依赖项。
-与调用<strong>带有特定参数的静态工厂方法</strong>来构造<code>Bean</code>几乎是等价的。</p>
-<p>本讨论对构造函数和静态工厂方法的<mark>参数</mark>进行类似处理。
-以下示例显示了一个只能通过构造函数进行依赖注入的类。</p>
+<p><strong>基于构造函数的依赖注入</strong>是容器（如Spring框架）调用具有多个参数的构造函数来实现，每个参数代表一个依赖项，容器负责在创建Bean时注入这些依赖项。
+<strong>与静态工厂方法的比较</strong>构造Bean几乎是等价的。</p>
+<p>以下示例通过构造函数进行依赖注入：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleMovieLister</span> <span class="token punctuation">{</span>
 
     <span class="token comment">// SimpleMovieLister 依赖于 MovieFinder</span>
@@ -487,13 +486,12 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 
     <span class="token comment">// 省略了实际使用注入的 MovieFinder 的业务逻辑...</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>请注意，这个类并没有什么特别之处。它是一个普通的POJO（简单的Java对象），不依赖于容器特定的接口、基类或注解。</p>
+</code></pre></div><p>这个类并没有什么特别之处。它是一个普通的POJO（简单的Java对象），不依赖于容器特定的接口、基类或注解。</p>
 <h3>构造函数参数解析</h3>
 <p><strong>1.按定义的顺序传递构造函数的参数（参数无歧义时）</strong></p>
 <p>构造函数参数的解析匹配是通过使用参数的类型来完成的。
-如果<code>Bean</code>定义中的构造函数参数不存在歧义， 那么<strong>构造函数参数的顺序</strong>就是<code>Bean</code>定义中的定义顺序。
-这样在实例化Bean时，Spring IoC容器就会按照定义的顺序传递参数。</p>
-<p>请考虑以下这个类：</p>
+如果Bean定义中的构造函数参数不存在歧义， 那么构造函数参数的顺序就是Bean定义中的定义顺序。
+这样在实例化Bean时，Spring IoC容器就会按照定义的顺序传递参数。 请考虑以下这个类：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">x<span class="token punctuation">.</span>y</span><span class="token punctuation">;</span>
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThingOne</span> <span class="token punctuation">{</span>
@@ -786,7 +784,7 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 <li>等等</li>
 </ul>
 <p><strong>支持以XML、Java注释或Java代码作为配置元数据的格式</strong></p>
-<p>虽然<code>XML</code>一直是定义配置元数据的传统格式， 但您可以通过提供少量的<code>XML</code>配置来指定容器使用<code>Java注解</code>或<code>Java代码</code>作为元数据格式。
+<p>虽然<code>XML</code>一直是定义配置元数据的传统格式， 但你可以通过提供少量的<code>XML</code>配置来指定容器使用<code>Java注解</code>或<code>Java代码</code>作为元数据格式。
 以声明式方式启用对这些元数据格式的支持，从而更灵活地定义应用程序的配置信息。</p>
 <p><strong>为Web应用程序提供方便的ApplicationContext实例化</strong></p>
 <p>在大多数应用场景中，无需手动编写代码来实例化<strong>Spring IoC</strong>容器；
@@ -794,11 +792,11 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 行（或更多）<a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html#context-create" target="_blank" rel="noopener noreferrer">模板式的Web描述符</a>
 即可初始化<code>ApplicationContext</code></p>
 <p><strong>解析Spring框架的工作原理：<mark>应用程序类</mark>与<mark>配置元数据</mark>的整合</strong></p>
-<p>下图表展示了Spring框架的工作原理高层视图。通过将您的应用程序类与配置元数据结合起来，
-一旦<code>ApplicationContext</code>被创建和初始化，您就获得了一个完全配置且可执行的系统或应用程序。</p>
+<p>下图表展示了Spring框架的工作原理高层视图。通过将你的应用程序类与配置元数据结合起来，
+一旦<code>ApplicationContext</code>被创建和初始化，你就获得了一个完全配置且可执行的系统或应用程序。</p>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202403181756387.png" alt="Spring IoC容器" tabindex="0" loading="lazy"><figcaption>Spring IoC容器</figcaption></figure>
 <h2>配置元数据</h2>
-<p>如上图所示，Spring IoC容器消费一种配置元数据。
+<p>如上图所示，Spring IoC容器消费配置元数据。
 这种配置元数据代表了你作为一个应用开发者，如何告诉Spring容器在你的应用中实例化、配置和组装对象。</p>
 <blockquote>
 <p><strong>注意⚠️</strong>：Spring IoC容器本身与实际配置元数据的编写格式完全解耦。
@@ -914,7 +912,7 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 
 <span class="token comment">// 使用配置的实例</span>
 <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> userList <span class="token operator">=</span> service<span class="token punctuation">.</span><span class="token function">getUsernameList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><p><strong>不直接依赖于 Spring 的 API</strong></p>
+</code></pre></div><p><strong>不直接依赖于Spring的API</strong></p>
 <blockquote>
 <p>理想情况下，应用程序代码不应该直接依赖于Spring的API，而是通过元数据（如自动装配<code>@Autowired</code>注解）声明对特定Bean的依赖。</p>
 </blockquote>
