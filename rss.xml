@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 31 Mar 2024 16:12:57 GMT</pubDate>
-    <lastBuildDate>Sun, 31 Mar 2024 16:12:57 GMT</lastBuildDate>
+    <pubDate>Mon, 01 Apr 2024 08:35:14 GMT</pubDate>
+    <lastBuildDate>Mon, 01 Apr 2024 08:35:14 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -296,11 +296,11 @@ Map、Set和Properties实现的集合类型，没有排序语义。</p>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div><p>上述示例等同于以下Java代码：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code>exampleBean<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><h2>使用p-命名空间的XML快捷方式</h2>
-<p><strong>p-namespace</strong>（命名空间）提供了一种便捷的XML配置方式，允许你直接在<code>bean</code>
+</code></pre></div><h2>使用 p-命名空间</h2>
+<p>p-命名空间提供了一种便捷的XML配置方式，允许你直接在<code>bean</code>
 元素的属性中定义属性值或引用其他Bean，而无需使用嵌套的<code>&lt;property/&gt;</code>标签。</p>
 <p>Spring框架支持通过XML Schema定义的扩展配置格式和命名空间。
-虽然<code>beans</code>的配置格式在XML Schema文档中有所定义，但<strong>p-命名空间</strong>并未在XSD文件中声明，它是Spring框架内部的一个特性。</p>
+虽然<code>beans</code>的配置格式在XML Schema文档中有所定义，但p-命名空间并未在XSD文件中声明，它是Spring框架内部的一个特性。</p>
 <p><strong>简化bean属性设置</strong></p>
 <p>以下是一个示例，展示了两种不同的XML配置片段（标准XML格式和使用p-命名空间的格式），它们将产生相同的配置结果：</p>
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
@@ -318,9 +318,8 @@ Map、Set和Properties实现的集合类型，没有排序语义。</p>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>p-namespace<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.ExampleBean<span class="token punctuation">"</span></span>
           <span class="token attr-name"><span class="token namespace">p:</span>email</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>someone@somewhere.com<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
-</code></pre></div><p>在这个例子中，p-命名空间 中的<code>email</code>属性告诉Spring框架需要设置一个属性。需要注意的是，由于p-命名空间没有对应的schema定义，您可以直接使用属性名作为属性值。</p>
-<p>这个示例展示了在Bean定义中，p-命名空间中有一个名为<code>email</code>的属性。这告诉Spring要包含一个属性声明。
-如前所述，p-命名空间没有schema定义，所以你可以直接使用属性名作为属性值，而无需按照常规方式指定属性值。</p>
+</code></pre></div><p>这个示例展示了在Bean定义中，p-命名空间中有一个名为<code>email</code>的属性。这告诉Spring要包含一个属性声明。
+如前所述，p-命名空间没有Schema定义，所以你可以直接使用属性名作为属性值，而无需按照常规方式指定属性值。</p>
 <p><strong>简化bean属性引用</strong></p>
 <p>以下示例包含了两个bean定义，它们都引用了另一个bean：</p>
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
@@ -346,12 +345,59 @@ Map、Set和Properties实现的集合类型，没有排序语义。</p>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Jane Doe<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
-</code></pre></div><p>以下示例不仅使用p-命名空间声明了属性值，还使用了一种特殊的格式来声明属性的引用。
-第一个bean定义使用<code>&lt;property name="spouse" ref="jane"/&gt;</code>创建了从Bean <code>john</code> 到 Bean <code>jane</code>的引用，
-而第二个bean定义使用了<code>p:spouse-ref="jane"</code>作为属性来实现完全相同的功能。
-在这种情况下，<code>spouse</code>是属性名称，而<code>-ref</code>部分表示这不仅仅是一个直接的值，而是对另一个bean的引用。</p>
-<h2>使用c-命名空间的XML快捷方式</h2>
+</code></pre></div><p>此示例不仅使用p-命名空间声明了属性值，还使用了一种特殊的格式来声明属性的引用。
+第一个bean定义使用了传统的</p>
+<ul>
+<li><code>p:name</code>：这是使用p-命名空间设置name属性值的简洁方式</li>
+<li><code>p:spouse-ref</code>：这是使用p-命名空间声明spouse属性的引用，<code>-ref</code>后跟被引用Bean</li>
+</ul>
+<blockquote>
+<p>注意⚠️：p-命名空间不如标准XML格式灵活。例如，声明属性引用的格式与以<code>Ref</code>结尾的属性发生冲突，而标准XML格式则不会。
+我们建议你谨慎选择这种方式，并将此决策传达给你的团队成员，以避免同时使用这三种格式的XML文档。</p>
+</blockquote>
+<h2>使用 c-命名空间</h2>
+<p>与带有<a href="#%E4%BD%BF%E7%94%A8-p-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">p-命名空间的XML快捷方式</a>类似，
+Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造函数参数，而不是嵌套的<code>constructor-arg</code>元素。</p>
+<p>以下示例使用c-命名空间来实现与基于构造函数依赖注入相同的功能：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
+	<span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+	<span class="token attr-name"><span class="token namespace">xmlns:</span>c</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/c<span class="token punctuation">"</span></span>
+	<span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanTwo<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.ThingTwo<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanThree<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.ThingThree<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+	<span class="token comment">&lt;!-- 传统的声明，可以使用可选的参数名称 --&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanOne<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.ThingOne<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>thingTwo<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanTwo<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>thingThree<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanThree<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>something@somewhere.com<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+
+	<span class="token comment">&lt;!-- 使用c-命名空间声明参数名称 --&gt;</span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanOne<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.ThingOne<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">c:</span>thingTwo-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanTwo<span class="token punctuation">"</span></span>
+		<span class="token attr-name"><span class="token namespace">c:</span>thingThree-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanThree<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">c:</span>email</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>something@somewhere.com<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>c-命名空间与p-命名空间使用相同的约定（以<code>-ref</code>结尾表示Bean引用）来通过名称设置构造函数参数。
+同样，即使c-命名空间在XSD模式中未定义（它存在于Spring核心中），但在XML文件中仍然需要声明。</p>
+<p>对于构造函数参数名称不可用的罕见情况（通常是因为字节码是在没有调试debug信息的情况下编译的），可以使用参数索引（下标）作为备用，如下所示：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token comment">&lt;!-- c-namespace索引声明 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanOne<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.ThingOne<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">c:</span>_0-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanTwo<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">c:</span>_1-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanThree<span class="token punctuation">"</span></span>
+      <span class="token attr-name"><span class="token namespace">c:</span>_2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>something@somewhere.com<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><blockquote>
+<p>由于XML语法限制，索引表示法需要以下划线（_）开头，因为XML属性名不能以数字开头（尽管一些IDE允许这样做）。
+对于<code>&lt;constructor-arg&gt;</code>元素，也有相应的索引表示法可用，但并不常用，因为通常情况下，普通的声明顺序已经足够了。</p>
+</blockquote>
+<p>在实践中，构造函数解析机制在匹配参数方面非常高效，因此除非确实需要，我们建议在整个配置中始终使用名称标记。</p>
 <h2>复合属性名</h2>
+<p>在设置Bean属性时，只要路径中除最终属性名外的所有组件不为null，就可以使用复合或嵌套的属性名称。以下是一个Bean定义的示例：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>something<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>things.ThingOne<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fred.bob.sammy<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>123<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>在这个示例中，<code>something</code> Bean有一个<code>fred</code>属性，该属性又有一个<code>bob</code>属性，<code>bob</code>属性又有一个<code>sammy</code>属性，最终<code>sammy</code>属性被设置为值 123。
+为了使这个设置生效，除了最终属性名<code>sammy</code>外，需要保证路径中的所有属性的构建必须不为 <code>null</code>。否则，将抛出 <code>NullPointerException</code> 异常。</p>
 ]]></content:encoded>
     </item>
     <item>
