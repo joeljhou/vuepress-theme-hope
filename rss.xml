@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 01 Apr 2024 09:25:10 GMT</pubDate>
-    <lastBuildDate>Mon, 01 Apr 2024 09:25:10 GMT</lastBuildDate>
+    <pubDate>Mon, 01 Apr 2024 09:28:48 GMT</pubDate>
+    <lastBuildDate>Mon, 01 Apr 2024 09:28:48 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -396,8 +396,8 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>something<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>things.ThingOne<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fred.bob.sammy<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>123<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
-</code></pre></div><p>在这个示例中，<code>something</code> Bean有一个<code>fred</code>属性，该属性又有一个<code>bob</code>属性，<code>bob</code>属性又有一个<code>sammy</code>属性，最终<code>sammy</code>属性被设置为值 123。
-为了使这个设置生效，除了最终属性名<code>sammy</code>外，需要保证路径中的所有属性的构建必须不为 <code>null</code>。否则，将抛出 <code>NullPointerException</code> 异常。</p>
+</code></pre></div><p>在这个示例中，<code>something</code> Bean有一个<code>fred</code>属性，该属性又有一个<code>bob</code>属性，属性下又有一个<code>sammy</code>属性，最终<code>sammy</code>属性被设置为值 123。
+为了使这个设置生效，除了最终的属性名<code>sammy</code>外，要保证路径中的所有属性不为 <code>null</code>。否则，将抛出 NullPointerException 异常。</p>
 ]]></content:encoded>
     </item>
     <item>
