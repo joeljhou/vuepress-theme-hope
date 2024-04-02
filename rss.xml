@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 02 Apr 2024 07:49:10 GMT</pubDate>
-    <lastBuildDate>Tue, 02 Apr 2024 07:49:10 GMT</lastBuildDate>
+    <pubDate>Tue, 02 Apr 2024 09:44:42 GMT</pubDate>
+    <lastBuildDate>Tue, 02 Apr 2024 09:44:42 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -20,10 +20,27 @@
       <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-autowire.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-autowire.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">自动装配协作者</source>
-      <description>自动装配协作者</description>
+      <description>自动装配协作者（Autowiring Collaborators） Spring容器可以自动装配协作Bean之间的关系。 你可以通过检查ApplicationContext的内容，让Spring自动为你的Bean解析协作对象（其他Bean）。 自动装配的优势 减少手动配置：自动装配可以显著减少对手动指定属性或构造方法参数的需求。 其他机制 ，如bean...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
+<p>Spring容器可以自动装配协作Bean之间的关系。
+你可以通过检查<code>ApplicationContext</code>的内容，让Spring自动为你的Bean解析协作对象（其他Bean）。</p>
+<p><strong>自动装配的优势</strong></p>
+<ul>
+<li><strong>减少手动配置</strong>：自动装配可以显著减少对手动指定属性或构造方法参数的需求。
+<a href="https://docs.spring.io/spring-framework/reference/core/beans/child-bean-definitions.html" target="_blank" rel="noopener noreferrer">其他机制</a>
+，如bean模板，在这方面也是非常有价值的。</li>
+<li><strong>动态更新配置</strong>：随着项目的发展，对象可能会增加新的依赖。自动装配能够适应这种变化，自动满足新的依赖关系，而无需手动更新配置。
+这一点在项目的迭代开发过程中尤为有用。同时，当项目稳定下来后，开发者仍然可以选择切换到显式装配，以获得更精确的控制。</li>
+</ul>
+<p><strong>四种自动装配模式</strong></p>
+<p>在使用XML配置时，
+（参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html" target="_blank" rel="noopener noreferrer">依赖注入</a>），
+可以通过<code>&lt;bean/&gt;</code>元素的<code>autowire</code>属性来定义Bean的自动装配模式。
+Spring提供了四种自动装配模式，允许你为每个Bean单独指定使用哪种模式。以下是这四种模式的详细描述：</p>
+<p>| 模式          | 描述                                                                                                                                           |
+|</p>
 ]]></content:encoded>
     </item>
     <item>
