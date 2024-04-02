@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 01 Apr 2024 10:52:55 GMT</pubDate>
-    <lastBuildDate>Mon, 01 Apr 2024 10:52:55 GMT</lastBuildDate>
+    <pubDate>Tue, 02 Apr 2024 07:49:10 GMT</pubDate>
+    <lastBuildDate>Tue, 02 Apr 2024 07:49:10 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -63,11 +63,27 @@ Bean的情况下，还可以指定相应的销毁时依赖关系。
       <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-lazy-init.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-lazy-init.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">懒加载（Lazy Initialization）Bean</source>
-      <description>懒加载（Lazy Initialization）Bean</description>
+      <description>懒加载（Lazy Initialization）Bean 在Spring框架中，ApplicationContext的默认行为是在启动过程中立即创建并配置所有的单例Bean。 这种做法有利于及时发现配置错误或环境问题，避免了错误在应用运行一段时间后才暴露。 然而，如果需要改变这一行为，可以通过设置Bean定义为懒加载（lazy-initialized）...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-]]></content:encoded>
+<p>在Spring框架中，<code>ApplicationContext</code>的默认行为是在启动过程中立即创建并配置所有的单例Bean。
+这种做法有利于及时发现配置错误或环境问题，避免了错误在应用运行一段时间后才暴露。
+然而，如果需要改变这一行为，可以通过设置Bean定义为懒加载（lazy-initialized）来实现。
+这样一来，Bean的实例化将被推迟到第一次实际请求该Bean时进行，而不是在应用启动时完成，从而提供了更大的灵活性和控制。</p>
+<p>在XML中，通过<code>&lt;bean/&gt;</code>元素上的<code>lazy-init</code>属性来控制这种行为，如下例所示：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token comment">&lt;!-- 将Bean定义为懒加载 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lazy<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.something.ExpensiveToCreateBean<span class="token punctuation">"</span></span> <span class="token attr-name">lazy-init</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token comment">&lt;!-- 默认立即创建Bean --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>not.lazy<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.something.AnotherBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><p>当上述配置被<code>ApplicationContext</code>加载启动时，<code>lazy</code> Bean不会立即预实例化，而<code>not.lazy</code> Bean则会被急切地预实例化。</p>
+<p>然而，当一个懒加载的Bean作为另一个未标记为懒加载单例Bean的依赖项时，<code>ApplicationContext</code>会在启动时创建这个懒加载的Bean，
+因为它必须满足单例Bean的依赖关系。懒加载的Bean会被注入到一个未标记为懒加载的单例Bean中。</p>
+<p>你还可以通过在<code>&lt;beans/&gt;</code>元素上使用<code>default-lazy-init</code>属性来控制容器级别的懒加载初始化，如下例所示：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">default-lazy-init</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token comment">&lt;!-- 不会预实例化任何Bean... --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div>]]></content:encoded>
     </item>
     <item>
       <title>方法注入</title>
@@ -465,7 +481,7 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 <li><a href="/spring-framework/core/dependencies/factory-collaborators.html" target="_blank">依赖注入</a></li>
 <li><a href="/spring-framework/core/dependencies/factory-properties-detailed.html" target="_blank">依赖和配置详解</a></li>
 <li><a href="/spring-framework/core/dependencies/factory-dependson.html" target="_blank">使用depends-on</a></li>
-<li><a href="/spring-framework/core/dependencies/factory-lazy-init.html" target="_blank">延迟初始化的Bean</a></li>
+<li><a href="/spring-framework/core/dependencies/factory-lazy-init.html" target="_blank">懒加载Bean</a></li>
 <li><a href="/spring-framework/core/dependencies/factory-autowire.html" target="_blank">自动装配协作者</a></li>
 <li><a href="/spring-framework/core/dependencies/factory-method-injection.html" target="_blank">方法注入</a></li>
 </ul>
