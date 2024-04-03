@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 03 Apr 2024 07:13:57 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2024 07:13:57 GMT</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2024 07:46:48 GMT</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2024 07:46:48 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -107,43 +107,43 @@ Bean的情况下，还可以指定相应的销毁时依赖关系。
       <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-method-injection.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-method-injection.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">方法注入</source>
-      <description>方法注入 在大多数应用场景中，容器中的大多数Bean都是单例 的。 当一个单例Bean需要与另一个单例Bean或非单例Bean协作时，通常通过将一个Bean定义为另一个Bean的属性来处理这种依赖关系。 当Bean的生命周期不同时，问题就出现了。 假设单例Bean A 需要在每次调用其方法时使用非单例原型（prototype）Bean B。 容器只创建...</description>
+      <description>方法注入 大多数应用场景中，容器中的大多数Bean都是单例（singleton） 的。 当一个单例（singleton）Bean需要与原型（prototype）Bean协作时，传统的注入方式可能不再适用。 这是因为单例Bean在整个应用生命周期内只创建一次，而原型Bean每次请求时都会创建一个新的实例。 一种解决方案是放弃一些控制反转（inversio...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<p>在大多数应用场景中，容器中的大多数Bean都是<a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html#beans-factory-scopes-singleton" target="_blank" rel="noopener noreferrer">单例</a>
+<p>大多数应用场景中，容器中的大多数Bean都是<a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html#beans-factory-scopes-singleton" target="_blank" rel="noopener noreferrer">单例（singleton）</a>
 的。
-当一个单例Bean需要与另一个单例Bean或非单例Bean协作时，通常通过将一个Bean定义为另一个Bean的属性来处理这种依赖关系。
-当Bean的生命周期不同时，问题就出现了。 假设单例Bean A 需要在每次调用其方法时使用非单例<strong>原型</strong>（prototype）Bean B。
-容器只创建一次单例Bean A，因此只有一次设置属性的机会。容器不能在每次需要Bean B的时候为Bean A提供一个新的实例。</p>
+当一个单例（singleton）Bean需要与原型（prototype）Bean协作时，传统的注入方式可能不再适用。
+这是因为单例Bean在整个应用生命周期内只创建一次，而原型Bean每次请求时都会创建一个新的实例。</p>
 <p>一种解决方案是放弃一些控制反转（inversion of control）。
-你可以通过实现<a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#beans-factory-aware" target="_blank" rel="noopener noreferrer">ApplicationContextAware</a>
-接口使BeanA意识到容器，并通过<a href="https://docs.spring.io/spring-framework/reference/core/beans/basics.html#beans-factory-client" target="_blank" rel="noopener noreferrer">对容器进行<code>getBean("B")</code>调用</a>
-，每次Bean A需要时请求（new一个新的）Bean B实例。 以下示例展示了这种方法：</p>
+通过实现<a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#beans-factory-aware" target="_blank" rel="noopener noreferrer">ApplicationContextAware</a>
+接口使Bean A意识到Spring IoC容器 ，并
+<a href="https://docs.spring.io/spring-framework/reference/core/beans/basics.html#beans-factory-client" target="_blank" rel="noopener noreferrer">使用容器</a>
+进行<code>getBean("B")</code>调用，每次Bean A需要时请求（新建<code>new</code>）Bean B实例。 以下示例展示了这种方法：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">fiona<span class="token punctuation">.</span>apple</span><span class="token punctuation">;</span>
 
-<span class="token comment">// Spring-API imports</span>
+<span class="token comment">// 导入 Spring 框架相关类</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span></span><span class="token class-name">BeansException</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span></span><span class="token class-name">ApplicationContext</span></span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span></span><span class="token class-name">ApplicationContextAware</span></span><span class="token punctuation">;</span>
 
 <span class="token doc-comment comment">/**
- * 使用一个具有状态的Command-style类来执行一些处理的类。
+ * 使用一个有状态的 Command-style 类来执行一些处理的类。
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CommandManager</span> <span class="token keyword">implements</span> <span class="token class-name">ApplicationContextAware</span> <span class="token punctuation">{</span>
 
 	<span class="token keyword">private</span> <span class="token class-name">ApplicationContext</span> applicationContext<span class="token punctuation">;</span>
 
 	<span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token class-name">Map</span> commandState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token comment">// 获取适当Command的新实例</span>
+	    <span class="token comment">// 获取一个适当的 Command 的新实例</span>
 		<span class="token class-name">Command</span> command <span class="token operator">=</span> <span class="token function">createCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">// 在（希望是全新的）Command实例上设置状态</span>
+		<span class="token comment">// 设置 Command 的状态</span>
 		command<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span>commandState<span class="token punctuation">)</span><span class="token punctuation">;</span>
 		<span class="token keyword">return</span> command<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 
 	<span class="token keyword">protected</span> <span class="token class-name">Command</span> <span class="token function">createCommand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token comment">// 注意Spring API的依赖！</span>
+		<span class="token comment">// 注意 Spring API 的依赖！</span>
 		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>applicationContext<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token string">"command"</span><span class="token punctuation">,</span> <span class="token class-name">Command</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 
@@ -152,7 +152,8 @@ Bean的情况下，还可以指定相应的销毁时依赖关系。
 		<span class="token keyword">this</span><span class="token punctuation">.</span>applicationContext <span class="token operator">=</span> applicationContext<span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>上述方法并不理想，因为业务代码意识到并与Spring框架耦合。方法注入（Method Injection）是Spring IoC容器的一种高级特性，可以干净地处理这种用例。</p>
+</code></pre></div><p>上述方法并不理想，因为业务代码意识到并与Spring框架耦合。
+方法注入（Method Injection）是Spring IoC容器的一种高级特性，可以干净地处理这种用例。</p>
 <blockquote>
 <p>你可以在<a href="https://spring.io/blog/2004/08/06/method-injection/" target="_blank" rel="noopener noreferrer">这篇博客文章</a>中阅读更多关于方法注入的动机。</p>
 </blockquote>
