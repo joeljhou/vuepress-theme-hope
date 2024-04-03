@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 03 Apr 2024 07:46:48 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2024 07:46:48 GMT</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2024 08:13:55 GMT</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2024 08:13:55 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -15,6 +15,17 @@
     <category>Spring Data</category>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>Bean作用域（Scope）</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/beans-scope.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/beans-scope.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Bean作用域（Scope）</source>
+      <description>Bean作用域（Scope）</description>
+      <category>Spring</category>
+      <pubDate>Wed, 03 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>自动装配协作者</title>
       <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-autowire.html</link>
