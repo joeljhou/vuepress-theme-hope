@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 03 Apr 2024 08:13:55 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2024 08:13:55 GMT</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2024 09:29:49 GMT</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2024 09:29:49 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -20,10 +20,18 @@
       <link>https://www.geekyspace.cn/spring-framework/core/beans-scope.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/beans-scope.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Bean作用域（Scope）</source>
-      <description>Bean作用域（Scope）</description>
+      <description>Bean作用域（Scope） 当你创建一个Bean定义时，实际上是在创建Bean定义所定义类的实际实例的配方。 将Bean定义视为“配方”的概念非常重要，因为它意味着，就像一个类一样，你可以从一个单一的“配方”中创建多个对象实例。 你不仅可以控制Bean定义中的各种依赖项和配置值，还可以控制由Bean定义创建的对象的作用域（scope）。 这种方法是强...</description>
       <category>Spring</category>
       <pubDate>Wed, 03 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
+<p>当你创建一个Bean定义时，实际上是在创建Bean定义所定义类的实际实例的配方。
+将Bean定义视为“配方”的概念非常重要，因为它意味着，就像一个类一样，你可以从一个单一的“配方”中创建多个对象实例。</p>
+<p>你不仅可以控制Bean定义中的各种依赖项和配置值，还可以控制由Bean定义创建的对象的作用域（scope）。
+这种方法是强大且灵活的，因为你可以通过配置选择创建的对象的作用域，而不必在Java类级别上固定对象的作用域。
+Bean定义可以是多种作用域之一。Spring框架支持六种作用域，其中四种仅在使用Web感知（aware）的<code>ApplicationContext</code>时才可用。
+你还可以创建<a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html#beans-factory-scopes-custom" target="_blank" rel="noopener noreferrer">自定义作用域</a>。</p>
+<p>| Bean作用域（Scope） | 描述                                   |
+|</p>
 ]]></content:encoded>
     </item>
     <item>
