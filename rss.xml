@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 03 Apr 2024 09:29:49 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Apr 2024 09:29:49 GMT</lastBuildDate>
+    <pubDate>Wed, 03 Apr 2024 10:05:58 GMT</pubDate>
+    <lastBuildDate>Wed, 03 Apr 2024 10:05:58 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -33,6 +33,7 @@ Bean定义可以是多种作用域之一。Spring框架支持六种作用域，�
 <p>| Bean作用域（Scope） | 描述                                   |
 |</p>
 ]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/singleton.png" type="image/png"/>
     </item>
     <item>
       <title>自动装配协作者</title>
