@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 08 Apr 2024 10:32:08 GMT</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2024 10:32:08 GMT</lastBuildDate>
+    <pubDate>Mon, 08 Apr 2024 11:00:40 GMT</pubDate>
+    <lastBuildDate>Mon, 08 Apr 2024 11:00:40 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -74,8 +74,8 @@
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div><p>然而，前面两个示例中的第一个并未将代码与Spring耦合。</p>
-<div class="hint-container tip">
-<p class="hint-container-title">提示</p>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p>请注意，<code>@PostConstruct</code>和初始化方法一般在容器的单例创建锁内执行。只有在从<code>@PostConstruct</code>方法返回后，
 Bean实例才被视为完全初始化并准备好发布给其他对象。
 这些单独的初始化方法仅用于验证配置状态并可能根据给定的配置准备一些数据结构，但不涉及外部Bean访问相关的进一步活动。
@@ -208,12 +208,13 @@ Spring提供了四种自动装配模式，允许你为每个Bean单独指定使�
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manager<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ManagerBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>accountDao<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.jdbc.JdbcAccountDao<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-</code></pre></div><blockquote>
+</code></pre></div><div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p><code>depends-on</code>属性不仅可以指定初始化时的依赖关系，而且在
 <a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html#beans-factory-scopes-singleton" target="_blank" rel="noopener noreferrer">单例</a>
 Bean的情况下，还可以指定相应的销毁时依赖关系。
 <code>depends-on</code>指定的依赖Bean会在给定Bean本身被销毁之前被首先销毁。因此，<code>depends-on</code>也可以控制关闭顺序。</p>
-</blockquote>
+</div>
 ]]></content:encoded>
     </item>
     <item>
@@ -373,10 +374,11 @@ Spring使用 <a href="https://docs.spring.io/spring-framework/reference/core/val
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div><p>第一种形式比第二种形式好，使用<code>idref</code>标签可以在部署时验证引用的<code>Bean</code>是否存在，
 避免在第二种情况下，当实例化时才发现拼写错误或不存在的引用（并且可能导致致命的结果）。这提高了配置文件的可靠性和易读性。</p>
-<blockquote>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p>4.0 版Bean XSD中，不再支持<code>idref</code>元素上的<code>local</code>属性，因为它与常规的Bean引用没有区别。
 在升级到4.0模式时，将你现有的<code>idref</code>局部引用改为<code>idref bean</code>。</p>
-</blockquote>
+</div>
 <p><code>&lt;idref/&gt;</code>元素带来价值的一个常见地方（至少在早于Spring 2.0的版本中）是在<code>ProxyFactory</code> Bean
 定义中配置 <a href="https://docs.spring.io/spring-framework/reference/core/aop-api/pfb.html#aop-pfb-1" target="_blank" rel="noopener noreferrer">AOP interceptor（拦截器）</a>
 。当你指定拦截器名称时，使用<code>&lt;idref/&gt;</code>元素可以防止你把拦截器的ID拼错。</p>
@@ -407,10 +409,11 @@ Spring使用 <a href="https://docs.spring.io/spring-framework/reference/core/val
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
     <span class="token comment">&lt;!-- 插入其他配置和依赖项 --&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
-</code></pre></div><blockquote>
+</code></pre></div><div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p>4.0 版Bean XSD中，<code>ref</code>元素上的<code>local</code>属性不在支持，因为它与常规的Bean引用没有区别。
 在升级到4.0模式时，将你现有的<code>ref</code>局部引用改为<code>idref bean</code>。</p>
-</blockquote>
+</div>
 <h2>内部 Bean</h2>
 <p>在<code>&lt;property/&gt;</code>或<code>&lt;constructor-arg/&gt;</code>元素内部使用<code>&lt;bean/&gt;</code>元素定义了一个内部Bean，如下例所示。</p>
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>outer<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -594,10 +597,11 @@ Map、Set和Properties实现的集合类型，没有排序语义。</p>
 <li><code>p:name</code>：这是使用p-命名空间设置name属性值的简洁方式</li>
 <li><code>p:spouse-ref</code>：这是使用p-命名空间声明spouse属性的引用，<code>-ref</code>后跟被引用Bean</li>
 </ul>
-<blockquote>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p>注意⚠️：p-命名空间不如标准XML格式灵活。例如，声明属性引用的格式与以<code>Ref</code>结尾的属性发生冲突，而标准XML格式则不会。
 我们建议你谨慎选择这种方式，并将此决策传达给你的团队成员，以避免同时使用这三种格式的XML文档。</p>
-</blockquote>
+</div>
 <h2>使用 c-命名空间</h2>
 <p>与带有<a href="#%E4%BD%BF%E7%94%A8-p-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">p-命名空间的XML快捷方式</a>类似，
 Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造函数参数，而不是嵌套的<code>constructor-arg</code>元素。</p>
@@ -629,10 +633,11 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token comment">&lt;!-- c-namespace索引声明 --&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanOne<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x.y.ThingOne<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">c:</span>_0-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanTwo<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">c:</span>_1-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>beanThree<span class="token punctuation">"</span></span>
       <span class="token attr-name"><span class="token namespace">c:</span>_2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>something@somewhere.com<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
-</code></pre></div><blockquote>
+</code></pre></div><div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p>由于XML语法限制，索引表示法需要以下划线（_）开头，因为XML属性名不能以数字开头（尽管一些IDE允许这样做）。
 对于<code>&lt;constructor-arg&gt;</code>元素，也有相应的索引表示法可用，但并不常用，因为通常情况下，普通的声明顺序已经足够了。</p>
-</blockquote>
+</div>
 <p>在实践中，构造函数解析机制在匹配参数方面非常高效，因此除非确实需要，我们建议在整个配置中始终使用名称标记。</p>
 <h2>复合属性名</h2>
 <p>在设置Bean属性时，只要路径中除最终属性名外的所有组件不为null，就可以使用复合或嵌套的属性名称。以下是一个Bean定义的示例：</p>
@@ -785,9 +790,10 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>42<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">&gt;</span></span>
 </code></pre></div><p>除了解决多个简单值的歧义外，指定索引还可以解决构造函数具有两个相同类型参数的歧义问题。</p>
-<blockquote>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p><strong>注意⚠️</strong>：索引（下标）从0开始。</p>
-</blockquote>
+</div>
 <p>你还可以使用构造函数的参数名称来消除值的歧义，如下例所示：</p>
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.ExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>constructor-arg</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>years<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>7500000<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
@@ -1041,11 +1047,12 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 <h2>配置元数据</h2>
 <p>如上图所示，Spring IoC容器消费配置元数据。
 这种配置元数据代表了你作为一个应用开发者，如何告诉Spring容器在你的应用中实例化、配置和组装对象。</p>
-<blockquote>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p><strong>注意⚠️</strong>：Spring IoC容器本身与实际配置元数据的编写格式完全解耦。
 如今，许多开发者选择使用<a href="https://docs.spring.io/spring-framework/reference/core/beans/java.html" target="_blank" rel="noopener noreferrer">基于Java的容器配置</a>
 来构建他们的Spring应用程序。</p>
-</blockquote>
+</div>
 <p>有关在<code>Spring</code>容器中使用其他形式的元数据信息，参阅：</p>
 <ul>
 <li><a href="https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html" target="_blank" rel="noopener noreferrer">基于XML的容器配置</a></li>
@@ -1094,12 +1101,13 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 构造函数的一条或多条路径是<mark>资源字符串</mark>，它让容器从各种外部资源（如本地文件系统、Java <code>CLASSPATH</code>
 等）加载配置元数据。</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">ApplicationContext</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"services.xml"</span><span class="token punctuation">,</span> <span class="token string">"daos.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><blockquote>
+</code></pre></div><div class="hint-container note">
+<p class="hint-container-title">注</p>
 <p>了解更多关于<a href="https://docs.spring.io/spring-framework/reference/core/resources.html" target="_blank" rel="noopener noreferrer">资源加载</a>的信息；
 它提供了一种简单的方法，可以从<code>URI</code>语法中定义的位置读取<code>InputStream</code>。 特别是，<code>Resource</code>路径被用来构建应用程序上下文， 如
 <a href="https://docs.spring.io/spring-framework/reference/core/resources.html#resources-app-ctx" target="_blank" rel="noopener noreferrer">Application Context和资源路径</a>
 中所述。</p>
-</blockquote>
+</div>
 <p>以下示例显示了<strong>服务层对象</strong><code>services.xml</code> 配置文件：</p>
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
