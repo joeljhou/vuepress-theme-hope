@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 08 Apr 2024 08:54:33 GMT</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2024 08:54:33 GMT</lastBuildDate>
+    <pubDate>Mon, 08 Apr 2024 09:07:17 GMT</pubDate>
+    <lastBuildDate>Mon, 08 Apr 2024 09:07:17 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -15,6 +15,26 @@
     <category>Spring Data</category>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>自定义Bean的性质</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/custom-beans-nature.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/custom-beans-nature.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">自定义Bean的性质</source>
+      <description>自定义Bean的性质 Spring框架提供了多种接口，你可以使用这些接口来定制Bean的性质。本节将它们分为以下几类： 生命周期回调 ApplicationContextAware 和 BeanNameAware 其他Aware接口 生命周期回调 ApplicationContextAware和BeanNameAware 其他Aware接口</description>
+      <category>Spring</category>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>Spring框架提供了多种接口，你可以使用这些接口来定制Bean的性质。本节将它们分为以下几类：</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#beans-factory-lifecycle" target="_blank" rel="noopener noreferrer">生命周期回调</a></li>
+<li><a href="#applicationcontextaware%E5%92%8Cbeannameaware">ApplicationContextAware 和 BeanNameAware</a></li>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#aware-list" target="_blank" rel="noopener noreferrer">其他Aware接口</a></li>
+</ul>
+<h2>生命周期回调</h2>
+<h2>ApplicationContextAware和BeanNameAware</h2>
+<h2>其他Aware接口</h2>
+]]></content:encoded>
+    </item>
     <item>
       <title>Bean作用域（Scope）</title>
       <link>https://www.geekyspace.cn/spring-framework/core/beans-scope.html</link>
