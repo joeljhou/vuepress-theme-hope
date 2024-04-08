@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 08 Apr 2024 09:22:17 GMT</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2024 09:22:17 GMT</lastBuildDate>
+    <pubDate>Mon, 08 Apr 2024 10:02:11 GMT</pubDate>
+    <lastBuildDate>Mon, 08 Apr 2024 10:02:11 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -47,6 +47,50 @@
 参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-extension.html" target="_blank" rel="noopener noreferrer">容器扩展点</a>。</p>
 <p>除了初始化和销毁回调之外，Spring管理的对象还可以实现<code>Lifecycle</code>接口，以便这些对象可以参与由容器自身生命周期驱动的启动和关闭过程。</p>
 <p>生命周期回调接口在本节中有详细描述。</p>
+<h3>初始化回调</h3>
+<p><code>org.springframework.beans.factory.InitializingBean</code>接口允许Bean在容器设置了所有必要属性之后执行初始化工作。
+<code>InitializingBean</code>接口指定了一个方法：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">void</span> <span class="token function">afterPropertiesSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
+</code></pre></div><p>我们建议不要使用<code>InitializingBean</code>接口，因为它会将代码不必要地耦合到Spring。
+相反，我们建议使用<code>@PostConstruct</code>注解或指定一个POJO初始化方法。
+在基于XML的配置元数据中，你可以使用<code>init-method</code>属性来指定具有<code>void</code>无参数签名的方法的名称。
+对于Java配置，你可以使用<code>@Bean</code>的<code>initMethod</code>属性。
+参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/java/bean-annotation.html#beans-java-lifecycle-callbacks" target="_blank" rel="noopener noreferrer">接收生命周期回调</a>。
+考虑以下示例：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleInitBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.ExampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">init-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>init<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleBean</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 做一些初始化工作</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上一个示例与以下示例几乎具有相同的效果，以下示例分为两个部分：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleInitBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.AnotherExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnotherExampleBean</span> <span class="token keyword">implements</span> <span class="token class-name">InitializingBean</span> <span class="token punctuation">{</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterPropertiesSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 做一些初始化工作</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然而，前面两个示例中的第一个并未将代码与Spring耦合在一起。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>请注意，<code>@PostConstruct</code>和初始化方法一般在容器的单例创建锁内执行。只有在从<code>@PostConstruct</code>方法返回后，
+Bean实例才被视为完全初始化并准备好发布给其他对象。
+这些单独的初始化方法仅用于验证配置状态并可能根据给定的配置准备一些数据结构，但不涉及外部Bean访问相关的进一步活动。
+否则，存在初始化死锁的风险。</p>
+<p>对于需要触发昂贵的初始化后活动的场景，例如异步数据库准备步骤，你的Bean应该实现
+<code>SmartInitializingSingleton.afterSingletonsInstantiated()</code>方法，或依赖于上下文刷新事件：实现
+<code>ApplicationListener&lt;ContextRefreshedEvent&gt;</code>或声明其注解等效的 <code>@EventListener(ContextRefreshedEvent.class)</code>。
+这些变体在所有常规单例初始化之后，因此不会在任何单例创建锁内。</p>
+<p>或者，你可以实现<code>(Smart)Lifecycle</code>接口并与容器的整体生命周期管理集成，包括自动启动机制、预销毁停止步骤和潜在的停止/重新启动回调（参见下文）。</p>
+</div>
+<h3>销毁回调</h3>
+<h3>默认的初始化和销毁方法</h3>
+<h3>结合生命周期机制</h3>
+<h3>启动和关闭的回调</h3>
+<h3>在非Web应用中优雅地关闭Spring IoC容器</h3>
 <h2>ApplicationContextAware和BeanNameAware</h2>
 <h2>其他Aware接口</h2>
 ]]></content:encoded>
