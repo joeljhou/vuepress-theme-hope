@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 08 Apr 2024 10:02:11 GMT</pubDate>
-    <lastBuildDate>Mon, 08 Apr 2024 10:02:11 GMT</lastBuildDate>
+    <pubDate>Mon, 08 Apr 2024 10:32:08 GMT</pubDate>
+    <lastBuildDate>Mon, 08 Apr 2024 10:32:08 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -48,12 +48,12 @@
 <p>除了初始化和销毁回调之外，Spring管理的对象还可以实现<code>Lifecycle</code>接口，以便这些对象可以参与由容器自身生命周期驱动的启动和关闭过程。</p>
 <p>生命周期回调接口在本节中有详细描述。</p>
 <h3>初始化回调</h3>
-<p><code>org.springframework.beans.factory.InitializingBean</code>接口允许Bean在容器设置了所有必要属性之后执行初始化工作。
+<p>实现<code>org.springframework.beans.factory.InitializingBean</code>接口允许Bean在容器设置了所有必要属性之后执行初始化工作。
 <code>InitializingBean</code>接口指定了一个方法：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">void</span> <span class="token function">afterPropertiesSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
 </code></pre></div><p>我们建议不要使用<code>InitializingBean</code>接口，因为它会将代码不必要地耦合到Spring。
 相反，我们建议使用<code>@PostConstruct</code>注解或指定一个POJO初始化方法。
-在基于XML的配置元数据中，你可以使用<code>init-method</code>属性来指定具有<code>void</code>无参数签名的方法的名称。
+在基于XML的配置中，你可以使用<code>init-method</code>属性来指定具有<code>void</code>无参数签名的方法的名称。
 对于Java配置，你可以使用<code>@Bean</code>的<code>initMethod</code>属性。
 参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/java/bean-annotation.html#beans-java-lifecycle-callbacks" target="_blank" rel="noopener noreferrer">接收生命周期回调</a>。
 考虑以下示例：</p>
@@ -64,7 +64,7 @@
 		<span class="token comment">// 做一些初始化工作</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>上一个示例与以下示例几乎具有相同的效果，以下示例分为两个部分：</p>
+</code></pre></div><p>上一个示例与以下示例几乎具有相同的效果：</p>
 <div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleInitBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.AnotherExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
 </code></pre></div><div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnotherExampleBean</span> <span class="token keyword">implements</span> <span class="token class-name">InitializingBean</span> <span class="token punctuation">{</span>
 
@@ -73,7 +73,7 @@
 		<span class="token comment">// 做一些初始化工作</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>然而，前面两个示例中的第一个并未将代码与Spring耦合在一起。</p>
+</code></pre></div><p>然而，前面两个示例中的第一个并未将代码与Spring耦合。</p>
 <div class="hint-container tip">
 <p class="hint-container-title">提示</p>
 <p>请注意，<code>@PostConstruct</code>和初始化方法一般在容器的单例创建锁内执行。只有在从<code>@PostConstruct</code>方法返回后，
@@ -87,6 +87,47 @@ Bean实例才被视为完全初始化并准备好发布给其他对象。
 <p>或者，你可以实现<code>(Smart)Lifecycle</code>接口并与容器的整体生命周期管理集成，包括自动启动机制、预销毁停止步骤和潜在的停止/重新启动回调（参见下文）。</p>
 </div>
 <h3>销毁回调</h3>
+<p>实现<code>org.springframework.beans.factory.DisposableBean</code>接口允许Bean在包含它的容器销毁时获得回调。
+<code>DisposableBean</code>接口指定了一个方法：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
+</code></pre></div><p>我们建议你不要使用 DisposableBean 回调接口，因为它不必要地将代码耦合到Spring。
+另外，我们建议使用 @PreDestroy 注解或指定一个bean定义所支持的通用方法。对于基于XML的配置元数据，你可以使用 </p>
+<p>我们建议不要使用<code>DisposableBean</code>回调接口，因为它会将代码不必要地耦合到Spring。
+相反，我们建议使用<code>@PreDestroy</code>注解或指定一个由Bean定义支持的通用方法。
+在基于XML的配置中，你可以在<code>&lt;bean/&gt;</code>元素中使用<code>destroy-method</code>属性。
+在Java配置中，你可以使用<code>@Bean</code>的<code>destroyMethod</code>属性。
+参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/java/bean-annotation.html#beans-java-lifecycle-callbacks" target="_blank" rel="noopener noreferrer">接收生命周期回调</a>。
+考虑以下示例：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleInitBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.ExampleBean<span class="token punctuation">"</span></span> <span class="token attr-name">destroy-method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cleanup<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleBean</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 做一些销毁工作(比如释放池连接)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上一个示例与以下示例几乎具有相同的效果：</p>
+<div class="language-xml" data-ext="xml" data-title="xml"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>exampleInitBean<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>examples.AnotherExampleBean<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+</code></pre></div><div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnotherExampleBean</span> <span class="token keyword">implements</span> <span class="token class-name">DisposableBean</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 做一些销毁工作(比如释放池连接)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然而，前面两个示例中的第一个并未将代码与Spring耦合。</p>
+<p>请注意，Spring还支持推断销毁方法，可以检测到公开的<code>close</code>或<code>shutdown</code>方法。
+这是Java配置类中<code>@Bean</code>方法的默认行为，并且自动匹配<code>java.lang.AutoCloseable</code>或<code>java.io.Closeable</code>实现，也不会将销毁逻辑与Spring耦合。</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>在XML配置中，你可以将<code>&lt;bean&gt;</code>元素的<code>destroy-method</code>属性设置为一个特殊的(inferred)值。
+该值指示Spring自动检测特定Bean类上的public <code>close</code>或<code>shutdown</code>方法。
+另外，你也可以将这个特殊（inferred）值赋给<code>&lt;beans&gt;</code>元素的<code>default-destroy-method</code>属性，以将此行为应用于一组Bean定义。
+（参阅 <a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#beans-factory-lifecycle-default-init-destroy-methods" target="_blank" rel="noopener noreferrer">默认初始化和销毁方法</a>）。</p>
+</div>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>对于延长的关闭阶段，您可以实现该Lifecycle接口并在调用任何单例 bean 的 destroy 方法之前接收提前停止信号。您还可以实现SmartLifecycle一个有时限的停止步骤，其中容器将等待所有此类停止处理完成，然后再继续销毁方法。</p>
+</div>
 <h3>默认的初始化和销毁方法</h3>
 <h3>结合生命周期机制</h3>
 <h3>启动和关闭的回调</h3>
@@ -257,6 +298,8 @@ Bean的情况下，还可以指定相应的销毁时依赖关系。
 <blockquote>
 <p>你可以在<a href="https://spring.io/blog/2004/08/06/method-injection/" target="_blank" rel="noopener noreferrer">这篇博客文章</a>中阅读更多关于方法注入的动机。</p>
 </blockquote>
+<h2>查找方法依赖注入</h2>
+<h2>任意方法替换</h2>
 ]]></content:encoded>
     </item>
     <item>
