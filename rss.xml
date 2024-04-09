@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 09 Apr 2024 02:44:55 GMT</pubDate>
-    <lastBuildDate>Tue, 09 Apr 2024 02:44:55 GMT</lastBuildDate>
+    <pubDate>Tue, 09 Apr 2024 03:00:11 GMT</pubDate>
+    <lastBuildDate>Tue, 09 Apr 2024 03:00:11 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -167,7 +167,37 @@ Spring IoC容器会在创建Bean时调用该方法
 <p>Spring容器保证在为Bean提供所有依赖项之后立即调用配置的初始化回调。 因此，初始化回调在原始Bean引用上被调用，这意味着AOP拦截器等还没有被应用到Bean上。
 首先完全创建目标Bean，然后再应用AOP代理（例如）及其拦截器链。 如果目标Bean和代理是分开定义的，你的代码甚至可以与原始目标Bean交互，绕过代理。
 因此，将拦截器应用于<code>init</code>方法是不一致的，因为这样做会将目标Bean的生命周期与它的代理或拦截器耦合在一起，当你的代码直接与原始目标Bean交互时，会留下奇怪的语义。</p>
-<h3>结合生命周期机制</h3>
+<h3>组合式生命周期机制</h3>
+<p>截至Spring 2.5，你有三种选项来控制bean的生命周期行为：</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#beans-factory-lifecycle-initializingbean" target="_blank" rel="noopener noreferrer">InitializingBean</a>
+和<a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#beans-factory-lifecycle-disposablebean" target="_blank" rel="noopener noreferrer">DisposableBean</a>
+回调接口</li>
+<li>自定义<code>init()</code>和<code>destroy()</code>方法</li>
+<li><code>@PostConstruct</code>和<code>@PreDestroy</code>注解
+<ol>
+<li>你可以组合这些机制来控制Bean的生命周期行为</li>
+</ol>
+</li>
+</ul>
+<div class="hint-container note">
+<p class="hint-container-title">注</p>
+<p>如果为一个Bean配置了多种生命周期机制，并且每种机制都配置了不同的方法名称，则每个配置的方法按照本说明后面列出的顺序运行。
+然而，如果为这些生命周期机制中的一个或多个配置了相同的方法名称，例如使用<code>init()</code>
+作为初始化方法的名称，则该方法只会被执行一次，详细说明参考 <a href="https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html#beans-factory-lifecycle-default-init-destroy-methods" target="_blank" rel="noopener noreferrer">上一节</a>。</p>
+</div>
+<p>为同一个Bean配置了多个生命周期机制，并且使用了不同的初始化方法时，调用顺序如下：</p>
+<ol>
+<li>使用<code>@PostConstruct</code>注解的方法</li>
+<li>实现<code>InitializingBean</code>接口定义的<code>afterPropertiesSet()</code>方法</li>
+<li>自定义配置的<code>init()</code>方法</li>
+</ol>
+<p>销毁方法的调用顺序也类似：</p>
+<ol>
+<li>使用<code>@PreDestroy</code>注解的方法</li>
+<li>实现<code>DisposableBean</code>接口定义的<code>destroy()</code>方法</li>
+<li>自定义配置的<code>destroy()</code>方法</li>
+</ol>
 <h3>启动和关闭的回调</h3>
 <h3>在非Web应用中优雅地关闭Spring IoC容器</h3>
 <h2>ApplicationContextAware和BeanNameAware</h2>
