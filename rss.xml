@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 10 Apr 2024 08:58:20 GMT</pubDate>
-    <lastBuildDate>Wed, 10 Apr 2024 08:58:20 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2024 09:00:06 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2024 09:00:06 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -874,10 +874,10 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 ]]></content:encoded>
     </item>
     <item>
-      <title>依赖</title>
+      <title>依赖（Dependencies）</title>
       <link>https://www.geekyspace.cn/spring-framework/core/dependencies/</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">依赖</source>
+      <source url="https://www.geekyspace.cn/rss.xml">依赖（Dependencies）</source>
       <description>依赖（Dependencies） 企业应用程序通常不是由单个对象（或Spring术语中的Bean）构成的。 即使是最简单的应用程序，也是由多个对象共同协作来呈现给最终用户一个连贯的应用体验。 下一节将解释如何从定义独立的Bean开始，逐步实现一个完整的应用程序。 在这个应用程序中，各个对象将相互协作，实现一个共同的目标。 章节摘要</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
