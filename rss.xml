@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 10 Apr 2024 08:52:33 GMT</pubDate>
-    <lastBuildDate>Wed, 10 Apr 2024 08:52:33 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2024 08:54:07 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2024 08:54:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -16,11 +16,11 @@
     <category>Java</category>
     <category>程序人生</category>
     <item>
-      <title>自定义Bean的性质</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/custom-beans-nature.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/custom-beans-nature.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">自定义Bean的性质</source>
-      <description>自定义Bean的性质 Spring框架提供了多种接口，你可以使用这些接口来定制Bean的性质。本节将它们分为以下几类： 生命周期回调 ApplicationContextAware 和 BeanNameAware 其他Aware接口 生命周期回调 为了与容器管理Bean的生命周期进行交互，你可以实现Spring的InitializingBean和Dis...</description>
+      <title>Bean生命周期</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/beans-lifecycle.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/beans-lifecycle.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Bean生命周期</source>
+      <description>Bean生命周期 Spring框架提供了多种接口，你可以使用这些接口来定制Bean的性质。本节将它们分为以下几类： 生命周期回调 ApplicationContextAware 和 BeanNameAware 其他Aware接口 生命周期回调 为了与容器管理Bean的生命周期进行交互，你可以实现Spring的InitializingBean和Dispo...</description>
       <category>Spring</category>
       <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
