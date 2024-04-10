@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 10 Apr 2024 09:00:06 GMT</pubDate>
-    <lastBuildDate>Wed, 10 Apr 2024 09:00:06 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2024 09:18:39 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2024 09:18:39 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -15,6 +15,17 @@
     <category>Spring Data</category>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>Bean定义继承</title>
+      <link>https://www.geekyspace.cn/spring-framework/core/child-bean-definitions.html</link>
+      <guid>https://www.geekyspace.cn/spring-framework/core/child-bean-definitions.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Bean定义继承</source>
+      <description>Bean定义继承</description>
+      <category>Spring</category>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>Bean生命周期（Lifecycle）</title>
       <link>https://www.geekyspace.cn/spring-framework/core/beans-lifecycle.html</link>
