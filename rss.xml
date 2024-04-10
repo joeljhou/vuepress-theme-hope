@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 10 Apr 2024 08:06:09 GMT</pubDate>
-    <lastBuildDate>Wed, 10 Apr 2024 08:06:09 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2024 08:47:37 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2024 08:47:37 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -87,9 +87,7 @@ Bean实例才被视为完全初始化并准备好发布给其他对象。
 <p>实现<code>org.springframework.beans.factory.DisposableBean</code>接口允许Bean在包含它的容器销毁时获得回调。
 <code>DisposableBean</code>接口指定了一个方法：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
-</code></pre></div><p>我们建议你不要使用 DisposableBean 回调接口，因为它不必要地将代码耦合到Spring。
-另外，我们建议使用 @PreDestroy 注解或指定一个bean定义所支持的通用方法。对于基于XML的配置元数据，你可以使用 </p>
-<p>我们建议不要使用<code>DisposableBean</code>回调接口，因为它会将代码不必要地耦合到Spring。
+</code></pre></div><p>我们建议不要使用<code>DisposableBean</code>回调接口，因为它会将代码不必要地耦合到Spring。
 相反，我们建议使用<code>@PreDestroy</code>注解或指定一个由Bean定义支持的通用方法。
 在基于XML的配置中，你可以在<code>&lt;bean/&gt;</code>元素中使用<code>destroy-method</code>属性。
 在Java配置中，你可以使用<code>@Bean</code>的<code>destroyMethod</code>属性。
@@ -304,31 +302,37 @@ Spring IoC容器会在创建Bean时调用该方法
 虽然常见的生命周期回调遵循一定的顺序，例如，启动回调只会在完全初始化之后发生，而停止回调只会在初始启动之后发生，
 但与常见的停止前销毁安排有一个特殊情况：强烈建议在任何这样的Bean中内部状态也允许在没有先前停止的情况下立即进行销毁回调，
 因为这可能会在取消引导时或在由另一个bean引起的停止超时的情况下发生非常规关闭时发生。</p>
-<h2>ApplicationContextAware和BeanNameAware</h2>
-<p><strong>ApplicationContextAware</strong></p>
-<p>在Spring中，当一个类实现了<code>org.springframework.context.ApplicationContextAware</code>接口时，
-该类的实例会得到对应的<code>ApplicationContext</code>实例的引用。以下是<code>ApplicationContextAware</code>接口的定义示例：</p>
+<h2>ApplicationContextAware</h2>
+<p>当一个类实现了<code>org.springframework.context.ApplicationContextAware</code>接口时，
+该类的实例会得到对应的<code>ApplicationContext</code>实例的引用。</p>
+<p>以下是<code>ApplicationContextAware</code>接口的定义示例：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ApplicationContextAware</span> <span class="token punctuation">{</span>
 
 	<span class="token keyword">void</span> <span class="token function">setApplicationContext</span><span class="token punctuation">(</span><span class="token class-name">ApplicationContext</span> applicationContext<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">BeansException</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>这意味着，当一个Bean实现了<code>ApplicationContextAware</code>接口 或 将引用转换为该接口的已知子类（如<code>ConfigurableApplicationContext</code>），
-它就可以通过<code>ApplicationContext</code>接口来访问Spring容器的各种功能， 比如访问其他Bean、获取文件资源、发布事件，以及访问<code>MessageSource</code>的功能。
-这些额外功能在<a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html" target="_blank" rel="noopener noreferrer"><code>ApplicationContext</code>的附加功能</a>中描述。
-不过，通常情况下不推荐过度使用这种方式，因为它会将代码与Spring框架耦合在一起，不符合控制反转的原则。</p>
+</code></pre></div><p>这意味着，当一个Bean实现了<code>ApplicationContextAware</code>接口或 引用了该接口的已知子类（如<code>ConfigurableApplicationContext</code>），
+它就可以通过<code>ApplicationContext</code>接口来访问Spring容器的各种功能，
+比如访问其他Bean、获取文件资源、发布事件，以及访问<code>MessageSource</code>的功能。
+这些额外功能在<a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html" target="_blank" rel="noopener noreferrer">ApplicationContext的附加功能</a>
+中描述。 不过，通常情况下不推荐过度使用这种方式，因为它会将代码与Spring框架耦合在一起，不符合控制反转的原则。</p>
 <p>另一种获得对<code>ApplicationContext</code>引用的方式是通过自动装配（Autowiring）。
-你可以使用<code>@Autowired</code>注解来自动装配 ApplicationContext，这样就可以在需要时轻松访问 Spring 容器的功能。
+你可以使用<code>@Autowired</code>注解来自动装配 ApplicationContext，这样就可以在需要时轻松访问Spring容器的功能。
 详细信息可以查阅使用<a href="https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html" target="_blank" rel="noopener noreferrer">使用@Autowired</a>。</p>
-<p><strong>BeanNameAware</strong></p>
-<p>与<code>ApplicationContextAware</code>类似，当一个类实现了<code>org.springframework.beans.factory.BeanNameAware</code>接口时，
-这个类的实例会得到对应的Bean名称的引用。以下是<code>BeanNameAware</code>接口的定义示例：</p>
+<h2>BeanNameAware</h2>
+<p>当一个类实现了<code>org.springframework.beans.factory.BeanNameAware</code>接口时，
+这个类的实例会得到对应的Bean名称的引用。</p>
+<p>以下是<code>BeanNameAware</code>接口的定义示例：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">BeanNameAware</span> <span class="token punctuation">{</span>
 
 	<span class="token keyword">void</span> <span class="token function">setBeanName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">BeansException</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>这个回调方法会在Bean的普通属性填充完成后但在初始化回调（如<code>InitializingBean.afterPropertiesSet</code>()或自定义<code>init</code>方法）之前被调用。
+</code></pre></div><p>回调方法会在Bean的属性填充后 &amp; 初始化回调之前（如<code>InitializingBean.afterPropertiesSet</code>() 或 自定义<code>init</code>方法）被调用。
 通过实现<code>BeanNameAware</code>接口，Bean可以在需要时获取自己在Spring容器中的名称，这在某些场景下可能会很有用。</p>
 <h2>其他Aware接口</h2>
+<p>除了之前讨论的<code>ApplicationContextAware</code>和<code>BeanNameAware</code>，Spring还提供了一系列广泛的<code>Aware</code>回调接口，
+让Bean向容器表明它们需要某种基础设施的依赖性。通常，接口名称反映了依赖的类型。以下表格总结了最重要的<code>Aware</code>接口：</p>
+<p>| Aware 接口                         | 注入的依赖                       | 解释                                                                                                                                                                                |
+|</p>
 ]]></content:encoded>
     </item>
     <item>
