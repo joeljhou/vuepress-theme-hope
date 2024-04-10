@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 10 Apr 2024 08:54:07 GMT</pubDate>
-    <lastBuildDate>Wed, 10 Apr 2024 08:54:07 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2024 08:58:20 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2024 08:58:20 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -16,11 +16,11 @@
     <category>Java</category>
     <category>程序人生</category>
     <item>
-      <title>Bean生命周期</title>
+      <title>Bean生命周期（Lifecycle）</title>
       <link>https://www.geekyspace.cn/spring-framework/core/beans-lifecycle.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/beans-lifecycle.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Bean生命周期</source>
-      <description>Bean生命周期 Spring框架提供了多种接口，你可以使用这些接口来定制Bean的性质。本节将它们分为以下几类： 生命周期回调 ApplicationContextAware 和 BeanNameAware 其他Aware接口 生命周期回调 为了与容器管理Bean的生命周期进行交互，你可以实现Spring的InitializingBean和Dispo...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">Bean生命周期（Lifecycle）</source>
+      <description>Bean生命周期（Lifecycle） Spring框架提供了多种接口，你可以使用这些接口来定制Bean的性质。本节将它们分为以下几类： 生命周期回调 ApplicationContextAware 和 BeanNameAware 其他Aware接口 生命周期回调 为了与容器管理Bean的生命周期进行交互，你可以实现Spring的Initializin...</description>
       <category>Spring</category>
       <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -848,11 +848,11 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 ]]></content:encoded>
     </item>
     <item>
-      <title>Bean 定义</title>
+      <title>Bean 定义（Definition）</title>
       <link>https://www.geekyspace.cn/spring-framework/core/beans-definition.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/beans-definition.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Bean 定义</source>
-      <description>Bean 定义 概述 构建应用程序主干并由Spring IoC 容器管理的对象称为 Bean。 在容器中，Bean的定义表示为org.springframework.beans.factory.config.BeanDefinition对象。 BeanDefinition包含以下元数据： 全路径类名：通常，被定义为Bean的实现类 行为配置元素：说明了...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">Bean 定义（Definition）</source>
+      <description>Bean 定义（Definition） 概述 构建应用程序主干并由Spring IoC 容器管理的对象称为 Bean。 在容器中，Bean的定义表示为org.springframework.beans.factory.config.BeanDefinition对象。 BeanDefinition包含以下元数据： 全路径类名：通常，被定义为Bean的实现...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -878,7 +878,7 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
       <link>https://www.geekyspace.cn/spring-framework/core/dependencies/</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/</guid>
       <source url="https://www.geekyspace.cn/rss.xml">依赖</source>
-      <description>依赖 企业应用程序通常不是由单个对象（或Spring术语中的Bean）构成的。 即使是最简单的应用程序，也是由多个对象共同协作来呈现给最终用户一个连贯的应用体验。 下一节将解释如何从定义独立的Bean开始，逐步实现一个完整的应用程序。 在这个应用程序中，各个对象将相互协作，实现一个共同的目标。 章节摘要</description>
+      <description>依赖（Dependencies） 企业应用程序通常不是由单个对象（或Spring术语中的Bean）构成的。 即使是最简单的应用程序，也是由多个对象共同协作来呈现给最终用户一个连贯的应用体验。 下一节将解释如何从定义独立的Bean开始，逐步实现一个完整的应用程序。 在这个应用程序中，各个对象将相互协作，实现一个共同的目标。 章节摘要</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -1212,11 +1212,11 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
 ]]></content:encoded>
     </item>
     <item>
-      <title>IoC 容器</title>
+      <title>IoC 容器（Container）</title>
       <link>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</link>
       <guid>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">IoC 容器</source>
-      <description>IoC 容器 概述 Spring IoC（控制反转）容器是Spring框架的核心。 org.springframework.context.ApplicationContext接口代表Spring IoC容器，负责实例化、配置和组装Bean。 Spring提供了几个 ApplicationContext 接口的实现，在独立应用程序中，最常用的是： Cl...</description>
+      <source url="https://www.geekyspace.cn/rss.xml">IoC 容器（Container）</source>
+      <description>IoC 容器（Container） 概述 Spring IoC（控制反转）容器是Spring框架的核心。 org.springframework.context.ApplicationContext接口代表Spring IoC容器，负责实例化、配置和组装Bean。 Spring提供了几个 ApplicationContext 接口的实现，在独立应用程序...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
