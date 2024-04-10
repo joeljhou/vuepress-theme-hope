@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 09 Apr 2024 10:12:57 GMT</pubDate>
-    <lastBuildDate>Tue, 09 Apr 2024 10:12:57 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Apr 2024 08:06:09 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Apr 2024 08:06:09 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Spring</category>
@@ -305,6 +305,29 @@ Spring IoC容器会在创建Bean时调用该方法
 但与常见的停止前销毁安排有一个特殊情况：强烈建议在任何这样的Bean中内部状态也允许在没有先前停止的情况下立即进行销毁回调，
 因为这可能会在取消引导时或在由另一个bean引起的停止超时的情况下发生非常规关闭时发生。</p>
 <h2>ApplicationContextAware和BeanNameAware</h2>
+<p><strong>ApplicationContextAware</strong></p>
+<p>在Spring中，当一个类实现了<code>org.springframework.context.ApplicationContextAware</code>接口时，
+该类的实例会得到对应的<code>ApplicationContext</code>实例的引用。以下是<code>ApplicationContextAware</code>接口的定义示例：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ApplicationContextAware</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">void</span> <span class="token function">setApplicationContext</span><span class="token punctuation">(</span><span class="token class-name">ApplicationContext</span> applicationContext<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">BeansException</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这意味着，当一个Bean实现了<code>ApplicationContextAware</code>接口 或 将引用转换为该接口的已知子类（如<code>ConfigurableApplicationContext</code>），
+它就可以通过<code>ApplicationContext</code>接口来访问Spring容器的各种功能， 比如访问其他Bean、获取文件资源、发布事件，以及访问<code>MessageSource</code>的功能。
+这些额外功能在<a href="https://docs.spring.io/spring-framework/reference/core/beans/context-introduction.html" target="_blank" rel="noopener noreferrer"><code>ApplicationContext</code>的附加功能</a>中描述。
+不过，通常情况下不推荐过度使用这种方式，因为它会将代码与Spring框架耦合在一起，不符合控制反转的原则。</p>
+<p>另一种获得对<code>ApplicationContext</code>引用的方式是通过自动装配（Autowiring）。
+你可以使用<code>@Autowired</code>注解来自动装配 ApplicationContext，这样就可以在需要时轻松访问 Spring 容器的功能。
+详细信息可以查阅使用<a href="https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html" target="_blank" rel="noopener noreferrer">使用@Autowired</a>。</p>
+<p><strong>BeanNameAware</strong></p>
+<p>与<code>ApplicationContextAware</code>类似，当一个类实现了<code>org.springframework.beans.factory.BeanNameAware</code>接口时，
+这个类的实例会得到对应的Bean名称的引用。以下是<code>BeanNameAware</code>接口的定义示例：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">BeanNameAware</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">void</span> <span class="token function">setBeanName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">BeansException</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这个回调方法会在Bean的普通属性填充完成后但在初始化回调（如<code>InitializingBean.afterPropertiesSet</code>()或自定义<code>init</code>方法）之前被调用。
+通过实现<code>BeanNameAware</code>接口，Bean可以在需要时获取自己在Spring容器中的名称，这在某些场景下可能会很有用。</p>
 <h2>其他Aware接口</h2>
 ]]></content:encoded>
     </item>
