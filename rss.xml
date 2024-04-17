@@ -6,15 +6,66 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 17 Apr 2024 09:39:12 GMT</pubDate>
-    <lastBuildDate>Wed, 17 Apr 2024 09:39:12 GMT</lastBuildDate>
+    <pubDate>Wed, 17 Apr 2024 09:54:47 GMT</pubDate>
+    <lastBuildDate>Wed, 17 Apr 2024 09:54:47 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>IDEA</category>
     <category>Spring</category>
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>2024最新IntelliJ IDEA专业版稳定正版激活码</title>
+      <link>https://www.geekyspace.cn/idea-tips/activation.html</link>
+      <guid>https://www.geekyspace.cn/idea-tips/activation.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">2024最新IntelliJ IDEA专业版稳定正版激活码</source>
+      <description>2024最新IntelliJ IDEA专业版稳定正版激活码 适用于Mac系统 仅支持官网专业版2020-2024的激活。不支持社区版 toolbox下载的IDEA。 1️⃣ 第一步：下载激活文件 https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz 2️⃣ 第二步：打开激活文件 macjihuo.zip，解压缩 3️⃣ 第三...</description>
+      <category>IDEA</category>
+      <pubDate>Wed, 17 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>适用于Mac系统</h2>
+<blockquote>
+<p>仅支持官网专业版2020-2024的激活。不支持社区版 toolbox下载的IDEA。</p>
+</blockquote>
+<h3>1️⃣ 第一步：下载激活文件</h3>
+<p><a href="https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz" target="_blank" rel="noopener noreferrer">https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz</a></p>
+<h3>2️⃣ 第二步：打开激活文件 <code>macjihuo.zip</code>，解压缩</h3>
+<h3>3️⃣ 第三步："macjihuo"文件夹上右键，新建终端窗口</h3>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171725739.png" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h3>4️⃣ 第三步：运行脚本，输入对应软件的命令-回车（看下图）</h3>
+<p><mark>运行命令前：先打开你要激活的软件。然后关闭软件，最后输入命令激活软件哦。</mark></p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>如果你要激活idea：     则输入 <span class="token function">sh</span> idea.sh
+如果你要激活pycharm：  则输入 <span class="token function">sh</span> pycharm.sh
+如果你要激活datagrip： 则输入 <span class="token function">sh</span> datagrip.sh
+如果你要激活clion：    则输入 <span class="token function">sh</span> clion.sh
+如果你要激活goland：   则输入 <span class="token function">sh</span> goland.sh
+如果你要激活webstorm： 则输入 <span class="token function">sh</span> webstorm.sh
+如果你要激活phpstorm： 则输入 <span class="token function">sh</span> phpstorm.sh
+如果你要激活dataspell：则输入 <span class="token function">sh</span> dataspell.sh
+如果你要激活rider：    则输入 <span class="token function">sh</span> rider.sh
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202404171714345.png" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<h2>适用于Windows系统</h2>
+<blockquote>
+<p>仅支持官网专业版2020-2024的激活。不支持社区版 toolbox下载的</p>
+</blockquote>
+<h3>1️⃣ 第一步：下载激活文件</h3>
+<p><a href="https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz" target="_blank" rel="noopener noreferrer">https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz</a></p>
+<h3>2️⃣ 第二步：解压下载的压缩包</h3>
+<h3>3️⃣ 第三步：打开解压的“<code>激活码-Win系统</code>”文件夹，</h3>
+<p><mark>双击要激活软件的vbs</mark></p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718775.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p><strong>♦♦比如：</strong></p>
+<ul>
+<li>要激活pycharm，就运行 pycharm激活.vbs</li>
+<li>要激活IDEA，就运行 IDEA激活.vbs</li>
+</ul>
+<p>等待出现 如下 <code>Success</code> 提示，再次打开软件即可正常使用！</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718903.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404171725739.png" type="image/png"/>
+    </item>
     <item>
       <title>Bean定义继承</title>
       <link>https://www.geekyspace.cn/spring-framework/core/child-bean-definitions.html</link>
