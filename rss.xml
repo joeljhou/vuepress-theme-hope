@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 23 Apr 2024 17:29:12 GMT</pubDate>
-    <lastBuildDate>Tue, 23 Apr 2024 17:29:12 GMT</lastBuildDate>
+    <pubDate>Tue, 23 Apr 2024 19:35:57 GMT</pubDate>
+    <lastBuildDate>Tue, 23 Apr 2024 19:35:57 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>安装大全</category>
@@ -52,7 +52,7 @@
 </ol>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404232040995.png" alt="更改产品密钥" tabindex="0" loading="lazy"><figcaption>更改产品密钥</figcaption></figure>
 <ol start="3">
-<li>输入“<a href="%E9%97%B2%E9%B1%BC%E5%9C%B0%E5%9D%80">微软官方正版秘钥</a>”，点击“下一页”，再点击“激活”</li>
+<li>输入“<a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">微软官方正版秘钥</a>”，点击“下一页”，再点击“激活”</li>
 </ol>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404232318292.png" alt="输入产品密钥" tabindex="0" loading="lazy"><figcaption>输入产品密钥</figcaption></figure>
 <ol start="4">
@@ -63,12 +63,12 @@
 <blockquote>
 <p>可激活Windows，查看激活状态</p>
 </blockquote>
-<p>如果你有新的零售产品密钥，将X替换为实际的密钥，来<strong>安装新的产品密钥</strong></p>
+<p>如果你有新的零售产品密钥，将 X 替换为实际的密钥，来<strong>安装新的产品密钥</strong></p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-</code></pre></div><p><a href="/%E9%97%B2%E9%B1%BC%E5%9C%B0%E5%9D%80">脚本获取</a></p>
+</code></pre></div><p><a href="/https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J">脚本获取</a></p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
 <p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="image-20240424011655055" tabindex="0" loading="lazy"><figcaption>image-20240424011655055</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
 <h2>一键激活程序</h2>
 <blockquote>
 <p>可激活任意版本的Windows和Office</p>
