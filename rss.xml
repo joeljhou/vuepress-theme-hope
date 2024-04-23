@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 23 Apr 2024 19:35:57 GMT</pubDate>
-    <lastBuildDate>Tue, 23 Apr 2024 19:35:57 GMT</lastBuildDate>
+    <pubDate>Tue, 23 Apr 2024 19:36:38 GMT</pubDate>
+    <lastBuildDate>Tue, 23 Apr 2024 19:36:38 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>安装大全</category>
@@ -65,7 +65,7 @@
 </blockquote>
 <p>如果你有新的零售产品密钥，将 X 替换为实际的密钥，来<strong>安装新的产品密钥</strong></p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-</code></pre></div><p><a href="/https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J">脚本获取</a></p>
+</code></pre></div><p><a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">脚本获取</a></p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
 <p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
@@ -84,7 +84,8 @@
 </div>
 <h3>数字激活工具 HWID_KMS38_CN_62</h3>
 <p><strong>概述</strong></p>
-<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到 Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
+<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到
+Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
 <p><strong>激活步骤</strong></p>
 <ol>
 <li>鼠标右键点击“打开”，进入程序中</li>
@@ -107,10 +108,12 @@
 <p>等待一会，激活成功后提示</p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404240027800.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
 <h3>小马激活工具 KMS10</h3>
-<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel switch。</p>
+<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel
+switch。</p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404240037901.png" alt="小马激活工具" tabindex="0" loading="lazy"><figcaption>小马激活工具</figcaption></figure>
 <h3>大神制作 W10DigitalActivation</h3>
-<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
+<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>
+。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404240055203.png" alt="WIN0-HWID数字永久激活" tabindex="0" loading="lazy"><figcaption>WIN0-HWID数字永久激活</figcaption></figure>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404240057039.png" alt="永久激活" tabindex="0" loading="lazy"><figcaption>永久激活</figcaption></figure>
 <h3>云萌激活工具 CMWTAT_Digital</h3>
