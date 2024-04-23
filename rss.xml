@@ -6,16 +6,64 @@
     <link>https://www.geekyspace.cn/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 17 Apr 2024 09:54:47 GMT</pubDate>
-    <lastBuildDate>Wed, 17 Apr 2024 09:54:47 GMT</lastBuildDate>
+    <pubDate>Tue, 23 Apr 2024 11:40:38 GMT</pubDate>
+    <lastBuildDate>Tue, 23 Apr 2024 11:40:38 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>安装大全</category>
     <category>IDEA</category>
     <category>Spring</category>
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Java</category>
     <category>程序人生</category>
+    <item>
+      <title>开发者安装大全</title>
+      <link>https://www.geekyspace.cn/installation-guide/</link>
+      <guid>https://www.geekyspace.cn/installation-guide/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
+      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Windows、Office激活密钥，程序，脚本</title>
+      <link>https://www.geekyspace.cn/installation-guide/os/windows-office-activation.html</link>
+      <guid>https://www.geekyspace.cn/installation-guide/os/windows-office-activation.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，程序，脚本</source>
+      <description>Windows、Office激活密钥，程序，脚本 微软官方正版秘钥 官方正版秘钥激活，可激活任意版本的Windows系统 微软官方密钥微软官方密钥 一键激活程序 可激活任意版本的Windows和Office 程序-持续更新程序-持续更新 注意：使用程序激活，需先关闭电脑相关的杀毒程序 关闭 Windows 安全中心中的Defender 防病毒保护 36...</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>微软官方正版秘钥</h2>
+<blockquote>
+<p>官方正版秘钥激活，可激活任意版本的Windows系统</p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231858402.png" alt="微软官方密钥" tabindex="0" loading="lazy"><figcaption>微软官方密钥</figcaption></figure>
+<h2>一键激活程序</h2>
+<blockquote>
+<p>可激活任意版本的Windows和Office</p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900370.png" alt="程序-持续更新" tabindex="0" loading="lazy"><figcaption>程序-持续更新</figcaption></figure>
+<div class="hint-container tip">
+<p class="hint-container-title">注意：使用程序激活，需先关闭电脑相关的杀毒程序</p>
+<ul>
+<li><a href="https://support.microsoft.com/zh-cn/windows/%E5%85%B3%E9%97%AD-windows-%E5%AE%89%E5%85%A8%E4%B8%AD%E5%BF%83%E4%B8%AD%E7%9A%84defender-%E9%98%B2%E7%97%85%E6%AF%92%E4%BF%9D%E6%8A%A4-99e6004f-c54c-8509-773c-a4d776b77960" target="_blank" rel="noopener noreferrer">关闭 Windows 安全中心中的Defender 防病毒保护</a></li>
+<li><a href="http://www.fastaux.com/index.php?c=show&amp;id=54" target="_blank" rel="noopener noreferrer">360安全卫士设置白名单</a></li>
+<li><a href="https://www.eyunsou.com/360sd/gongnneg/bmd/" target="_blank" rel="noopener noreferrer">360杀毒软件怎么添加文件白名单</a></li>
+</ul>
+</div>
+<h2>一键执行脚本</h2>
+<blockquote>
+<p>可激活Windows，查看激活状态</p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404231858402.png" type="image/png"/>
+    </item>
     <item>
       <title>2024最新IntelliJ IDEA专业版稳定正版激活码</title>
       <link>https://www.geekyspace.cn/idea-tips/activation.html</link>
@@ -33,7 +81,7 @@
 <p><a href="https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz" target="_blank" rel="noopener noreferrer">https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz</a></p>
 <h3>2️⃣ 第二步：打开激活文件 <code>macjihuo.zip</code>，解压缩</h3>
 <h3>3️⃣ 第三步："macjihuo"文件夹上右键，新建终端窗口</h3>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171725739.png" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171725739.png" alt="macjihuo" tabindex="0" loading="lazy"><figcaption>macjihuo</figcaption></figure>
 <h3>4️⃣ 第三步：运行脚本，输入对应软件的命令-回车（看下图）</h3>
 <p><mark>运行命令前：先打开你要激活的软件。然后关闭软件，最后输入命令激活软件哦。</mark></p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>如果你要激活idea：     则输入 <span class="token function">sh</span> idea.sh
@@ -45,7 +93,7 @@
 如果你要激活phpstorm： 则输入 <span class="token function">sh</span> phpstorm.sh
 如果你要激活dataspell：则输入 <span class="token function">sh</span> dataspell.sh
 如果你要激活rider：    则输入 <span class="token function">sh</span> rider.sh
-</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202404171714345.png" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202404171714345.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
 <h2>适用于Windows系统</h2>
 <blockquote>
 <p>仅支持官网专业版2020-2024的激活。不支持社区版 toolbox下载的</p>
@@ -55,14 +103,14 @@
 <h3>2️⃣ 第二步：解压下载的压缩包</h3>
 <h3>3️⃣ 第三步：打开解压的“<code>激活码-Win系统</code>”文件夹，</h3>
 <p><mark>双击要激活软件的vbs</mark></p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718775.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718775.png" alt="Double-click" tabindex="0" loading="lazy"><figcaption>Double-click</figcaption></figure>
 <p><strong>♦♦比如：</strong></p>
 <ul>
 <li>要激活pycharm，就运行 pycharm激活.vbs</li>
 <li>要激活IDEA，就运行 IDEA激活.vbs</li>
 </ul>
 <p>等待出现 如下 <code>Success</code> 提示，再次打开软件即可正常使用！</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718903.png" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718903.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202404171725739.png" type="image/png"/>
     </item>
