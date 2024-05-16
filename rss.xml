@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://www.geekyspace.cn/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://www.geekyspace.cn/geekyspace/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://www.geekyspace.cn/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://www.geekyspace.cn/geekyspace/rss.xml" rel="self" type="application/rss+xml"/>
     <title>极客空间</title>
-    <link>https://www.geekyspace.cn/</link>
+    <link>https://www.geekyspace.cn/geekyspace/</link>
     <description>vuepress-theme-hope 的博客搭建</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 24 Apr 2024 14:22:06 GMT</pubDate>
-    <lastBuildDate>Wed, 24 Apr 2024 14:22:06 GMT</lastBuildDate>
+    <pubDate>Thu, 16 May 2024 10:13:34 GMT</pubDate>
+    <lastBuildDate>Thu, 16 May 2024 10:13:34 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>安装大全</category>
@@ -19,9 +19,9 @@
     <category>程序人生</category>
     <item>
       <title>开发者安装大全</title>
-      <link>https://www.geekyspace.cn/installation-guide/</link>
-      <guid>https://www.geekyspace.cn/installation-guide/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
+      <link>https://www.geekyspace.cn/geekyspace/installation-guide/</link>
+      <guid>https://www.geekyspace.cn/geekyspace/installation-guide/</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">开发者安装大全</source>
       <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
       <category>安装大全</category>
       <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
@@ -31,9 +31,9 @@
     </item>
     <item>
       <title>Windows、Office激活密钥，脚本，程序</title>
-      <link>https://www.geekyspace.cn/installation-guide/os/windows-office-activation.html</link>
-      <guid>https://www.geekyspace.cn/installation-guide/os/windows-office-activation.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
+      <link>https://www.geekyspace.cn/geekyspace/installation-guide/os/windows-office-activation.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/installation-guide/os/windows-office-activation.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Windows、Office激活密钥，脚本，程序</source>
       <description>Windows、Office激活密钥，脚本，程序 微软官方正版秘钥 获取 官方正版秘钥，可激活任意版本的Windows系统 微软官方密钥微软官方密钥 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” 输入产品密钥输入产品密钥 “激活”成功 Windows官方密...</description>
       <category>安装大全</category>
       <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
@@ -124,9 +124,9 @@ switch。</p>
     </item>
     <item>
       <title>2024最新IntelliJ IDEA专业版稳定正版激活码</title>
-      <link>https://www.geekyspace.cn/idea-tips/activation.html</link>
-      <guid>https://www.geekyspace.cn/idea-tips/activation.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">2024最新IntelliJ IDEA专业版稳定正版激活码</source>
+      <link>https://www.geekyspace.cn/geekyspace/idea-tips/activation.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/idea-tips/activation.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">2024最新IntelliJ IDEA专业版稳定正版激活码</source>
       <description>2024最新IntelliJ IDEA专业版稳定正版激活码 适用于Mac系统 仅支持官网专业版2020-2024的激活。不支持社区版 toolbox下载的IDEA。 1️⃣ 第一步：下载激活文件 https://m.tb.cn/h.ga8m4it?tk=QujxWrXRYZz 2️⃣ 第二步：打开激活文件 macjihuo.zip，解压缩 3️⃣ 第三...</description>
       <category>IDEA</category>
       <pubDate>Wed, 17 Apr 2024 00:00:00 GMT</pubDate>
@@ -174,9 +174,9 @@ switch。</p>
     </item>
     <item>
       <title>Bean定义继承</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/child-bean-definitions.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/child-bean-definitions.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Bean定义继承</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/child-bean-definitions.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/child-bean-definitions.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Bean定义继承</source>
       <description>Bean定义继承 一个Bean定义可以包含大量的配置信息，包括构造函数参数、属性值以及容器特定的信息，比如初始化方法、静态工厂方法名称等等。 一个子Bean定义会从父定义中继承配置数据。子定义可以根据需要覆盖一些值或添加其他值。 使用父子Bean定义可以节省大量的输入工作。实际上，这是一种模板化的形式。 如果你以编程方式使用ApplicationCon...</description>
       <category>Spring</category>
       <pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate>
@@ -232,9 +232,9 @@ true，否则应用上下文将尝试预实化<code>abstract</code> Bean。</p>
     </item>
     <item>
       <title>Bean生命周期（Lifecycle）</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/beans-lifecycle.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/beans-lifecycle.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Bean生命周期（Lifecycle）</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/beans-lifecycle.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/beans-lifecycle.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Bean生命周期（Lifecycle）</source>
       <description>Bean生命周期（Lifecycle） Spring框架提供了多种接口，你可以使用这些接口来定制Bean的性质。本节将它们分为以下几类： 生命周期回调 ApplicationContextAware 和 BeanNameAware 其他Aware接口 生命周期回调 为了与容器管理Bean的生命周期进行交互，你可以实现Spring的Initializin...</description>
       <category>Spring</category>
       <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
@@ -552,9 +552,9 @@ Spring IoC容器会在创建Bean时调用该方法
     </item>
     <item>
       <title>Bean作用域（Scope）</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/beans-scope.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/beans-scope.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Bean作用域（Scope）</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/beans-scope.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/beans-scope.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Bean作用域（Scope）</source>
       <description>Bean作用域（Scope） 当你创建一个Bean定义时，实际上是在创建Bean定义所定义类的实际实例的配方。 将Bean定义视为“配方”的概念非常重要，因为它意味着，就像一个类一样，你可以从一个单一的“配方”中创建多个对象实例。 你不仅可以控制Bean定义中的各种依赖项和配置值，还可以控制由Bean定义创建的对象的作用域（scope）。 这种方法是强...</description>
       <category>Spring</category>
       <pubDate>Wed, 03 Apr 2024 00:00:00 GMT</pubDate>
@@ -572,9 +572,9 @@ Bean定义可以是多种作用域之一。Spring框架支持六种作用域，�
     </item>
     <item>
       <title>自动装配协作者</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-autowire.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-autowire.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">自动装配协作者</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-autowire.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-autowire.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">自动装配协作者</source>
       <description>自动装配协作者（Autowiring Collaborators） Spring容器可以自动装配协作Bean之间的关系。 你可以通过检查ApplicationContext的内容，让Spring自动为你的Bean解析协作对象（其他Bean）。 自动装配的优势 减少手动配置：自动装配可以显著减少对手动指定属性或构造方法参数的需求。 其他机制 ，如bean...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
@@ -600,9 +600,9 @@ Spring提供了四种自动装配模式，允许你为每个Bean单独指定使�
     </item>
     <item>
       <title>使用depends-on</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-dependson.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-dependson.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">使用depends-on</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-dependson.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-dependson.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">使用depends-on</source>
       <description>使用depends-on 如果一个Bean是另一个Bean的依赖项，这意味着一个Bean被设置为另一个Bean的属性。 可以通过&amp;lt;ref/&amp;gt;元素 来实现这一点。 然而，有时Bean之间的依赖关系并不那么直接。 举个例子：当一个类中的静态初始化器需要被触发时，比如数据库驱动程序的注册。 depends-on属性可以强制容器在初始化beanOne Bean...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
@@ -633,9 +633,9 @@ Bean的情况下，还可以指定相应的销毁时依赖关系。
     </item>
     <item>
       <title>懒加载（Lazy Initialization）Bean</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-lazy-init.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-lazy-init.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">懒加载（Lazy Initialization）Bean</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-lazy-init.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-lazy-init.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">懒加载（Lazy Initialization）Bean</source>
       <description>懒加载（Lazy Initialization）Bean 在Spring框架中，ApplicationContext的默认行为是在启动过程中立即创建并配置所有的单例Bean。 这种做法有利于及时发现配置错误或环境问题，避免了错误在应用运行一段时间后才暴露。 然而，如果需要改变这一行为，可以通过设置Bean定义为懒加载（lazy-initialized）...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
@@ -660,9 +660,9 @@ Bean的情况下，还可以指定相应的销毁时依赖关系。
     </item>
     <item>
       <title>方法注入</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-method-injection.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-method-injection.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">方法注入</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-method-injection.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-method-injection.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">方法注入</source>
       <description>方法注入 大多数应用场景中，容器中的大多数Bean都是单例（singleton） 的。 当一个单例（singleton）Bean需要与原型（prototype）Bean协作时，传统的注入方式可能不再适用。 这是因为单例Bean在整个应用生命周期内只创建一次，而原型Bean每次请求时都会创建一个新的实例。 一种解决方案是放弃一些控制反转（inversio...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
@@ -719,9 +719,9 @@ Bean的情况下，还可以指定相应的销毁时依赖关系。
     </item>
     <item>
       <title>依赖和配置详解</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-properties-detailed.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-properties-detailed.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">依赖和配置详解</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-properties-detailed.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-properties-detailed.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">依赖和配置详解</source>
       <description>依赖和配置详解 正如前一节所述，您可以将Bean属性和构造函数参数定义为对其它托管Bean（协作者）的引用或内联定义的值。 Spring基于XML的配置元数据支持&amp;lt;property/&amp;gt;和&amp;lt;constructor-arg/&amp;gt;元素内的子元素类型，以达到这个目的。 字面值 (基本类型、 String 等) &amp;lt;property/&amp;gt;元素的value属性指定了一个...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
@@ -1064,9 +1064,9 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
     </item>
     <item>
       <title>Bean 定义（Definition）</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/beans-definition.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/beans-definition.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Bean 定义（Definition）</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/beans-definition.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/beans-definition.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Bean 定义（Definition）</source>
       <description>Bean 定义（Definition） 概述 构建应用程序主干并由Spring IoC 容器管理的对象称为 Bean。 在容器中，Bean的定义表示为org.springframework.beans.factory.config.BeanDefinition对象。 BeanDefinition包含以下元数据： 全路径类名：通常，被定义为Bean的实现...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
@@ -1090,9 +1090,9 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
     </item>
     <item>
       <title>依赖（Dependencies）</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">依赖（Dependencies）</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">依赖（Dependencies）</source>
       <description>依赖（Dependencies） 企业应用程序通常不是由单个对象（或Spring术语中的Bean）构成的。 即使是最简单的应用程序，也是由多个对象共同协作来呈现给最终用户一个连贯的应用体验。 下一节将解释如何从定义独立的Bean开始，逐步实现一个完整的应用程序。 在这个应用程序中，各个对象将相互协作，实现一个共同的目标。 章节摘要</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
@@ -1103,20 +1103,20 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 在这个应用程序中，各个对象将相互协作，实现一个共同的目标。</p>
 <h2>章节摘要</h2>
 <ul>
-<li><a href="/spring-framework/core/dependencies/factory-collaborators.html" target="_blank">依赖注入</a></li>
-<li><a href="/spring-framework/core/dependencies/factory-properties-detailed.html" target="_blank">依赖和配置详解</a></li>
-<li><a href="/spring-framework/core/dependencies/factory-dependson.html" target="_blank">使用depends-on</a></li>
-<li><a href="/spring-framework/core/dependencies/factory-lazy-init.html" target="_blank">懒加载Bean</a></li>
-<li><a href="/spring-framework/core/dependencies/factory-autowire.html" target="_blank">自动装配协作者</a></li>
-<li><a href="/spring-framework/core/dependencies/factory-method-injection.html" target="_blank">方法注入</a></li>
+<li><a href="/geekyspace/spring-framework/core/dependencies/factory-collaborators.html" target="_blank">依赖注入</a></li>
+<li><a href="/geekyspace/spring-framework/core/dependencies/factory-properties-detailed.html" target="_blank">依赖和配置详解</a></li>
+<li><a href="/geekyspace/spring-framework/core/dependencies/factory-dependson.html" target="_blank">使用depends-on</a></li>
+<li><a href="/geekyspace/spring-framework/core/dependencies/factory-lazy-init.html" target="_blank">懒加载Bean</a></li>
+<li><a href="/geekyspace/spring-framework/core/dependencies/factory-autowire.html" target="_blank">自动装配协作者</a></li>
+<li><a href="/geekyspace/spring-framework/core/dependencies/factory-method-injection.html" target="_blank">方法注入</a></li>
 </ul>
 ]]></content:encoded>
     </item>
     <item>
       <title>依赖注入</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-collaborators.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/dependencies/factory-collaborators.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">依赖注入</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-collaborators.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/dependencies/factory-collaborators.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">依赖注入</source>
       <description>依赖注入 依赖注入（DI）是什么？ Spring IoC（控制反转）也被称为依赖注入（DI） 它是一个过程，对象仅通过构造参数、工厂方法参数或在对象实例被构造函数或工厂方法返回后，在其上设置的属性来定义它们的依赖关系。 在IoC容器创建Bean时，它会自动注入这些依赖项。 不再需要通直接构造依赖项或使用服务定位器模式等方式来管理对象的实例化或位置， 而...</description>
       <category>Spring</category>
       <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
@@ -1428,9 +1428,9 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
     </item>
     <item>
       <title>IoC 容器（Container）</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/ioc-container.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">IoC 容器（Container）</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/ioc-container.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/ioc-container.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">IoC 容器（Container）</source>
       <description>IoC 容器（Container） 概述 Spring IoC（控制反转）容器是Spring框架的核心。 org.springframework.context.ApplicationContext接口代表Spring IoC容器，负责实例化、配置和组装Bean。 Spring提供了几个 ApplicationContext 接口的实现，在独立应用程序...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
@@ -1590,9 +1590,9 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
     </item>
     <item>
       <title>Spring 核心技术</title>
-      <link>https://www.geekyspace.cn/spring-framework/core/</link>
-      <guid>https://www.geekyspace.cn/spring-framework/core/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring 核心技术</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/core/</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/core/</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Spring 核心技术</source>
       <description>Spring 核心技术 核心技术 Spring 框架的核心技术主要包括： 依赖注入（dependency injection），也称为控制反转（IoC） 事件（events） 资源（resources） 国际化（i18n） 数据验证（validation） 数据绑定（data binding） 类型转换（type conversion） SpEL（Sp...</description>
       <category>Spring</category>
       <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
@@ -1636,9 +1636,9 @@ JDK注解来显式命名你的构造函数参数。 示例类将如下所示：<
     </item>
     <item>
       <title>Spring Framework 概述</title>
-      <link>https://www.geekyspace.cn/spring-framework/overview/</link>
-      <guid>https://www.geekyspace.cn/spring-framework/overview/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring Framework 概述</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/overview/</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/overview/</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Spring Framework 概述</source>
       <description>Spring Framework 概述 Spring Framework 简介 Spring是一个开源、轻量级、依赖注入(DI)容器和框架，用于构建Java企业应用程序。 Spring 官网：spring.io Spring 中文网：springdoc.cn 为什么使用Spring？ 官网解释：why-spring Spring让Java编程变得更快、...</description>
       <category>Spring</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
@@ -1688,9 +1688,9 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
     </item>
     <item>
       <title>Spring Framework 快速开始</title>
-      <link>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</link>
-      <guid>https://www.geekyspace.cn/spring-framework/overview/quickstart.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring Framework 快速开始</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-framework/overview/quickstart.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-framework/overview/quickstart.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Spring Framework 快速开始</source>
       <description>Spring Framework 快速开始 IntelliJ IDEA 提供的专用项目向导，您能够快速创建Spring应用程序，这也是创建Spring应用程序的最佳方式之一。 参考🚀 ：Jetbrains 创建第一个Spring应用程序 在本教程中，您将学习如何公开HTTP端点并将其映射到一个方法，当用户通过Web浏览器访问时，该方法会向用户返回问候...</description>
       <category>Spring</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
@@ -1801,9 +1801,9 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
     </item>
     <item>
       <title>Spring Boot 入门教程</title>
-      <link>https://www.geekyspace.cn/spring-boot/</link>
-      <guid>https://www.geekyspace.cn/spring-boot/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring Boot 入门教程</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-boot/</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-boot/</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Spring Boot 入门教程</source>
       <description>Spring Boot 教程</description>
       <category>Spring Boot</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
@@ -1812,9 +1812,9 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
     </item>
     <item>
       <title>SpringBoot 快速入门</title>
-      <link>https://www.geekyspace.cn/spring-boot/quickstart.html</link>
-      <guid>https://www.geekyspace.cn/spring-boot/quickstart.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">SpringBoot 快速入门</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-boot/quickstart.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-boot/quickstart.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">SpringBoot 快速入门</source>
       <description>SpringBoot 快速入门</description>
       <category>Spring Boot</category>
       <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
@@ -1823,9 +1823,9 @@ Spring对速度、简单性和生产力的关注使其成为世界上最受欢�
     </item>
     <item>
       <title>Spring Data JPA 快速入门</title>
-      <link>https://www.geekyspace.cn/spring-data-jpa/jetbrains/getting-started.html</link>
-      <guid>https://www.geekyspace.cn/spring-data-jpa/jetbrains/getting-started.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring Data JPA 快速入门</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-data-jpa/jetbrains/getting-started.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-data-jpa/jetbrains/getting-started.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Spring Data JPA 快速入门</source>
       <description>Spring Data JPA 快速入门 目标： 了解如何使用Spring Data JPA从数据库中存储和检索数据。 参考： Spring Data JPA 官方文档 Jetbrains 官方文档 介绍 Spring Data JPA是一个功能强大的框架，允许用户轻松地与数据库交互，同时最大限度地减少样板代码。 在本教程中，我们将研究如何使用Spri...</description>
       <category>Spring Data</category>
       <pubDate>Thu, 04 Apr 2024 00:00:00 GMT</pubDate>
@@ -2083,24 +2083,24 @@ IntelliJ IDEA<a href="https://www.jetbrains.com/help/java/connecting-to-a-databa
     </item>
     <item>
       <title>Spring Data JPA</title>
-      <link>https://www.geekyspace.cn/spring-data-jpa/</link>
-      <guid>https://www.geekyspace.cn/spring-data-jpa/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Spring Data JPA</source>
+      <link>https://www.geekyspace.cn/geekyspace/spring-data-jpa/</link>
+      <guid>https://www.geekyspace.cn/geekyspace/spring-data-jpa/</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Spring Data JPA</source>
       <description>Spring Data JPA 目录 Spring Data JPA 快速入门</description>
       <category>Spring Data</category>
       <pubDate>Thu, 04 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>目录</h2>
 <ul>
-<li><a href="/spring-data-jpa/jetbrains/getting-started">Spring Data JPA 快速入门</a></li>
+<li><a href="/spring-data-jpa/jetbrains/getting-started" target="_blank" rel="noopener noreferrer">Spring Data JPA 快速入门</a></li>
 </ul>
 ]]></content:encoded>
     </item>
     <item>
       <title>Java 21 新特性：虚拟线程</title>
-      <link>https://www.geekyspace.cn/java-features/Java21/jep444-virtual-threads.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java21/jep444-virtual-threads.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：虚拟线程</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep444-virtual-threads.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep444-virtual-threads.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 21 新特性：虚拟线程</source>
       <description>Java 21 新特性：虚拟线程（Virtual Threads） Java 21 引入了虚拟线程（Virtual Threads）功能，类似于Go语言中的Goroutines。 虚拟线程是一种轻量级的线程，它可以极大地减少了编写、维护和管理高吞吐量并发应用程序所需的工作量。 Java平台目前为止有两种类型的线程：传统线程，也称为平台线程，和虚拟线程。...</description>
       <category>Java</category>
       <pubDate>Thu, 11 Jan 2024 00:00:00 GMT</pubDate>
@@ -2192,15 +2192,15 @@ factoryThread<span class="token punctuation">.</span><span class="token function
     </item>
     <item>
       <title>Java 21 新特性：switch模式匹配</title>
-      <link>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java21/jep441-pattern-matching-for-switch.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：switch模式匹配</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep441-pattern-matching-for-switch.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep441-pattern-matching-for-switch.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 21 新特性：switch模式匹配</source>
       <description>Java 21 新特性：switch模式匹配 Java 21 引入了 switch 模式匹配功能，它增强了 switch 语句的功能，允许使用更简洁的语法来执行类型检查和数据提取。 该功能与记录模式（JEP 440）共同发展，并与之有相当大的互动。 switch + instanceof 与if条件中的instanceof一样，switch case现...</description>
       <category>Java</category>
       <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>Java 21 引入了 switch 模式匹配功能，它增强了 switch 语句的功能，允许使用更简洁的语法来执行类型检查和数据提取。
-该功能与<a href="/java-features/Java21/jep440-record-partterns">记录模式（JEP 440）</a>共同发展，并与之有相当大的互动。</p>
+该功能与<a href="/java-features/Java21/jep440-record-partterns" target="_blank" rel="noopener noreferrer">记录模式（JEP 440）</a>共同发展，并与之有相当大的互动。</p>
 <h2>switch + instanceof</h2>
 <p>与if条件中的<code>instanceof</code>一样，<code>switch case</code>现在可以对其值进行类型检查，并创建一个case作用域变量:</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">asStringValue</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anyValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -2240,9 +2240,9 @@ factoryThread<span class="token punctuation">.</span><span class="token function
     </item>
     <item>
       <title>Java 21 新特性：记录模式</title>
-      <link>https://www.geekyspace.cn/java-features/Java21/jep440-record-partterns.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java21/jep440-record-partterns.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：记录模式</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep440-record-partterns.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep440-record-partterns.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 21 新特性：记录模式</source>
       <description>Java 21 新特性：记录模式（Record Patterns） Java 21 中的记录模式（Record Patterns）是对模式匹配的扩展，它允许在模式匹配中使用记录（Records）类型。 同时，记录模式还支持嵌套，可以实现更复杂的数据查询和处理。 仅仅是类型匹配 到目前为止，Java中的模式匹配主要局限于匹配类型：instanceof类型...</description>
       <category>Java</category>
       <pubDate>Tue, 09 Jan 2024 00:00:00 GMT</pubDate>
@@ -2250,7 +2250,7 @@ factoryThread<span class="token punctuation">.</span><span class="token function
 <p>Java 21 中的<strong>记录模式</strong>（Record Patterns）是对模式匹配的扩展，它允许在模式匹配中使用<strong>记录</strong>（Records）类型。
 同时，记录模式还支持嵌套，可以实现更复杂的数据查询和处理。</p>
 <h2>仅仅是类型匹配</h2>
-<p>到目前为止，Java中的模式匹配主要局限于匹配类型：<a href="/java-features/Java16/jep394-pattern-matching-for-instanceof">instanceof类型匹配</a></p>
+<p>到目前为止，Java中的模式匹配主要局限于匹配类型：<a href="/java-features/Java16/jep394-pattern-matching-for-instanceof" target="_blank" rel="noopener noreferrer">instanceof类型匹配</a></p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// Java 16 之前</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> obj<span class="token punctuation">;</span>
@@ -2262,7 +2262,7 @@ factoryThread<span class="token punctuation">.</span><span class="token function
   <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><p>Java
-21扩展了这个概念，使其可用于switch语句和表达式: <a href="/java-features/Java21/jep441-pattern-matching-for-switch">switch的模式匹配</a></p>
+21扩展了这个概念，使其可用于switch语句和表达式: <a href="/java-features/Java21/jep441-pattern-matching-for-switch" target="_blank" rel="noopener noreferrer">switch的模式匹配</a></p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// JAVA 21之前</span>
 <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">asStringValue</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anyValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token class-name">String</span> result <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
@@ -2340,9 +2340,9 @@ factoryThread<span class="token punctuation">.</span><span class="token function
     </item>
     <item>
       <title>Java 21 新特性：分代ZGC</title>
-      <link>https://www.geekyspace.cn/java-features/Java21/jep439-generational-zgc.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java21/jep439-generational-zgc.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：分代ZGC</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep439-generational-zgc.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep439-generational-zgc.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 21 新特性：分代ZGC</source>
       <description>Java 21 新特性：分代ZGC（Generational ZGC） Java以其垃圾回收机制而闻名。这是它的主要优势之一，但也可能是许多头疼的根源。 Java 11（JEP 333）中引入了一个可扩展的低延迟垃圾收集器，称为ZGC Java 15（JEP 377）中 ZGC 可用于生产 现在，随着Java 21的出现，它已经发展成为一种分代GC（J...</description>
       <category>Java</category>
       <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
@@ -2412,9 +2412,9 @@ factoryThread<span class="token punctuation">.</span><span class="token function
     </item>
     <item>
       <title>Java 21 新特性：有序集合</title>
-      <link>https://www.geekyspace.cn/java-features/Java21/jep431-sequenced-collections.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java21/jep431-sequenced-collections.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：有序集合</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep431-sequenced-collections.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep431-sequenced-collections.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 21 新特性：有序集合</source>
       <description>Java 21 新特性：有序集合（Sequenced Collections） 在JDK 21中，有序集合（Sequenced Collections）引入了新的接口和方法来简化集合处理。 此增强功能旨在解决访问Java中各种集合类型的第一个和最后一个元素需要非统一且麻烦处理场景 Sequenced Collections 引入如下 3 个新接口，用于...</description>
       <category>Java</category>
       <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
@@ -2532,9 +2532,9 @@ linkedHashSet<span class="token punctuation">.</span><span class="token function
     </item>
     <item>
       <title>Java 21 新特性：字符串模版(Preview)</title>
-      <link>https://www.geekyspace.cn/java-features/Java21/jep430-string-templates.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java21/jep430-string-templates.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 21 新特性：字符串模版(Preview)</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep430-string-templates.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java21/jep430-string-templates.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 21 新特性：字符串模版(Preview)</source>
       <description>Java 21 新特性：String Templates（字符串模版） Java 21 中引入了字符串模版（String Templates），它是一种新的字符串字面量，用于更简洁地构建字符串。 字符串组合的机制 在之前，Java 提供了几种字符串组合的机制，但不幸的是，它们都存在一些缺点 使用 + 操作符, 代码难以阅读 使用 StringBuild...</description>
       <category>Java</category>
       <pubDate>Sat, 06 Jan 2024 00:00:00 GMT</pubDate>
@@ -2645,7 +2645,7 @@ linkedHashSet<span class="token punctuation">.</span><span class="token function
 </code></pre></div></li>
 </ul>
 <h2>多行模板表达式</h2>
-<p>模板表达式的模板可以跨越多行源代码，类似于Java 15中的<a href="/java-features/Java15/jep378-text-blocks">文本块</a>的语法。
+<p>模板表达式的模板可以跨越多行源代码，类似于Java 15中的<a href="/java-features/Java15/jep378-text-blocks" target="_blank" rel="noopener noreferrer">文本块</a>的语法。
 开发者可以用它来方便的组织<code>html</code>、<code>json</code>、<code>xml</code>等字符串内容，比如下面这样：</p>
 <div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// 多行模板表达式示例：HTML文档</span>
 <span class="token class-name">String</span> title <span class="token operator">=</span> <span class="token string">"My Web Page"</span><span class="token punctuation">;</span>
@@ -2754,9 +2754,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
     </item>
     <item>
       <title>Java19 新特性总结</title>
-      <link>https://www.geekyspace.cn/java-features/Java19/java19-new-features-summary.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java19/java19-new-features-summary.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java19 新特性总结</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java19/java19-new-features-summary.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java19/java19-new-features-summary.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java19 新特性总结</source>
       <description>Java 19 新特性总结 该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。 422: Linux/RISC-V Port：RISC-V是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）,这个JEP的主旨则是移植JDK到RISC-V上。 以下预览特性在Java 21中正式定稿： 405: R...</description>
       <category>Java</category>
       <pubDate>Thu, 04 Jan 2024 00:00:00 GMT</pubDate>
@@ -2767,9 +2767,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
 </ul>
 <p>以下预览特性在Java 21中正式定稿：</p>
 <ul>
-<li><a href="/java-features/Java21/jep440-record-partterns">405: Record Patterns (Preview)：终稿见 440: Record Patterns</a></li>
-<li><a href="/java-features/Java21/jep444-virtual-threads">425: Virtual Threads (Preview)：终稿见 444: Virtual Threads</a></li>
-<li><a href="/java-features/Java21/jep441-pattern-matching-for-switch">427: Pattern Matching for switch (Third Preview)：终稿见 441: Pattern Matching for switch</a></li>
+<li><a href="/java-features/Java21/jep440-record-partterns" target="_blank" rel="noopener noreferrer">405: Record Patterns (Preview)：终稿见 440: Record Patterns</a></li>
+<li><a href="/java-features/Java21/jep444-virtual-threads" target="_blank" rel="noopener noreferrer">425: Virtual Threads (Preview)：终稿见 444: Virtual Threads</a></li>
+<li><a href="/java-features/Java21/jep441-pattern-matching-for-switch" target="_blank" rel="noopener noreferrer">427: Pattern Matching for switch (Third Preview)：终稿见 441: Pattern Matching for switch</a></li>
 </ul>
 <p>以下内容在Java 21中继续迭代：</p>
 <ul>
@@ -2781,9 +2781,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
     </item>
     <item>
       <title>Java20 新特性总结</title>
-      <link>https://www.geekyspace.cn/java-features/Java20/java20-new-features-summary.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java20/java20-new-features-summary.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java20 新特性总结</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java20/java20-new-features-summary.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java20/java20-new-features-summary.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java20 新特性总结</source>
       <description>Java 20 新特性总结 该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。 以下内容在Java 21中正式定稿，可根据链接查看终稿内容： 432: Record Patterns (Second Preview)：终稿见440: Record Patterns 433: Pattern Matchin...</description>
       <category>Java</category>
       <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
@@ -2791,9 +2791,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
 <p>该版本推出的均为孵化与预览功能，所以这里不做单独的详细解读，大部分内容均放在Java 21中介绍。</p>
 <p>以下内容在Java 21中正式定稿，可根据链接查看终稿内容：</p>
 <ul>
-<li><a href="/java-features/Java21/jep440-record-partterns">432: Record Patterns (Second Preview)：终稿见440: Record Patterns</a></li>
-<li><a href="/java-features/Java21/jep441-pattern-matching-for-switch">433: Pattern Matching for switch (Fourth Preview)：终稿见441: Pattern Matching for switch</a></li>
-<li><a href="/java-features/Java21/jep444-virtual-threads">436: Virtual Threads (Second Preview)：终稿见444: Virtual Threads</a></li>
+<li><a href="/java-features/Java21/jep440-record-partterns" target="_blank" rel="noopener noreferrer">432: Record Patterns (Second Preview)：终稿见440: Record Patterns</a></li>
+<li><a href="/java-features/Java21/jep441-pattern-matching-for-switch" target="_blank" rel="noopener noreferrer">433: Pattern Matching for switch (Fourth Preview)：终稿见441: Pattern Matching for switch</a></li>
+<li><a href="/java-features/Java21/jep444-virtual-threads" target="_blank" rel="noopener noreferrer">436: Virtual Threads (Second Preview)：终稿见444: Virtual Threads</a></li>
 </ul>
 <p>以下内容在Java 21中继续迭代：</p>
 <ul>
@@ -2806,9 +2806,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
     </item>
     <item>
       <title>Java 18 新特性：指定UTF-8为默认字符集</title>
-      <link>https://www.geekyspace.cn/java-features/Java18/jep400-utf8-by-default.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java18/jep400-utf8-by-default.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 18 新特性：指定UTF-8为默认字符集</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java18/jep400-utf8-by-default.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java18/jep400-utf8-by-default.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 18 新特性：指定UTF-8为默认字符集</source>
       <description>Java 18 新特性：指定UTF-8为默认字符集 在Java 18中，将UTF-8指定为标准Java API 的默认字符集， 以提高Java程序在不同实现、操作系统、区域设置和配置下的一致性。 目标 使Java程序在依赖默认字符集的代码上更加可预测和可移植 明确标准Java API在何处使用默认字符集 在标准Java API中统一使用UTF-8，除了...</description>
       <category>Java</category>
       <pubDate>Mon, 01 Jan 2024 00:00:00 GMT</pubDate>
@@ -2884,9 +2884,9 @@ FMT与STR相似之处在于它执行插值，但还提供了<mark>格式化处�
     </item>
     <item>
       <title>Java 18 新特性：简单Web服务器</title>
-      <link>https://www.geekyspace.cn/java-features/Java18/jep408-simple-web-server.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java18/jep408-simple-web-server.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 18 新特性：简单Web服务器</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java18/jep408-simple-web-server.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java18/jep408-simple-web-server.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 18 新特性：简单Web服务器</source>
       <description>Java 18 新特性：简单Web服务器 Java 18 引入了简单Web服务器（Simple Web Server），一个专为教育或非正式任务设计的最小HTTP服务器，为单个目录层次结构提供服务。 基于JDK中的com.sun.net.httpserver包实现，旨在简化服务器的创建和请求处理过程。 主要特点： 不能替代成熟的商业服务器，如Jetty...</description>
       <category>Java</category>
       <pubDate>Tue, 02 Jan 2024 00:00:00 GMT</pubDate>
@@ -3047,9 +3047,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     </item>
     <item>
       <title>Java 18 新特性：新增@snipppet标签</title>
-      <link>https://www.geekyspace.cn/java-features/Java18/jep413-code-snippets-in-api-documentation.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java18/jep413-code-snippets-in-api-documentation.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 18 新特性：新增@snipppet标签</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java18/jep413-code-snippets-in-api-documentation.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java18/jep413-code-snippets-in-api-documentation.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 18 新特性：新增@snipppet标签</source>
       <description>Java 18 新特性：新增@snipppet标签 Java 18 引入了@snippet标签，用于在API文档中嵌入代码片段，以便更好地展示API的使用方法。 主要特点： 有效性检查，代码包含语法错误时，会出现错误提示 启用现代样式，例如语法高亮显示，以及名称与声明的自动链接 为创建和编辑代码段提供更好的IDE支持 存在的@code标签 用于单独的小...</description>
       <category>Java</category>
       <pubDate>Wed, 03 Jan 2024 00:00:00 GMT</pubDate>
@@ -3097,9 +3097,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     </item>
     <item>
       <title>Java 17 新特性：switch模式匹配（Preview）</title>
-      <link>https://www.geekyspace.cn/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 17 新特性：switch模式匹配（Preview）</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java17/jep406-pattern-matching-for-switch-preview.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 17 新特性：switch模式匹配（Preview）</source>
       <description>Java 17 新特性：switch模式匹配（Preview） 当case标签可以有模式时，有如下四个主要的设计问题，我们一一来看： 增强类型检查 switch表达式和语句的完整性 模式变量声明的作用域 处理null 模式匹配设计 增强类型检查 通过扩展switch模式匹配的case标签，现在支持除了原始数据类型（char、byte、short 或 i...</description>
       <category>Java</category>
       <pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate>
@@ -3283,9 +3283,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     </item>
     <item>
       <title>Java 17 新特性：sealed类</title>
-      <link>https://www.geekyspace.cn/java-features/Java17/jep409-sealed-classes.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java17/jep409-sealed-classes.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 17 新特性：sealed类</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java17/jep409-sealed-classes.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java17/jep409-sealed-classes.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 17 新特性：sealed类</source>
       <description>Java 17 新特性：sealed类 Java 17 中引入了密封类（Sealed Classes），它是一种限制的类和接口， 可以控制哪些类继承或实现它，保证在编译时就能够确定类的继承关系，提高代码的可读性和可维护性。 密封类语法 密封类的声明使用关键字 sealed，并通过 permits 关键字声明允许继承或实现的类。 密封类对其允许的子类施加...</description>
       <category>Java</category>
       <pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate>
@@ -3327,9 +3327,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     </item>
     <item>
       <title>Java 16 新特性：instanceof 模式匹配</title>
-      <link>https://www.geekyspace.cn/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 16 新特性：instanceof 模式匹配</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java16/jep394-pattern-matching-for-instanceof.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java16/jep394-pattern-matching-for-instanceof.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 16 新特性：instanceof 模式匹配</source>
       <description>Java 16 新特性：instanceof 模式匹配 Java 16 引入了instanceof模式匹配的增强语法，用于更简便地判断对象是否是某个类的实例并进行相应的局部类型转换。 instanceof 基础用法 这个强制转换通常是在 instanceof 检查之后 的第一件事，所以为什么不围绕它优化一下语法呢？ instanceof 增强用法 若 ...</description>
       <category>Java</category>
       <pubDate>Thu, 28 Dec 2023 00:00:00 GMT</pubDate>
@@ -3384,9 +3384,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     </item>
     <item>
       <title>Java 16 新特性：record类</title>
-      <link>https://www.geekyspace.cn/java-features/Java16/jep395-records.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java16/jep395-records.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 16 新特性：record类</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java16/jep395-records.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java16/jep395-records.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 16 新特性：record类</source>
       <description>Java 16 新特性：record类 Java 16 引入的记录类（Records Classes）是一种用于简化不可变数据管理的特殊类。 它通过紧凑的语法提供了对不可变数据的支持，并自动生成常见的方法， 如equals()、hashCode()和toString()等，从而减少了开发者的样板代码。 传统Java Bean问题 在处理不可变数据时，传...</description>
       <category>Java</category>
       <pubDate>Fri, 29 Dec 2023 00:00:00 GMT</pubDate>
@@ -3550,9 +3550,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     </item>
     <item>
       <title>Java 15 新特性：隐藏类（Hidden Classes）</title>
-      <link>https://www.geekyspace.cn/java-features/Java15/jep371-hidden-classes.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java15/jep371-hidden-classes.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：隐藏类（Hidden Classes）</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java15/jep371-hidden-classes.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java15/jep371-hidden-classes.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 15 新特性：隐藏类（Hidden Classes）</source>
       <description>Java 15 新特性：隐藏类（Hidden Classes） 隐藏类（Hidden Classes） 提供了一种在运行时生成类的机制，在编译时未知，并且不能直接在源代码中引用， 需要通过反射间接使用它们，隐藏类是为框架设计的，具有以下特性： 动态生成内部类：隐藏类天生为框架设计，在运行时生成内部类 反射访问限制：隐藏类只能通过反射访问，不能直接被其他...</description>
       <category>Java</category>
       <pubDate>Tue, 26 Dec 2023 00:00:00 GMT</pubDate>
@@ -3572,9 +3572,9 @@ s<span class="token punctuation">.</span><span class="token function">start</spa
     </item>
     <item>
       <title>Java 15 新特性：文本块（Text Blocks）</title>
-      <link>https://www.geekyspace.cn/java-features/Java15/jep378-text-blocks.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java15/jep378-text-blocks.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 15 新特性：文本块（Text Blocks）</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java15/jep378-text-blocks.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java15/jep378-text-blocks.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 15 新特性：文本块（Text Blocks）</source>
       <description>Java 15 新特性：文本块（Text Blocks） Java 15(JEP 378)引入了文本块（Text Blocks）这一新特性，旨在简化多行字符串的表示，提高代码可读性，并减少在字符串中使用转义符的需求。 文本块通过引入三个双引号的胖分隔符（&amp;quot;&amp;quot;&amp;quot;）来实现，同时支持转义序列，为开发人员提供更直观、易读的字符串处理方式。 快速上手 HTML示...</description>
       <category>Java</category>
       <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
@@ -3697,9 +3697,9 @@ Object obj = engine.eval("function hello() {\n" +
     </item>
     <item>
       <title>Java 14 新特性：switch表达式增强</title>
-      <link>https://www.geekyspace.cn/java-features/Java14/jep361-switch-expressions.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java14/jep361-switch-expressions.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 14 新特性：switch表达式增强</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java14/jep361-switch-expressions.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java14/jep361-switch-expressions.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 14 新特性：switch表达式增强</source>
       <description>Java 14 新特性：switch表达式增强 Java 14(JEP 361)引入了 switch 表达式的新特性，其中包括了 &amp;quot;箭头标签（case ... -&amp;gt;）&amp;quot; 和 yield 语句的增强， 同时支持 Lambda 语法，使得代码更加灵活、简洁，并为未来的模式匹配(JEP 305)特性做好了准备。 传统的switch语句 首先，让我们回顾一下传...</description>
       <category>Java</category>
       <pubDate>Mon, 25 Dec 2023 00:00:00 GMT</pubDate>
@@ -3797,9 +3797,9 @@ Object obj = engine.eval("function hello() {\n" +
     </item>
     <item>
       <title>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</title>
-      <link>https://www.geekyspace.cn/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java11/jep320-remove-JavaEE-CORBA.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java11/jep320-remove-JavaEE-CORBA.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX</source>
       <description>Java 11 新特性 ：移除JavaEE和CORBA模块以及JavaFX Java 11 中移除了 Java EE 和 CORBA 模块，同时 JavaFX 也被剥离，但仍可作为独立模块使用。 Java9 弃用过程 在 Java 9 中，Java EE 和 CORBA 模块被标记为 @Deprecated，为开发者提供了适应期。 Java11 彻底删...</description>
       <category>Java</category>
       <pubDate>Sun, 24 Dec 2023 00:00:00 GMT</pubDate>
@@ -3841,9 +3841,9 @@ Object obj = engine.eval("function hello() {\n" +
     </item>
     <item>
       <title>Java 10 新特性：局部变量类型推断</title>
-      <link>https://www.geekyspace.cn/java-features/Java10/jep286-local-variable-type-inference.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java10/jep286-local-variable-type-inference.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 10 新特性：局部变量类型推断</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java10/jep286-local-variable-type-inference.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java10/jep286-local-variable-type-inference.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 10 新特性：局部变量类型推断</source>
       <description>Java 10 新特性：局部变量类型推断 Java 10 引入了一项新的语言特性，即局部变量类型推断（Local-Variable Type Inference）， 它允许在局部变量声明时，根据变量的初始值，推断出变量的数据类型。 语法 局部变量类型推断的语法非常简单，只需要将 var 关键字作为局部变量的类型即可。 示例 相比传统的方式和 Java ...</description>
       <category>Java</category>
       <pubDate>Sat, 23 Dec 2023 00:00:00 GMT</pubDate>
@@ -3877,9 +3877,9 @@ Object obj = engine.eval("function hello() {\n" +
     </item>
     <item>
       <title>Java 8-21：前沿特性解读系列（持续连载）</title>
-      <link>https://www.geekyspace.cn/java-features/</link>
-      <guid>https://www.geekyspace.cn/java-features/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 8-21：前沿特性解读系列（持续连载）</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 8-21：前沿特性解读系列（持续连载）</source>
       <description>Java 8-21：前沿特性解读系列（持续连载），截至2023年9月中旬，Java已达到第21版本。 尽管如此，众多开发者仍停滞在Java 8的认知水平。为填补这一差距，我们推出专栏，聚焦分享最新Java知识。</description>
       <category>Java</category>
       <pubDate>Wed, 20 Dec 2023 00:00:00 GMT</pubDate>
@@ -4184,9 +4184,9 @@ Object obj = engine.eval("function hello() {\n" +
     </item>
     <item>
       <title>Java 9 新特性：交互式编程环境JShell</title>
-      <link>https://www.geekyspace.cn/java-features/Java9/jep222-jshell.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java9/jep222-jshell.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 9 新特性：交互式编程环境JShell</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java9/jep222-jshell.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java9/jep222-jshell.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 9 新特性：交互式编程环境JShell</source>
       <description>Java 9 新特性：交互式编程环境JShell JShell 是 Java 9 引入的一个交互式编程环境，它是 Java 编程语言的 REPL（Read-Eval-Print Loop）实现。 REPL 是一种编程环境，允许用户输入表达式并立即看到结果，而无需事先编写和编译完整的程序。 JShell 的目标是提供一个轻量级、灵活且易于使用的工具，使得...</description>
       <category>Java</category>
       <pubDate>Thu, 21 Dec 2023 00:00:00 GMT</pubDate>
@@ -4401,9 +4401,9 @@ jshell<span class="token operator">&gt;</span>
     </item>
     <item>
       <title>Java 9 新特性：不可变集合的快捷创建方法</title>
-      <link>https://www.geekyspace.cn/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</link>
-      <guid>https://www.geekyspace.cn/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Java 9 新特性：不可变集合的快捷创建方法</source>
+      <link>https://www.geekyspace.cn/geekyspace/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/java-features/Java9/jep269-convenience-factory-methods-for-collections.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">Java 9 新特性：不可变集合的快捷创建方法</source>
       <description>Java 9 新特性：不可变集合的快捷创建方法 Java 9 引入了一项令人期待的新特性，即集合的便利工厂方法（Convenience Factory Methods for Collections），旨在使不可变集合的创建更加简单和便捷。 在此之前，我们通常使用构造方法来初始化集合，而Java 9为我们提供了一些全新的静态工厂方法，使得创建不可变集合...</description>
       <category>Java</category>
       <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
@@ -4492,9 +4492,9 @@ mutableList<span class="token punctuation">.</span><span class="token function">
     </item>
     <item>
       <title>GeekySpace | 软件开发者与技术领袖的信息平台</title>
-      <link>https://www.geekyspace.cn/intro.html</link>
-      <guid>https://www.geekyspace.cn/intro.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">GeekySpace | 软件开发者与技术领袖的信息平台</source>
+      <link>https://www.geekyspace.cn/geekyspace/intro.html</link>
+      <guid>https://www.geekyspace.cn/geekyspace/intro.html</guid>
+      <source url="https://www.geekyspace.cn/geekyspace/rss.xml">GeekySpace | 软件开发者与技术领袖的信息平台</source>
       <description>软件开发者与技术领袖的信息平台</description>
       <category>程序人生</category>
       <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
@@ -4519,7 +4519,7 @@ mutableList<span class="token punctuation">.</span><span class="token function">
 我们的使命是为软件开发社区提供最新的技术趋势、最佳实践和行业动态，帮助开发者们不断学习和成长。</p>
 <p>欢迎访问我们的网站 <a href="www.geekyspace.cn">www.geekyspace.cn</a>，与我们一起探索科技的未来！</p>
 ]]></content:encoded>
-      <enclosure url="https://www.geekyspace.cn/assets/images/cover3.jpg" type="image/jpeg"/>
+      <enclosure url="https://www.geekyspace.cn/geekyspace/assets/images/cover3.jpg" type="image/jpeg"/>
     </item>
   </channel>
 </rss>
