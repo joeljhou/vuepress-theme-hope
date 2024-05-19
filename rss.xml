@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <atom:link href="https://www.geekyspace.cn/rss.xml" rel="self" type="application/rss+xml"/>
-    <title>极客空间</title>
+    <title></title>
     <link>https://www.geekyspace.cn/</link>
-    <description>vuepress-theme-hope 的博客搭建</description>
+    <description></description>
     <language>zh-CN</language>
-    <pubDate>Sun, 19 May 2024 09:22:43 GMT</pubDate>
-    <lastBuildDate>Sun, 19 May 2024 09:22:43 GMT</lastBuildDate>
+    <pubDate>Sun, 19 May 2024 10:15:32 GMT</pubDate>
+    <lastBuildDate>Sun, 19 May 2024 10:15:32 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>安装大全</category>
@@ -4491,11 +4491,11 @@ mutableList<span class="token punctuation">.</span><span class="token function">
 ]]></content:encoded>
     </item>
     <item>
-      <title>GeekySpace | 软件开发者与技术领袖的信息平台</title>
+      <title>极客空间 | 一个专注于技术分享的博客网站</title>
       <link>https://www.geekyspace.cn/intro.html</link>
       <guid>https://www.geekyspace.cn/intro.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">GeekySpace | 软件开发者与技术领袖的信息平台</source>
-      <description>软件开发者与技术领袖的信息平台</description>
+      <source url="https://www.geekyspace.cn/rss.xml">极客空间 | 一个专注于技术分享的博客网站</source>
+      <description>一个专注于技术分享的博客网站</description>
       <category>程序人生</category>
       <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
