@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Sun, 19 May 2024 17:50:18 GMT</pubDate>
-    <lastBuildDate>Sun, 19 May 2024 17:50:18 GMT</lastBuildDate>
+    <pubDate>Mon, 20 May 2024 05:43:58 GMT</pubDate>
+    <lastBuildDate>Mon, 20 May 2024 05:43:58 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>安装大全</category>
@@ -34,13 +34,14 @@
       <link>https://www.geekyspace.cn/installation-guide/os/windows-office-activation.html</link>
       <guid>https://www.geekyspace.cn/installation-guide/os/windows-office-activation.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
-      <description>Windows、Office激活密钥，脚本，程序 微软官方正版秘钥 获取 官方正版秘钥，可激活任意版本的Windows系统 微软官方密钥微软官方密钥 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” 输入产品密钥输入产品密钥 “激活”成功 Windows官方密...</description>
+      <description>Windows、Office激活密钥，脚本，程序 微软官方正版秘钥 获取 官方正版秘钥 ，可激活任意版本的Windows系统 微软官方密钥微软官方密钥 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” 输入产品密钥输入产品密钥 “激活”成功 Windows官方...</description>
       <category>安装大全</category>
       <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>微软官方正版秘钥</h2>
 <blockquote>
-<p>获取 <a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">官方正版秘钥</a>，可激活任意版本的Windows系统</p>
+<p>获取 <a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener noreferrer">官方正版秘钥</a>
+，可激活任意版本的Windows系统</p>
 </blockquote>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404231858402.png" alt="微软官方密钥" tabindex="0" loading="lazy"><figcaption>微软官方密钥</figcaption></figure>
 <ol>
