@@ -6,17 +6,310 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Wed, 10 Jul 2024 23:20:25 GMT</pubDate>
-    <lastBuildDate>Wed, 10 Jul 2024 23:20:25 GMT</lastBuildDate>
+    <pubDate>Sat, 20 Jul 2024 06:41:17 GMT</pubDate>
+    <lastBuildDate>Sat, 20 Jul 2024 06:41:17 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>JVM</category>
     <category>IDEA</category>
-    <category>安装大全</category>
     <category>Java</category>
+    <category>安装大全</category>
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Spring</category>
     <category>程序人生</category>
+    <item>
+      <title>深入理解Java虚拟机</title>
+      <link>https://www.geekyspace.cn/md/jvm/</link>
+      <guid>https://www.geekyspace.cn/md/jvm/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">深入理解Java虚拟机</source>
+      <description>深入理解Java虚拟机 JVM 基础 类字节码详解 字节码的增强技术 Java 类加载机制 JVM 内存结构 Java 内存模型引入 Java 内存模型详解 GC 垃圾回收 Java 垃圾回收基础知识 Java 垃圾回收器之G1详解 Java 垃圾回收器之ZGC详解 Java 垃圾回收器之CMS GC问题分析与解决 调试排错 JVM 调优参数 Java...</description>
+      <category>JVM</category>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>JVM 基础</h2>
+<ul>
+<li>类字节码详解</li>
+<li>字节码的增强技术</li>
+<li>Java 类加载机制</li>
+<li>JVM 内存结构</li>
+<li>Java 内存模型引入</li>
+<li>Java 内存模型详解</li>
+</ul>
+<h2>GC 垃圾回收</h2>
+<ul>
+<li>Java 垃圾回收基础知识</li>
+<li>Java 垃圾回收器之G1详解</li>
+<li>Java 垃圾回收器之ZGC详解</li>
+<li>Java 垃圾回收器之CMS GC问题分析与解决</li>
+</ul>
+<h2>调试排错</h2>
+<ul>
+<li>JVM 调优参数</li>
+<li>Java 内存分析之堆内存和MetaSpace内存</li>
+<li>Java 内存分析之堆外内存</li>
+<li>Java 线程分析之线程Dump分析</li>
+<li>Java 问题排查之Linux命令</li>
+<li>Java 问题排查之工具单</li>
+<li>Java 问题排查之JVM可视化工具</li>
+<li>Java 问题排查之应用在线调试Arthas</li>
+<li>Java 问题排查之使用IDEA本地调试和远程调试</li>
+<li>Java动态调试技术原理</li>
+</ul>
+<h2>学习文献</h2>
+<ul>
+<li><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5" target="_blank" rel="noopener noreferrer">Java虚拟机规范（Java SE 8）</a></li>
+<li><a href="">JSR-133：JavaTM内存模型和线程规范</a></li>
+</ul>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://docs.oracle.com/javase/specs/index.html" target="_blank" rel="noopener noreferrer">Java语言和虚拟机规范（Oracle）</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>类字节码详解</title>
+      <link>https://www.geekyspace.cn/md/jvm/basics/class.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/basics/class.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">类字节码详解</source>
+      <description>类字节码详解 引言 计算机不能直接运行Java代码。必须先运行Java虚拟机（JVM），再由JVM运行编译后的Java代码。 这个编译后的Java代码，就是我们要介绍的Java字节码。 无关性的基石 平台无关性： 字节码可以在任何支持JVM的平台上运行，实现“一次编写，到处运行”。 语言无关性： 多种编程语言可以编译成字节码并在JVM上运行，不仅限于J...</description>
+      <category>JVM</category>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>引言</h2>
+<p>计算机不能直接运行Java代码。必须先运行Java虚拟机（JVM），再由JVM运行编译后的Java代码。
+这个编译后的Java代码，就是我们要介绍的Java字节码。</p>
+<h2>无关性的基石</h2>
+<ul>
+<li><strong>平台无关性：</strong> 字节码可以在任何支持JVM的平台上运行，实现“一次编写，到处运行”。</li>
+<li><strong>语言无关性：</strong> 多种编程语言可以编译成字节码并在JVM上运行，不仅限于Java。</li>
+</ul>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/202407200209120.png" alt="Java虚拟机提供的语言无关性" tabindex="0" loading="lazy"><figcaption>Java虚拟机提供的语言无关性</figcaption></figure>
+<h2>Java字节码文件</h2>
+<p>Class文件本质上是一组以8个字节为基础单位的二进制流，各数据项严格按顺序紧密排列，中间没有任何分隔符。
+JVM根据其特定的规则解析该二进制数据，从而得到相关信息。</p>
+<h3>Class类文件的结构</h3>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/202407200258362.png" alt="Class类文件的结构" tabindex="0" loading="lazy"><figcaption>Class类文件的结构</figcaption></figure>
+<p>Java字节码是以类文件（<code>.class</code>）形式存储的，包含如下结构属性：</p>
+<ol>
+<li><strong>魔数：</strong> 用于标识类文件的起始部分，通常是固定的值（<code>0xCAFEBABE</code>）</li>
+<li><strong>版本号：</strong> 表示类文件的版本，包括主版本号和次版本号，即编译时的Java版本</li>
+<li><strong>常量池：</strong> 存储了类文件中用到的所有常量，包括字符串、数值和类引用等</li>
+<li><strong>访问标志：</strong> 描述类或接口的访问权限和其他属性，如<code>public</code>、<code>abstract</code>、<code>final</code>等</li>
+<li><strong>类索引、父类索引和接口索引集合：</strong> 分别指向常量池中的项，用于标识类、父类和实现的接口</li>
+<li><strong>字段表：</strong> 定义类或接口中的成员变量，包括类型、名称和修饰符等信息</li>
+<li><strong>方法表：</strong> 定义类或接口中的方法，包括名称、参数和修饰符等信息</li>
+<li><strong>属性表：</strong> 存储类、字段、方法等相关的附加信息，如代码段、异常处理表等</li>
+</ol>
+]]></content:encoded>
+      <enclosure url="https://img.geekyspace.cn/pictures/2024/202407200209120.png" type="image/png"/>
+    </item>
+    <item>
+      <title>类加载机制</title>
+      <link>https://www.geekyspace.cn/md/jvm/basics/classload.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/basics/classload.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">类加载机制</source>
+      <description>类加载机制</description>
+      <category>JVM</category>
+      <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
+    <item>
+      <title>JVM 概述</title>
+      <link>https://www.geekyspace.cn/md/jvm/basics/overview.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/basics/overview.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">JVM 概述</source>
+      <description>JVM 概述 Java虚拟机（Java Virtual Machine，简称JVM）是运行所有Java程序的虚拟计算机，是Java平台的核心实现。 它提供了一种独立于底层硬件和操作系统的运行环境，使Java程序能够在任何安装了JVM的系统上执行。 JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台运行，这一特性被称为“Write O...</description>
+      <category>JVM</category>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>Java虚拟机（Java Virtual Machine，简称JVM）是运行所有Java程序的虚拟计算机，是Java平台的核心实现。
+它提供了一种独立于底层硬件和操作系统的运行环境，使Java程序能够在任何安装了JVM的系统上执行。
+JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台运行，这一特性被称为“Write Once, Run Anywhere”。</p>
+</blockquote>
+<h2>Java虚拟机家族</h2>
+<p><strong>虚拟机始祖：Sun Classic/Exact VM（Sun/Oracle公司）</strong></p>
+<ul>
+<li><strong>Classic VM：</strong>
+<ul>
+<li>1996年1月23日，Sun发布JDK 1.0，正式商用，最早的Java虚拟机实现</li>
+<li>纯解释器，可外挂即时编译器（JIT），但只能二选一</li>
+<li>直到JDK 1.4，才完全退出商用虚拟机的历史舞台</li>
+</ul>
+</li>
+<li><strong>Exact VM：</strong>
+<ul>
+<li>在JDK 1.2时，在Solaris平台发布，是Classic VM的改进版</li>
+<li>因准确式内存管理（Exact Memory Management）而得名，是垃圾收集时准确判断堆上数据的前提</li>
+<li>它的编译执行系统已经具备现代高性能虚拟机雏形
+<ul>
+<li>如热点探测、两级即时编译器、编译器与解释器混合工作模式等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>武林盟主：HotSpot VM（Sun/Oracle公司）</strong></p>
+<ul>
+<li><strong>HotSpot VM</strong>
+<ul>
+<li>从JDK 1.3至今（2024），HotSpot VM成为默认虚拟机，目前使用最广泛</li>
+<li>HotSpot VM集成了Sun以上两款虚拟机优点（准确式内存管理，热点代码探测技术...）</li>
+<li>Oracle收购Sun以后，建立HotRockit项目，把BEA JRocki优秀特性融合到HotSpot之中</li>
+<li>2014年JDK 8时期，HotSpot移除掉永久代，吸收了JRockit的Java Mission Control监控工具等功能</li>
+</ul>
+</li>
+</ul>
+<p><strong>小家碧玉：Mobile/Embedded VM（Sun/Oracle公司）</strong></p>
+<p>专门为移动设备和嵌入式设备设计的Java虚拟机（JavaME）</p>
+<ul>
+<li>
+<p><strong>KVM（Kilobyte Virtual Machine）</strong>:</p>
+<ul>
+<li>用于早期的移动设备，但智能手机市场已被Android和iOS主导</li>
+</ul>
+</li>
+<li>
+<p><strong>CDC（Connected Device Configuration）</strong>:</p>
+<ul>
+<li>用于功能更强的嵌入式设备，但面临自家Java SE Embedded（eJDK）的竞争</li>
+<li>由于Java SE的普及，CDC市场快速萎缩，Oracle基本砍掉了CDC-HI项目，将其划归Java SE Embedded</li>
+</ul>
+</li>
+</ul>
+<p><strong>天下第二：BEA JRockit/IBM J9 VM</strong></p>
+<ul>
+<li><strong>BEA JRockit</strong>:
+<ul>
+<li>最初由BEA Systems开发，后被Oracle收购，永远停留在R28（JDK 6版JRockit代号）</li>
+<li>专注于服务器硬件和服务端应用场景，不关注启动速度，不包含解释器实现</li>
+<li>以其出色的垃圾收集器和性能和诊断工具（如Java Mission Control）著称</li>
+</ul>
+</li>
+<li><strong>IBM J9 VM</strong>:
+<ul>
+<li>全称“IBM Technology for Java Virtual Machine”，简称IT4J，但普遍称为J9</li>
+<li>作为通用型JVM，其市场定位接近HotSpot，主要优势在IBM产品上</li>
+<li>由IBM开发，2017年开源为<a href="https://www.eclipse.org/openj9/" target="_blank" rel="noopener noreferrer">OpenJ9</a>，现由Eclipse基金会维护</li>
+<li>模块化设计优于HotSpot
+<ul>
+<li>核心组件库（包括垃圾收集器、即时编译器、诊断监控子系统等）构成了IBM OMR项目</li>
+<li>可以在其他语言平台如Ruby、Python中快速组装成相应的功能</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>软硬合璧：BEA Liquid VM/Azul VM（Zing）</strong></p>
+<ul>
+<li>
+<p><strong>BEA Liquid VM</strong>:</p>
+<ul>
+<li>也被称为JRockit VE（Virtual Edition，VE），专为BEA WebLogic实时运行环境设计</li>
+<li>BEA公司开发的JRockit虚拟机虚拟化版本，可直接运行在自家Hypervisor系统上</li>
+<li>不需要操作系统支持，自身实现了必要的操作系统功能（如线程调度、文件系统、网络支持等）</li>
+<li>直接控制硬件，避免内核态/用户态切换，最大限度发挥硬件性能，提升Java程序执行效率</li>
+<li>随着JRockit虚拟机终止开发，Liquid VM项目也停止了</li>
+</ul>
+</li>
+<li>
+<p><strong>Azul VM</strong>:</p>
+<ul>
+<li>适用于Azul Systems专有硬件Vega产品线，在HotSpot基础改进</li>
+<li>采用PGC和C4收集器，停顿时间可控，每个Azul VM实例可管理数十个CPU和数百GB内存</li>
+</ul>
+</li>
+<li>
+<p><strong>Zing VM</strong>:</p>
+<ul>
+<li>2010年起，Azul公司重心转向软件，发布Zing虚拟机，基于HotSpot某旧版代码分支</li>
+<li>低延迟，配备PGC和C4垃圾收集器
+<ul>
+<li>支持TB级别Java堆内存，暂停时间不超过10毫秒</li>
+<li>HotSpot直到JDK 11和JDK 12的ZGC和Shenandoah收集器才达到类似目标，但效果仍不及C4</li>
+</ul>
+</li>
+<li>Zing的ReadyNow（快速预热、启动）！
+<ul>
+<li>利用之前收集的性能监控数据，使虚拟机在启动后快速达到高性能水平</li>
+<li>减少从解释执行到即时编译的等待时间</li>
+</ul>
+</li>
+<li>易于监控（ZVision/ZVRobot工具）
+<ul>
+<li>方便用户监控JVM运行状态，包括代码热点、对象分配监控、锁竞争监控等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>挑战者：Apache Harmony/Google Android Dalvik VM</strong></p>
+<ul>
+<li>
+<p><strong>Apache Harmony</strong>:</p>
+<ul>
+<li>一个开源的Java SE实现项目，旨在提供兼容Java SE的JVM及类库。虽然项目已停止，但其代码和理念影响深远</li>
+<li>Apache软件基金会开源项目，兼容JDK 5和JDK 6，提供自己的虚拟机和Java类库API。</li>
+<li>没有通过TCK认证，无法正式称为“Java虚拟机”</li>
+<li>曾对Java生态系统构成巨大挑战，导致Apache基金会退出JCP组织</li>
+<li>随Sun公司开源OpenJDK，Harmony项目的优势逐渐减弱</li>
+<li>主要贡献（如Java类库代码）被吸纳进IBM JDK 7和Google Android SDK</li>
+</ul>
+</li>
+<li>
+<p><strong>Google Android Dalvik VM</strong>:</p>
+<ul>
+<li>Android平台核心虚拟机，名字来源于冰岛的小渔村Dalvik</li>
+<li>非Java虚拟机，使用寄存器架构，不直接执行Java Class文件，而是执行DEX文件</li>
+<li>通过Class文件转化为DEX文件，支持Java语法和API，推动Android迅速发展</li>
+<li>Android 2.2引入即时编译器，提升性能</li>
+<li>Android 4.4开始引入提前编译（Ahead of Time Compilation，AOT）的ART虚拟机</li>
+<li>Android 5.0开始ART全面替代Dalvik虚拟机</li>
+</ul>
+</li>
+</ul>
+<p><strong>没有成功，但并非失败：Microsoft JVM及其他</strong></p>
+<ul>
+<li><strong>Microsoft JVM</strong>:
+<ul>
+<li>微软开发的Java虚拟机，曾用于早期的Windows平台。但由于与Sun的法律纠纷，微软最终停止了其开发</li>
+<li>为支持Internet Explorer 3中的Java Applets，开发Microsoft JVM，仅限Windows平台</li>
+<li>被认为是当时Windows系统下性能最好的Java虚拟机，1997年和1998年连续获得《PC Magazine》“编辑选择奖”</li>
+<li>1997年被Sun公司控告侵犯商标、不正当竞争，最终微软赔偿2000万美元，并承诺停止开发和逐步移除其Java虚拟机</li>
+<li>虽然微软的Java虚拟机未能长期发展，但其短暂的成功对当时Java的推广起到了积极作用。</li>
+</ul>
+</li>
+</ul>
+<p><strong>百家争鸣</strong></p>
+<ul>
+<li>KVM：为小型设备设计的轻量级Java虚拟机</li>
+<li>Java Card VM：支持智能卡和小型嵌入式设备的Java虚拟机</li>
+<li>Squawk VM：针对嵌入式系统和传感器网络的Java虚拟机</li>
+<li>JavaInJava：用Java自身编写的Java虚拟机</li>
+<li>Maxine VM：由Java编写、用于研究和实验的Java虚拟机</li>
+<li>Jikes RVM： IBM开源的高性能研究虚拟机</li>
+<li>IKVM.NET：在.NET平台上运行Java代码的虚拟机</li>
+<li>JamVM：<a href="http://jamvm.sourceforge.net/" target="_blank" rel="noopener noreferrer">http://jamvm.sourceforge.net/</a></li>
+<li>CacaoVM：<a href="http://www.cacaovm.org/" target="_blank" rel="noopener noreferrer">http://www.cacaovm.org/</a></li>
+<li>SableVM：<a href="http://www.sablevm.org/" target="_blank" rel="noopener noreferrer">http://www.sablevm.org/</a></li>
+<li>Kaffe：<a href="http://www.kaffe.org/" target="_blank" rel="noopener noreferrer">http://www.kaffe.org/</a></li>
+<li>Jelatine JVM：<a href="http://jelatine.sourceforge.net/" target="_blank" rel="noopener noreferrer">http://jelatine.sourceforge.net/</a></li>
+<li>NanoVM：<a href="http://www.harbaum.org/till/nanovm/index.shtml" target="_blank" rel="noopener noreferrer">http://www.harbaum.org/till/nanovm/index.shtml</a></li>
+<li>MRP：<a href="https://github.com/codehaus/mrp" target="_blank" rel="noopener noreferrer">https://github.com/codehaus/mrp</a></li>
+<li>Moxie JVM：<a href="http://moxie.sourceforge.net/" target="_blank" rel="noopener noreferrer">http://moxie.sourceforge.net/</a></li>
+</ul>
+<h2>跨平台开发的通用平台</h2>
+<p>随着发展，JVM不再是Java独享的Moment，越来越多的语言开始在JVM上运行，使JVM逐渐演变成一个<strong>跨平台开发的通用平台</strong>。</p>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/image-20240620020158368.png" alt="jvm-class" tabindex="0" loading="lazy"><figcaption>jvm-class</figcaption></figure>
+<p>JVM本质上只关心<code>.class</code>的字节码文件，而不关心源代码是用什么语言编写的。</p>
+<h2>Java虚拟机体系结构</h2>
+<p><a href="https://www.freecodecamp.org/news/jvm-tutorial-java-virtual-machine-architecture-explained-for-beginners/" target="_blank" rel="noopener noreferrer">参考面向初学者的Java虚拟机架构</a></p>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/0082zybply1gc6fz21n8kj30u00wpn5v.jpg" alt="Java虚拟机架构" tabindex="0" loading="lazy"><figcaption>Java虚拟机架构</figcaption></figure>
+]]></content:encoded>
+      <enclosure url="https://img.geekyspace.cn/pictures/2024/image-20240620020158368.png" type="image/png"/>
+    </item>
     <item>
       <title>2024最新IntelliJ IDEA专业版稳定正版激活码</title>
       <link>https://www.geekyspace.cn/md/idea-tips/activation.html</link>
@@ -66,18 +359,6 @@
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718903.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202404171725739.png" type="image/png"/>
-    </item>
-    <item>
-      <title>开发者安装大全</title>
-      <link>https://www.geekyspace.cn/md/installation-guide/</link>
-      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
-      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
-      <category>安装大全</category>
-      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
-]]></content:encoded>
     </item>
     <item>
       <title>Java 8-21：前沿特性解读系列（持续连载）</title>
@@ -387,6 +668,18 @@
 ]]></content:encoded>
     </item>
     <item>
+      <title>开发者安装大全</title>
+      <link>https://www.geekyspace.cn/md/installation-guide/</link>
+      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
+      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Spring Boot 入门教程</title>
       <link>https://www.geekyspace.cn/md/spring-boot/</link>
       <guid>https://www.geekyspace.cn/md/spring-boot/</guid>
@@ -422,107 +715,6 @@
 <li><a href="/spring-data-jpa/jetbrains/getting-started">Spring Data JPA 快速入门</a></li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Windows、Office激活密钥，脚本，程序</title>
-      <link>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</link>
-      <guid>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
-      <description>Windows、Office激活密钥，脚本，程序 ① 微软正版秘钥（官方） 01.Windows系统激活 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” ！获取 微软Windows官方正版秘钥 输入产品密钥输入产品密钥 “激活”成功 Windows官方密钥激...</description>
-      <category>安装大全</category>
-      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>① 微软正版秘钥（官方）</h2>
-<h3>01.Windows系统激活</h3>
-<ol>
-<li><code>Win+R</code> 打开终端，输入命令</li>
-</ol>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slui <span class="token number">3</span>
-</code></pre></div><ol start="2">
-<li>打开“系统激活”窗口，点击“更改”按钮</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232040995.png" alt="更改产品密钥" tabindex="0" loading="lazy"><figcaption>更改产品密钥</figcaption></figure>
-<ol start="3">
-<li>输入“秘钥”，点击“下一页” 进行 “激活” ！获取 <a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener noreferrer">微软Windows官方正版秘钥</a></li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232318292.png" alt="输入产品密钥" tabindex="0" loading="lazy"><figcaption>输入产品密钥</figcaption></figure>
-<ol start="4">
-<li>“激活”成功</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232327475.png" alt="Windows官方密钥激活" tabindex="0" loading="lazy"><figcaption>Windows官方密钥激活</figcaption></figure>
-<h3>02.Office软件激活</h3>
-<ol>
-<li><strong>打开Office应用程序：</strong> 启动<code>Word</code>、<code>Excel</code>或<code>PowerPoint</code>等</li>
-<li><strong>访问文件菜单：</strong> 在应用程序中，点击左上角的"文件"菜单</li>
-<li><strong>点击账户：</strong> 在文件菜单中，选择"账户"</li>
-<li><strong>更改产品密钥：</strong> 在账户页面，找到并点击"更改产品密钥"</li>
-<li><strong>输入产品密钥：</strong> 在弹出的对话框中输入你的25位密钥 ！获取 <a href="https://learn.microsoft.com/zh-cn/deployoffice/vlactivation/gvlks" target="_blank" rel="noopener noreferrer">微软Office官方正版秘钥</a></li>
-<li><strong>激活Office：</strong> 输入密钥后，点击"继续"或"激活产品"</li>
-</ol>
-<h2>② 激活脚本（原理）</h2>
-<blockquote>
-<p>一键激活脚本：<a href="https://wwi.lanzoup.com/b0foh27ne" target="_blank" rel="noopener noreferrer">https://wwi.lanzoup.com/b0foh27ne</a>, 密码：<code>gkjb</code></p>
-</blockquote>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
-<h3>01.脚本激活命令</h3>
-<p><strong>将密钥写入系统，实现激活</strong></p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-</code></pre></div><p>如果你有新的零售产品密钥，将 <code>X</code> 替换为实际的密钥，运行以上命令即可激活</p>
-<h3>02.脚本激活网站推荐</h3>
-<p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
-<h2>③ 激活程序（推荐）</h2>
-<blockquote>
-<p>获取 <a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">一键激活程序</a> ,提供多种激活方式</p>
-</blockquote>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900370.png" alt="程序-持续更新" tabindex="0" loading="lazy"><figcaption>程序-持续更新</figcaption></figure>
-<div class="hint-container note">
-<p class="hint-container-title">注意：使用一键激活程序，需先关闭电脑相关的杀毒程序</p>
-<ul>
-<li><a href="https://support.microsoft.com/zh-cn/windows/%E5%85%B3%E9%97%AD-windows-%E5%AE%89%E5%85%A8%E4%B8%AD%E5%BF%83%E4%B8%AD%E7%9A%84defender-%E9%98%B2%E7%97%85%E6%AF%92%E4%BF%9D%E6%8A%A4-99e6004f-c54c-8509-773c-a4d776b77960" target="_blank" rel="noopener noreferrer">关闭 Windows 安全中心中的Defender 防病毒保护</a></li>
-<li><a href="http://www.fastaux.com/index.php?c=show&amp;id=54" target="_blank" rel="noopener noreferrer">360安全卫士设置白名单</a></li>
-<li><a href="https://www.eyunsou.com/360sd/gongnneg/bmd/" target="_blank" rel="noopener noreferrer">360杀毒软件怎么添加文件白名单</a></li>
-</ul>
-</div>
-<h3>01.数字激活工具 HWID_KMS38_CN_62</h3>
-<p><strong>概述</strong></p>
-<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到
-Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
-<p><strong>激活步骤</strong></p>
-<ol>
-<li>鼠标右键点击“打开”，进入程序中</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232343700.png" alt="正在启动" tabindex="0" loading="lazy"><figcaption>正在启动</figcaption></figure>
-<ol start="2">
-<li>进入程序界面后，工作模式选择“<mark>安装数字密钥</mark>（HWID）”，点击“开始”</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232345572.png" alt="数字密钥激活" tabindex="0" loading="lazy"><figcaption>数字密钥激活</figcaption></figure>
-<ol start="3">
-<li>完成后执行<a href="#%E4%B8%80%E9%94%AE%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC">一键激活脚本</a>中的<code>06.查看是否永久激活.bat</code>验证激活状态</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232347627.png" alt="计算机已永久激活" tabindex="0" loading="lazy"><figcaption>计算机已永久激活</figcaption></figure>
-<h3>02.KMS激活工具 DragonKMS</h3>
-<p>互联网论坛上的知名激活工具，也是我个人常用的激活工具，常用于激活Windows和Office全家桶，通过联网KMS激活</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232356474.png" alt="MicroKMS神龙版" tabindex="0" loading="lazy"><figcaption>MicroKMS神龙版</figcaption></figure>
-<h3>03.开源激活工具 HEU_KMS_Activator</h3>
-<p>仅供研究激活原理使用，在“智能激活”中点击“开始”，即按照最佳激活方式"数字许可证/KMS38/OEM/KMS"依次激活，直到激活成功</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240021458.png" alt="智能激活（即数字许可证/KMS38/OEM/KMS依次激活）" tabindex="0" loading="lazy"><figcaption>智能激活（即数字许可证/KMS38/OEM/KMS依次激活）</figcaption></figure>
-<p>等待一会，激活成功后提示</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240027800.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
-<h3>04.小马激活工具 KMS10</h3>
-<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel
-switch。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240037901.png" alt="小马激活工具" tabindex="0" loading="lazy"><figcaption>小马激活工具</figcaption></figure>
-<h3>05.大神制作 W10DigitalActivation</h3>
-<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>
-。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240055203.png" alt="WIN0-HWID数字永久激活" tabindex="0" loading="lazy"><figcaption>WIN0-HWID数字永久激活</figcaption></figure>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240057039.png" alt="永久激活" tabindex="0" loading="lazy"><figcaption>永久激活</figcaption></figure>
-<h3>06.云萌激活工具 CMWTAT_Digital</h3>
-<p>云萌 Windows 10 激活工具，专门用于数字权利激活的软件。本软件是一款使用CSharp编写的 Windows 10 数字权利激活工具</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240106825.png" alt="云萌 Windows 10 激活工具" tabindex="0" loading="lazy"><figcaption>云萌 Windows 10 激活工具</figcaption></figure>
-]]></content:encoded>
-      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404232040995.png" type="image/png"/>
     </item>
     <item>
       <title>Java 10 新特性：局部变量类型推断</title>
@@ -2610,6 +2802,107 @@ mutableList<span class="token punctuation">.</span><span class="token function">
 </code></pre></div></li>
 </ul>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Windows、Office激活密钥，脚本，程序</title>
+      <link>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</link>
+      <guid>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
+      <description>Windows、Office激活密钥，脚本，程序 ① 微软正版秘钥（官方） 01.Windows系统激活 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” ！获取 微软Windows官方正版秘钥 输入产品密钥输入产品密钥 “激活”成功 Windows官方密钥激...</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>① 微软正版秘钥（官方）</h2>
+<h3>01.Windows系统激活</h3>
+<ol>
+<li><code>Win+R</code> 打开终端，输入命令</li>
+</ol>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slui <span class="token number">3</span>
+</code></pre></div><ol start="2">
+<li>打开“系统激活”窗口，点击“更改”按钮</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232040995.png" alt="更改产品密钥" tabindex="0" loading="lazy"><figcaption>更改产品密钥</figcaption></figure>
+<ol start="3">
+<li>输入“秘钥”，点击“下一页” 进行 “激活” ！获取 <a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener noreferrer">微软Windows官方正版秘钥</a></li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232318292.png" alt="输入产品密钥" tabindex="0" loading="lazy"><figcaption>输入产品密钥</figcaption></figure>
+<ol start="4">
+<li>“激活”成功</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232327475.png" alt="Windows官方密钥激活" tabindex="0" loading="lazy"><figcaption>Windows官方密钥激活</figcaption></figure>
+<h3>02.Office软件激活</h3>
+<ol>
+<li><strong>打开Office应用程序：</strong> 启动<code>Word</code>、<code>Excel</code>或<code>PowerPoint</code>等</li>
+<li><strong>访问文件菜单：</strong> 在应用程序中，点击左上角的"文件"菜单</li>
+<li><strong>点击账户：</strong> 在文件菜单中，选择"账户"</li>
+<li><strong>更改产品密钥：</strong> 在账户页面，找到并点击"更改产品密钥"</li>
+<li><strong>输入产品密钥：</strong> 在弹出的对话框中输入你的25位密钥 ！获取 <a href="https://learn.microsoft.com/zh-cn/deployoffice/vlactivation/gvlks" target="_blank" rel="noopener noreferrer">微软Office官方正版秘钥</a></li>
+<li><strong>激活Office：</strong> 输入密钥后，点击"继续"或"激活产品"</li>
+</ol>
+<h2>② 激活脚本（原理）</h2>
+<blockquote>
+<p>一键激活脚本：<a href="https://wwi.lanzoup.com/b0foh27ne" target="_blank" rel="noopener noreferrer">https://wwi.lanzoup.com/b0foh27ne</a>, 密码：<code>gkjb</code></p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
+<h3>01.脚本激活命令</h3>
+<p><strong>将密钥写入系统，实现激活</strong></p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+</code></pre></div><p>如果你有新的零售产品密钥，将 <code>X</code> 替换为实际的密钥，运行以上命令即可激活</p>
+<h3>02.脚本激活网站推荐</h3>
+<p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
+<h2>③ 激活程序（推荐）</h2>
+<blockquote>
+<p>获取 <a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">一键激活程序</a> ,提供多种激活方式</p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900370.png" alt="程序-持续更新" tabindex="0" loading="lazy"><figcaption>程序-持续更新</figcaption></figure>
+<div class="hint-container note">
+<p class="hint-container-title">注意：使用一键激活程序，需先关闭电脑相关的杀毒程序</p>
+<ul>
+<li><a href="https://support.microsoft.com/zh-cn/windows/%E5%85%B3%E9%97%AD-windows-%E5%AE%89%E5%85%A8%E4%B8%AD%E5%BF%83%E4%B8%AD%E7%9A%84defender-%E9%98%B2%E7%97%85%E6%AF%92%E4%BF%9D%E6%8A%A4-99e6004f-c54c-8509-773c-a4d776b77960" target="_blank" rel="noopener noreferrer">关闭 Windows 安全中心中的Defender 防病毒保护</a></li>
+<li><a href="http://www.fastaux.com/index.php?c=show&amp;id=54" target="_blank" rel="noopener noreferrer">360安全卫士设置白名单</a></li>
+<li><a href="https://www.eyunsou.com/360sd/gongnneg/bmd/" target="_blank" rel="noopener noreferrer">360杀毒软件怎么添加文件白名单</a></li>
+</ul>
+</div>
+<h3>01.数字激活工具 HWID_KMS38_CN_62</h3>
+<p><strong>概述</strong></p>
+<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到
+Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
+<p><strong>激活步骤</strong></p>
+<ol>
+<li>鼠标右键点击“打开”，进入程序中</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232343700.png" alt="正在启动" tabindex="0" loading="lazy"><figcaption>正在启动</figcaption></figure>
+<ol start="2">
+<li>进入程序界面后，工作模式选择“<mark>安装数字密钥</mark>（HWID）”，点击“开始”</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232345572.png" alt="数字密钥激活" tabindex="0" loading="lazy"><figcaption>数字密钥激活</figcaption></figure>
+<ol start="3">
+<li>完成后执行<a href="#%E4%B8%80%E9%94%AE%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC">一键激活脚本</a>中的<code>06.查看是否永久激活.bat</code>验证激活状态</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232347627.png" alt="计算机已永久激活" tabindex="0" loading="lazy"><figcaption>计算机已永久激活</figcaption></figure>
+<h3>02.KMS激活工具 DragonKMS</h3>
+<p>互联网论坛上的知名激活工具，也是我个人常用的激活工具，常用于激活Windows和Office全家桶，通过联网KMS激活</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232356474.png" alt="MicroKMS神龙版" tabindex="0" loading="lazy"><figcaption>MicroKMS神龙版</figcaption></figure>
+<h3>03.开源激活工具 HEU_KMS_Activator</h3>
+<p>仅供研究激活原理使用，在“智能激活”中点击“开始”，即按照最佳激活方式"数字许可证/KMS38/OEM/KMS"依次激活，直到激活成功</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240021458.png" alt="智能激活（即数字许可证/KMS38/OEM/KMS依次激活）" tabindex="0" loading="lazy"><figcaption>智能激活（即数字许可证/KMS38/OEM/KMS依次激活）</figcaption></figure>
+<p>等待一会，激活成功后提示</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240027800.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
+<h3>04.小马激活工具 KMS10</h3>
+<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel
+switch。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240037901.png" alt="小马激活工具" tabindex="0" loading="lazy"><figcaption>小马激活工具</figcaption></figure>
+<h3>05.大神制作 W10DigitalActivation</h3>
+<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>
+。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240055203.png" alt="WIN0-HWID数字永久激活" tabindex="0" loading="lazy"><figcaption>WIN0-HWID数字永久激活</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240057039.png" alt="永久激活" tabindex="0" loading="lazy"><figcaption>永久激活</figcaption></figure>
+<h3>06.云萌激活工具 CMWTAT_Digital</h3>
+<p>云萌 Windows 10 激活工具，专门用于数字权利激活的软件。本软件是一款使用CSharp编写的 Windows 10 数字权利激活工具</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240106825.png" alt="云萌 Windows 10 激活工具" tabindex="0" loading="lazy"><figcaption>云萌 Windows 10 激活工具</figcaption></figure>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404232040995.png" type="image/png"/>
     </item>
     <item>
       <title>Spring Data JPA 快速入门</title>
