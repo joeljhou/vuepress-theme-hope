@@ -6,14 +6,14 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Sat, 20 Jul 2024 06:41:17 GMT</pubDate>
-    <lastBuildDate>Sat, 20 Jul 2024 06:41:17 GMT</lastBuildDate>
+    <pubDate>Sun, 21 Jul 2024 17:58:40 GMT</pubDate>
+    <lastBuildDate>Sun, 21 Jul 2024 17:58:40 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>JVM</category>
     <category>IDEA</category>
-    <category>Java</category>
     <category>安装大全</category>
+    <category>Java</category>
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Spring</category>
@@ -72,35 +72,61 @@
       <link>https://www.geekyspace.cn/md/jvm/basics/class.html</link>
       <guid>https://www.geekyspace.cn/md/jvm/basics/class.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">类字节码详解</source>
-      <description>类字节码详解 引言 计算机不能直接运行Java代码。必须先运行Java虚拟机（JVM），再由JVM运行编译后的Java代码。 这个编译后的Java代码，就是我们要介绍的Java字节码。 无关性的基石 平台无关性： 字节码可以在任何支持JVM的平台上运行，实现“一次编写，到处运行”。 语言无关性： 多种编程语言可以编译成字节码并在JVM上运行，不仅限于J...</description>
+      <description>类字节码详解 计算机只能运行由0和1构成的二进制格式。 要运行Java程序，必须先通过Java虚拟机（JVM）执行编译后的Java代码，这个编译后的代码就是Java字节码。 跨平台的基石 Java字节码具有“平台无关性”和“语言无关性”。 平台无关性： 字节码可以在任何支持JVM的平台上运行，实现“一次编写，到处运行” 语言无关性： 多种编程语言可以编...</description>
       <category>JVM</category>
       <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>引言</h2>
-<p>计算机不能直接运行Java代码。必须先运行Java虚拟机（JVM），再由JVM运行编译后的Java代码。
-这个编译后的Java代码，就是我们要介绍的Java字节码。</p>
-<h2>无关性的基石</h2>
+<blockquote>
+<p>计算机只能运行由0和1构成的二进制格式。
+要运行Java程序，必须先通过Java虚拟机（JVM）执行编译后的Java代码，这个编译后的代码就是<strong>Java字节码</strong>。</p>
+</blockquote>
+<h2>跨平台的基石</h2>
+<p>Java字节码具有“平台无关性”和“语言无关性”。</p>
 <ul>
-<li><strong>平台无关性：</strong> 字节码可以在任何支持JVM的平台上运行，实现“一次编写，到处运行”。</li>
-<li><strong>语言无关性：</strong> 多种编程语言可以编译成字节码并在JVM上运行，不仅限于Java。</li>
+<li><strong>平台无关性：</strong> 字节码可以在任何支持JVM的平台上运行，实现“一次编写，到处运行”</li>
+<li><strong>语言无关性：</strong> 多种编程语言可以编译成字节码并在JVM（GraalVM）上运行，不仅限于Java</li>
 </ul>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202407200209120.png" alt="Java虚拟机提供的语言无关性" tabindex="0" loading="lazy"><figcaption>Java虚拟机提供的语言无关性</figcaption></figure>
-<h2>Java字节码文件</h2>
-<p>Class文件本质上是一组以8个字节为基础单位的二进制流，各数据项严格按顺序紧密排列，中间没有任何分隔符。
-JVM根据其特定的规则解析该二进制数据，从而得到相关信息。</p>
-<h3>Class类文件的结构</h3>
-<figure><img src="https://img.geekyspace.cn/pictures/2024/202407200258362.png" alt="Class类文件的结构" tabindex="0" loading="lazy"><figcaption>Class类文件的结构</figcaption></figure>
-<p>Java字节码是以类文件（<code>.class</code>）形式存储的，包含如下结构属性：</p>
-<ol>
-<li><strong>魔数：</strong> 用于标识类文件的起始部分，通常是固定的值（<code>0xCAFEBABE</code>）</li>
-<li><strong>版本号：</strong> 表示类文件的版本，包括主版本号和次版本号，即编译时的Java版本</li>
-<li><strong>常量池：</strong> 存储了类文件中用到的所有常量，包括字符串、数值和类引用等</li>
-<li><strong>访问标志：</strong> 描述类或接口的访问权限和其他属性，如<code>public</code>、<code>abstract</code>、<code>final</code>等</li>
-<li><strong>类索引、父类索引和接口索引集合：</strong> 分别指向常量池中的项，用于标识类、父类和实现的接口</li>
-<li><strong>字段表：</strong> 定义类或接口中的成员变量，包括类型、名称和修饰符等信息</li>
-<li><strong>方法表：</strong> 定义类或接口中的方法，包括名称、参数和修饰符等信息</li>
-<li><strong>属性表：</strong> 存储类、字段、方法等相关的附加信息，如代码段、异常处理表等</li>
-</ol>
+<h2>Class类文件结构</h2>
+<p>Java技术的良好向后兼容性得益于Class文件结构的稳定性，
+每个Class文件对应一个类或接口的定义信息，是一组以8个字节为单位的二进制流。各数据项严格按顺序排列，没有任何分隔符。</p>
+<p>Class文件格式类似于C语言的结构体，这种伪结构只有两种数据类型：“无符号数”和“表”。</p>
+<ul>
+<li><strong>无符号数：</strong> 基本数据类型，使用<code>u1</code>、<code>u2</code>、<code>u4</code>、<code>u8</code>表示1、2、4、8个字节的无符号数。
+它们可以描述数字、索引引用、数量值或按照<code>UTF-8</code>编码的字符串值。</li>
+<li><strong>表：</strong> 由多个无符号数或其他表构成的复合数据类型，通常以“_info”结尾。
+表用于描述有层次关系的复合结构，整个Class文件本质上也是一个表，由按严格顺序排列的数据项构成。</li>
+</ul>
+<p><a href="https://docs.oracle.com/javase/specs/jvms/se22/html/jvms-4.html" target="_blank" rel="noopener noreferrer">JVM虚拟机规范第四章</a>
+中规定了Class文件必须是一个固定的<code>ClassFile</code>结构，如下所示：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token class-name">ClassFile</span> <span class="token punctuation">{</span>
+  u4 magic<span class="token punctuation">;</span>                   <span class="token comment">// 魔数 (0xCAFEBABE)，标识class文件格式</span>
+  u2 minor_version<span class="token punctuation">;</span>           <span class="token comment">// 次版本号</span>
+  u2 major_version<span class="token punctuation">;</span>           <span class="token comment">// 主版本号</span>
+  u2 constant_pool_count<span class="token punctuation">;</span>     <span class="token comment">// 常量池计数</span>
+  cp_info constant_pool<span class="token punctuation">[</span>constant_pool_count<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 常量池</span>
+  u2 access_flags<span class="token punctuation">;</span>            <span class="token comment">// 访问标志</span>
+  u2 this_class<span class="token punctuation">;</span>              <span class="token comment">// 当前类索引</span>
+  u2 super_class<span class="token punctuation">;</span>             <span class="token comment">// 父类索引</span>
+  u2 interfaces_count<span class="token punctuation">;</span>        <span class="token comment">// 接口计数</span>
+  u2 interfaces<span class="token punctuation">[</span>interfaces_count<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 接口索引表</span>
+  u2 fields_count<span class="token punctuation">;</span>            <span class="token comment">// 字段计数</span>
+  field_info fields<span class="token punctuation">[</span>fields_count<span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">// 字段表</span>
+  u2 methods_count<span class="token punctuation">;</span>           <span class="token comment">// 方法计数</span>
+  method_info methods<span class="token punctuation">[</span>methods_count<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 方法表</span>
+  u2 attributes_count<span class="token punctuation">;</span>        <span class="token comment">// 属性计数</span>
+  attribute_info attributes<span class="token punctuation">[</span>attributes_count<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 属性表</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>通过分析 ClassFile 的内容，我们便可以知道 class 文件的组成。</p>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/202407220149546.png" alt="ClassFile 内容分析" tabindex="0" loading="lazy"><figcaption>ClassFile 内容分析</figcaption></figure>
+<h3>魔数与Class文件的版本</h3>
+<p>每个Class文件的头4个字节被称为魔数（Magic Number），它的唯一作用是确定这个文件是否为一个能被虚拟机接受的Class文件。</p>
+<h3>常量池</h3>
+<h3>访问标志</h3>
+<h3>类索引、父类索引与接口索引集合</h3>
+<h3>字段表集合</h3>
+<h3>方法表集合</h3>
+<h3>属性表集合</h3>
 ]]></content:encoded>
       <enclosure url="https://img.geekyspace.cn/pictures/2024/202407200209120.png" type="image/png"/>
     </item>
@@ -125,7 +151,7 @@ JVM根据其特定的规则解析该二进制数据，从而得到相关信息�
       <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
-<p>Java虚拟机（Java Virtual Machine，简称JVM）是运行所有Java程序的虚拟计算机，是Java平台的核心实现。
+<p><strong>Java虚拟机</strong>（Java Virtual Machine，简称JVM）是运行所有Java程序的虚拟计算机，是Java平台的核心实现。
 它提供了一种独立于底层硬件和操作系统的运行环境，使Java程序能够在任何安装了JVM的系统上执行。
 JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台运行，这一特性被称为“Write Once, Run Anywhere”。</p>
 </blockquote>
@@ -359,6 +385,18 @@ JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台�
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718903.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202404171725739.png" type="image/png"/>
+    </item>
+    <item>
+      <title>开发者安装大全</title>
+      <link>https://www.geekyspace.cn/md/installation-guide/</link>
+      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
+      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
+]]></content:encoded>
     </item>
     <item>
       <title>Java 8-21：前沿特性解读系列（持续连载）</title>
@@ -668,18 +706,6 @@ JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台�
 ]]></content:encoded>
     </item>
     <item>
-      <title>开发者安装大全</title>
-      <link>https://www.geekyspace.cn/md/installation-guide/</link>
-      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
-      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
-      <category>安装大全</category>
-      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Spring Boot 入门教程</title>
       <link>https://www.geekyspace.cn/md/spring-boot/</link>
       <guid>https://www.geekyspace.cn/md/spring-boot/</guid>
@@ -715,6 +741,107 @@ JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台�
 <li><a href="/spring-data-jpa/jetbrains/getting-started">Spring Data JPA 快速入门</a></li>
 </ul>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Windows、Office激活密钥，脚本，程序</title>
+      <link>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</link>
+      <guid>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
+      <description>Windows、Office激活密钥，脚本，程序 ① 微软正版秘钥（官方） 01.Windows系统激活 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” ！获取 微软Windows官方正版秘钥 输入产品密钥输入产品密钥 “激活”成功 Windows官方密钥激...</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>① 微软正版秘钥（官方）</h2>
+<h3>01.Windows系统激活</h3>
+<ol>
+<li><code>Win+R</code> 打开终端，输入命令</li>
+</ol>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slui <span class="token number">3</span>
+</code></pre></div><ol start="2">
+<li>打开“系统激活”窗口，点击“更改”按钮</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232040995.png" alt="更改产品密钥" tabindex="0" loading="lazy"><figcaption>更改产品密钥</figcaption></figure>
+<ol start="3">
+<li>输入“秘钥”，点击“下一页” 进行 “激活” ！获取 <a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener noreferrer">微软Windows官方正版秘钥</a></li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232318292.png" alt="输入产品密钥" tabindex="0" loading="lazy"><figcaption>输入产品密钥</figcaption></figure>
+<ol start="4">
+<li>“激活”成功</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232327475.png" alt="Windows官方密钥激活" tabindex="0" loading="lazy"><figcaption>Windows官方密钥激活</figcaption></figure>
+<h3>02.Office软件激活</h3>
+<ol>
+<li><strong>打开Office应用程序：</strong> 启动<code>Word</code>、<code>Excel</code>或<code>PowerPoint</code>等</li>
+<li><strong>访问文件菜单：</strong> 在应用程序中，点击左上角的"文件"菜单</li>
+<li><strong>点击账户：</strong> 在文件菜单中，选择"账户"</li>
+<li><strong>更改产品密钥：</strong> 在账户页面，找到并点击"更改产品密钥"</li>
+<li><strong>输入产品密钥：</strong> 在弹出的对话框中输入你的25位密钥 ！获取 <a href="https://learn.microsoft.com/zh-cn/deployoffice/vlactivation/gvlks" target="_blank" rel="noopener noreferrer">微软Office官方正版秘钥</a></li>
+<li><strong>激活Office：</strong> 输入密钥后，点击"继续"或"激活产品"</li>
+</ol>
+<h2>② 激活脚本（原理）</h2>
+<blockquote>
+<p>一键激活脚本：<a href="https://wwi.lanzoup.com/b0foh27ne" target="_blank" rel="noopener noreferrer">https://wwi.lanzoup.com/b0foh27ne</a>, 密码：<code>gkjb</code></p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
+<h3>01.脚本激活命令</h3>
+<p><strong>将密钥写入系统，实现激活</strong></p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+</code></pre></div><p>如果你有新的零售产品密钥，将 <code>X</code> 替换为实际的密钥，运行以上命令即可激活</p>
+<h3>02.脚本激活网站推荐</h3>
+<p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
+<h2>③ 激活程序（推荐）</h2>
+<blockquote>
+<p>获取 <a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">一键激活程序</a> ,提供多种激活方式</p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900370.png" alt="程序-持续更新" tabindex="0" loading="lazy"><figcaption>程序-持续更新</figcaption></figure>
+<div class="hint-container note">
+<p class="hint-container-title">注意：使用一键激活程序，需先关闭电脑相关的杀毒程序</p>
+<ul>
+<li><a href="https://support.microsoft.com/zh-cn/windows/%E5%85%B3%E9%97%AD-windows-%E5%AE%89%E5%85%A8%E4%B8%AD%E5%BF%83%E4%B8%AD%E7%9A%84defender-%E9%98%B2%E7%97%85%E6%AF%92%E4%BF%9D%E6%8A%A4-99e6004f-c54c-8509-773c-a4d776b77960" target="_blank" rel="noopener noreferrer">关闭 Windows 安全中心中的Defender 防病毒保护</a></li>
+<li><a href="http://www.fastaux.com/index.php?c=show&amp;id=54" target="_blank" rel="noopener noreferrer">360安全卫士设置白名单</a></li>
+<li><a href="https://www.eyunsou.com/360sd/gongnneg/bmd/" target="_blank" rel="noopener noreferrer">360杀毒软件怎么添加文件白名单</a></li>
+</ul>
+</div>
+<h3>01.数字激活工具 HWID_KMS38_CN_62</h3>
+<p><strong>概述</strong></p>
+<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到
+Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
+<p><strong>激活步骤</strong></p>
+<ol>
+<li>鼠标右键点击“打开”，进入程序中</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232343700.png" alt="正在启动" tabindex="0" loading="lazy"><figcaption>正在启动</figcaption></figure>
+<ol start="2">
+<li>进入程序界面后，工作模式选择“<mark>安装数字密钥</mark>（HWID）”，点击“开始”</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232345572.png" alt="数字密钥激活" tabindex="0" loading="lazy"><figcaption>数字密钥激活</figcaption></figure>
+<ol start="3">
+<li>完成后执行<a href="#%E4%B8%80%E9%94%AE%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC">一键激活脚本</a>中的<code>06.查看是否永久激活.bat</code>验证激活状态</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232347627.png" alt="计算机已永久激活" tabindex="0" loading="lazy"><figcaption>计算机已永久激活</figcaption></figure>
+<h3>02.KMS激活工具 DragonKMS</h3>
+<p>互联网论坛上的知名激活工具，也是我个人常用的激活工具，常用于激活Windows和Office全家桶，通过联网KMS激活</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232356474.png" alt="MicroKMS神龙版" tabindex="0" loading="lazy"><figcaption>MicroKMS神龙版</figcaption></figure>
+<h3>03.开源激活工具 HEU_KMS_Activator</h3>
+<p>仅供研究激活原理使用，在“智能激活”中点击“开始”，即按照最佳激活方式"数字许可证/KMS38/OEM/KMS"依次激活，直到激活成功</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240021458.png" alt="智能激活（即数字许可证/KMS38/OEM/KMS依次激活）" tabindex="0" loading="lazy"><figcaption>智能激活（即数字许可证/KMS38/OEM/KMS依次激活）</figcaption></figure>
+<p>等待一会，激活成功后提示</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240027800.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
+<h3>04.小马激活工具 KMS10</h3>
+<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel
+switch。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240037901.png" alt="小马激活工具" tabindex="0" loading="lazy"><figcaption>小马激活工具</figcaption></figure>
+<h3>05.大神制作 W10DigitalActivation</h3>
+<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>
+。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240055203.png" alt="WIN0-HWID数字永久激活" tabindex="0" loading="lazy"><figcaption>WIN0-HWID数字永久激活</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240057039.png" alt="永久激活" tabindex="0" loading="lazy"><figcaption>永久激活</figcaption></figure>
+<h3>06.云萌激活工具 CMWTAT_Digital</h3>
+<p>云萌 Windows 10 激活工具，专门用于数字权利激活的软件。本软件是一款使用CSharp编写的 Windows 10 数字权利激活工具</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240106825.png" alt="云萌 Windows 10 激活工具" tabindex="0" loading="lazy"><figcaption>云萌 Windows 10 激活工具</figcaption></figure>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404232040995.png" type="image/png"/>
     </item>
     <item>
       <title>Java 10 新特性：局部变量类型推断</title>
@@ -2802,107 +2929,6 @@ mutableList<span class="token punctuation">.</span><span class="token function">
 </code></pre></div></li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Windows、Office激活密钥，脚本，程序</title>
-      <link>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</link>
-      <guid>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
-      <description>Windows、Office激活密钥，脚本，程序 ① 微软正版秘钥（官方） 01.Windows系统激活 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” ！获取 微软Windows官方正版秘钥 输入产品密钥输入产品密钥 “激活”成功 Windows官方密钥激...</description>
-      <category>安装大全</category>
-      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>① 微软正版秘钥（官方）</h2>
-<h3>01.Windows系统激活</h3>
-<ol>
-<li><code>Win+R</code> 打开终端，输入命令</li>
-</ol>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slui <span class="token number">3</span>
-</code></pre></div><ol start="2">
-<li>打开“系统激活”窗口，点击“更改”按钮</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232040995.png" alt="更改产品密钥" tabindex="0" loading="lazy"><figcaption>更改产品密钥</figcaption></figure>
-<ol start="3">
-<li>输入“秘钥”，点击“下一页” 进行 “激活” ！获取 <a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener noreferrer">微软Windows官方正版秘钥</a></li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232318292.png" alt="输入产品密钥" tabindex="0" loading="lazy"><figcaption>输入产品密钥</figcaption></figure>
-<ol start="4">
-<li>“激活”成功</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232327475.png" alt="Windows官方密钥激活" tabindex="0" loading="lazy"><figcaption>Windows官方密钥激活</figcaption></figure>
-<h3>02.Office软件激活</h3>
-<ol>
-<li><strong>打开Office应用程序：</strong> 启动<code>Word</code>、<code>Excel</code>或<code>PowerPoint</code>等</li>
-<li><strong>访问文件菜单：</strong> 在应用程序中，点击左上角的"文件"菜单</li>
-<li><strong>点击账户：</strong> 在文件菜单中，选择"账户"</li>
-<li><strong>更改产品密钥：</strong> 在账户页面，找到并点击"更改产品密钥"</li>
-<li><strong>输入产品密钥：</strong> 在弹出的对话框中输入你的25位密钥 ！获取 <a href="https://learn.microsoft.com/zh-cn/deployoffice/vlactivation/gvlks" target="_blank" rel="noopener noreferrer">微软Office官方正版秘钥</a></li>
-<li><strong>激活Office：</strong> 输入密钥后，点击"继续"或"激活产品"</li>
-</ol>
-<h2>② 激活脚本（原理）</h2>
-<blockquote>
-<p>一键激活脚本：<a href="https://wwi.lanzoup.com/b0foh27ne" target="_blank" rel="noopener noreferrer">https://wwi.lanzoup.com/b0foh27ne</a>, 密码：<code>gkjb</code></p>
-</blockquote>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
-<h3>01.脚本激活命令</h3>
-<p><strong>将密钥写入系统，实现激活</strong></p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-</code></pre></div><p>如果你有新的零售产品密钥，将 <code>X</code> 替换为实际的密钥，运行以上命令即可激活</p>
-<h3>02.脚本激活网站推荐</h3>
-<p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
-<h2>③ 激活程序（推荐）</h2>
-<blockquote>
-<p>获取 <a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">一键激活程序</a> ,提供多种激活方式</p>
-</blockquote>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900370.png" alt="程序-持续更新" tabindex="0" loading="lazy"><figcaption>程序-持续更新</figcaption></figure>
-<div class="hint-container note">
-<p class="hint-container-title">注意：使用一键激活程序，需先关闭电脑相关的杀毒程序</p>
-<ul>
-<li><a href="https://support.microsoft.com/zh-cn/windows/%E5%85%B3%E9%97%AD-windows-%E5%AE%89%E5%85%A8%E4%B8%AD%E5%BF%83%E4%B8%AD%E7%9A%84defender-%E9%98%B2%E7%97%85%E6%AF%92%E4%BF%9D%E6%8A%A4-99e6004f-c54c-8509-773c-a4d776b77960" target="_blank" rel="noopener noreferrer">关闭 Windows 安全中心中的Defender 防病毒保护</a></li>
-<li><a href="http://www.fastaux.com/index.php?c=show&amp;id=54" target="_blank" rel="noopener noreferrer">360安全卫士设置白名单</a></li>
-<li><a href="https://www.eyunsou.com/360sd/gongnneg/bmd/" target="_blank" rel="noopener noreferrer">360杀毒软件怎么添加文件白名单</a></li>
-</ul>
-</div>
-<h3>01.数字激活工具 HWID_KMS38_CN_62</h3>
-<p><strong>概述</strong></p>
-<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到
-Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
-<p><strong>激活步骤</strong></p>
-<ol>
-<li>鼠标右键点击“打开”，进入程序中</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232343700.png" alt="正在启动" tabindex="0" loading="lazy"><figcaption>正在启动</figcaption></figure>
-<ol start="2">
-<li>进入程序界面后，工作模式选择“<mark>安装数字密钥</mark>（HWID）”，点击“开始”</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232345572.png" alt="数字密钥激活" tabindex="0" loading="lazy"><figcaption>数字密钥激活</figcaption></figure>
-<ol start="3">
-<li>完成后执行<a href="#%E4%B8%80%E9%94%AE%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC">一键激活脚本</a>中的<code>06.查看是否永久激活.bat</code>验证激活状态</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232347627.png" alt="计算机已永久激活" tabindex="0" loading="lazy"><figcaption>计算机已永久激活</figcaption></figure>
-<h3>02.KMS激活工具 DragonKMS</h3>
-<p>互联网论坛上的知名激活工具，也是我个人常用的激活工具，常用于激活Windows和Office全家桶，通过联网KMS激活</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232356474.png" alt="MicroKMS神龙版" tabindex="0" loading="lazy"><figcaption>MicroKMS神龙版</figcaption></figure>
-<h3>03.开源激活工具 HEU_KMS_Activator</h3>
-<p>仅供研究激活原理使用，在“智能激活”中点击“开始”，即按照最佳激活方式"数字许可证/KMS38/OEM/KMS"依次激活，直到激活成功</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240021458.png" alt="智能激活（即数字许可证/KMS38/OEM/KMS依次激活）" tabindex="0" loading="lazy"><figcaption>智能激活（即数字许可证/KMS38/OEM/KMS依次激活）</figcaption></figure>
-<p>等待一会，激活成功后提示</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240027800.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
-<h3>04.小马激活工具 KMS10</h3>
-<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel
-switch。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240037901.png" alt="小马激活工具" tabindex="0" loading="lazy"><figcaption>小马激活工具</figcaption></figure>
-<h3>05.大神制作 W10DigitalActivation</h3>
-<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>
-。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240055203.png" alt="WIN0-HWID数字永久激活" tabindex="0" loading="lazy"><figcaption>WIN0-HWID数字永久激活</figcaption></figure>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240057039.png" alt="永久激活" tabindex="0" loading="lazy"><figcaption>永久激活</figcaption></figure>
-<h3>06.云萌激活工具 CMWTAT_Digital</h3>
-<p>云萌 Windows 10 激活工具，专门用于数字权利激活的软件。本软件是一款使用CSharp编写的 Windows 10 数字权利激活工具</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240106825.png" alt="云萌 Windows 10 激活工具" tabindex="0" loading="lazy"><figcaption>云萌 Windows 10 激活工具</figcaption></figure>
-]]></content:encoded>
-      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404232040995.png" type="image/png"/>
     </item>
     <item>
       <title>Spring Data JPA 快速入门</title>
