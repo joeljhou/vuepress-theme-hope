@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Sun, 21 Jul 2024 19:09:51 GMT</pubDate>
-    <lastBuildDate>Sun, 21 Jul 2024 19:09:51 GMT</lastBuildDate>
+    <pubDate>Mon, 22 Jul 2024 19:23:21 GMT</pubDate>
+    <lastBuildDate>Mon, 22 Jul 2024 19:23:21 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>JVM</category>
@@ -104,7 +104,7 @@
   u2 minor_version<span class="token punctuation">;</span>           <span class="token comment">// 次版本号</span>
   u2 major_version<span class="token punctuation">;</span>           <span class="token comment">// 主版本号</span>
   u2 constant_pool_count<span class="token punctuation">;</span>     <span class="token comment">// 常量池计数</span>
-  cp_info constant_pool<span class="token punctuation">[</span>constant_pool_count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 常量池</span>
+  cp_info constant_pool<span class="token punctuation">[</span>constant_pool_count<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 常量池</span>
   u2 access_flags<span class="token punctuation">;</span>            <span class="token comment">// 访问标志</span>
   u2 this_class<span class="token punctuation">;</span>              <span class="token comment">// 当前类索引</span>
   u2 super_class<span class="token punctuation">;</span>             <span class="token comment">// 父类索引</span>
@@ -119,7 +119,7 @@
 <span class="token punctuation">}</span>
 </code></pre></div><p>通过分析 ClassFile 的内容，我们便可以知道 class 文件的组成。</p>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202407220149546.png" alt="ClassFile 内容分析" tabindex="0" loading="lazy"><figcaption>ClassFile 内容分析</figcaption></figure>
-<h3>魔数（Magic Number）</h3>
+<h3>魔数</h3>
 <p>魔数是头4个字节的值<code>0xCAFEBABE</code>，用于验证文件是否为有效的Class文件。
 不仅限于Class文件，很多文件格式如<code>GIF</code>或<code>JPEG</code>等也使用魔数来进行身份识别。</p>
 <ul>
@@ -129,16 +129,16 @@
 <p>在Java被称为“Oak”语言时期（大约1991年前后），<code>0xCAFEBABE</code>被选为魔数。
 Java开发小组关键成员Patrick Naughton提到，他们选择这个值是因为它好玩且容易记忆，
 象征着著名咖啡品牌Peet’s Coffee深受欢迎的Baristas咖啡，也预示着日后“Java”这一商标名称的出现。</p>
-<h3>Class文件版本号（Minor&amp;Major Version）</h3>
+<h3>Class文件版本号</h3>
 <p>紧跟魔数<code>0xCAFEBABE</code>之后的4个字节存储的是Class文件的版本号，其中：</p>
 <ul>
 <li>第5~6字节：次版本号（Minor Version）</li>
 <li>第7~8字节：主版本号（Major Version），Java 8 = 52.0</li>
 </ul>
-<p>Java的主版本号从JDK 1.0的45开始，每次大版本发布都会+1。
-次版本号通常保持为0，对应一些次要的特性改进或修复。
-以下是一些JDK版本及其对应的Class文件主版本号：</p>
-<p>| JDK 版本  | 主版本号（10 进制） | 主版本号（16 进制） |
+<p>Java的主版本号从JDK 1.0的45开始，每次大版本发布都会+1；
+次版本号通常保持为0，对应一些次要的特性改进或修复。</p>
+<p><strong>Java版本对应表：</strong></p>
+<p>| JDK版本  | 十进制 | 十六进制 | 发布时间       |
 |</p>
 ]]></content:encoded>
       <enclosure url="https://img.geekyspace.cn/pictures/2024/202407200209120.png" type="image/png"/>
