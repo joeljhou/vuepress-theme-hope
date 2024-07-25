@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Tue, 23 Jul 2024 16:14:40 GMT</pubDate>
-    <lastBuildDate>Tue, 23 Jul 2024 16:14:40 GMT</lastBuildDate>
+    <pubDate>Thu, 25 Jul 2024 16:59:47 GMT</pubDate>
+    <lastBuildDate>Thu, 25 Jul 2024 16:59:47 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>JVM</category>
@@ -87,7 +87,7 @@
 <li><strong>语言无关性：</strong> 多种编程语言可以编译成字节码并在JVM（GraalVM）上运行，不仅限于Java</li>
 </ul>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202407200209120.png" alt="Java虚拟机提供的语言无关性" tabindex="0" loading="lazy"><figcaption>Java虚拟机提供的语言无关性</figcaption></figure>
-<h2>Class类文件结构</h2>
+<h2>Class类文件结构（理论）</h2>
 <p>Java技术的良好向后兼容性得益于Class文件结构的稳定性，
 每个Class文件对应一个类或接口的定义信息，是一组以8个字节为单位的二进制流。各数据项严格按顺序排列，没有任何分隔符。</p>
 <p>Class文件格式类似于C语言的结构体，这种伪结构只有两种数据类型：“无符号数”和“表”。</p>
