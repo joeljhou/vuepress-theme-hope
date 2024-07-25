@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Thu, 25 Jul 2024 18:37:07 GMT</pubDate>
-    <lastBuildDate>Thu, 25 Jul 2024 18:37:07 GMT</lastBuildDate>
+    <pubDate>Thu, 25 Jul 2024 20:29:44 GMT</pubDate>
+    <lastBuildDate>Thu, 25 Jul 2024 20:29:44 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>JVM</category>
@@ -18,6 +18,35 @@
     <category>Spring Data</category>
     <category>Spring</category>
     <category>程序人生</category>
+    <item>
+      <title>实战编译JDK</title>
+      <link>https://www.geekyspace.cn/md/jvm/basics/compile_jdk.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/basics/compile_jdk.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">实战编译JDK</source>
+      <description>实战编译JDK 想要窥探Java虚拟机内部的实现原理，最直接的路径就是编译自己的JDK。 尽管网络上有不少开源JDK实现，但OpenJDK无疑是最广泛使用的，我们将选择OpenJDK进行编译实战。 获取源码 版本选择OpenJDK 12，下载地址 https://hg.openjdk.org/jdk/jdk12 点击“browse”链接，然后选择对应的...</description>
+      <category>JVM</category>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>想要窥探Java虚拟机内部的实现原理，最直接的路径就是编译自己的JDK。
+尽管网络上有不少开源JDK实现，但OpenJDK无疑是最广泛使用的，我们将选择OpenJDK进行编译实战。</p>
+<h2>获取源码</h2>
+<ul>
+<li>版本选择OpenJDK 12，下载地址 <a href="https://hg.openjdk.org/jdk/jdk12" target="_blank" rel="noopener noreferrer">https://hg.openjdk.org/jdk/jdk12</a></li>
+<li>点击“browse”链接，然后选择对应的压缩包（zip、gz）进行下载</li>
+</ul>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/202407260406861.png" alt="OpenJDK源码下载" tabindex="0" loading="lazy"><figcaption>OpenJDK源码下载</figcaption></figure>
+<h2>系统需求</h2>
+<p>建议在Linux或MacOS上构建OpenJDK，构建工具链和依赖项比起Windows或Solaris平台要容易许多。</p>
+<ul>
+<li>认真阅读一遍源码中的<code>doc/building.html</code>文档</li>
+<li>确保源码和依赖项不要放在包含中文的目录里面</li>
+</ul>
+<h2>构建编译环境</h2>
+<h2>进行编译</h2>
+<h2>在IDE工具中进行源码调试</h2>
+]]></content:encoded>
+      <enclosure url="https://img.geekyspace.cn/pictures/2024/202407260406861.png" type="image/png"/>
+    </item>
     <item>
       <title>深入理解Java虚拟机</title>
       <link>https://www.geekyspace.cn/md/jvm/</link>
