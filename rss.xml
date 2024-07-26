@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Fri, 26 Jul 2024 09:09:26 GMT</pubDate>
-    <lastBuildDate>Fri, 26 Jul 2024 09:09:26 GMT</lastBuildDate>
+    <pubDate>Fri, 26 Jul 2024 17:32:01 GMT</pubDate>
+    <lastBuildDate>Fri, 26 Jul 2024 17:32:01 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>JVM</category>
@@ -48,14 +48,41 @@
       <enclosure url="https://img.geekyspace.cn/pictures/2024/202407260406861.png" type="image/png"/>
     </item>
     <item>
-      <title>字节码指令</title>
+      <title>字节码指令集</title>
       <link>https://www.geekyspace.cn/md/jvm/basics/bytecode.html</link>
       <guid>https://www.geekyspace.cn/md/jvm/basics/bytecode.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">字节码指令</source>
-      <description>字节码指令</description>
+      <source url="https://www.geekyspace.cn/rss.xml">字节码指令集</source>
+      <description>字节码指令集 字节码指令集是JVM执行的低级指令集合，由Java编译器将Java源代码编译后保存在Method描述中。 由操作码和操作数组成: 操作码（Opcode）： 一个字节长度的数字，代表某种特定操作 操作数（Operands）： 跟随操作码之后的零至多个参数，用于该操作所需的数据 由于JVM采用面向操作数栈而不是面向寄存器的架构，大多数指令都不...</description>
       <category>JVM</category>
       <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
+<p>字节码指令集是JVM执行的低级指令集合，由Java编译器将Java源代码编译后保存在<code>Method</code>描述中。 由操作码和操作数组成:</p>
+<ul>
+<li><strong>操作码（<code>Opcode</code>）：</strong> 一个字节长度的数字，代表某种特定操作</li>
+<li><strong>操作数（<code>Operands</code>）：</strong> 跟随操作码之后的零至多个参数，用于该操作所需的数据</li>
+</ul>
+<p>由于JVM采用面向操作数栈而不是面向寄存器的架构，大多数指令都不包含操作数，只有一个操作码，指令参数存放在操作数栈中。</p>
+<p><strong>优势和劣势</strong></p>
+<p>限制Java虚拟机操作码的长度为一个字节（即0～255），意味着指令集的操作码总数不能超过256条；
+Class文件格式放弃了编译后代码的操作数长度对齐，需要在运行时从字节中重建具体数据结构。
+例如，存储16位无符号整数要使用两个无符号字节（<code>byte1</code>和<code>byte2</code>）：</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>byte1 <span class="token operator">&lt;&lt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">|</span> byte2
+</code></pre></div><p>这种操作可能导致解释执行字节码时性能损失，但省略了大量的填充和间隔符号，用一个字节代表操作码，使编译代码更小，更适合高传输效率的设计。
+Java语言设计初期主要面向网络和智能家电，这种设计一直沿用至今。</p>
+<p><strong>执行模型</strong></p>
+<p>如果不考虑异常处理的话，那Java虚拟机的解释器可以使用下面这段伪代码作为最基本的执行模型来理解：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">do</span> <span class="token punctuation">{</span>
+    自动计算<span class="token constant">PC</span>寄存器的值加<span class="token number">1</span><span class="token punctuation">;</span>
+    根据<span class="token constant">PC</span>寄存器指示的位置，从字节码流中取出操作码<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>字节码存在操作数<span class="token punctuation">)</span> 从字节码流中取出操作数<span class="token punctuation">;</span>
+    执行操作码所定义的操作<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>字节码流长度 <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>字节码指令流基本上都是单字节对齐的，只有“tableswitch”和“lookupswitch”两条指令例外，
+由于操作数特殊，是以4字节为界划分的，所以需要预留出相应的空位填充来实现对齐。</p>
+<h2>字节码与数据类型</h2>
+<p>数据类型相关的字节码指令，包含特定的<strong>操作码助记符</strong>：</p>
+<p>| 数据类型      | 操作码助记符 |
+|</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -388,7 +415,7 @@ JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台�
 </ul>
 <h2>跨平台开发的通用平台</h2>
 <p>随着发展，JVM不再是Java独享的Moment，越来越多的语言开始在JVM上运行，使JVM逐渐演变成一个<strong>跨平台开发的通用平台</strong>。</p>
-<figure><img src="https://img.geekyspace.cn/pictures/2024/image-20240620020158368.png" alt="javaJvm-class" tabindex="0" loading="lazy"><figcaption>javaJvm-class</figcaption></figure>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/image-20240620020158368.png" alt="jvm-class" tabindex="0" loading="lazy"><figcaption>jvm-class</figcaption></figure>
 <p>JVM本质上只关心<code>.class</code>的字节码文件，而不关心源代码是用什么语言编写的。</p>
 <h2>Java虚拟机体系结构</h2>
 <p><a href="https://www.freecodecamp.org/news/jvm-tutorial-java-virtual-machine-architecture-explained-for-beginners/" target="_blank" rel="noopener noreferrer">参考面向初学者的Java虚拟机架构</a></p>
