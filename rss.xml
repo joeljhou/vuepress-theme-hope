@@ -6,10 +6,11 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Sat, 27 Jul 2024 18:42:23 GMT</pubDate>
-    <lastBuildDate>Sat, 27 Jul 2024 18:42:23 GMT</lastBuildDate>
+    <pubDate>Sun, 28 Jul 2024 15:46:18 GMT</pubDate>
+    <lastBuildDate>Sun, 28 Jul 2024 15:46:18 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>程序人生</category>
     <category>JVM</category>
     <category>IDEA</category>
     <category>安装大全</category>
@@ -17,7 +18,38 @@
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Spring</category>
-    <category>程序人生</category>
+    <item>
+      <title>个人简介</title>
+      <link>https://www.geekyspace.cn/about-me.html</link>
+      <guid>https://www.geekyspace.cn/about-me.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">个人简介</source>
+      <description>一个专注于技术分享的博客网站</description>
+      <category>程序人生</category>
+      <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>欢迎访问我的博客网站 <a href="www.geekyspace.cn">www.geekyspace.cn</a>，与我一起探索科技的未来！</p>
+<p>本博客维护人周宇，在Java和相关技术领域拥有多年的专业经验。
+此前，我在深圳南山 <a href="https://www.liquido.com/" target="_blank" rel="noopener noreferrer">Liquido</a> 工作，这是一家专注于金融领域，
+提供拉美地区<a href="https://mp.weixin.qq.com/s/UzPsaVvXqrvW8T8PDPnhZw" target="_blank" rel="noopener noreferrer">支付解决方案</a>的公司。</p>
+<p><strong>贴上“程序员”标签</strong></p>
+<ol>
+<li>个人兴趣：我从小就对工科方向的工作非常感兴趣，喜欢倒腾电子产品，研究它们的原理，拆了又装。</li>
+<li>家庭影响：我有一个“伢伢”，比我大10多岁，他学的就是计算机，赚钱也多。
+他毕业后在一家电商公司工作，后来被京东收购，之后去了高德，又被阿里收购。在它的影响下，我最终成为了一名程序员。</li>
+</ol>
+<p><strong>程序员的价值体现</strong></p>
+<p>做程序员是幸运的，世界的本质是价值交换。
+作为程序员，我最大的成就感在于能否真正给别人带来价值。如果可以，那泰裤辣。
+大环境没有那么差，这是程序员的时代！！！</p>
+<p><strong>我的程序员格言</strong></p>
+<ol>
+<li>编码原则：🥇 代码简洁高效，优雅永不过时 ✨</li>
+<li>架构核心：🔧 掌握系统控制权，确保可扩展性和灵活性</li>
+<li>技术理念：🌐 技术广度是技术深度的副产品</li>
+<li>职业信仰：🚀 当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然</li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>类加载机制</title>
       <link>https://www.geekyspace.cn/md/jvm/classload.html</link>
@@ -4861,37 +4893,6 @@ Spring 3.1中引入的c-命名空间，允许使用内联属性来配置构造�
 </code></pre></div><p>在这个示例中，<code>something</code> Bean有一个<code>fred</code>属性，该属性又有一个<code>bob</code>属性，属性下又有一个<code>sammy</code>属性，最终<code>sammy</code>属性被设置为值 123。
 为了使这个设置生效，除了最终的属性名<code>sammy</code>外，要保证路径中的所有属性不为 <code>null</code>。否则，将抛出 NullPointerException 异常。</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>极客空间 | 一个专注于技术分享的博客网站</title>
-      <link>https://www.geekyspace.cn/intro.html</link>
-      <guid>https://www.geekyspace.cn/intro.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">极客空间 | 一个专注于技术分享的博客网站</source>
-      <description>一个专注于技术分享的博客网站</description>
-      <category>程序人生</category>
-      <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>🚀 当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然</p>
-</blockquote>
-<h2>会敲代码的程序猿</h2>
-<p>Hi，我是一名<em>会敲代码的程序员</em>，在Java和相关技术领域拥有多年的专业经验。
-目前，我在 <a href="https://www.liquido.com/" target="_blank" rel="noopener noreferrer">Liquido</a> 工作，这是一家专注于金融领域，
-提供拉美地区<a href="https://mp.weixin.qq.com/s/UzPsaVvXqrvW8T8PDPnhZw" target="_blank" rel="noopener noreferrer">支付解决方案</a>的公司。</p>
-<h2>编程之路</h2>
-<ul>
-<li>启蒙早期：初中时期接触编程，参与编程比赛，培养了对编程的浓厚兴趣</li>
-<li>博客分享：运营个人博客 <a href="https://www.geekyspace.cn/" target="_blank" rel="noopener noreferrer">GeekySpace</a>，分享编程经验和技术干货，致力于帮助他人少走弯路</li>
-<li>个人接单服务：为客户提供专业的软件开发服务，涵盖Java Web开发和微服务架构等领域</li>
-<li>持续成长：通过不断学习和实践，持续提升技术能力，致力于成为更优秀的软件工程师</li>
-</ul>
-<h2>探索博客世界</h2>
-<p>GeekySpace 是一个专注于软件开发者和技术领导者的在线信息平台。
-我们提供了涵盖软件开发、敏捷方法、DevOps、大数据、人工智能、微服务、云计算等技术领域的丰富文章、博客内容。
-我们的使命是为软件开发社区提供最新的技术趋势、最佳实践和行业动态，帮助开发者们不断学习和成长。</p>
-<p>欢迎访问我们的网站 <a href="www.geekyspace.cn">www.geekyspace.cn</a>，与我们一起探索科技的未来！</p>
-]]></content:encoded>
-      <enclosure url="https://www.geekyspace.cn/assets/images/cover3.jpg" type="image/jpeg"/>
     </item>
   </channel>
 </rss>
