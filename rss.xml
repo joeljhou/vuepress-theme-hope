@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Fri, 02 Aug 2024 17:13:57 GMT</pubDate>
-    <lastBuildDate>Fri, 02 Aug 2024 17:13:57 GMT</lastBuildDate>
+    <pubDate>Fri, 02 Aug 2024 20:28:43 GMT</pubDate>
+    <lastBuildDate>Fri, 02 Aug 2024 20:28:43 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>程序人生</category>
@@ -456,25 +456,79 @@ Java语言设计初期主要面向网络和智能家电，这种设计一直沿�
 </code></pre></div><p>通过分析 ClassFile 的内容，我们便可以知道 class 文件的组成。</p>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202407220149546.png" alt="ClassFile 内容分析" tabindex="0" loading="lazy"><figcaption>ClassFile 内容分析</figcaption></figure>
 <h3>魔数</h3>
-<p>魔数是头4个字节的值<code>0xCAFEBABE</code>，用于验证文件是否为有效的Class文件。
-不仅限于Class文件，很多文件格式如<code>GIF</code>或<code>JPEG</code>等也使用魔数来进行身份识别。</p>
+<blockquote>
+<p><strong>魔数：</strong> 用于验证文件是否为有效的Class文件，其值固定为<code>0xCAFEBABE</code>。</p>
+</blockquote>
+<ul>
+<li>不仅限于Class文件，其他文件格式如<code>GIF</code>或<code>JPEG</code>等，也使用魔数来进行身份识别。
 <ul>
 <li>GIF文件：<code>47 49 46 38</code></li>
 <li>JPEG文件：<code>FF D8 FF E0</code></li>
+</ul>
+</li>
 </ul>
 <p>在Java被称为“Oak”语言时期（大约1991年前后），<code>0xCAFEBABE</code>被选为魔数。
 Java开发小组关键成员Patrick Naughton提到，他们选择这个值是因为它好玩且容易记忆，
 象征着著名咖啡品牌Peet’s Coffee深受欢迎的Baristas咖啡，也预示着日后“Java”这一商标名称的出现。</p>
 <h3>Class文件版本号</h3>
-<p>紧跟魔数<code>0xCAFEBABE</code>之后的4个字节存储的是Class文件的版本号，其中：</p>
+<blockquote>
+<p><strong>版本号：</strong> 紧跟魔数之后，占4个字节，包含主版本号和次版本号，用于标识Class文件的版本。</p>
+</blockquote>
 <ul>
 <li>第5~6字节：次版本号（Minor Version）</li>
 <li>第7~8字节：主版本号（Major Version），Java 8 = 52.0</li>
 </ul>
-<p>Java的主版本号从JDK 1.0的45开始，每次大版本发布都会+1；
+<p>Java 的主版本号从 JDK 1.0 的 45 开始，每次大版本发布都会+1；
 次版本号通常保持为0，对应一些次要的特性改进或修复。</p>
-<p><strong>Java版本对应表：</strong></p>
-<p>| JDK版本  | 十进制 | 十六进制 | 发布时间       |
+<p><strong>Class文件版本号：</strong></p>
+<p>支持高版本JDK编译出兼容低版本JDK的类，例如使用JDK 1.8版本，编译出1.7版本的class：</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>javac –source <span class="token number">1.8</span> –target <span class="token number">1.7</span> Example.java
+</code></pre></div><p>注：从JDK 9开始，<code>javac</code>编译器不再支持使用<code>-source</code>参数编译版本号小于1.5的源码。</p>
+<h3>常量池</h3>
+<blockquote>
+<p><strong>常量池：</strong> 紧随版本号之后，可以理解成Class文件的资源仓库。存放各种常量信息，如字符串常量、类和接口名、字段名和方法名等。</p>
+</blockquote>
+<ul>
+<li>与其他数据关联最多，占用空间最大，也是第一个出现的表类型数据项<code>cp_info</code>。</li>
+</ul>
+<p><strong>1、常量池计数</strong></p>
+<p>由于常量项不固定，入口处<code>u2</code>类型的数据值表示<strong>常量池计数</strong>（<code>constant_pool_count</code>）。</p>
+<ul>
+<li>常量池的计数从1开始，即：<code>常量项 = 常量池计数 - 1</code></li>
+<li>Class文件格式规范刻意将第0项常量空出，索引值0表示“不引用任何常量池项”</li>
+</ul>
+<p><strong>2、常量类型</strong></p>
+<p>常量池主要存放两大类常量：字面量（Literal）和符号引用（Symbolic References）</p>
+<ul>
+<li><strong>字面量：</strong> 比较接近于Java语言层面的常量概念，如数值、文本字符串、final常量等</li>
+<li><strong>符号引用：</strong> 符号引用则属于编译原理方面的概念，包括以下几类常量：
+<ul>
+<li>被模块导出或者开放的包(Package)</li>
+<li>类和接口的全限定名(Fully Qualified Name)</li>
+<li>字段的名称和描述符(Descriptor)</li>
+<li>方法的名称和描述符</li>
+<li>方法句柄和方法类型(Method Handle、Method Type、Invoke Dynamic)</li>
+<li>动态调用点和动态常量(Dynamically-Computed Call Site、Dynamically-Computed Constant)</li>
+</ul>
+</li>
+</ul>
+<p>不同于C/C++编译时有“连接”步骤，JVM在加载Class文件时才进行“动态连接”。
+因此，Class文件不保存方法、字段最终在内存中的布局信息。
+JVM在类加载时从常量池获取符号引用，并在类创建或运行时解析为具体地址。</p>
+<p><strong>3、常量表结构</strong></p>
+<p><a href="https://docs.oracle.com/javase/specs/jvms/se22/html/jvms-4.html#jvms-4.4" target="_blank" rel="noopener noreferrer">JVM虚拟机规范第四章-常量池</a>
+定义了<code>constant_pool</code>表条目具有以下通用格式：</p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code>cp_info <span class="token punctuation">{</span>
+  u1 tag<span class="token punctuation">;</span>
+  u1 info<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>常量池中的每项常量都是一个表，起始的第一位是一个<code>u1</code>类型的标志位（tag），表示当前常量的类型。</p>
+<ol>
+<li>最初设计的11种常量类型</li>
+<li>为支持动态语言，增加了4种动态语言相关的常量</li>
+<li>为支持Java模块化系统（Jigsaw），新增了<code>CONSTANT_Module_info</code>和<code>CONSTANT_Package_info</code></li>
+</ol>
+<p>| 类型(tag)                              | 描述              | 结构细节（起始<code>u1 tag;</code>）                                                                                  |
 |</p>
 ]]></content:encoded>
       <enclosure url="https://img.geekyspace.cn/pictures/2024/202407200209120.png" type="image/png"/>
