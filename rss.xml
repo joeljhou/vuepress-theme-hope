@@ -6,15 +6,15 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Sat, 03 Aug 2024 15:28:02 GMT</pubDate>
-    <lastBuildDate>Sat, 03 Aug 2024 15:28:02 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Aug 2024 18:35:46 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Aug 2024 18:35:46 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>程序人生</category>
     <category>JVM</category>
     <category>IDEA</category>
-    <category>安装大全</category>
     <category>Java</category>
+    <category>安装大全</category>
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Spring</category>
@@ -56,7 +56,7 @@
       <link>https://www.geekyspace.cn/md/jvm/classload.html</link>
       <guid>https://www.geekyspace.cn/md/jvm/classload.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">类加载机制</source>
-      <description>类加载机制 类的生命周期 类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。 类的生命周期类的生命周期 注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。 初始化的时机 Java虚拟机规范中类初始化的6种场景，称为对一个类进行主动引用。 使用new关键字创建对象实例时、获取或设置...</description>
+      <description>类加载机制 类的生命周期 类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。 类的生命周期类的生命周期 注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。 1、初始化时机的六种情况称为“主动引用” 在Java虚拟机规范中，“有且只有”以下六种情况会触发类的初始化，称为对一个类的主...</description>
       <category>JVM</category>
       <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -64,10 +64,10 @@
 <p>类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。</p>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202407260441081.png" alt="类的生命周期" tabindex="0" loading="lazy"><figcaption>类的生命周期</figcaption></figure>
 <p>注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。</p>
-<p><strong>初始化的时机</strong></p>
-<p>Java虚拟机规范中类初始化的6种场景，称为对一个类进行<strong>主动引用</strong>。</p>
+<p><strong>1、初始化时机的六种情况称为“主动引用”</strong></p>
+<p>在Java虚拟机规范中，“有且只有”以下六种情况会触发类的初始化，称为对一个类的<strong>主动引用</strong>：</p>
 <ol>
-<li>使用<code>new</code>关键字创建对象实例时、获取或设置静态字段值时、调用类的静态方法时。即遇到<code>new</code>、<code>getstatic</code>、<code>putstatic</code>
+<li>创建对象实例时、获取或设置静态字段值时（非常量）、调用类的静态方法时。即遇到<code>new</code>、<code>getstatic</code>、<code>putstatic</code>
 或<code>invokestatic</code>字节码指令这 4 种指令。</li>
 <li>通过反射机制（如<code>Class.forName()</code>）调用类时。</li>
 <li>初始化某个子类时，若其父类还没有初始化，则先初始化父类。</li>
@@ -76,64 +76,60 @@
 实例解析结果为<code>REF_getStatic</code>、<code>REF_putStatic</code>、<code>REF_invokeStatic</code>或<code>REF_newInvokeSpecial</code>，若其对应类没有初始化，则先初始化。</li>
 <li>当接口中定义了JDK 1.8新增的默认方法时，若实现类初始化，则需要先初始化该接口。</li>
 </ol>
-<p>除了这六种场景外，所有其他引用类的方式都不会触发初始化，称为<strong>被动引用</strong>。</p>
-<blockquote>
-<p>被动引用的例子</p>
-</blockquote>
-<p><strong>例子一：通过子类引用父类的静态字段，不会导致子类初始化</strong></p>
-<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>fenixsoft<span class="token punctuation">.</span>classloading</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">SuperClass</span> <span class="token punctuation">{</span>
-   <span class="token keyword">static</span> <span class="token punctuation">{</span>
-      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"SuperClass init!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> value <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">SubClass</span> <span class="token keyword">extends</span> <span class="token class-name">SuperClass</span> <span class="token punctuation">{</span>
-   <span class="token keyword">static</span> <span class="token punctuation">{</span>
-      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"SubClass init!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NotInitialization</span> <span class="token punctuation">{</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment">// 运行结果只输出“SuperClass init！”，不会输出“SubClass init！”。</span>
-      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">SubClass</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>至于是否要触发子类的加载和验证阶段，取决于虚拟机的具体实现。
-对于HotSpot虚拟机（JDK1.8亲测），加入<code>-XX:+TraceClassLoading</code>观察，此操作是会导致子类加载的。</p>
-<p><strong>例子二：通过数组定义来引用类，不会触发此类的初始化</strong></p>
-<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>fenixsoft<span class="token punctuation">.</span>classloading</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NotInitialization</span> <span class="token punctuation">{</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment">// 运行结果没有输出“SuperClass init！”，说明并没有触发类SuperClass的初始化</span>
-      <span class="token class-name">SuperClass</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sca <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperClass</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div><p>但这段代码触发了另一个名为<code>[Lorg.fenixsoft.classloading.SuperClass</code>的类的初始化阶段。
-它是由虚拟机自动生成的、直接继承于<code>java.lang.Object</code>的子类，由字节码指令<code>newarray</code>触发。</p>
+<p><strong>2、“被动引用”的例子</strong></p>
+<p>除了以上六种场景外，所有其他引用类的方式都不会触发初始化，称为<strong>被动引用</strong>。</p>
 <ul>
-<li>这个类表示<code>SuperClass</code>的一维数组，包含数组应有的属性和方法（如<code>public</code>的<code>length</code>属性和<code>clone()</code>方法）。</li>
+<li><strong>例1：通过子类引用父类的静态字段，不会导致子类初始化，只有父类会被初始化</strong>
+<ul>
+<li>子类是否加载和验证，取决于虚拟机的具体实现。</li>
+<li>在HotSpot虚拟机（JDK 1.8 亲测）中，使用<code>-XX:+TraceClassLoading</code>观察到此操作会导致子类加载。</li>
+</ul>
+</li>
+<li><strong>例2：通过数组定义来引用类，不会触发此类的初始化</strong>
+<ul>
+<li>例如，<code>MyClass[] sca = new MyClass[10];</code>，不会初始化<code>MyClass</code>类</li>
+<li>但这段代码触发了另一个名为<code>[L包名.MyClass</code>的类的初始化阶段。它是由虚拟机自动生成的、继承自<code>java.lang.Object</code>
+的子类，由字节码指令<code>newarray</code>触发。这个类表示<code>MyClass</code>的一维数组，包含数组应有的属性和方法（如<code>public</code>的<code>length</code>
+属性和<code>clone()</code>方法）。</li>
 <li>Java语言对数组的访问比C/C++更安全，因为这个类包装了数组元素的访问，C/C++中直接翻译为对数组指针的移动。
 在Java语言里，发生数组越界时会抛出<code>java.lang.ArrayIndexOutOfBoundsException</code>异常，避免非法内存访问。</li>
 </ul>
-<p><strong>例子三：常量在编译阶段存入调用类的常量池中，不会触发定义常量的类的初始化</strong></p>
-<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>fenixsoft<span class="token punctuation">.</span>classloading</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">ConstClass</span> <span class="token punctuation">{</span>
-    <span class="token keyword">static</span> <span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ConstClass init!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">HELLOWORLD</span> <span class="token operator">=</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NotInitialization</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">// 运行结果没有输出“ConstClass init！”</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">ConstClass</span><span class="token punctuation">.</span><span class="token constant">HELLOWORLD</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div>]]></content:encoded>
+</li>
+<li><strong>例3：引用常量不会触发定义常量的类的初始化</strong>
+<ul>
+<li>因为常量在编译阶段就会被存入调用类的常量池中。</li>
+</ul>
+</li>
+</ul>
+<p><strong>3、接口的“加载与初始化”与类的差异</strong></p>
+<p>接口的加载与初始化过程与类略有不同，差异如下：</p>
+<ul>
+<li><strong>静态变量的初始化：</strong> 虽然接口不能使用静态语句块<code>static{}</code>来输出初始化信息，编译器仍会为接口生成<code>&lt;clinit&gt;()</code>类构造器，用于初始化接口中定义的静态变量。</li>
+<li><strong>初始化触发条件：</strong> 类的初始化需要其所有父类已经初始化，而接口的初始化则不要求其父接口全部初始化。接口只有在实际使用父接口中的成员（如引用接口中定义的常量）时，才会进行初始化。</li>
+</ul>
+<h2>类加载的过程</h2>
+<p>Java类加载过程主要分为加载、连接（验证、准备、解析）、初始化三个阶段。</p>
+<h3>加载</h3>
+<p>在加载阶段，Java虚拟机需要完成以下三件事情：</p>
+<blockquote>
+<ol>
+<li>通过类的全限定名获取定义此类的二进制字节流。</li>
+<li>并将字节流所代表的静态存储结构转化为方法区的运行时数据结构。</li>
+<li>在内存中生成一个代表这个类的<code>java.lang.Class</code>对象，作为方法区这个类的各种数据的访问入口。</li>
+</ol>
+</blockquote>
+<p><strong>类文件读取来源：</strong></p>
+<p>通常包括本地文件系统、压缩文件（如JAR、WAR）、网络、数据库、加密文件（防止反编译）、运行时动态生成，以及由其他文件生成（如JSP应用生成的Class文件）。</p>
+<p><strong>数组类的加载过程：</strong></p>
+<p>数组类本身不通过类加载器创建，而是由Java虚拟机直接在内存中构建出来。但数组类的元素类型最终还是靠类加载器来完成加载。</p>
+<p><strong>加载与连接阶段的顺序：</strong></p>
+<p>加载阶段与连接阶段的一些动作（如部分字节码文件格式验证）交叉进行，加载阶段尚未完成时，连接阶段可能已开始。尽管如此，这些交叉进行的动作仍属于连接阶段的一部分，加载和连接阶段的开始时间顺序固定。</p>
+<h3>验证</h3>
+<h3>准备</h3>
+<h3>解析</h3>
+<h3>初始化</h3>
+<h2>类加载器</h2>
+]]></content:encoded>
       <enclosure url="https://img.geekyspace.cn/pictures/2024/202407260441081.png" type="image/png"/>
     </item>
     <item>
@@ -588,18 +584,6 @@ JVM在类加载时从常量池获取符号引用，并在类创建或运行时�
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202404171725739.png" type="image/png"/>
     </item>
     <item>
-      <title>开发者安装大全</title>
-      <link>https://www.geekyspace.cn/md/installation-guide/</link>
-      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
-      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
-      <category>安装大全</category>
-      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Java 8-21：前沿特性解读系列（持续连载）</title>
       <link>https://www.geekyspace.cn/md/java-features/</link>
       <guid>https://www.geekyspace.cn/md/java-features/</guid>
@@ -907,6 +891,18 @@ JVM在类加载时从常量池获取符号引用，并在类创建或运行时�
 ]]></content:encoded>
     </item>
     <item>
+      <title>开发者安装大全</title>
+      <link>https://www.geekyspace.cn/md/installation-guide/</link>
+      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
+      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Spring Boot 入门教程</title>
       <link>https://www.geekyspace.cn/md/spring-boot/</link>
       <guid>https://www.geekyspace.cn/md/spring-boot/</guid>
@@ -942,107 +938,6 @@ JVM在类加载时从常量池获取符号引用，并在类创建或运行时�
 <li><a href="/spring-data-jpa/jetbrains/getting-started">Spring Data JPA 快速入门</a></li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Windows、Office激活密钥，脚本，程序</title>
-      <link>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</link>
-      <guid>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
-      <description>Windows、Office激活密钥，脚本，程序 ① 微软正版秘钥（官方） 01.Windows系统激活 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” ！获取 微软Windows官方正版秘钥 输入产品密钥输入产品密钥 “激活”成功 Windows官方密钥激...</description>
-      <category>安装大全</category>
-      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>① 微软正版秘钥（官方）</h2>
-<h3>01.Windows系统激活</h3>
-<ol>
-<li><code>Win+R</code> 打开终端，输入命令</li>
-</ol>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slui <span class="token number">3</span>
-</code></pre></div><ol start="2">
-<li>打开“系统激活”窗口，点击“更改”按钮</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232040995.png" alt="更改产品密钥" tabindex="0" loading="lazy"><figcaption>更改产品密钥</figcaption></figure>
-<ol start="3">
-<li>输入“秘钥”，点击“下一页” 进行 “激活” ！获取 <a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener noreferrer">微软Windows官方正版秘钥</a></li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232318292.png" alt="输入产品密钥" tabindex="0" loading="lazy"><figcaption>输入产品密钥</figcaption></figure>
-<ol start="4">
-<li>“激活”成功</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232327475.png" alt="Windows官方密钥激活" tabindex="0" loading="lazy"><figcaption>Windows官方密钥激活</figcaption></figure>
-<h3>02.Office软件激活</h3>
-<ol>
-<li><strong>打开Office应用程序：</strong> 启动<code>Word</code>、<code>Excel</code>或<code>PowerPoint</code>等</li>
-<li><strong>访问文件菜单：</strong> 在应用程序中，点击左上角的"文件"菜单</li>
-<li><strong>点击账户：</strong> 在文件菜单中，选择"账户"</li>
-<li><strong>更改产品密钥：</strong> 在账户页面，找到并点击"更改产品密钥"</li>
-<li><strong>输入产品密钥：</strong> 在弹出的对话框中输入你的25位密钥 ！获取 <a href="https://learn.microsoft.com/zh-cn/deployoffice/vlactivation/gvlks" target="_blank" rel="noopener noreferrer">微软Office官方正版秘钥</a></li>
-<li><strong>激活Office：</strong> 输入密钥后，点击"继续"或"激活产品"</li>
-</ol>
-<h2>② 激活脚本（原理）</h2>
-<blockquote>
-<p>一键激活脚本：<a href="https://wwi.lanzoup.com/b0foh27ne" target="_blank" rel="noopener noreferrer">https://wwi.lanzoup.com/b0foh27ne</a>, 密码：<code>gkjb</code></p>
-</blockquote>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
-<h3>01.脚本激活命令</h3>
-<p><strong>将密钥写入系统，实现激活</strong></p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-</code></pre></div><p>如果你有新的零售产品密钥，将 <code>X</code> 替换为实际的密钥，运行以上命令即可激活</p>
-<h3>02.脚本激活网站推荐</h3>
-<p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
-<h2>③ 激活程序（推荐）</h2>
-<blockquote>
-<p>获取 <a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">一键激活程序</a> ,提供多种激活方式</p>
-</blockquote>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900370.png" alt="程序-持续更新" tabindex="0" loading="lazy"><figcaption>程序-持续更新</figcaption></figure>
-<div class="hint-container note">
-<p class="hint-container-title">注意：使用一键激活程序，需先关闭电脑相关的杀毒程序</p>
-<ul>
-<li><a href="https://support.microsoft.com/zh-cn/windows/%E5%85%B3%E9%97%AD-windows-%E5%AE%89%E5%85%A8%E4%B8%AD%E5%BF%83%E4%B8%AD%E7%9A%84defender-%E9%98%B2%E7%97%85%E6%AF%92%E4%BF%9D%E6%8A%A4-99e6004f-c54c-8509-773c-a4d776b77960" target="_blank" rel="noopener noreferrer">关闭 Windows 安全中心中的Defender 防病毒保护</a></li>
-<li><a href="http://www.fastaux.com/index.php?c=show&amp;id=54" target="_blank" rel="noopener noreferrer">360安全卫士设置白名单</a></li>
-<li><a href="https://www.eyunsou.com/360sd/gongnneg/bmd/" target="_blank" rel="noopener noreferrer">360杀毒软件怎么添加文件白名单</a></li>
-</ul>
-</div>
-<h3>01.数字激活工具 HWID_KMS38_CN_62</h3>
-<p><strong>概述</strong></p>
-<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到
-Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
-<p><strong>激活步骤</strong></p>
-<ol>
-<li>鼠标右键点击“打开”，进入程序中</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232343700.png" alt="正在启动" tabindex="0" loading="lazy"><figcaption>正在启动</figcaption></figure>
-<ol start="2">
-<li>进入程序界面后，工作模式选择“<mark>安装数字密钥</mark>（HWID）”，点击“开始”</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232345572.png" alt="数字密钥激活" tabindex="0" loading="lazy"><figcaption>数字密钥激活</figcaption></figure>
-<ol start="3">
-<li>完成后执行<a href="#%E4%B8%80%E9%94%AE%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC">一键激活脚本</a>中的<code>06.查看是否永久激活.bat</code>验证激活状态</li>
-</ol>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232347627.png" alt="计算机已永久激活" tabindex="0" loading="lazy"><figcaption>计算机已永久激活</figcaption></figure>
-<h3>02.KMS激活工具 DragonKMS</h3>
-<p>互联网论坛上的知名激活工具，也是我个人常用的激活工具，常用于激活Windows和Office全家桶，通过联网KMS激活</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232356474.png" alt="MicroKMS神龙版" tabindex="0" loading="lazy"><figcaption>MicroKMS神龙版</figcaption></figure>
-<h3>03.开源激活工具 HEU_KMS_Activator</h3>
-<p>仅供研究激活原理使用，在“智能激活”中点击“开始”，即按照最佳激活方式"数字许可证/KMS38/OEM/KMS"依次激活，直到激活成功</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240021458.png" alt="智能激活（即数字许可证/KMS38/OEM/KMS依次激活）" tabindex="0" loading="lazy"><figcaption>智能激活（即数字许可证/KMS38/OEM/KMS依次激活）</figcaption></figure>
-<p>等待一会，激活成功后提示</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240027800.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
-<h3>04.小马激活工具 KMS10</h3>
-<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel
-switch。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240037901.png" alt="小马激活工具" tabindex="0" loading="lazy"><figcaption>小马激活工具</figcaption></figure>
-<h3>05.大神制作 W10DigitalActivation</h3>
-<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>
-。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240055203.png" alt="WIN0-HWID数字永久激活" tabindex="0" loading="lazy"><figcaption>WIN0-HWID数字永久激活</figcaption></figure>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240057039.png" alt="永久激活" tabindex="0" loading="lazy"><figcaption>永久激活</figcaption></figure>
-<h3>06.云萌激活工具 CMWTAT_Digital</h3>
-<p>云萌 Windows 10 激活工具，专门用于数字权利激活的软件。本软件是一款使用CSharp编写的 Windows 10 数字权利激活工具</p>
-<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240106825.png" alt="云萌 Windows 10 激活工具" tabindex="0" loading="lazy"><figcaption>云萌 Windows 10 激活工具</figcaption></figure>
-]]></content:encoded>
-      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404232040995.png" type="image/png"/>
     </item>
     <item>
       <title>Java 10 新特性：局部变量类型推断</title>
@@ -3130,6 +3025,107 @@ mutableList<span class="token punctuation">.</span><span class="token function">
 </code></pre></div></li>
 </ul>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Windows、Office激活密钥，脚本，程序</title>
+      <link>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</link>
+      <guid>https://www.geekyspace.cn/md/installation-guide/os/windows-office-activation.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Windows、Office激活密钥，脚本，程序</source>
+      <description>Windows、Office激活密钥，脚本，程序 ① 微软正版秘钥（官方） 01.Windows系统激活 Win+R 打开终端，输入命令 打开“系统激活”窗口，点击“更改”按钮 更改产品密钥更改产品密钥 输入“秘钥”，点击“下一页” 进行 “激活” ！获取 微软Windows官方正版秘钥 输入产品密钥输入产品密钥 “激活”成功 Windows官方密钥激...</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>① 微软正版秘钥（官方）</h2>
+<h3>01.Windows系统激活</h3>
+<ol>
+<li><code>Win+R</code> 打开终端，输入命令</li>
+</ol>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slui <span class="token number">3</span>
+</code></pre></div><ol start="2">
+<li>打开“系统激活”窗口，点击“更改”按钮</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232040995.png" alt="更改产品密钥" tabindex="0" loading="lazy"><figcaption>更改产品密钥</figcaption></figure>
+<ol start="3">
+<li>输入“秘钥”，点击“下一页” 进行 “激活” ！获取 <a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener noreferrer">微软Windows官方正版秘钥</a></li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232318292.png" alt="输入产品密钥" tabindex="0" loading="lazy"><figcaption>输入产品密钥</figcaption></figure>
+<ol start="4">
+<li>“激活”成功</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232327475.png" alt="Windows官方密钥激活" tabindex="0" loading="lazy"><figcaption>Windows官方密钥激活</figcaption></figure>
+<h3>02.Office软件激活</h3>
+<ol>
+<li><strong>打开Office应用程序：</strong> 启动<code>Word</code>、<code>Excel</code>或<code>PowerPoint</code>等</li>
+<li><strong>访问文件菜单：</strong> 在应用程序中，点击左上角的"文件"菜单</li>
+<li><strong>点击账户：</strong> 在文件菜单中，选择"账户"</li>
+<li><strong>更改产品密钥：</strong> 在账户页面，找到并点击"更改产品密钥"</li>
+<li><strong>输入产品密钥：</strong> 在弹出的对话框中输入你的25位密钥 ！获取 <a href="https://learn.microsoft.com/zh-cn/deployoffice/vlactivation/gvlks" target="_blank" rel="noopener noreferrer">微软Office官方正版秘钥</a></li>
+<li><strong>激活Office：</strong> 输入密钥后，点击"继续"或"激活产品"</li>
+</ol>
+<h2>② 激活脚本（原理）</h2>
+<blockquote>
+<p>一键激活脚本：<a href="https://wwi.lanzoup.com/b0foh27ne" target="_blank" rel="noopener noreferrer">https://wwi.lanzoup.com/b0foh27ne</a>, 密码：<code>gkjb</code></p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900072.png" alt="脚本-持续更新" tabindex="0" loading="lazy"><figcaption>脚本-持续更新</figcaption></figure>
+<h3>01.脚本激活命令</h3>
+<p><strong>将密钥写入系统，实现激活</strong></p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+</code></pre></div><p>如果你有新的零售产品密钥，将 <code>X</code> 替换为实际的密钥，运行以上命令即可激活</p>
+<h3>02.脚本激活网站推荐</h3>
+<p><a href="https://kms.cx/" target="_blank" rel="noopener noreferrer">KMS一键激活windows/office网站</a></p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240116136.png" alt="KMS一键激活windows/office网站" tabindex="0" loading="lazy"><figcaption>KMS一键激活windows/office网站</figcaption></figure>
+<h2>③ 激活程序（推荐）</h2>
+<blockquote>
+<p>获取 <a href="https://m.tb.cn/h.g0ZtnKz?tk=OoXyWIKR74J" target="_blank" rel="noopener noreferrer">一键激活程序</a> ,提供多种激活方式</p>
+</blockquote>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404231900370.png" alt="程序-持续更新" tabindex="0" loading="lazy"><figcaption>程序-持续更新</figcaption></figure>
+<div class="hint-container note">
+<p class="hint-container-title">注意：使用一键激活程序，需先关闭电脑相关的杀毒程序</p>
+<ul>
+<li><a href="https://support.microsoft.com/zh-cn/windows/%E5%85%B3%E9%97%AD-windows-%E5%AE%89%E5%85%A8%E4%B8%AD%E5%BF%83%E4%B8%AD%E7%9A%84defender-%E9%98%B2%E7%97%85%E6%AF%92%E4%BF%9D%E6%8A%A4-99e6004f-c54c-8509-773c-a4d776b77960" target="_blank" rel="noopener noreferrer">关闭 Windows 安全中心中的Defender 防病毒保护</a></li>
+<li><a href="http://www.fastaux.com/index.php?c=show&amp;id=54" target="_blank" rel="noopener noreferrer">360安全卫士设置白名单</a></li>
+<li><a href="https://www.eyunsou.com/360sd/gongnneg/bmd/" target="_blank" rel="noopener noreferrer">360杀毒软件怎么添加文件白名单</a></li>
+</ul>
+</div>
+<h3>01.数字激活工具 HWID_KMS38_CN_62</h3>
+<p><strong>概述</strong></p>
+<p><code>HWID_KMS38_CN_62.exe</code> 是一种<strong>数字激活工具</strong>，主要用于激活 Microsoft Windows 操作系统。它采用 HWID 技术，生成硬件标识符并将其发送到
+Microsoft 的激活服务器进行验证，实现系统长期激活。</p>
+<p><strong>激活步骤</strong></p>
+<ol>
+<li>鼠标右键点击“打开”，进入程序中</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232343700.png" alt="正在启动" tabindex="0" loading="lazy"><figcaption>正在启动</figcaption></figure>
+<ol start="2">
+<li>进入程序界面后，工作模式选择“<mark>安装数字密钥</mark>（HWID）”，点击“开始”</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232345572.png" alt="数字密钥激活" tabindex="0" loading="lazy"><figcaption>数字密钥激活</figcaption></figure>
+<ol start="3">
+<li>完成后执行<a href="#%E4%B8%80%E9%94%AE%E6%BF%80%E6%B4%BB%E8%84%9A%E6%9C%AC">一键激活脚本</a>中的<code>06.查看是否永久激活.bat</code>验证激活状态</li>
+</ol>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232347627.png" alt="计算机已永久激活" tabindex="0" loading="lazy"><figcaption>计算机已永久激活</figcaption></figure>
+<h3>02.KMS激活工具 DragonKMS</h3>
+<p>互联网论坛上的知名激活工具，也是我个人常用的激活工具，常用于激活Windows和Office全家桶，通过联网KMS激活</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404232356474.png" alt="MicroKMS神龙版" tabindex="0" loading="lazy"><figcaption>MicroKMS神龙版</figcaption></figure>
+<h3>03.开源激活工具 HEU_KMS_Activator</h3>
+<p>仅供研究激活原理使用，在“智能激活”中点击“开始”，即按照最佳激活方式"数字许可证/KMS38/OEM/KMS"依次激活，直到激活成功</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240021458.png" alt="智能激活（即数字许可证/KMS38/OEM/KMS依次激活）" tabindex="0" loading="lazy"><figcaption>智能激活（即数字许可证/KMS38/OEM/KMS依次激活）</figcaption></figure>
+<p>等待一会，激活成功后提示</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240027800.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
+<h3>04.小马激活工具 KMS10</h3>
+<p>老牌激活工具，文件大小仅1M，我以前还用来激活Win7，可以想象年代的久远。支持离线激活，永久有效，无需考虑激活时限。office版本为retail的用户请自行转换版本到volume，即channel
+switch。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240037901.png" alt="小马激活工具" tabindex="0" loading="lazy"><figcaption>小马激活工具</figcaption></figure>
+<h3>05.大神制作 W10DigitalActivation</h3>
+<p>大神Ratiborus制作的，它还有开发激活Office的 <strong>KMSAuto++</strong> 工具，以及可定制化安装Office的 <strong>Office2013-2021 C2R Install</strong>
+。可以关注它的<a href="https://twitter.com/ratiborus58" target="_blank" rel="noopener noreferrer">Twitter</a>。</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240055203.png" alt="WIN0-HWID数字永久激活" tabindex="0" loading="lazy"><figcaption>WIN0-HWID数字永久激活</figcaption></figure>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240057039.png" alt="永久激活" tabindex="0" loading="lazy"><figcaption>永久激活</figcaption></figure>
+<h3>06.云萌激活工具 CMWTAT_Digital</h3>
+<p>云萌 Windows 10 激活工具，专门用于数字权利激活的软件。本软件是一款使用CSharp编写的 Windows 10 数字权利激活工具</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202404240106825.png" alt="云萌 Windows 10 激活工具" tabindex="0" loading="lazy"><figcaption>云萌 Windows 10 激活工具</figcaption></figure>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202404232040995.png" type="image/png"/>
     </item>
     <item>
       <title>Spring Data JPA 快速入门</title>
