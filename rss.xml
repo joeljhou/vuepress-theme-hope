@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Fri, 02 Aug 2024 20:30:41 GMT</pubDate>
-    <lastBuildDate>Fri, 02 Aug 2024 20:30:41 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Aug 2024 15:28:02 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Aug 2024 15:28:02 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>程序人生</category>
@@ -56,23 +56,25 @@
       <link>https://www.geekyspace.cn/md/jvm/classload.html</link>
       <guid>https://www.geekyspace.cn/md/jvm/classload.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">类加载机制</source>
-      <description>类加载机制 类的生命周期 类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。 类的生命周期类的生命周期 类加载过程中的初始化 在《Java虚拟机规范》中，“有且只有” 以下6种场景会触发初始化，称为对一个类进行主动引用。 遇到new、getstatic、putstatic或invokestatic字节码指令时，如果...</description>
+      <description>类加载机制 类的生命周期 类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。 类的生命周期类的生命周期 注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。 初始化的时机 Java虚拟机规范中类初始化的6种场景，称为对一个类进行主动引用。 使用new关键字创建对象实例时、获取或设置...</description>
       <category>JVM</category>
       <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>类的生命周期</h2>
 <p>类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。</p>
 <figure><img src="https://img.geekyspace.cn/pictures/2024/202407260441081.png" alt="类的生命周期" tabindex="0" loading="lazy"><figcaption>类的生命周期</figcaption></figure>
-<p><strong>类加载过程中的初始化</strong></p>
-<p>在《Java虚拟机规范》中，“有且只有” 以下6种场景会触发初始化，称为对一个类进行<strong>主动引用</strong>。</p>
+<p>注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。</p>
+<p><strong>初始化的时机</strong></p>
+<p>Java虚拟机规范中类初始化的6种场景，称为对一个类进行<strong>主动引用</strong>。</p>
 <ol>
-<li>遇到<code>new</code>、<code>getstatic</code>、<code>putstatic</code>或<code>invokestatic</code>字节码指令时，如果类型尚未初始化，则需要先触发其初始化。</li>
-<li>对类型进行反射调用时，如果类型还没有初始化，则需要先触发其初始化。</li>
-<li>初始化一个类时，如果其父类还没有初始化，则需要先初始化父类。</li>
-<li>虚拟机启动时，需要指定一个包含<code>main()</code>方法的主类，虚拟机会先初始化这个主类。</li>
-<li>使用JDK 1.7引入的动态语言支持时，如果<code>java.lang.invoke.MethodHandle</code>
-实例解析结果为<code>REF_getStatic</code>、<code>REF_putStatic</code>、<code>REF_invokeStatic</code>或<code>REF_newInvokeSpecial</code>，并且对应类没有初始化，则需要先触发其初始化。</li>
-<li>当接口中定义了JDK 1.8新增的默认方法时，如果实现类初始化，则需要先初始化该接口。</li>
+<li>使用<code>new</code>关键字创建对象实例时、获取或设置静态字段值时、调用类的静态方法时。即遇到<code>new</code>、<code>getstatic</code>、<code>putstatic</code>
+或<code>invokestatic</code>字节码指令这 4 种指令。</li>
+<li>通过反射机制（如<code>Class.forName()</code>）调用类时。</li>
+<li>初始化某个子类时，若其父类还没有初始化，则先初始化父类。</li>
+<li>当虚拟机启动时，指定的包含<code>main()</code>方法的主类会被初始化。</li>
+<li>使用JDK 1.7引入动态语言支持时，若<code>java.lang.invoke.MethodHandle</code>
+实例解析结果为<code>REF_getStatic</code>、<code>REF_putStatic</code>、<code>REF_invokeStatic</code>或<code>REF_newInvokeSpecial</code>，若其对应类没有初始化，则先初始化。</li>
+<li>当接口中定义了JDK 1.8新增的默认方法时，若实现类初始化，则需要先初始化该接口。</li>
 </ol>
 <p>除了这六种场景外，所有其他引用类的方式都不会触发初始化，称为<strong>被动引用</strong>。</p>
 <blockquote>
@@ -370,11 +372,13 @@ JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台�
       <link>https://www.geekyspace.cn/md/jvm/specs/bytecode.html</link>
       <guid>https://www.geekyspace.cn/md/jvm/specs/bytecode.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">字节码指令集</source>
-      <description>字节码指令集 字节码指令集是JVM执行的低级指令集合，由Java编译器将Java源代码编译后保存在Method描述中。 由操作码和操作数组成: 操作码（Opcode）： 一个字节长度的数字，代表某种特定操作 操作数（Operands）： 跟随操作码之后的零至多个参数，用于该操作所需的数据 由于JVM采用面向操作数栈而不是面向寄存器的架构，大多数指令都不...</description>
+      <description>字节码指令集 字节码指令集是Java虚拟机（JVM）能理解和执行的低级指令集合。具体保存在Java类文件（.class）的方法区部分，由操作码和操作数组成。 操作码（Opcode）： 一个字节长度的数字，代表某种特定操作 操作数（Operands）： 跟随操作码之后的零至多个参数，用于该操作所需的数据 由于JVM采用面向操作数栈而不是面向寄存器的架构，...</description>
       <category>JVM</category>
       <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<p>字节码指令集是JVM执行的低级指令集合，由Java编译器将Java源代码编译后保存在<code>Method</code>描述中。 由操作码和操作数组成:</p>
+<blockquote>
+<p>字节码指令集是Java虚拟机（JVM）能理解和执行的低级指令集合。具体保存在Java类文件（<code>.class</code>）的方法区部分，由操作码和操作数组成。</p>
+</blockquote>
 <ul>
 <li><strong>操作码（<code>Opcode</code>）：</strong> 一个字节长度的数字，代表某种特定操作</li>
 <li><strong>操作数（<code>Operands</code>）：</strong> 跟随操作码之后的零至多个参数，用于该操作所需的数据</li>
