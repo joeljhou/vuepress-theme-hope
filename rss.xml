@@ -6,12 +6,12 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Wed, 07 Aug 2024 15:37:23 GMT</pubDate>
-    <lastBuildDate>Wed, 07 Aug 2024 15:37:23 GMT</lastBuildDate>
+    <pubDate>Thu, 08 Aug 2024 13:26:13 GMT</pubDate>
+    <lastBuildDate>Thu, 08 Aug 2024 13:26:13 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>程序人生</category>
     <category>JVM</category>
+    <category>程序人生</category>
     <category>IDEA</category>
     <category>Java</category>
     <category>安装大全</category>
@@ -19,164 +19,9 @@
     <category>Spring Data</category>
     <category>Spring</category>
     <item>
-      <title>个人简介</title>
-      <link>https://www.geekyspace.cn/about-me.html</link>
-      <guid>https://www.geekyspace.cn/about-me.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">个人简介</source>
-      <description>一个专注于技术分享的博客网站</description>
-      <category>程序人生</category>
-      <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>欢迎访问我的博客网站 <a href="www.geekyspace.cn">www.geekyspace.cn</a>，与我一起探索科技的未来！</p>
-<p>本博客维护人周宇，在Java和相关技术领域拥有多年的专业经验。
-此前，我在深圳南山 <a href="https://www.liquido.com/" target="_blank" rel="noopener noreferrer">Liquido</a> 工作，这是一家专注于金融领域，
-提供拉美地区<a href="https://mp.weixin.qq.com/s/UzPsaVvXqrvW8T8PDPnhZw" target="_blank" rel="noopener noreferrer">支付解决方案</a>的公司。</p>
-<p><strong>贴上“程序员”标签</strong></p>
-<ol>
-<li>个人兴趣：我从小就对工科方向的工作非常感兴趣，喜欢倒腾电子产品，研究它们的原理，拆了又装。</li>
-<li>家庭影响：我有一个“伢伢”，比我大10多岁，他学的就是计算机，赚钱也多。
-他毕业后在一家电商公司工作，后来被京东收购，之后去了高德，又被阿里收购。在它的影响下，我最终成为了一名程序员。</li>
-</ol>
-<p><strong>程序员的价值体现</strong></p>
-<p>做程序员是幸运的，世界的本质是价值交换。
-作为程序员，我最大的成就感在于能否真正给别人带来价值。如果可以，那泰裤辣。
-大环境没有那么差，这是程序员的时代！！！</p>
-<p><strong>我的程序员格言</strong></p>
-<ol>
-<li>编码原则：🥇 代码简洁高效，优雅永不过时 ✨</li>
-<li>架构核心：🔧 掌握系统控制权，确保可扩展性和灵活性</li>
-<li>技术理念：🌐 技术广度是技术深度的副产品</li>
-<li>职业信仰：🚀 当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然</li>
-<li>长期主义：⏳ 注重长远发展，坚持不懈地追求卓越</li>
-</ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>类加载机制</title>
-      <link>https://www.geekyspace.cn/md/jvm/classload.html</link>
-      <guid>https://www.geekyspace.cn/md/jvm/classload.html</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">类加载机制</source>
-      <description>类加载机制 类的生命周期 类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。 类的生命周期类的生命周期 注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。 1、初始化时机的六种情况称为“主动引用” 在Java虚拟机规范中，“有且只有”以下六种情况会触发类的初始化，称为对一个类的主...</description>
-      <category>JVM</category>
-      <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>类的生命周期</h2>
-<p>类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。</p>
-<figure><img src="https://img.geekyspace.cn/pictures/2024/202407260441081.png" alt="类的生命周期" tabindex="0" loading="lazy"><figcaption>类的生命周期</figcaption></figure>
-<p>注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。</p>
-<p><strong>1、初始化时机的六种情况称为“主动引用”</strong></p>
-<p>在Java虚拟机规范中，“有且只有”以下六种情况会触发类的初始化，称为对一个类的<strong>主动引用</strong>：</p>
-<ol>
-<li>创建对象实例时、获取或设置静态字段值时（非常量）、调用类的静态方法时。即遇到<code>new</code>、<code>getstatic</code>、<code>putstatic</code>
-或<code>invokestatic</code>字节码指令这 4 种指令。</li>
-<li>通过反射机制（如<code>Class.forName()</code>）调用类时。</li>
-<li>初始化某个子类时，若其父类还没有初始化，则先初始化父类。</li>
-<li>当虚拟机启动时，指定的包含<code>main()</code>方法的主类会被初始化。</li>
-<li>使用JDK 1.7引入动态语言支持时，若<code>java.lang.invoke.MethodHandle</code>
-实例解析结果为<code>REF_getStatic</code>、<code>REF_putStatic</code>、<code>REF_invokeStatic</code>或<code>REF_newInvokeSpecial</code>，若其对应类没有初始化，则先初始化。</li>
-<li>当接口中定义了JDK 1.8新增的默认方法时，若实现类初始化，则需要先初始化该接口。</li>
-</ol>
-<p><strong>2、“被动引用”的例子</strong></p>
-<p>除了以上六种场景外，所有其他引用类的方式都不会触发初始化，称为<strong>被动引用</strong>。</p>
-<ul>
-<li><strong>例1：通过子类引用父类的静态字段，不会导致子类初始化，只有父类会被初始化</strong>
-<ul>
-<li>子类是否加载和验证，取决于虚拟机的具体实现。</li>
-<li>在HotSpot虚拟机（JDK 1.8 亲测）中，使用<code>-XX:+TraceClassLoading</code>观察到此操作会导致子类加载。</li>
-</ul>
-</li>
-<li><strong>例2：通过数组定义来引用类，不会触发此类的初始化</strong>
-<ul>
-<li>例如，<code>MyClass[] sca = new MyClass[10];</code>，不会初始化<code>MyClass</code>类</li>
-<li>但这段代码触发了另一个名为<code>[L包名.MyClass</code>的类的初始化阶段。它是由虚拟机自动生成的、继承自<code>java.lang.Object</code>
-的子类，由字节码指令<code>newarray</code>触发。这个类表示<code>MyClass</code>的一维数组，包含数组应有的属性和方法（如<code>public</code>的<code>length</code>
-属性和<code>clone()</code>方法）。</li>
-<li>Java语言对数组的访问比C/C++更安全，因为这个类包装了数组元素的访问，C/C++中直接翻译为对数组指针的移动。
-在Java语言里，发生数组越界时会抛出<code>java.lang.ArrayIndexOutOfBoundsException</code>异常，避免非法内存访问。</li>
-</ul>
-</li>
-<li><strong>例3：引用常量不会触发定义常量的类的初始化</strong>
-<ul>
-<li>因为常量在编译阶段就会被存入调用类的常量池中。</li>
-</ul>
-</li>
-</ul>
-<p><strong>3、接口的“加载与初始化”与类的差异</strong></p>
-<p>接口的加载与初始化过程与类略有不同，差异如下：</p>
-<ul>
-<li><strong>静态变量的初始化：</strong> 虽然接口不能使用静态语句块<code>static{}</code>来输出初始化信息，编译器仍会为接口生成<code>&lt;clinit&gt;()</code>
-类构造器，用于初始化接口中定义的静态变量。</li>
-<li><strong>初始化触发条件：</strong> 类的初始化需要其所有父类已经初始化，而接口的初始化则不要求其父接口全部初始化。接口只有在实际使用父接口中的成员（如引用接口中定义的常量）时，才会进行初始化。</li>
-</ul>
-<h2>类加载的过程</h2>
-<p>Java类加载过程主要分为加载、连接（验证、准备、解析）、初始化三个阶段。</p>
-<h3>加载</h3>
-<blockquote>
-<ol>
-<li>通过类的全限定名获取定义此类的二进制字节流。</li>
-<li>并将字节流所代表的静态存储结构转化为方法区的运行时数据结构。</li>
-<li>在内存中生成一个代表这个类的<code>java.lang.Class</code>对象，作为方法区这个类的各种数据的访问入口。</li>
-</ol>
-</blockquote>
-<ul>
-<li><strong>类文件来源：</strong>
-<ul>
-<li>通常包括本地文件系统、压缩文件（如JAR、WAR）、网络、数据库、加密文件（防止反编译）、运行时动态生成，以及由其他文件生成（如JSP应用生成的Class文件）。</li>
-</ul>
-</li>
-<li><strong>数组类加载：</strong>
-<ul>
-<li>数组类本身不通过类加载器创建，而是由Java虚拟机直接在内存中构建出来。但数组类的元素类型最终还是靠类加载器来完成加载。</li>
-</ul>
-</li>
-</ul>
-<h3>验证</h3>
-<blockquote>
-<p>验证是连接阶段的第一步，目的是确保字节码的正确性和安全性，包括文件格式验证、元数据验证、字节码验证和符号引用验证四个阶段。</p>
-</blockquote>
-<p>验证阶段大致上会完成下面四个阶段的检验动作：</p>
-<ol>
-<li><strong>文件格式验证：</strong> 检查字节流是否符合Class文件的格式规范。</li>
-<li><strong>元数据验证：</strong> 对类的元数据信息进行语义校验，确保其符合Java语言的语法和语意规则。</li>
-<li><strong>字节码验证：</strong> 通过数据流分析和控制流分析，确保字节码指令的合法性和逻辑正确性。</li>
-<li><strong>符号引用验证：</strong> 在解析阶段之前，检查符号引用是否能被正确解析。</li>
-</ol>
-<h3>准备</h3>
-<blockquote>
-<p>准备阶段为类中的静态变量分配内存并设置初始值。静态变量的内存分配发生在方法区中。</p>
-</blockquote>
-<ul>
-<li>在 JDK 7及之前，HotSpot使用<strong>永久代</strong>（PerGen）来实现方法区，存放在堆内存中</li>
-<li>在 JDK 8及之后，永久代被移除，取而代之的是<strong>元空间</strong>（Metaspace），存放在操作系统本地内存中</li>
-</ul>
-<h3>解析</h3>
-<blockquote>
-<p>解析阶段是Java虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
-</blockquote>
-<ul>
-<li><strong>符号引用（Symbolic References）：</strong> 字符串形式表示的对目标的逻辑引用</li>
-<li><strong>直接引用（Direct References）：</strong> 是直接定位到目标内存位置的指针、偏移量或句柄。</li>
-</ul>
-<p>解析动作主要针对类或接口、字段、类方法、接口方法、方法类型、方法句柄和调用点限定符这7类符号引用进行。</p>
-<h3>初始化</h3>
-<blockquote>
-<p>类加载过程的最后一个阶段，负责执行类构造器方法 <code>&lt;clinit&gt;</code>。</p>
-</blockquote>
-<ul>
-<li><strong>自动生成：</strong> 由javac编译自动生成<code>&lt;clinit&gt;</code>，是所有静态变量赋值和静态代码块的集合。</li>
-<li><strong>非法前向引用：</strong> 静态语句块中只能访问定义在其之前的变量。</li>
-<li>父类的 <code>&lt;clinit&gt;</code> 方法会先于子类的 <code>&lt;clinit&gt;</code> 方法执行。</li>
-<li>如果一个类没有静态语句块和静态变量的赋值操作，那么编译器可能不会生成 <code>&lt;clinit&gt;</code> 方法。</li>
-<li>多线程环境下，类的初始化可能会出现并发问题，JVM会保证<code>&lt;clinit&gt;</code>方法的线程安全执行。</li>
-</ul>
-<h2>类加载器</h2>
-]]></content:encoded>
-      <enclosure url="https://img.geekyspace.cn/pictures/2024/202407260441081.png" type="image/png"/>
-    </item>
-    <item>
       <title>实战编译JDK</title>
-      <link>https://www.geekyspace.cn/md/jvm/compile_jdk.html</link>
-      <guid>https://www.geekyspace.cn/md/jvm/compile_jdk.html</guid>
+      <link>https://www.geekyspace.cn/md/jvm/part1/compile_jdk.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/part1/compile_jdk.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">实战编译JDK</source>
       <description>实战编译JDK 想要窥探Java虚拟机内部的实现原理，最直接的路径就是编译自己的JDK。 尽管网络上有不少开源JDK实现，但OpenJDK无疑是最广泛使用的，我们将选择OpenJDK进行编译实战。 获取源码 版本选择OpenJDK 12，下载地址 https://hg.openjdk.org/jdk/jdk12 点击“browse”链接，然后选择对应的...</description>
       <category>JVM</category>
@@ -204,8 +49,8 @@
     </item>
     <item>
       <title>Java虚拟机概述</title>
-      <link>https://www.geekyspace.cn/md/jvm/overview.html</link>
-      <guid>https://www.geekyspace.cn/md/jvm/overview.html</guid>
+      <link>https://www.geekyspace.cn/md/jvm/part1/overview.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/part1/overview.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Java虚拟机概述</source>
       <description>Java虚拟机概述 Java虚拟机（Java Virtual Machine，简称JVM）是运行所有Java程序的虚拟计算机，是Java平台的核心实现。 它提供了一种独立于底层硬件和操作系统的运行环境，使Java程序能够在任何安装了JVM的系统上执行。 JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台运行，这一特性被称为“Writ...</description>
       <category>JVM</category>
@@ -406,8 +251,8 @@ JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台�
     </item>
     <item>
       <title>字节码指令集</title>
-      <link>https://www.geekyspace.cn/md/jvm/specs/bytecode.html</link>
-      <guid>https://www.geekyspace.cn/md/jvm/specs/bytecode.html</guid>
+      <link>https://www.geekyspace.cn/md/jvm/part3/bytecode-instructions-set.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/part3/bytecode-instructions-set.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">字节码指令集</source>
       <description>字节码指令集 字节码指令集是Java虚拟机（JVM）能理解和执行的低级指令集合。具体保存在Java类文件（.class）的方法区部分，由操作码和操作数组成。 操作码（Opcode）： 一个字节长度的数字，代表某种特定操作 操作数（Operands）： 跟随操作码之后的零至多个参数，用于该操作所需的数据 由于JVM采用面向操作数栈而不是面向寄存器的架构，...</description>
       <category>JVM</category>
@@ -421,24 +266,7 @@ JVM通过将Java字节码（.class文件）转换为机器码来实现跨平台�
 <li><strong>操作数（<code>Operands</code>）：</strong> 跟随操作码之后的零至多个参数，用于该操作所需的数据</li>
 </ul>
 <p>由于JVM采用面向操作数栈而不是面向寄存器的架构，大多数指令都不包含操作数，只有一个操作码，指令参数存放在操作数栈中。</p>
-<p><strong>优势和劣势</strong></p>
-<p>限制Java虚拟机操作码的长度为一个字节（即0～255），意味着指令集的操作码总数不能超过256条；
-Class文件格式放弃了编译后代码的操作数长度对齐，需要在运行时从字节中重建具体数据结构。
-例如，存储16位无符号整数要使用两个无符号字节（<code>byte1</code>和<code>byte2</code>）：</p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">(</span>byte1 <span class="token operator">&lt;&lt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">|</span> byte2
-</code></pre></div><p>这种操作可能导致解释执行字节码时性能损失，但省略了大量的填充和间隔符号，用一个字节代表操作码，使编译代码更小，更适合高传输效率的设计。
-Java语言设计初期主要面向网络和智能家电，这种设计一直沿用至今。</p>
-<p><strong>执行模型</strong></p>
-<p>如果不考虑异常处理的话，那Java虚拟机的解释器可以使用下面这段伪代码作为最基本的执行模型来理解：</p>
-<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token keyword">do</span> <span class="token punctuation">{</span>
-    自动计算<span class="token constant">PC</span>寄存器的值加<span class="token number">1</span><span class="token punctuation">;</span>
-    根据<span class="token constant">PC</span>寄存器指示的位置，从字节码流中取出操作码<span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>字节码存在操作数<span class="token punctuation">)</span> 从字节码流中取出操作数<span class="token punctuation">;</span>
-    执行操作码所定义的操作<span class="token punctuation">;</span>
-<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>字节码流长度 <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div><p>字节码指令流基本上都是单字节对齐的，只有“tableswitch”和“lookupswitch”两条指令例外，
-由于操作数特殊，是以4字节为界划分的，所以需要预留出相应的空位填充来实现对齐。</p>
-<h2>字节码与数据类型</h2>
+<h2>操作码助记符</h2>
 <p>数据类型相关的字节码指令，包含特定的<strong>操作码助记符</strong>：</p>
 <p>| 数据类型      | 操作码助记符 |
 |</p>
@@ -446,8 +274,8 @@ Java语言设计初期主要面向网络和智能家电，这种设计一直沿�
     </item>
     <item>
       <title>类文件结构</title>
-      <link>https://www.geekyspace.cn/md/jvm/specs/class.html</link>
-      <guid>https://www.geekyspace.cn/md/jvm/specs/class.html</guid>
+      <link>https://www.geekyspace.cn/md/jvm/part3/class-file-structure.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/part3/class-file-structure.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">类文件结构</source>
       <description>类文件结构 计算机只能运行由0和1构成的二进制格式。 要运行Java程序，必须先通过Java虚拟机（JVM）执行编译后的Java代码，这个编译后的代码就是Java字节码，存储在.class类文件中。 跨平台的基石 Java字节码具有“平台无关性”和“语言无关性”。 平台无关性： 字节码可以在任何支持JVM的平台上运行，实现“一次编写，到处运行” 语言无...</description>
       <category>JVM</category>
@@ -573,6 +401,346 @@ JVM在类加载时从常量池获取符号引用，并在类创建或运行时�
 |</p>
 ]]></content:encoded>
       <enclosure url="https://img.geekyspace.cn/pictures/2024/202407200209120.png" type="image/png"/>
+    </item>
+    <item>
+      <title>类加载机制</title>
+      <link>https://www.geekyspace.cn/md/jvm/part3/class-loading-mechanism.html</link>
+      <guid>https://www.geekyspace.cn/md/jvm/part3/class-loading-mechanism.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">类加载机制</source>
+      <description>类加载机制 类的生命周期 类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。 类的生命周期类的生命周期 注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。 1、初始化时机的六种情况称为“主动引用” 在Java虚拟机规范中，“有且只有”以下六种情况会触发类的初始化，称为对一个类的主...</description>
+      <category>JVM</category>
+      <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>类的生命周期</h2>
+<p>类的生命周期分为以下7个阶段，其中解析可以在初始化之后，以支持Java的运行时绑定特性。</p>
+<figure><img src="https://img.geekyspace.cn/pictures/2024/202407260441081.png" alt="类的生命周期" tabindex="0" loading="lazy"><figcaption>类的生命周期</figcaption></figure>
+<p>注：并非所有的类都会经历完整的生命周期，有些类可能在某些阶段就结束其在JVM中的生涯。</p>
+<p><strong>1、初始化时机的六种情况称为“主动引用”</strong></p>
+<p>在Java虚拟机规范中，“有且只有”以下六种情况会触发类的初始化，称为对一个类的<strong>主动引用</strong>：</p>
+<ol>
+<li>创建对象实例时、获取或设置静态字段值时（非常量）、调用类的静态方法时。即遇到<code>new</code>、<code>getstatic</code>、<code>putstatic</code>
+或<code>invokestatic</code>字节码指令这 4 种指令。</li>
+<li>通过反射机制（如<code>Class.forName()</code>）调用类时。</li>
+<li>初始化某个子类时，若其父类还没有初始化，则先初始化父类。</li>
+<li>当虚拟机启动时，指定的包含<code>main()</code>方法的主类会被初始化。</li>
+<li>使用JDK 1.7引入动态语言支持时，若<code>java.lang.invoke.MethodHandle</code>
+实例解析结果为<code>REF_getStatic</code>、<code>REF_putStatic</code>、<code>REF_invokeStatic</code>或<code>REF_newInvokeSpecial</code>，若其对应类没有初始化，则先初始化。</li>
+<li>当接口中定义了JDK 1.8新增的默认方法时，若实现类初始化，则需要先初始化该接口。</li>
+</ol>
+<p><strong>2、“被动引用”的例子</strong></p>
+<p>除了以上六种场景外，所有其他引用类的方式都不会触发初始化，称为<strong>被动引用</strong>。</p>
+<ul>
+<li><strong>例1：通过子类引用父类的静态字段，不会导致子类初始化，只有父类会被初始化</strong>
+<ul>
+<li>子类是否加载和验证，取决于虚拟机的具体实现。</li>
+<li>在HotSpot虚拟机（JDK 1.8 亲测）中，使用<code>-XX:+TraceClassLoading</code>观察到此操作会导致子类加载。</li>
+</ul>
+</li>
+<li><strong>例2：通过数组定义来引用类，不会触发此类的初始化</strong>
+<ul>
+<li>例如，<code>MyClass[] sca = new MyClass[10];</code>，不会初始化<code>MyClass</code>类</li>
+<li>但这段代码触发了另一个名为<code>[L包名.MyClass</code>的类的初始化阶段。它是由虚拟机自动生成的、继承自<code>java.lang.Object</code>
+的子类，由字节码指令<code>newarray</code>触发。这个类表示<code>MyClass</code>的一维数组，包含数组应有的属性和方法（如<code>public</code>的<code>length</code>
+属性和<code>clone()</code>方法）。</li>
+<li>Java语言对数组的访问比C/C++更安全，因为这个类包装了数组元素的访问，C/C++中直接翻译为对数组指针的移动。
+在Java语言里，发生数组越界时会抛出<code>java.lang.ArrayIndexOutOfBoundsException</code>异常，避免非法内存访问。</li>
+</ul>
+</li>
+<li><strong>例3：引用常量不会触发定义常量的类的初始化</strong>
+<ul>
+<li>因为常量在编译阶段就会被存入调用类的常量池中。</li>
+</ul>
+</li>
+</ul>
+<p><strong>3、接口的“加载与初始化”与类的差异</strong></p>
+<p>接口的加载与初始化过程与类略有不同，差异如下：</p>
+<ul>
+<li><strong>静态变量的初始化：</strong> 虽然接口不能使用静态语句块<code>static{}</code>来输出初始化信息，编译器仍会为接口生成<code>&lt;clinit&gt;()</code>
+类构造器，用于初始化接口中定义的静态变量。</li>
+<li><strong>初始化触发条件：</strong> 类的初始化需要其所有父类已经初始化，而接口的初始化则不要求其父接口全部初始化。接口只有在实际使用父接口中的成员（如引用接口中定义的常量）时，才会进行初始化。</li>
+</ul>
+<h2>类加载的过程</h2>
+<p>Java类加载过程主要分为加载、连接（验证、准备、解析）、初始化三个阶段。</p>
+<h3>加载</h3>
+<blockquote>
+<ol>
+<li>通过类的全限定名获取定义此类的二进制字节流。</li>
+<li>并将字节流所代表的静态存储结构转化为方法区的运行时数据结构。</li>
+<li>在内存中生成一个代表这个类的<code>java.lang.Class</code>对象，作为方法区这个类的各种数据的访问入口。</li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>类文件来源：</strong>
+<ul>
+<li>通常包括本地文件系统、压缩文件（如JAR、WAR）、网络、数据库、加密文件（防止反编译）、运行时动态生成，以及由其他文件生成（如JSP应用生成的Class文件）。</li>
+</ul>
+</li>
+<li><strong>数组类加载：</strong>
+<ul>
+<li>数组类本身不通过类加载器创建，而是由Java虚拟机直接在内存中构建出来。但数组类的元素类型最终还是靠类加载器来完成加载。</li>
+</ul>
+</li>
+</ul>
+<h3>验证</h3>
+<blockquote>
+<p>验证是连接阶段的第一步，目的是确保字节码的正确性和安全性，包括文件格式验证、元数据验证、字节码验证和符号引用验证四个阶段。</p>
+</blockquote>
+<p>验证阶段大致上会完成下面四个阶段的检验动作：</p>
+<ol>
+<li><strong>文件格式验证：</strong> 检查字节流是否符合Class文件的格式规范。</li>
+<li><strong>元数据验证：</strong> 对类的元数据信息进行语义校验，确保其符合Java语言的语法和语意规则。</li>
+<li><strong>字节码验证：</strong> 通过数据流分析和控制流分析，确保字节码指令的合法性和逻辑正确性。</li>
+<li><strong>符号引用验证：</strong> 在解析阶段之前，检查符号引用是否能被正确解析。</li>
+</ol>
+<h3>准备</h3>
+<blockquote>
+<p>准备阶段为类中的静态变量分配内存并设置初始值。静态变量的内存分配发生在方法区中。</p>
+</blockquote>
+<ul>
+<li>在 JDK 7及之前，HotSpot使用<strong>永久代</strong>（PerGen）来实现方法区，存放在堆内存中</li>
+<li>在 JDK 8及之后，永久代被移除，取而代之的是<strong>元空间</strong>（Metaspace），存放在操作系统本地内存中</li>
+</ul>
+<h3>解析</h3>
+<blockquote>
+<p>解析阶段是Java虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
+</blockquote>
+<ul>
+<li><strong>符号引用（Symbolic References）：</strong> 字符串形式表示的对目标的逻辑引用</li>
+<li><strong>直接引用（Direct References）：</strong> 是直接定位到目标内存位置的指针、偏移量或句柄。</li>
+</ul>
+<p>解析动作主要针对类或接口、字段、类方法、接口方法、方法类型、方法句柄和调用点限定符这7类符号引用进行。</p>
+<h3>初始化</h3>
+<blockquote>
+<p>类加载过程的最后一个阶段，负责执行类构造器方法 <code>&lt;clinit&gt;</code>。</p>
+</blockquote>
+<ul>
+<li><strong>自动生成：</strong> 由javac编译自动生成<code>&lt;clinit&gt;</code>，是所有静态变量赋值和静态代码块的集合。</li>
+<li><strong>非法前向引用：</strong> 静态语句块中只能访问定义在其之前的变量。</li>
+<li>父类的 <code>&lt;clinit&gt;</code> 方法会先于子类的 <code>&lt;clinit&gt;</code> 方法执行。</li>
+<li>如果一个类没有静态语句块和静态变量的赋值操作，那么编译器可能不会生成 <code>&lt;clinit&gt;</code> 方法。</li>
+<li>多线程环境下，类的初始化可能会出现并发问题，JVM会保证<code>&lt;clinit&gt;</code>方法的线程安全执行。</li>
+</ul>
+<h2>类加载器</h2>
+<blockquote>
+<p>加载阶段“通过一个类的全限定名来获取描述该类的二进制字节流”，这个动作的代码被称为“类加载器”（Class Loader）。</p>
+</blockquote>
+<h3>类与类加载器</h3>
+<h3>双亲委派模型</h3>
+<h3>破坏双亲委派模型</h3>
+]]></content:encoded>
+      <enclosure url="https://img.geekyspace.cn/pictures/2024/202407260441081.png" type="image/png"/>
+    </item>
+    <item>
+      <title>个人简介</title>
+      <link>https://www.geekyspace.cn/about-me.html</link>
+      <guid>https://www.geekyspace.cn/about-me.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">个人简介</source>
+      <description>一个专注于技术分享的博客网站</description>
+      <category>程序人生</category>
+      <pubDate>Mon, 14 Dec 1998 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>欢迎访问我的博客网站 <a href="www.geekyspace.cn">www.geekyspace.cn</a>，与我一起探索科技的未来！</p>
+<p>本博客维护人周宇，在Java和相关技术领域拥有多年的专业经验。
+此前，我在深圳南山 <a href="https://www.liquido.com/" target="_blank" rel="noopener noreferrer">Liquido</a> 工作，这是一家专注于金融领域，
+提供拉美地区<a href="https://mp.weixin.qq.com/s/UzPsaVvXqrvW8T8PDPnhZw" target="_blank" rel="noopener noreferrer">支付解决方案</a>的公司。</p>
+<p><strong>贴上“程序员”标签</strong></p>
+<ol>
+<li>个人兴趣：我从小就对工科方向的工作非常感兴趣，喜欢倒腾电子产品，研究它们的原理，拆了又装。</li>
+<li>家庭影响：我有一个“伢伢”，比我大10多岁，他学的就是计算机，赚钱也多。
+他毕业后在一家电商公司工作，后来被京东收购，之后去了高德，又被阿里收购。在它的影响下，我最终成为了一名程序员。</li>
+</ol>
+<p><strong>程序员的价值体现</strong></p>
+<p>做程序员是幸运的，世界的本质是价值交换。
+作为程序员，我最大的成就感在于能否真正给别人带来价值。如果可以，那泰裤辣。
+大环境没有那么差，这是程序员的时代！！！</p>
+<p><strong>我的程序员格言</strong></p>
+<ol>
+<li>编码原则：🥇 代码简洁高效，优雅永不过时 ✨</li>
+<li>架构核心：🔧 掌握系统控制权，确保可扩展性和灵活性</li>
+<li>技术理念：🌐 技术广度是技术深度的副产品</li>
+<li>职业信仰：🚀 当坚持成为一种热爱，极致成为一种精神，那么成功就是一种必然</li>
+<li>长期主义：⏳ 注重长远发展，坚持不懈地追求卓越</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>深入理解Java虚拟机（持续连载）</title>
+      <link>https://www.geekyspace.cn/md/jvm/</link>
+      <guid>https://www.geekyspace.cn/md/jvm/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">深入理解Java虚拟机（持续连载）</source>
+      <description>深入理解Java虚拟机目录（持续连载） 前言（Preface） 致谢（Acknowledgements） 第一部分 走近Java（Part 1: Approaching Java） 第1章 走近Java（Chapter 1: Approaching Java） 1.1 概述（Overview） 1.2 Java技术体系（Java Technology ...</description>
+      <category>JVM</category>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>前言（Preface）</h2>
+<h2>致谢（Acknowledgements）</h2>
+<h2>第一部分 走近Java（Part 1: Approaching Java）</h2>
+<ul>
+<li><strong>第1章 走近Java（Chapter 1: Approaching Java）</strong>
+<ul>
+<li>1.1 概述（Overview）</li>
+<li>1.2 Java技术体系（Java Technology System）</li>
+<li>1.3 Java发展史（History of Java）</li>
+<li><a href="/md/jvm/part1/overview.html#java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%B6%E6%97%8F" target="_blank">1.4 Java虚拟机家族（Java Virtual Machine Family）</a></li>
+<li>1.5 展望Java技术的未来（Future of Java Technology）</li>
+<li><a href="part1/compile_jdk">1.6 实战：自己编译JDK（Practical: Compiling JDK）</a></li>
+</ul>
+</li>
+</ul>
+<h2>第二部分 自动内存管理（Part 2: Automatic Memory Management）</h2>
+<ul>
+<li>
+<p><strong>第2章 Java内存区域与内存溢出异常（Chapter 2: Java Memory Areas and OutOfMemoryError）</strong></p>
+<ul>
+<li>2.1 概述（Overview）</li>
+<li>2.2 程序计数器（Program Counter Register）</li>
+<li>2.3 Java虚拟机栈（Java Virtual Machine Stacks）</li>
+<li>2.4 本地方法栈（Native Method Stacks）</li>
+<li>2.5 堆（Heap）</li>
+<li>2.6 方法区（Method Area）</li>
+<li>2.7 运行时常量池（Runtime Constant Pool）</li>
+<li>2.8 直接内存（Direct Memory）</li>
+</ul>
+</li>
+<li>
+<p><strong>第3章 垃圾收集器与内存分配策略（Chapter 3: Garbage Collectors and Memory Allocation Strategies）</strong></p>
+<ul>
+<li>3.1 概述（Overview）</li>
+<li>3.2 对象已死吗？（Is the Object Dead?）</li>
+<li>3.3 垃圾收集算法（Garbage Collection Algorithms）</li>
+<li>3.4 HotSpot的算法实现（HotSpot Algorithm Implementation）</li>
+<li>3.5 垃圾收集器（Garbage Collectors）</li>
+</ul>
+</li>
+<li>
+<p><strong>第4章 虚拟机性能监控、故障处理工具（Chapter 4: JVM Performance Monitoring and Troubleshooting Tools）</strong></p>
+<ul>
+<li>4.1 概述（Overview）</li>
+<li>4.2 JConsole介绍（Introduction to JConsole）</li>
+<li>4.3 VisualVM介绍（Introduction to VisualVM）</li>
+<li>4.4 其他工具（Other Tools）</li>
+</ul>
+</li>
+<li>
+<p><strong>第5章 调优案例分析与实战（Chapter 5: Optimization Case Analysis and Practices）</strong></p>
+<ul>
+<li>5.1 概述（Overview）</li>
+<li>5.2 实战案例分析（Practical Case Analysis）</li>
+<li>5.3 调优实践（Optimization Practices）</li>
+</ul>
+</li>
+</ul>
+<h2>第三部分 虚拟机执行子系统（Part 3: JVM Execution Subsystem）</h2>
+<ul>
+<li>
+<p><strong>第6章 类文件结构（Chapter 6: Class File Structure）</strong></p>
+<ul>
+<li>6.1 概述（Overview）</li>
+<li><a href="/md/jvm/part3/class-file-structure.html#%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%9F%BA%E7%9F%B3" target="_blank">6.2 无关性的基石（The Cornerstone of Independence）</a></li>
+<li><a href="/md/jvm/part3/class-file-structure.html#class%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84-%E7%90%86%E8%AE%BA" target="_blank">6.3 Class类文件的结构（Structure of Class File）</a></li>
+<li><a href="part3/bytecode-instructions-set">6.4 字节码指令简介（Introduction to Bytecode Instructions）</a></li>
+<li>6.5 公有设计，私有实现（Public Design, Private Implementation）</li>
+<li>6.6 Class文件结构的发展（Development of Class File Structure）</li>
+</ul>
+</li>
+<li>
+<p><strong>第7章 虚拟机类加载机制（Chapter 7: JVM Class Loading Mechanism）</strong></p>
+<ul>
+<li>7.1 概述（Overview）</li>
+<li>7.2 类加载的时机（Timing of Class Loading）</li>
+<li><a href="/md/jvm/part3/class-loading-mechanism.html#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B" target="_blank">7.3 类加载的过程（Class Loading Process）</a></li>
+<li>7.4 类加载器（Class Loaders）</li>
+<li>7.5 Java模块化系统（Java Modular System）</li>
+</ul>
+</li>
+<li>
+<p><strong>第8章 虚拟机字节码执行引擎（Chapter 8: JVM Bytecode Execution Engine）</strong></p>
+<ul>
+<li>8.1 概述（Overview）</li>
+<li>8.2 运行时栈帧结构（Runtime Stack Frame Structure）</li>
+<li>8.3 方法调用与返回（Method Invocation and Return）</li>
+</ul>
+</li>
+<li>
+<p>**第9章 类加载及执行子系统的案例与实战（Chapter 9: Case Studies and Practices of Class Loading and Execution Subsystem）
+**</p>
+<ul>
+<li>9.1 概述（Overview）</li>
+<li>9.2 实战案例分析（Practical Case Analysis）</li>
+<li>9.3 调优实践（Optimization Practices）</li>
+</ul>
+</li>
+</ul>
+<h2>第四部分 程序编译与代码优化（Part 4: Program Compilation and Code Optimization）</h2>
+<ul>
+<li>
+<p><strong>第10章 前端编译与优化（Chapter 10: Front-end Compilation and Optimization）</strong></p>
+<ul>
+<li>10.1 概述（Overview）</li>
+<li>10.2 语法与语义分析（Syntax and Semantic Analysis）</li>
+<li>10.3 字节码生成（Bytecode Generation）</li>
+</ul>
+</li>
+<li>
+<p><strong>第11章 后端编译与优化（Chapter 11: Back-end Compilation and Optimization）</strong></p>
+<ul>
+<li>11.1 概述（Overview）</li>
+<li>11.2 即时编译器（Just-in-time Compiler）</li>
+<li>11.3 编译优化（Compilation Optimization）</li>
+</ul>
+</li>
+</ul>
+<h2>第五部分 高效并发（Part 5: Efficient Concurrency）</h2>
+<ul>
+<li>
+<p><strong>第12章 Java内存模型与线程（Chapter 12: Java Memory Model and Threads）</strong></p>
+<ul>
+<li>12.1 概述（Overview）</li>
+<li>12.2 Java内存模型（Java Memory Model）</li>
+<li>12.3 线程与线程池（Threads and Thread Pools）</li>
+</ul>
+</li>
+<li>
+<p><strong>第13章 线程安全与锁优化（Chapter 13: Thread Safety and Lock Optimization）</strong></p>
+<ul>
+<li>13.1 概述（Overview）</li>
+<li>13.2 线程安全（Thread Safety）</li>
+<li>13.3 锁优化（Lock Optimization）</li>
+</ul>
+</li>
+</ul>
+<h2>附录（Appendices）</h2>
+<ul>
+<li>
+<p><strong>附录A 在Windows系统下编译OpenJDK 6（Appendix A: Compiling OpenJDK 6 on Windows）</strong></p>
+</li>
+<li>
+<p><strong>附录B 展望Java技术的未来（2013年版）（Appendix B: Outlook of Java Technology's Future (2013 Edition)）</strong></p>
+</li>
+<li>
+<p><strong>附录C 虚拟机字节码指令表（Appendix C: JVM Bytecode Instruction Table）</strong></p>
+<ul>
+<li>C.1 指令集概述（Overview of Instruction Set）</li>
+<li>C.2 常用指令详解（Detailed Explanation of Common Instructions）</li>
+</ul>
+</li>
+<li>
+<p><strong>附录D 对象查询语言（OQL）简介（Appendix D: Introduction to Object Query Language (OQL)）</strong></p>
+<ul>
+<li>D.1 概述（Overview）</li>
+<li>D.2 OQL语法（OQL Syntax）</li>
+<li>D.3 使用案例（Usage Cases）</li>
+</ul>
+</li>
+<li>
+<p><strong>附录E JDK历史版本轨迹（Appendix E: Historical Versions of the JDK）</strong></p>
+<ul>
+<li>E.1 概述（Overview）</li>
+<li>E.2 版本列表（Version List）</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
     </item>
     <item>
       <title>2024最新IntelliJ IDEA专业版稳定正版激活码</title>
