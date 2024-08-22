@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Wed, 14 Aug 2024 17:33:53 GMT</pubDate>
-    <lastBuildDate>Wed, 14 Aug 2024 17:33:53 GMT</lastBuildDate>
+    <pubDate>Thu, 22 Aug 2024 16:23:16 GMT</pubDate>
+    <lastBuildDate>Thu, 22 Aug 2024 16:23:16 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>JVM</category>
@@ -23,10 +23,49 @@
       <link>https://www.geekyspace.cn/md/jvm/part2/heap-object-flow.html</link>
       <guid>https://www.geekyspace.cn/md/jvm/part2/heap-object-flow.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">堆中对象分配、布局和访问的全过程</source>
-      <description>堆中对象分配、布局和访问的全过程</description>
+      <description>堆中对象分配、布局和访问的全过程 本文将深入探讨HotSpot虚拟机中Java堆中对象分配、布局和访问的全过程。 对象的创建 在Java中，创建对象通常使用new关键字，而在JVM中，创建对象的过程如下： 1、类加载检查 JVM首先检查new指令所引用的类是否已加载、连接和初始化。 如果没有，会先执行。 2、分配内存 JVM为新对象分配内存，其大小在类...</description>
       <category>JVM</category>
       <pubDate>Sat, 10 Aug 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
+<blockquote>
+<p>本文将深入探讨HotSpot虚拟机中Java堆中对象分配、布局和访问的全过程。</p>
+</blockquote>
+<h2>对象的创建</h2>
+<p>在Java中，创建对象通常使用<code>new</code>关键字，而在JVM中，创建对象的过程如下：</p>
+<p><strong>1、类加载检查</strong></p>
+<p>JVM首先检查<code>new</code>指令所引用的类是否已加载、连接和初始化。
+如果没有，会先执行<a href="/md/jvm/part3/class-loading-mechanism.html#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B" target="_blank">类加载过程</a>。</p>
+<p><strong>2、分配内存</strong></p>
+<p>JVM为新对象分配内存，其大小在类加载完成时确认，<strong>内存分配的方式：</strong></p>
+<ol>
+<li><strong>指针碰撞：</strong> 适用于规整的堆内存，将内存分为已使用和未使用两部分，通过移动指针分配内存。</li>
+<li><strong>空闲列表：</strong> 适用于不规整的堆内存，JVM维护一个空闲列表，从中找到合适的内存块进行分配。</li>
+</ol>
+<p>使用压缩整理功能的收集器（如Serial、ParNew）通常采用指针碰撞分配，而基于标记-清除（Sweep）算法的CMS收集器使用空闲列表分配。</p>
+<p><strong>线程安全的内存分配方式：</strong></p>
+<ul>
+<li><strong>同步处理：</strong> 通过同步操作或CAS加重试机制确保原子性。</li>
+<li><strong>线程本地分配缓冲（TLAB）：</strong> 每个线程在Java堆中预先分配一小块内存，分配时在<code>TLAB</code>中进行，
+只有<code>TLAB</code>耗尽分配新的<code>TLAB</code>时才才需同步。
+<ul>
+<li>通过<code>-XX:+UseTLAB</code>参数来启用<code>TLAB</code>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>3、初始化零值（不包括对象头）</strong></p>
+<p>JVM将分配的内存空间（不包括对象头）初始化为零值，确保对象字段在未显式初始化时可直接使用。</p>
+<p><strong>4、设置对象头</strong></p>
+<p>JVM设置对象头，包括：</p>
+<ul>
+<li><strong>Mark Word：</strong> 存储对象的哈希码（调用<code>Object::hashCode()</code>时计算）、GC分代年龄、锁信息等。</li>
+<li><strong>类元数据指针：</strong> 指向对象所属类的元数据，确定对象是哪个类的实例。</li>
+</ul>
+<p><strong>5、执行<code>&lt;init&gt;</code>方法</strong></p>
+<p>至此，在JVM层面，一个新的对象已经产生了。
+但从Java程序视角，对象创建才刚刚开始，所有的字段都还为零值。
+只有构造方法<code>&lt;init&gt;</code>执行后，对象才按照程序员的意图完成初始化，成为一个真正可用的对象。</p>
+<h2>对象的内存布局</h2>
+<h2>对象的访问定位</h2>
 ]]></content:encoded>
     </item>
     <item>
