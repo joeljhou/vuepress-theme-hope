@@ -6,10 +6,11 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Thu, 22 Aug 2024 16:23:16 GMT</pubDate>
-    <lastBuildDate>Thu, 22 Aug 2024 16:23:16 GMT</lastBuildDate>
+    <pubDate>Fri, 15 Nov 2024 17:13:15 GMT</pubDate>
+    <lastBuildDate>Fri, 15 Nov 2024 17:13:15 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>Docker</category>
     <category>JVM</category>
     <category>程序人生</category>
     <category>IDEA</category>
@@ -18,6 +19,118 @@
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Spring</category>
+    <item>
+      <title>Docker安装</title>
+      <link>https://www.geekyspace.cn/md/docker/install.html</link>
+      <guid>https://www.geekyspace.cn/md/docker/install.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Docker安装</source>
+      <description>Docker安装&amp;配置 多平台安装 安装软件这种基础的操作，直接 参考官方文档即可： 在Mac上安装Docker Desktop 在Windows上安装Docker Desktop 在Linux上安装Docker Desktop 验证是否安装成功：</description>
+      <category>Docker</category>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>多平台安装</h2>
+<p>安装软件这种基础的操作，直接 参考官方文档即可：</p>
+<ul>
+<li><a href="https://docs.docker.com/desktop/setup/install/mac-install/" target="_blank" rel="noopener noreferrer">在Mac上安装Docker Desktop</a></li>
+<li><a href="https://docs.docker.com/desktop/setup/install/windows-install/" target="_blank" rel="noopener noreferrer">在Windows上安装Docker Desktop</a></li>
+<li><a href="https://docs.docker.com/desktop/setup/install/linux/" target="_blank" rel="noopener noreferrer">在Linux上安装Docker Desktop</a></li>
+</ul>
+<p>验证是否安装成功：</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>$ <span class="token function">docker</span> version
+$ <span class="token function">docker</span> info
+$ <span class="token function">docker</span> hello-world
+<span class="token comment"># 可能会遇到如下网络错误，需要配置国内镜像源</span>
+$ <span class="token function">docker</span> run <span class="token parameter variable">-it</span> ubuntu <span class="token function">bash</span>  
+docker: error pulling image configuration: download failed after <span class="token assign-left variable">attempts</span><span class="token operator">=</span><span class="token number">6</span>: EOF.
+</code></pre></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Docker镜像加速器</title>
+      <link>https://www.geekyspace.cn/md/docker/mirror-acceleration.html</link>
+      <guid>https://www.geekyspace.cn/md/docker/mirror-acceleration.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Docker镜像加速器</source>
+      <description>Docker镜像加速器 镜像加速器 阿里云镜像加速器，有针对Ubuntu，CentOS，Mac，Windows的配置教程 镜像源配置文件 Linux：/etc/docker/daemon.json Windows: %USERPROFILE%\.docker\daemon.json Windows配置： 右上角选择Settings图标，打开配置窗口后选...</description>
+      <category>Docker</category>
+      <pubDate>Sat, 16 Nov 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>镜像加速器</h2>
+<blockquote>
+<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener noreferrer">阿里云镜像加速器</a>，有针对Ubuntu，CentOS，Mac，Windows的配置教程</p>
+</blockquote>
+<p><strong>镜像源配置文件</strong></p>
+<ul>
+<li>Linux：<code>/etc/docker/daemon.json</code></li>
+<li>Windows: <code>%USERPROFILE%\.docker\daemon.json</code></li>
+</ul>
+<p><strong>Windows配置：</strong></p>
+<p>右上角选择Settings图标，打开配置窗口后选择Docker Engine。编辑JSON串，填写加速器地址：</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">{</span>
+  <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"https://onnxqmp4.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202411160051539.png" alt="Windows配置镜像加速" tabindex="0" loading="lazy"><figcaption>Windows配置镜像加速</figcaption></figure>
+<p><strong>完整的<code>daemon.json</code>配置示例：</strong></p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">{</span>
+  <span class="token string">"builder"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"gc"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"defaultKeepStorage"</span><span class="token builtin class-name">:</span> <span class="token string">"20GB"</span>,
+      <span class="token string">"enabled"</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">"experimental"</span><span class="token builtin class-name">:</span> false,
+  <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://onnxqmp4.mirror.aliyuncs.com"</span>,
+    <span class="token string">"https://docker.hpcloud.cloud"</span>,
+    <span class="token string">"https://docker.m.daocloud.io"</span>,
+    <span class="token string">"https://docker.1panel.live"</span>,
+    <span class="token string">"http://mirrors.ustc.edu.cn"</span>,
+    <span class="token string">"https://docker.chenby.cn"</span>,
+    <span class="token string">"https://docker.ckyl.me"</span>,
+    <span class="token string">"http://mirror.azure.cn"</span>,
+    <span class="token string">"https://hub.rat.dev"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div>]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202411160051539.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Docker概述</title>
+      <link>https://www.geekyspace.cn/md/docker/overview.html</link>
+      <guid>https://www.geekyspace.cn/md/docker/overview.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Docker概述</source>
+      <description>Docker概述 Docker是什么？ 核心定义： Docker 是一个开源的容器化平台，用于快速构建、部署和运行应用程序。 三大特性： 轻量： 容器共享操作系统内核，启动快，占用资源少。 可移植： 一次构建，随处运行（开发、测试、生产环境一致）。 高效： 资源利用率高，支持微服务架构。 重新定义Docker，不只是工具，而是生产力的革命。 Docke...</description>
+      <category>Docker</category>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>Docker是什么？</h2>
+<blockquote>
+<p><strong>核心定义：</strong> Docker 是一个开源的容器化平台，用于快速构建、部署和运行应用程序。</p>
+</blockquote>
+<p><strong>三大特性：</strong></p>
+<ol>
+<li><strong>轻量：</strong> 容器共享操作系统内核，启动快，占用资源少。</li>
+<li><strong>可移植：</strong> 一次构建，随处运行（开发、测试、生产环境一致）。</li>
+<li><strong>高效：</strong> 资源利用率高，支持微服务架构。</li>
+</ol>
+<p>重新定义Docker，不只是工具，而是生产力的革命。</p>
+<h2>Docker的核心组件</h2>
+<ul>
+<li><strong>镜像（Image）</strong>：程序和环境的只读模板（打包好的代码 + 环境）。</li>
+<li><strong>容器（Container）</strong>：运行起来的镜像，独立的执行单元。</li>
+<li><strong>仓库（Registry）</strong>：存储和分发镜像的地方，常用<a href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">Docker Hub</a>或私有仓库。</li>
+<li><strong>Dockerfile</strong>：定义镜像构建过程的配置文件。</li>
+</ul>
+<h2>Docker 执行流程</h2>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202411152359021.png" alt="Docker执行流程" tabindex="0" loading="lazy"><figcaption>Docker执行流程</figcaption></figure>
+<h2>历史的演化</h2>
+<ol>
+<li>物理机时代：一个应用占用一整台服务器，资源浪费严重，扩展困难。</li>
+<li>虚拟机时代：通过虚拟化技术在单台服务器上运行多个操作系统，提高资源利用率，但性能损耗较大。</li>
+<li><strong>容器化时代</strong>：容器共享内核，轻量、快速，提供了高效的资源隔离和一致的运行环境。</li>
+<li>云原生时代：容器化 + 容器编排 + 服务发现 + 配置管理 + 自动化部署，构建了一个完整的云原生应用平台。</li>
+</ol>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202411152359021.png" type="image/png"/>
+    </item>
     <item>
       <title>堆中对象分配、布局和访问的全过程</title>
       <link>https://www.geekyspace.cn/md/jvm/part2/heap-object-flow.html</link>
