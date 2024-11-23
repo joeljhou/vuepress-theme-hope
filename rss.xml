@@ -6,8 +6,8 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Fri, 15 Nov 2024 17:13:15 GMT</pubDate>
-    <lastBuildDate>Fri, 15 Nov 2024 17:13:15 GMT</lastBuildDate>
+    <pubDate>Sat, 23 Nov 2024 08:44:50 GMT</pubDate>
+    <lastBuildDate>Sat, 23 Nov 2024 08:44:50 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Docker</category>
@@ -19,6 +19,159 @@
     <category>Spring Boot</category>
     <category>Spring Data</category>
     <category>Spring</category>
+    <item>
+      <title>Top20常用命令</title>
+      <link>https://www.geekyspace.cn/md/docker/top20-commands.html</link>
+      <guid>https://www.geekyspace.cn/md/docker/top20-commands.html</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">Top20常用命令</source>
+      <description>Top20常用命令 作为一款领先的容器化工具，Docker 提供了强大的功能，让开发者和运维人员能够快速构建、部署和管理应用。 在这篇文章中，我们将介绍 20 条最常用的 Docker 命令，并结合详细说明，帮助大家轻松掌握 Docker 的基本操作。 1. Docker version 2. Docker search 3. Docker pull ...</description>
+      <category>Docker</category>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>作为一款领先的容器化工具，Docker 提供了强大的功能，让开发者和运维人员能够快速构建、部署和管理应用。
+在这篇文章中，我们将介绍 20 条最常用的 Docker 命令，并结合详细说明，帮助大家轻松掌握 Docker 的基本操作。</p>
+<ul>
+<li><a href="#docker-version">1. Docker version</a></li>
+<li><a href="#docker-search">2. Docker search</a></li>
+<li><a href="#docker-pull">3. Docker pull</a></li>
+<li><a href="#docker-run">4. Docker run</a></li>
+<li><a href="#docker-ps">5. Docker ps</a></li>
+<li><a href="#docker-stop">6. Docker stop</a></li>
+<li><a href="#docker-restart">7. Docker restart</a></li>
+<li><a href="#docker-kill">8. Docker kill</a></li>
+<li><a href="#docker-exec">9. Docker exec</a></li>
+<li><a href="#docker-login">10. Docker login</a></li>
+<li><a href="#docker-commit">11. Docker commit</a></li>
+<li><a href="#docker-push">12. Docker push</a></li>
+<li><a href="#docker-network">13. Docker network</a></li>
+<li><a href="#docker-history">14. Docker history</a></li>
+<li><a href="#docker-rmi">15. Docker rmi</a></li>
+<li><a href="#docker-ps--a">16. Docker ps -a</a></li>
+<li><a href="#docker-copy">17. Docker copy</a></li>
+<li><a href="#docker-logs">18. Docker logs</a></li>
+<li><a href="#docker-volume">19. Docker volume</a></li>
+<li><a href="#docker-logout">20. Docker logout</a></li>
+</ul>
+<h2>Docker version</h2>
+<p>用途：显示 Docker 的版本信息。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> version
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202411231416702.png" alt="docker version" tabindex="0" loading="lazy"><figcaption>docker version</figcaption></figure>
+<h2>Docker search</h2>
+<p>用途: 用于搜索 Docker Hub 上的镜像。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> search nginx
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202411231425169.png" alt="docker search nginx" tabindex="0" loading="lazy"><figcaption>docker search nginx</figcaption></figure>
+<h2>Docker pull</h2>
+<p>用途：从 Docker Hub 下载镜像。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> pull nginx
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202411231427300.png" alt="docker pull nginx" tabindex="0" loading="lazy"><figcaption>docker pull nginx</figcaption></figure>
+<h2>Docker run</h2>
+<p>用途：运行一个镜像，并创建一个容器。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> my-mysql <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span>root <span class="token parameter variable">-p</span> <span class="token number">3307</span>:3306 mysql:8.0
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>-d</code>：后台运行容器，并返回 Shell。</li>
+<li><code>-e MYSQL_ROOT_PASSWORD=root</code>：设置环境变量，用于设置 MySQL 的 root 用户密码。</li>
+<li><code>-p 3306:3306</code>：将主机的端口 3306 映射到容器的端口 3306。</li>
+<li><code>mysql:8.0</code>：要下载的镜像的名称。</li>
+</ul>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202411231444798.png" alt="docker run mysql" tabindex="0" loading="lazy"><figcaption>docker run mysql</figcaption></figure>
+<h2>Docker ps</h2>
+<p>用途：列出当前正在运行的容器。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token function">ps</span>
+</code></pre></div><h2>Docker stop</h2>
+<p>用途：停止一个正在运行的容器。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> stop <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span>
+</code></pre></div><h2>Docker restart</h2>
+<p>用途：重启一个容器。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> restart <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span>
+</code></pre></div><h2>Docker kill</h2>
+<p>用途：强制停止一个容器。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token function">kill</span> <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span>
+</code></pre></div><h2>Docker exec</h2>
+<p>用途：在运行中的容器中执行命令。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span> <span class="token function">bash</span>
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>-it</code>：保持 STDIN 打开并允许使用键盘输入。</li>
+<li><code>&lt;container_id&gt;</code>：要进入的容器的ID。</li>
+<li><code>bash</code>：要执行的命令。</li>
+</ul>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202411231506412.png" alt="docker exec -it <container_id> bash" tabindex="0" loading="lazy"><figcaption>docker exec -it &lt;container_id&gt; bash</figcaption></figure>
+<h2>Docker login</h2>
+<p>用途：登录 Docker Hub，用于推送私有镜像。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> login
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202411231511727.png" alt="docker login" tabindex="0" loading="lazy"><figcaption>docker login</figcaption></figure>
+<h2>Docker commit</h2>
+<p>用途：创建一个镜像，该镜像包含一个容器的当前状态。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> commit <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>image_name<span class="token operator">&gt;</span>
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>&lt;container_id&gt;</code>：要提交为镜像的容器的ID。</li>
+<li><code>&lt;image_name&gt;</code>：新镜像的名称。</li>
+</ul>
+<h2>Docker push</h2>
+<p>用途：将镜像推送到 Docker Hub。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> push <span class="token operator">&lt;</span>image_name<span class="token operator">&gt;</span>
+</code></pre></div><h2>Docker network</h2>
+<p>用途：管理 Docker 网络。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> network create <span class="token operator">&lt;</span>network_name<span class="token operator">&gt;</span>
+<span class="token function">docker</span> network inspect <span class="token operator">&lt;</span>network_name<span class="token operator">&gt;</span>
+<span class="token function">docker</span> network <span class="token function">rm</span> <span class="token operator">&lt;</span>network_name<span class="token operator">&gt;</span>
+<span class="token function">docker</span> network connect <span class="token operator">&lt;</span>network_name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span>
+<span class="token function">docker</span> network disconnect <span class="token operator">&lt;</span>network_name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span>
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>&lt;network_name&gt;</code>：要创建、查看、删除或连接的 Docker 网络的名称。</li>
+<li><code>&lt;container_id&gt;</code>：要连接到或断开连接的网络的容器的ID。</li>
+</ul>
+<h2>Docker history</h2>
+<p>用途：显示镜像的创建历史。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token function">history</span> <span class="token operator">&lt;</span>image_name<span class="token operator">&gt;</span>
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>&lt;image_name&gt;</code>：要查看其创建历史的镜像的名称。</li>
+</ul>
+<h2>Docker rmi</h2>
+<p>用途：删除镜像。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> rmi <span class="token operator">&lt;</span>image_id<span class="token operator">&gt;</span>
+</code></pre></div><h2>Docker ps -a</h2>
+<p>用途：列出所有容器，包括已停止的容器。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token function">ps</span> <span class="token parameter variable">-a</span>
+</code></pre></div><figure><img src="http://img.geekyspace.cn/pictures/2024/202411231500573.png" alt="docker ps -a" tabindex="0" loading="lazy"><figcaption>docker ps -a</figcaption></figure>
+<h2>Docker copy</h2>
+<p>用途：复制文件或文件夹到容器。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token function">cp</span> <span class="token operator">&lt;</span>host_path<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>container_path<span class="token operator">&gt;</span>
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>&lt;host_path&gt;</code>：主机上的文件或文件夹的路径。</li>
+<li><code>&lt;container_id&gt;</code>：要复制文件的容器的ID。</li>
+<li><code>&lt;container_path&gt;</code>：容器内的目标路径。</li>
+</ul>
+<h2>Docker logs</h2>
+<p>用途：查看容器的日志。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> logs <span class="token operator">&lt;</span>container_id<span class="token operator">&gt;</span>
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>&lt;container_id&gt;</code>：要查看其日志的容器的ID。</li>
+</ul>
+<h2>Docker volume</h2>
+<p>用途：管理 Docker 卷。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> volume create <span class="token operator">&lt;</span>volume_name<span class="token operator">&gt;</span>
+<span class="token function">docker</span> volume inspect <span class="token operator">&lt;</span>volume_name<span class="token operator">&gt;</span>
+<span class="token function">docker</span> volume <span class="token function">rm</span> <span class="token operator">&lt;</span>volume_name<span class="token operator">&gt;</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-v</span> <span class="token operator">&lt;</span>volume_name<span class="token operator">&gt;</span>:/data nginx
+</code></pre></div><p>参数解释：</p>
+<ul>
+<li><code>&lt;volume_name&gt;</code>：要创建、查看或删除的卷的名称。</li>
+<li><code>nginx</code>：要运行的镜像名称。</li>
+<li><code>/data</code>：要挂载到容器内的卷的挂载点。</li>
+</ul>
+<h2>Docker logout</h2>
+<p>用途：注销 Docker Hub。</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token builtin class-name">logout</span>
+</code></pre></div>]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202411231416702.png" type="image/png"/>
+    </item>
     <item>
       <title>Docker安装</title>
       <link>https://www.geekyspace.cn/md/docker/install.html</link>
