@@ -6,15 +6,15 @@
     <link>https://www.geekyspace.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Sat, 23 Nov 2024 08:44:50 GMT</pubDate>
-    <lastBuildDate>Sat, 23 Nov 2024 08:44:50 GMT</lastBuildDate>
+    <pubDate>Tue, 26 Nov 2024 16:25:02 GMT</pubDate>
+    <lastBuildDate>Tue, 26 Nov 2024 16:25:02 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Docker</category>
     <category>JVM</category>
     <category>程序人生</category>
-    <category>IDEA</category>
     <category>安装大全</category>
+    <category>IDEA</category>
     <category>Java</category>
     <category>Spring Boot</category>
     <category>Spring Data</category>
@@ -177,46 +177,52 @@
       <link>https://www.geekyspace.cn/md/docker/install.html</link>
       <guid>https://www.geekyspace.cn/md/docker/install.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Docker安装</source>
-      <description>Docker安装&amp;配置 多平台安装 安装软件这种基础的操作，直接 参考官方文档即可： 在Mac上安装Docker Desktop 在Windows上安装Docker Desktop 在Linux上安装Docker Desktop 验证是否安装成功：</description>
+      <description>Docker安装&amp;配置 您可以在多个平台上下载并安装 Docker。请参阅以下部分并选择最适合您的安装路径。 适用于Mac的Docker桌面 适用于Windows的Docker桌面 适用于Linux的Docker桌面 验证是否安装成功： 运行测试镜像 可能会遇到如下网络错误，这个时候就需要配置 docker: error pulling image c...</description>
       <category>Docker</category>
       <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>多平台安装</h2>
-<p>安装软件这种基础的操作，直接 参考官方文档即可：</p>
-<ul>
-<li><a href="https://docs.docker.com/desktop/setup/install/mac-install/" target="_blank" rel="noopener noreferrer">在Mac上安装Docker Desktop</a></li>
-<li><a href="https://docs.docker.com/desktop/setup/install/windows-install/" target="_blank" rel="noopener noreferrer">在Windows上安装Docker Desktop</a></li>
-<li><a href="https://docs.docker.com/desktop/setup/install/linux/" target="_blank" rel="noopener noreferrer">在Linux上安装Docker Desktop</a></li>
-</ul>
-<p>验证是否安装成功：</p>
-<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>$ <span class="token function">docker</span> version
-$ <span class="token function">docker</span> info
-$ <span class="token function">docker</span> hello-world
-<span class="token comment"># 可能会遇到如下网络错误，需要配置国内镜像源</span>
+<p>您可以在多个平台上下载并安装 Docker。请参阅以下部分并选择最适合您的安装路径。</p>
+<blockquote>
+<p><a href="https://docs.docker.com/desktop/setup/install/mac-install/" target="_blank" rel="noopener noreferrer">适用于Mac的Docker桌面</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://docs.docker.com/desktop/setup/install/windows-install/" target="_blank" rel="noopener noreferrer">适用于Windows的Docker桌面</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://docs.docker.com/desktop/setup/install/linux/" target="_blank" rel="noopener noreferrer">适用于Linux的Docker桌面</a></p>
+</blockquote>
+<p><strong>验证是否安装成功：</strong></p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>$ <span class="token function">docker</span> version           <span class="token comment"># 查看版本</span>
+$ <span class="token function">docker</span> info              <span class="token comment"># 查看信息</span>
+</code></pre></div><p><strong>运行测试镜像</strong></p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code>$ <span class="token function">docker</span> run hello-world
 $ <span class="token function">docker</span> run <span class="token parameter variable">-it</span> ubuntu <span class="token function">bash</span>  
-docker: error pulling image configuration: download failed after <span class="token assign-left variable">attempts</span><span class="token operator">=</span><span class="token number">6</span>: EOF.
-</code></pre></div>]]></content:encoded>
+</code></pre></div><p>可能会遇到如下网络错误，这个时候就需要配置<a href="/md/docker/mirror-acceleration.html" target="_blank">镜像源加速器</a></p>
+<p><code>docker: error pulling image configuration: download failed after attempts=6: EOF.</code></p>
+]]></content:encoded>
     </item>
     <item>
       <title>Docker镜像加速器</title>
       <link>https://www.geekyspace.cn/md/docker/mirror-acceleration.html</link>
       <guid>https://www.geekyspace.cn/md/docker/mirror-acceleration.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Docker镜像加速器</source>
-      <description>Docker镜像加速器 镜像加速器 阿里云镜像加速器，有针对Ubuntu，CentOS，Mac，Windows的配置教程 镜像源配置文件 Linux：/etc/docker/daemon.json Windows: %USERPROFILE%\.docker\daemon.json Windows配置： 右上角选择Settings图标，打开配置窗口后选...</description>
+      <description>Docker镜像加速器 阿里云镜像加速器 阿里云镜像加速器，有针对Ubuntu，CentOS，Mac，Windows的操作文档 阿里云镜像加速器阿里云镜像加速器 配置文件 Linux：/etc/docker/daemon.json Windows: %USERPROFILE%\.docker\daemon.json Windows配置 点击docker...</description>
       <category>Docker</category>
       <pubDate>Sat, 16 Nov 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>镜像加速器</h2>
+<h2>阿里云镜像加速器</h2>
 <blockquote>
-<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener noreferrer">阿里云镜像加速器</a>，有针对Ubuntu，CentOS，Mac，Windows的配置教程</p>
+<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener noreferrer">阿里云镜像加速器</a>，有针对<code>Ubuntu</code>，<code>CentOS</code>，<code>Mac</code>，<code>Windows</code>的操作文档</p>
 </blockquote>
-<p><strong>镜像源配置文件</strong></p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202411270006564.png" alt="阿里云镜像加速器" tabindex="0" loading="lazy"><figcaption>阿里云镜像加速器</figcaption></figure>
+<h2>配置文件</h2>
 <ul>
 <li>Linux：<code>/etc/docker/daemon.json</code></li>
 <li>Windows: <code>%USERPROFILE%\.docker\daemon.json</code></li>
 </ul>
-<p><strong>Windows配置：</strong></p>
-<p>右上角选择Settings图标，打开配置窗口后选择Docker Engine。编辑JSON串，填写加速器地址：</p>
+<h2>Windows配置</h2>
+<p>点击<code>docker desktop</code>右上角<strong>齿轮</strong>图标，打开配置窗口后选择<code>Docker Engine</code>。<br>
+编辑JSON串，填写加速器地址：</p>
 <div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token punctuation">{</span>
   <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"https://onnxqmp4.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
@@ -242,44 +248,80 @@ docker: error pulling image configuration: download failed after <span class="to
     <span class="token string">"https://hub.rat.dev"</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
-</code></pre></div>]]></content:encoded>
-      <enclosure url="http://img.geekyspace.cn/pictures/2024/202411160051539.png" type="image/png"/>
+</code></pre></div><h2>Linux配置</h2>
+<p>针对，<code>Ubuntu</code>或<code>CentOS</code>系统，编辑<code>/etc/docker/daemon.json</code>文件，添加如下内容：</p>
+<div class="language-bash" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/docker
+<span class="token function">sudo</span> <span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
+{
+  "registry-mirrors": ["https://onnxqmp4.mirror.aliyuncs.com"]
+}
+EOF</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart <span class="token function">docker</span>
+</code></pre></div><p><strong>相关文档</strong></p>
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/commandline/cli/" target="_blank" rel="noopener noreferrer">Docker 命令参考文档</a></li>
+<li><a href="https://docs.docker.com/engine/reference/builder/?spm=5176.8351553.0.0.4ef81991wFvDZm" target="_blank" rel="noopener noreferrer">Dockerfile 镜像构建参考文档</a></li>
+</ul>
+]]></content:encoded>
+      <enclosure url="http://img.geekyspace.cn/pictures/2024/202411270006564.png" type="image/png"/>
     </item>
     <item>
       <title>Docker概述</title>
       <link>https://www.geekyspace.cn/md/docker/overview.html</link>
       <guid>https://www.geekyspace.cn/md/docker/overview.html</guid>
       <source url="https://www.geekyspace.cn/rss.xml">Docker概述</source>
-      <description>Docker概述 Docker是什么？ 核心定义： Docker 是一个开源的容器化平台，用于快速构建、部署和运行应用程序。 三大特性： 轻量： 容器共享操作系统内核，启动快，占用资源少。 可移植： 一次构建，随处运行（开发、测试、生产环境一致）。 高效： 资源利用率高，支持微服务架构。 重新定义Docker，不只是工具，而是生产力的革命。 Docke...</description>
+      <description>Docker概述 Docker是什么？ Docker 是一个用于 开发、发布 和 运行应用程序 的开放平台。 它通过将应用程序与运行所需的基础设施进行隔离，使得应用程序可以在任何环境中保持一致性。 Docker 以轻量化的方式解决了软件跨平台部署的问题，是现代化应用程序开发的核心工具之一。 Docker执行流程 客户端发指令 → 守护进程接收指令 → ...</description>
       <category>Docker</category>
       <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Docker是什么？</h2>
-<blockquote>
-<p><strong>核心定义：</strong> Docker 是一个开源的容器化平台，用于快速构建、部署和运行应用程序。</p>
-</blockquote>
-<p><strong>三大特性：</strong></p>
-<ol>
-<li><strong>轻量：</strong> 容器共享操作系统内核，启动快，占用资源少。</li>
-<li><strong>可移植：</strong> 一次构建，随处运行（开发、测试、生产环境一致）。</li>
-<li><strong>高效：</strong> 资源利用率高，支持微服务架构。</li>
-</ol>
-<p>重新定义Docker，不只是工具，而是生产力的革命。</p>
-<h2>Docker的核心组件</h2>
+<p>Docker 是一个用于 <strong>开发、发布 和 运行应用程序</strong> 的开放平台。<br>
+它通过将应用程序与运行所需的基础设施进行隔离，使得应用程序可以在任何环境中保持一致性。
+Docker 以轻量化的方式解决了软件跨平台部署的问题，是现代化应用程序开发的核心工具之一。</p>
+<h2>Docker执行流程</h2>
 <ul>
-<li><strong>镜像（Image）</strong>：程序和环境的只读模板（打包好的代码 + 环境）。</li>
-<li><strong>容器（Container）</strong>：运行起来的镜像，独立的执行单元。</li>
-<li><strong>仓库（Registry）</strong>：存储和分发镜像的地方，常用<a href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">Docker Hub</a>或私有仓库。</li>
-<li><strong>Dockerfile</strong>：定义镜像构建过程的配置文件。</li>
+<li>客户端发指令 → 守护进程接收指令 → 检查镜像(本地/Docker Hub) → 创建容器 → 启动并运行。</li>
 </ul>
-<h2>Docker 执行流程</h2>
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202411152359021.png" alt="Docker执行流程" tabindex="0" loading="lazy"><figcaption>Docker执行流程</figcaption></figure>
-<h2>历史的演化</h2>
+<h2>Docker架构</h2>
+<p>Docker 的架构设计基于 <strong>客户端-服务器模型</strong>，主要包含以下核心组件：</p>
+<figure><img src="http://img.geekyspace.cn/pictures/2024/202411262315598.webp" alt="Docker架构" tabindex="0" loading="lazy"><figcaption>Docker架构</figcaption></figure>
 <ol>
-<li>物理机时代：一个应用占用一整台服务器，资源浪费严重，扩展困难。</li>
-<li>虚拟机时代：通过虚拟化技术在单台服务器上运行多个操作系统，提高资源利用率，但性能损耗较大。</li>
-<li><strong>容器化时代</strong>：容器共享内核，轻量、快速，提供了高效的资源隔离和一致的运行环境。</li>
-<li>云原生时代：容器化 + 容器编排 + 服务发现 + 配置管理 + 自动化部署，构建了一个完整的云原生应用平台。</li>
+<li><strong>Client（客户端）</strong> ：用户与Docker交互的界面，通过命令行或API发送指令给Docker daemon。
+<ul>
+<li><code>docker run</code>：创建并启动一个容器。</li>
+<li><code>docker build</code>：根据Dockerfile构建一个新的镜像。</li>
+<li><code>docker pull</code>：从注册中心拉取一个镜像。</li>
+<li><code>docker push</code>：将本地镜像推送到注册中心。</li>
+</ul>
+</li>
+<li><strong>Docker daemon（守护进程）</strong> ：Docker引擎的核心，负责监听、处理客户端的指令，并管理Docker对象（镜像、容器等）。
+<ul>
+<li><code>镜像管理</code>：管理本地镜像，包括存储、加载和删除。</li>
+<li><code>容器管理</code>：创建、启动、停止、删除容器。</li>
+<li><code>网络管理</code>：为容器提供网络接口。</li>
+<li><code>存储管理</code>：管理容器的数据卷。</li>
+</ul>
+</li>
+<li><strong>Images（镜像）</strong> ：Docker镜像是一个只读的模板，包含了运行容器所需的所有文件
+<ul>
+<li><code>分层结构</code>：镜像由多层组成，每一层代表一个构建步骤。</li>
+<li><code>只读</code>：镜像是只读的，保证了镜像内容的不可变性。</li>
+</ul>
+</li>
+<li><strong>Containers（容器）</strong> ：Docker容器是镜像的运行实例，是应用程序的运行环境。
+<ul>
+<li><code>隔离性</code>：每个容器都有独立的文件系统、网络配置和进程空间。</li>
+<li><code>可复用性</code>：基于同一个镜像可以创建多个容器实例。</li>
+</ul>
+</li>
+<li><strong>Registry（注册中心）</strong> ：用于存储和分发Docker镜像的仓库。
+<ul>
+<li><code>集中存储</code>：将镜像存储在集中式的仓库中，方便管理和共享。</li>
+<li><code>版本控制</code>：支持镜像的版本管理。</li>
+</ul>
+</li>
 </ol>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202411152359021.png" type="image/png"/>
@@ -1310,6 +1352,18 @@ JVM在类加载时从常量池获取符号引用，并在类创建或运行时�
 ]]></content:encoded>
     </item>
     <item>
+      <title>开发者安装大全</title>
+      <link>https://www.geekyspace.cn/md/installation-guide/</link>
+      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
+      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
+      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
+      <category>安装大全</category>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>2024最新IntelliJ IDEA专业版稳定正版激活码</title>
       <link>https://www.geekyspace.cn/md/idea-tips/activation.html</link>
       <guid>https://www.geekyspace.cn/md/idea-tips/activation.html</guid>
@@ -1358,18 +1412,6 @@ JVM在类加载时从常量池获取符号引用，并在类创建或运行时�
 <figure><img src="http://img.geekyspace.cn/pictures/2024/202404171718903.png" alt="Success" tabindex="0" loading="lazy"><figcaption>Success</figcaption></figure>
 ]]></content:encoded>
       <enclosure url="http://img.geekyspace.cn/pictures/2024/202404171725739.png" type="image/png"/>
-    </item>
-    <item>
-      <title>开发者安装大全</title>
-      <link>https://www.geekyspace.cn/md/installation-guide/</link>
-      <guid>https://www.geekyspace.cn/md/installation-guide/</guid>
-      <source url="https://www.geekyspace.cn/rss.xml">开发者安装大全</source>
-      <description>开发者安装大全 该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</description>
-      <category>安装大全</category>
-      <pubDate>Tue, 23 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>该专栏主要整理与汇总开发者常用的编程环境、中间件等工具的安装，以指导开发者快速搭建自己的需要的开发环境。</p>
-]]></content:encoded>
     </item>
     <item>
       <title>Java新版本特性（持续连载）</title>
